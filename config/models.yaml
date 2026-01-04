@@ -1,0 +1,235 @@
+rate_limit_buffer: 0.9
+
+inference_config:
+  max_retries: 3
+
+decoding_config:
+  high_temperature:
+    temperature: 1.0
+    top_p: 1.0
+  high_temperature_codex:
+    temperature: 1.0
+  high_temperature_high_reasoning:
+    temperature: 1.0
+    top_p: 1.0
+    reasoning_effort: "high"
+  gpt_5_high_reasoning:
+    reasoning_effort: "high"
+  high_temperature_gemini_thinking:
+    temperature: 1.0
+    top_p: 1.0
+    reasoning_effort: "high"
+    thinking:
+      type: "enabled"
+      budget_tokens: 24576
+
+models:
+  gpt-5:
+    name: openai/gpt-5-2025-08-07
+    max_context_size: 272000
+    rate_limits:
+      requests_per_minute: 10000
+      tokens_per_minute: 2000000
+
+  gpt-5-flex:
+    name: openai/gpt-5-2025-08-07
+    max_context_size: 272000
+    rate_limits:
+      requests_per_minute: 10000
+      tokens_per_minute: 2000000
+    request_params:
+      service_tier: "flex"
+      request_timeout: 1800
+
+  gpt-5-mini:
+    name: openai/gpt-5-mini-2025-08-07
+    max_context_size: 272000
+    rate_limits:
+      requests_per_minute: 10000
+      tokens_per_minute: 10000000
+
+  gpt-5-mini-flex:
+    name: openai/gpt-5-mini-2025-08-07
+    max_context_size: 272000
+    rate_limits:
+      requests_per_minute: 10000
+      tokens_per_minute: 10000000
+    request_params:
+      service_tier: "flex"
+      request_timeout: 1800
+
+  gpt-5-nano:
+    name: openai/gpt-5-nano-2025-08-07
+    max_context_size: 272000
+    rate_limits:
+      requests_per_minute: 10000
+      tokens_per_minute: 10000000
+
+  gpt-5-nano-flex:
+    name: openai/gpt-5-nano-2025-08-07
+    max_context_size: 272000
+    rate_limits:
+      requests_per_minute: 10000
+      tokens_per_minute: 10000000
+    request_params:
+      service_tier: "flex"
+      request_timeout: 1800
+
+  gpt-5-codex:
+    name: openai/gpt-5-codex
+    max_context_size: 272000
+    rate_limits:
+      requests_per_minute: 10000
+      tokens_per_minute: 10000000
+
+  gemini-2.5-pro:
+    name: gemini/gemini-2.5-pro
+    tokenizer: gemini/gemini-2.5-pro
+    max_context_size: 1047576
+    rate_limits:
+      requests_per_minute: 150
+      tokens_per_minute: 2000000
+
+  gemini-2.5-flash:
+    name: gemini/gemini-2.5-flash
+    tokenizer: gemini/gemini-2.5-flash
+    max_context_size: 1047576
+    rate_limits:
+      requests_per_minute: 1000
+      tokens_per_minute: 1000000
+
+  gemini-2.5-flash-lite:
+    name: gemini/gemini-2.5-flash-lite
+    tokenizer: gemini/gemini-2.5-flash-lite
+    max_context_size: 1047576
+    rate_limits:
+      requests_per_minute: 4000
+      tokens_per_minute: 4000000
+
+  qwen-3-4b-instruct:
+    name: ollama_chat/qwen3:4b-instruct-2507-fp16
+    tokenizer: hf/Qwen/Qwen3-4B-Instruct-2507
+    max_context_size: 262144
+    request_params:
+      request_timeout: 1800
+
+  qwen-3-4b-thinking:
+    name: ollama_chat/qwen3:4b-thinking-2507-fp16
+    tokenizer: hf/Qwen/Qwen3-4B-Thinking-2507
+    max_context_size: 262144
+    request_params:
+      request_timeout: 1800
+
+  gpt-oss-20b:
+    name: ollama_chat/gpt-oss:20b
+    tokenizer: hf/openai/gpt-oss-20b
+    max_context_size: 131072
+
+  gpt-oss-20b-high:
+    name: ollama_chat/gpt-oss:20b
+    tokenizer: hf/openai/gpt-oss-20b
+    max_context_size: 131072
+    request_params:
+      request_timeout: 1800
+      extra_body:
+        think: high
+
+  gpt-oss-120b:
+    name: ollama_chat/gpt-oss:120b
+    tokenizer: hf/openai/gpt-oss-120b
+    max_context_size: 131072
+
+  gpt-oss-120b-high:
+    name: ollama_chat/gpt-oss:120b
+    tokenizer: hf/openai/gpt-oss-120b
+    max_context_size: 131072
+    request_params:
+      extra_body:
+        think: high
+
+  qwen-3-30b-a3b-thinking:
+    name: ollama_chat/qwen3:30b-a3b-thinking-2507-fp16
+    tokenizer: hf/Qwen/Qwen3-30B-A3B-Thinking-2507
+    max_context_size: 262144
+    request_params:
+      request_timeout: 1800
+
+  qwen-3-30b-a3b-instruct:
+    name: ollama_chat/qwen3:30b-a3b-instruct-2507-fp16
+    tokenizer: hf/Qwen/Qwen3-30B-A3B-Instruct-2507
+    max_context_size: 262144
+    request_params:
+      request_timeout: 1800
+
+  qwen-3-coder-30b-a3b:
+    name: ollama_chat/qwen3-coder:30b-a3b-fp16
+    tokenizer: hf/Qwen/Qwen3-Coder-30B-A3B-Instruct
+    max_context_size: 262144
+    request_params:
+      request_timeout: 1800
+  
+  qwen-3-32b:
+    name: ollama_chat/qwen3:32b-fp16
+    tokenizer: hf/Qwen/Qwen3-32B
+    max_context_size: 40960
+
+  magistral-24b-small-vllm:
+    name: hosted_vllm/mistralai/Magistral-Small-2509
+    tokenizer: vllm/mistralai/Magistral-Small-2509
+    max_context_size: 131072
+    request_params:
+      request_timeout: 1800
+
+  devstral-24b-small-vllm:
+    name: hosted_vllm/mistralai/Devstral-Small-2507
+    tokenizer: vllm/mistralai/Devstral-Small-2507
+    max_context_size: 131072
+    request_params:
+      request_timeout: 1800
+
+  deepseek-coder-v2-16b-lite:
+    name: ollama_chat/deepseek-coder-v2:16b-lite-instruct-fp16
+    tokenizer: hf/deepseek-ai/DeepSeek-Coder-V2-Lite-Instruct
+    max_context_size: 131072
+
+  deepseek-r1-8b:
+    name: ollama_chat/deepseek-r1:8b-0528-qwen3-fp16
+    tokenizer: hf/deepseek-ai/DeepSeek-R1-0528-Qwen3-8B
+    max_context_size: 131072
+    request_params:
+      request_timeout: 1800
+
+  deepseek-r1-32b:
+    name: ollama_chat/deepseek-r1:32b-qwen-distill-fp16
+    tokenizer: hf/deepseek-ai/DeepSeek-R1-Distill-Qwen-32B
+    max_context_size: 131072
+    request_params:
+      request_timeout: 1800
+
+  vllm-nemotron-nano-9b-v2:
+    name: hosted_vllm/nvidia/NVIDIA-Nemotron-Nano-9B-v2
+    tokenizer: hf/nvidia/NVIDIA-Nemotron-Nano-9B-v2
+    max_context_size: 131072
+
+  vllm-llama-3-3-nemotron-super-49b-v1_5:
+    name: hosted_vllm/nvidia/Llama-3_3-Nemotron-Super-49B-v1_5
+    tokenizer: hf/nvidia/Llama-3_3-Nemotron-Super-49B-v1_5
+    max_context_size: 131072
+
+  vllm-gpt-oss-20b:
+    name: hosted_vllm//models/models--openai--gpt-oss-20b
+    tokenizer: hf/openai/gpt-oss-20b
+    max_context_size: 131072
+    async_vllm: true
+    request_params:
+      reasoning_effort: "high"
+      request_timeout: 3600
+
+  vllm-gpt-oss-120b:
+    name: hosted_vllm//models/models--openai--gpt-oss-120b
+    tokenizer: hf/openai/gpt-oss-120b
+    max_context_size: 131072
+    async_vllm: true
+    request_params:
+      reasoning_effort: "high"
+      request_timeout: 3600

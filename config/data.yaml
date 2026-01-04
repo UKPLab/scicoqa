@@ -1,0 +1,3759 @@
+synthetic_discrepancies:
+  1506_02169:
+    id: 1506.02169
+    arxiv_url: http://arxiv.org/abs/1506.02169
+    github_url: https://github.com/leonoravesterbacka/carl-torch
+    target_date: 2025-10-31
+    arxiv_subject: stat
+    arxiv_subsubject: stat
+    arxiv_categories:
+      - stat.AP
+      - physics.data-an
+      - stat.ML
+  1708_03999:
+    id: 1708.03999
+    arxiv_url: https://arxiv.org/abs/1708.03999
+    github_url: https://github.com/as791/ZOO_Attack_PyTorch
+    target_date: 2025-10-31
+    arxiv_subject: stat
+    arxiv_subsubject: stat
+    arxiv_categories:
+      - stat.ML
+      - cs.CR
+      - cs.LG
+  1805_09613:
+    id: 1805.09613
+    arxiv_url: https://arxiv.org/abs/1805.09613
+    github_url: https://github.com/tmoer/a0c
+    target_date: 2025-10-31
+    arxiv_subject: stat
+    arxiv_subsubject: stat
+    arxiv_categories:
+      - stat.ML
+      - cs.AI
+      - cs.LG
+      - cs.RO
+      - cs.SY
+  1805_11973:
+    id: 1805.11973
+    arxiv_url: https://arxiv.org/abs/1805.11973
+    github_url: https://github.com/MiloszGrabski/MolGAN-TF2-
+    target_date: 2025-10-31
+    arxiv_subject: stat
+    arxiv_subsubject: stat
+    arxiv_categories:
+      - stat.ML
+      - cs.LG
+  1810_12186:
+    id: 1810.12186
+    arxiv_url: https://arxiv.org/abs/1810.12186
+    github_url: https://github.com/deepsphere/deepsphere-cosmo-tf2
+    target_date: 2025-10-31
+    arxiv_subject: physics
+    arxiv_subsubject: astro-ph
+    arxiv_categories:
+      - astro-ph.CO
+      - astro-ph.IM
+      - cs.AI
+      - cs.CV
+      - cs.LG
+  1905_10876:
+    id: 1905.10876
+    arxiv_url: https://arxiv.org/abs/1905.10876
+    github_url: https://github.com/usamisaori/quantum-expressibility-entangling-capability
+    target_date: 2025-10-31
+    arxiv_subject: physics
+    arxiv_subsubject: quant-ph
+    arxiv_categories:
+      - quant-ph
+  1906_09436:
+    id: 1906.09436
+    arxiv_url: https://arxiv.org/abs/1906.09436
+    github_url: https://github.com/concavegit/kfda
+    target_date: 2025-10-31
+    arxiv_subject: stat
+    arxiv_subsubject: stat
+    arxiv_categories:
+      - stat.ML
+      - cs.LG
+  1910_09644:
+    id: 1910.09644
+    arxiv_url: https://arxiv.org/abs/1910.09644
+    github_url: https://github.com/rahlk/ConEX
+    target_date: 2025-10-31
+    arxiv_subject: eess
+    arxiv_subsubject: eess
+    arxiv_categories:
+      - eess.SY
+      - cs.LG
+      - cs.SE
+      - cs.SY
+  1910_10261:
+    id: 1910.10261
+    arxiv_url: https://arxiv.org/abs/1910.10261
+    github_url: https://github.com/oleges1/quartznet-pytorch
+    target_date: 2025-10-31
+    arxiv_subject: eess
+    arxiv_subsubject: eess
+    arxiv_categories:
+      - eess.AS
+  2001_07645:
+    id: 2001.07645
+    arxiv_url: https://arxiv.org/abs/2001.07645
+    github_url: https://github.com/bowang-lab/shape-attentive-unet
+    target_date: 2025-10-31
+    arxiv_subject: eess
+    arxiv_subsubject: eess
+    arxiv_categories:
+      - eess.IV
+      - cs.CV
+  2002_02239:
+    id: 2002.02239
+    arxiv_url: https://arxiv.org/abs/2002.02239
+    github_url: https://github.com/StefanoFor/Computationally_efficient_version_of_the_R_estimator
+    target_date: 2025-10-31
+    arxiv_subject: eess
+    arxiv_subsubject: eess
+    arxiv_categories:
+      - eess.SP
+  2002_02798:
+    id: 2002.02798
+    arxiv_url: https://arxiv.org/abs/2002.02798
+    github_url: https://github.com/cfinlay/ffjord-rnode
+    target_date: 2025-10-31
+    arxiv_subject: stat
+    arxiv_subsubject: stat
+    arxiv_categories:
+      - stat.ML
+      - cs.LG
+  2002_07128:
+    id: 2002.07128
+    arxiv_url: https://arxiv.org/abs/2002.07128
+    github_url: https://github.com/nealgravindra/scGAT
+    target_date: 2025-10-31
+    arxiv_subject: q-bio
+    arxiv_subsubject: q-bio
+    arxiv_categories:
+      - q-bio.GN
+      - cs.LG
+      - stat.ML
+  2002_09062:
+    id: 2002.09062
+    arxiv_url: https://arxiv.org/abs/2002.09062
+    github_url: https://github.com/DENG-MIT/CRNN
+    target_date: 2025-10-31
+    arxiv_subject: q-bio
+    arxiv_subsubject: q-bio
+    arxiv_categories:
+      - q-bio.MN
+      - cs.LG
+      - physics.chem-ph
+      - stat.ML
+  2003_00335:
+    id: 2003.00335
+    arxiv_url: https://arxiv.org/abs/2003.00335
+    github_url: https://github.com/CUAI/Differentiable-Frechet-Mean
+    target_date: 2025-10-31
+    arxiv_subject: stat
+    arxiv_subsubject: stat
+    arxiv_categories:
+      - stat.ML
+      - cs.LG
+  2003_02438:
+    id: 2003.02438
+    arxiv_url: https://arxiv.org/abs/2003.02438
+    github_url: https://github.com/MohitLamba94/L3Fnet
+    target_date: 2025-10-31
+    arxiv_subject: eess
+    arxiv_subsubject: eess
+    arxiv_categories:
+      - eess.IV
+      - cs.CV
+  2004_08293:
+    id: 2004.08293
+    arxiv_url: https://arxiv.org/abs/2004.08293
+    github_url: https://github.com/sotzee/quaryonic_eos
+    target_date: 2025-10-31
+    arxiv_subject: physics
+    arxiv_subsubject: astro-ph
+    arxiv_categories:
+      - astro-ph.HE
+      - nucl-th
+  2004_08790:
+    id: 2004.08790
+    arxiv_url: https://arxiv.org/abs/2004.08790
+    github_url: https://github.com/Geehaich/unet-3plus-torch
+    target_date: 2025-10-31
+    arxiv_subject: eess
+    arxiv_subsubject: eess
+    arxiv_categories: 
+    - eess.IV
+    - cs.CV
+    - cs.LG
+  2005_02347:
+    id: 2005.02347
+    arxiv_url: https://arxiv.org/abs/2005.02347
+    github_url: https://github.com/timemmert/differential-ml
+    target_date: 2025-10-31
+    arxiv_subject: math
+    arxiv_subsubject: q-fin
+    arxiv_categories:
+      - q-fin.CP
+      - cs.LG
+  2005_06081:
+    id: 2005.06081
+    arxiv_url: https://arxiv.org/abs/2005.06081
+    github_url: https://github.com/TSGut/SparseVolterraExamples.jl
+    target_date: 2025-10-31
+    arxiv_subject: math
+    arxiv_subsubject: math
+    arxiv_categories:
+      - math.NA
+      - cs.NA
+  2006_02700:
+    id: 2006.027
+    arxiv_url: https://arxiv.org/abs/2006.02700
+    github_url: https://github.com/noirritchandra/Lamb
+    target_date: 2025-10-31
+    arxiv_subject: stat
+    arxiv_subsubject: stat
+    arxiv_categories:
+      - stat.ME
+      - stat.CO
+  2006_04437:
+    id: 2006.04437
+    arxiv_url: https://arxiv.org/abs/2006.04437
+    github_url: https://github.com/nicola-decao/power_spherical
+    target_date: 2025-10-31
+    arxiv_subject: stat
+    arxiv_subsubject: stat
+    arxiv_categories:
+      - stat.ML
+      - cs.LG
+  2006_04731:
+    id: 2006.04731
+    arxiv_url: https://arxiv.org/abs/2006.04731
+    github_url: https://github.com/zabaras/deep-turbulence
+    target_date: 2025-10-31
+    arxiv_subject: physics
+    arxiv_subsubject: physics
+    arxiv_categories:
+      - physics.comp-ph
+      - cs.LG
+      - physics.flu-dyn
+      - 68T07
+  2006_13807:
+    id: 2006.13807
+    arxiv_url: https://arxiv.org/abs/2006.13807
+    github_url: https://github.com/armiro/COVID-CXNet
+    target_date: 2025-10-31
+    arxiv_subject: eess
+    arxiv_subsubject: eess
+    arxiv_categories:
+      - eess.IV
+      - cs.CV
+      - cs.LG
+  2007_09127:
+    id: 2007.09127
+    arxiv_url: https://arxiv.org/abs/2007.09127
+    github_url: https://github.com/cornerfarmer/ctc_segmentation
+    target_date: 2025-10-31
+    arxiv_subject: eess
+    arxiv_subsubject: eess
+    arxiv_categories:
+      - eess.AS
+  2007_13096:
+    id: 2007.13096
+    arxiv_url: https://arxiv.org/abs/2007.13096
+    github_url: https://github.com/HajimeKawahara/melodion
+    target_date: 2025-10-31
+    arxiv_subject: physics
+    arxiv_subsubject: astro-ph
+    arxiv_categories:
+      - astro-ph.EP
+      - astro-ph.IM
+      - stat.ME
+  2007_16196:
+    id: 2007.16196
+    arxiv_url: https://arxiv.org/abs/2007.16196
+    github_url: https://github.com/manojpamk/pytorch_xvectors
+    target_date: 2025-10-31
+    arxiv_subject: eess
+    arxiv_subsubject: eess
+    arxiv_categories:
+      - eess.AS
+      - cs.SD
+  2010_01196:
+    id: 2010.01196
+    arxiv_url: https://arxiv.org/abs/2010.01196
+    github_url: https://github.com/choderalab/espaloma
+    target_date: 2025-10-31
+    arxiv_subject: physics
+    arxiv_subsubject: physics
+    arxiv_categories:
+      - physics.comp-ph
+      - cs.AI
+  2011_01108:
+    id: 2011.01108
+    arxiv_url: https://arxiv.org/abs/2011.01108
+    github_url: https://github.com/eurecom-asp/rawnet2-antispoofing
+    target_date: 2025-10-31
+    arxiv_subject: eess
+    arxiv_subsubject: eess
+    arxiv_categories:
+      - eess.AS
+  2012_00173:
+    id: 2012.00173
+    arxiv_url: https://arxiv.org/abs/2012.00173
+    github_url: https://github.com/rkansal47/graph-gan
+    target_date: 2025-10-31
+    arxiv_subject: physics
+    arxiv_subsubject: physics
+    arxiv_categories:
+      - physics.data-an
+      - cs.LG
+      - hep-ex
+      - hep-ph
+      - physics.comp-ph
+  2012_03078:
+    id: 2012.03078
+    arxiv_url: https://arxiv.org/abs/2012.03078
+    github_url: https://github.com/m1balcerak/financial_labels
+    target_date: 2025-10-31
+    arxiv_subject: math
+    arxiv_subsubject: q-fin
+    arxiv_categories:
+      - q-fin.TR
+  2101_02321:
+    id: 2101.02321
+    arxiv_url: https://arxiv.org/abs/2101.02321
+    github_url: https://github.com/TaekyungKi/Scattering_maxp
+    target_date: 2025-10-31
+    arxiv_subject: math
+    arxiv_subsubject: math
+    arxiv_categories:
+      - math.NA
+      - cs.NA
+  2104_00769:
+    id: 2104.00769
+    arxiv_url: https://arxiv.org/abs/2104.00769
+    github_url: https://github.com/ARM-software/keyword-transformer
+    target_date: 2025-10-31
+    arxiv_subject: eess
+    arxiv_subsubject: eess
+    arxiv_categories:
+      - eess.AS
+      - cs.CL
+      - cs.LG
+      - cs.SD
+  2104_01133:
+    id: 2104.01133
+    arxiv_url: https://arxiv.org/abs/2104.01133
+    github_url: https://github.com/Data-Science-Brigade/modelo-epidemiologico-sc
+    target_date: 2025-10-31
+    arxiv_subject: stat
+    arxiv_subsubject: stat
+    arxiv_categories:
+      - stat.AP
+      - q-bio.PE
+      - stat.ME
+  2104_01374:
+    id: 2104.01374
+    arxiv_url: https://arxiv.org/abs/2104.01374
+    github_url: https://github.com/juglab/HDN
+    target_date: 2025-10-31
+    arxiv_subject: eess
+    arxiv_subsubject: eess
+    arxiv_categories:
+      - eess.IV
+      - cs.CV
+      - cs.LG
+      - q-bio.QM
+  2105_07809:
+    id: 2105.07809
+    arxiv_url: https://arxiv.org/abs/2105.07809
+    github_url: https://github.com/MediaTek-NeuroPilot/mai21-learned-smartphone-isp
+    target_date: 2025-10-31
+    arxiv_subject: eess
+    arxiv_subsubject: eess
+    arxiv_categories:
+      - eess.IV
+      - cs.CV
+      - cs.LG
+  2106_01100:
+    id: 2106.011
+    arxiv_url: https://arxiv.org/abs/2106.01100
+    github_url: https://github.com/pohl-michel/time-series-forecasting-with-UORO-RTRL-LMS-and-linear-regression
+    target_date: 2025-10-31
+    arxiv_subject: eess
+    arxiv_subsubject: eess
+    arxiv_categories:
+      - eess.IV
+      - cs.CV
+      - cs.LG
+      - cs.NE
+  2106_07889:
+    id: 2106.07889
+    arxiv_url: https://arxiv.org/abs/2106.07889
+    github_url: https://github.com/maum-ai/univnet
+    target_date: 2025-10-31
+    arxiv_subject: eess
+    arxiv_subsubject: eess
+    arxiv_categories:
+      - eess.AS
+      - cs.SD
+  2106_10052:
+    id: 2106.10052
+    arxiv_url: https://arxiv.org/abs/2106.10052
+    github_url: https://github.com/ae-foster/cresp
+    target_date: 2025-10-31
+    arxiv_subject: stat
+    arxiv_subsubject: stat
+    arxiv_categories:
+      - stat.ML
+      - cs.LG
+  2106_16070:
+    id: 2106.1607
+    arxiv_url: https://arxiv.org/abs/2106.16070
+    github_url: https://github.com/dczifra/epidemic_seeding
+    target_date: 2025-10-31
+    arxiv_subject: physics
+    arxiv_subsubject: physics
+    arxiv_categories:
+      - physics.soc-ph
+      - physics.app-ph
+      - stat.AP
+  2107_12710:
+    id: 2107.1271
+    arxiv_url: https://arxiv.org/abs/2107.12710
+    github_url: https://github.com/eurecom-asp/RawGAT-ST-antispoofing
+    target_date: 2025-10-31
+    arxiv_subject: eess
+    arxiv_subsubject: eess
+    arxiv_categories:
+      - eess.AS
+      - cs.SD
+  2108_11661:
+    id: 2108.11661
+    arxiv_url: https://arxiv.org/abs/2108.11661
+    github_url: https://github.com/bytedance/FermiNet_with_ECP
+    target_date: 2025-10-31
+    arxiv_subject: physics
+    arxiv_subsubject: physics
+    arxiv_categories:
+      - physics.chem-ph
+      - physics.comp-ph
+  2109_10902:
+    id: 2109.10902
+    arxiv_url: https://arxiv.org/abs/2109.10902
+    github_url: https://github.com/by-liu/ConfKD
+    target_date: 2025-10-31
+    arxiv_subject: eess
+    arxiv_subsubject: eess
+    arxiv_categories:
+      - eess.IV
+      - cs.CV
+      - cs.LG
+  2109_11996:
+    id: 2109.11996
+    arxiv_url: https://arxiv.org/abs/2109.11996
+    github_url: https://github.com/qecsim/TensorNetworkCodes.jl
+    target_date: 2025-10-31
+    arxiv_subject: physics
+    arxiv_subsubject: quant-ph
+    arxiv_categories:
+      - quant-ph
+  2110_13653:
+    id: 2110.13653
+    arxiv_url: https://arxiv.org/abs/2110.13653
+    github_url: https://github.com/shangeth/SpeakerProfiling
+    target_date: 2025-10-31
+    arxiv_subject: eess
+    arxiv_subsubject: eess
+    arxiv_categories:
+      - eess.AS
+      - cs.LG
+      - cs.SD
+  2111_05366:
+    id: 2111.05366
+    arxiv_url: https://arxiv.org/abs/2111.05366
+    github_url: https://github.com/neurodata/goat
+    target_date: 2025-10-31
+    arxiv_subject: stat
+    arxiv_subsubject: stat
+    arxiv_categories:
+      - stat.ML
+      - cs.LG
+      - math.CO
+  2111_14320:
+    id: 2111.14320
+    arxiv_url: https://arxiv.org/abs/2111.14320
+    github_url: https://github.com/Koushik0901/Swift-SRGAN
+    target_date: 2025-10-31
+    arxiv_subject: eess
+    arxiv_subsubject: eess
+    arxiv_categories: 
+    - eess.IV
+    - cs.CV
+  2201_12785:
+    id: 2201.12785
+    arxiv_url: https://arxiv.org/abs/2201.12785
+    github_url: https://github.com/Rubics-Xuan/TransBTS
+    target_date: 2025-10-31
+    arxiv_subject: eess
+    arxiv_subsubject: eess
+    arxiv_categories:
+      - eess.IV
+      - cs.CV
+  2202_03772:
+    id: 2202.03772
+    arxiv_url: https://arxiv.org/abs/2202.03772
+    github_url: https://github.com/jet-universe/particle_transformer
+    target_date: 2025-10-31
+    arxiv_subject: physics
+    arxiv_subsubject: hep-ph
+    arxiv_categories:
+      - hep-ph
+      - cs.LG
+      - hep-ex
+      - physics.data-an
+  2202_03813:
+    id: 2202.03813
+    arxiv_url: http://arxiv.org/abs/2202.03813
+    github_url: https://github.com/lmotte/graph-prediction-with-fused-gromov-wasserstein
+    target_date: 2025-10-31
+    arxiv_subject: stat
+    arxiv_subsubject: stat
+    arxiv_categories:
+      - stat.ML
+      - cs.LG
+  2202_07575:
+    id: 2202.07575
+    arxiv_url: https://arxiv.org/abs/2202.07575
+    github_url: https://github.com/openclimatefix/graph_weather
+    target_date: 2025-10-31
+    arxiv_subject: physics
+    arxiv_subsubject: physics
+    arxiv_categories:
+      - physics.ao-ph
+      - cs.LG
+  2206_04119: 
+    id: 2206.04119
+    arxiv_url: https://arxiv.org/abs/2206.04119
+    github_url: https://github.com/blt2114/ProtDiff_SMCDiff
+    target_date: 2025-10-31
+    arxiv_subject: q-bio
+    arxiv_subsubject: q-bio
+    arxiv_categories: 
+        - q-bio.BM
+        - cs.LG
+        - stat.ML
+  2207_05951:
+    id: 2207.05951
+    arxiv_url: https://arxiv.org/abs/2207.05951
+    github_url: https://github.com/pohl-michel/3D-image-warping-using-Nadaraya-Watson-non-linear-regression
+    target_date: 2025-10-31
+    arxiv_subject: eess
+    arxiv_subsubject: eess
+    arxiv_categories:
+      - eess.IV
+      - cs.CV
+      - cs.LG
+  2207_08208:
+    id: 2207.08208
+    arxiv_url: https://arxiv.org/abs/2207.08208
+    github_url: https://github.com/icon-lab/SynDiff
+    target_date: 2025-10-31
+    arxiv_subject: eess
+    arxiv_subsubject: eess
+    arxiv_categories:
+      - eess.IV
+      - cs.CV
+  2207_09996:
+    id: 2207.09996
+    arxiv_url: https://arxiv.org/abs/2207.09996
+    github_url: https://github.com/hnbeck/ECpsm
+    target_date: 2025-10-31
+    arxiv_subject: eess
+    arxiv_subsubject: eess
+    arxiv_categories:
+      - eess.SY
+      - cs.SY
+  2207_11173:
+    id: 2207.11173
+    arxiv_url: https://arxiv.org/abs/2207.11173
+    github_url: https://github.com/usamisaori/qLipschitz
+    target_date: 2025-10-31
+    arxiv_subject: physics
+    arxiv_subsubject: quant-ph
+    arxiv_categories:
+      - quant-ph
+      - cs.CY
+      - cs.LG
+  2207_14316:
+    id: 2207.14316
+    arxiv_url: https://arxiv.org/abs/2207.14316
+    github_url: https://github.com/kaitshin/CHIMEFRB-Cat1-Energy-Dist-Distrs
+    target_date: 2025-10-31
+    arxiv_subject: physics
+    arxiv_subsubject: astro-ph
+    arxiv_categories:
+      - astro-ph.HE
+  2208_04654:
+    id: 2208.04654
+    arxiv_url: https://arxiv.org/abs/2208.04654
+    github_url: https://github.com/axeber01/ngcc
+    target_date: 2025-10-31
+    arxiv_subject: eess
+    arxiv_subsubject: eess
+    arxiv_categories:
+      - eess.AS
+      - cs.LG
+      - cs.SD
+  2201_06255:
+    id: 2201.06255
+    arxiv_url: https://arxiv.org/abs/2201.06255
+    github_url: https://github.com/CMU-SAFARI/FastRemap
+    target_date: 2025-10-31
+    arxiv_subject: q-bio
+    arxiv_subsubject: q-bio
+    arxiv_categories: 
+    - q-bio.GN
+  2211_00918: 
+    id: 2211.00918
+    arxiv_url: https://arxiv.org/abs/2211.00918
+    github_url: https://github.com/kktsubota/universal-dic
+    target_date: 2025-10-31
+    arxiv_subject: eess
+    arxiv_subsubject: eess
+    arxiv_categories: 
+        - eess.IV
+        - cs.CV
+  2302_12835:
+    id: 2302.12835
+    arxiv_url: https://arxiv.org/abs/2302.12835
+    github_url: https://github.com/saitta-s/INRs-4DFlowMRI
+    target_date: 2025-10-31
+    arxiv_subject: eess
+    arxiv_subsubject: eess
+    arxiv_categories:
+      - eess.IV
+      - cs.CV
+      - cs.LG
+      - q-bio.QM
+  2303_07428:
+    id: 2303.07428
+    arxiv_url: https://arxiv.org/abs/2303.07428
+    github_url: https://github.com/DebeshJha/TransNetR
+    target_date: 2025-10-31
+    arxiv_subject: eess
+    arxiv_subsubject: eess
+    arxiv_categories:
+      - eess.IV
+      - cs.CV
+  2304_01864:
+    id: 2304.01864
+    arxiv_url: https://arxiv.org/abs/2304.01864
+    github_url: https://github.com/AillisInc/USPMIE
+    target_date: 2025-10-31
+    arxiv_subject: eess
+    arxiv_subsubject: eess
+    arxiv_categories:
+      - eess.IV
+      - cs.CV
+  2304_03889: 
+    id: 2304.03889
+    arxiv_url: https://arxiv.org/abs/2304.03889
+    github_url: https://github.com/ketatam/DiffDock-PP
+    target_date: 2025-10-31
+    arxiv_subject: q-bio
+    arxiv_subsubject: q-bio
+    arxiv_categories: 
+        - q-bio.BM
+        - cs.LG
+  2304_04740:
+    id: 2304.0474
+    arxiv_url: https://arxiv.org/abs/2304.04740
+    github_url: https://github.com/louaaron/Reflected-Diffusion
+    target_date: 2025-10-31
+    arxiv_subject: stat
+    arxiv_subsubject: stat
+    arxiv_categories:
+      - stat.ML
+      - cs.LG
+  2305_11847:
+    id: 2305.11847
+    arxiv_url: https://arxiv.org/abs/2305.11847
+    github_url: https://github.com/atlytle/dense-ev
+    target_date: 2025-10-31
+    arxiv_subject: physics
+    arxiv_subsubject: quant-ph
+    arxiv_categories:
+      - quant-ph
+      - hep-lat
+      - hep-ph
+  2306_00160:
+    id: 2306.0016
+    arxiv_url: https://arxiv.org/abs/2306.00160
+    github_url: https://github.com/hmartelb/avlit
+    target_date: 2025-10-31
+    arxiv_subject: eess
+    arxiv_subsubject: eess
+    arxiv_categories:
+      - eess.AS
+      - cs.LG
+      - cs.SD
+  2306_04149:
+    id: 2306.04149
+    arxiv_url: https://arxiv.org/abs/2306.04149
+    github_url: https://github.com/leiii/hyperuniform-cities
+    target_date: 2025-10-31
+    arxiv_subject: physics
+    arxiv_subsubject: physics
+    arxiv_categories:
+      - physics.soc-ph
+  2306_12360:
+    id: 2306.1236
+    arxiv_url: https://arxiv.org/abs/2306.12360
+    github_url: https://github.com/Genentech/walk-jump
+    target_date: 2025-10-31
+    arxiv_subject: q-bio
+    arxiv_subsubject: q-bio
+    arxiv_categories:
+      - q-bio.BM
+      - cs.LG
+  2306_12584:
+    id: 2306.12584
+    arxiv_url: https://arxiv.org/abs/2306.12584
+    github_url: https://github.com/smsharma/hierarchical-inference
+    target_date: 2025-10-31
+    arxiv_subject: stat
+    arxiv_subsubject: stat
+    arxiv_categories:
+      - stat.ML
+      - astro-ph.IM
+      - cs.LG
+      - hep-ex
+  2307_10370:
+    id: 2307.1037
+    arxiv_url: https://arxiv.org/abs/2307.10370
+    github_url: https://github.com/manuel-morales-a/PBSP_PDFs_newphysics
+    target_date: 2025-10-31
+    arxiv_subject: physics
+    arxiv_subsubject: hep-ph
+    arxiv_categories:
+      - hep-ph
+  2310_10843:
+    id: 2310.10843
+    arxiv_url: https://arxiv.org/abs/2310.10843
+    github_url: https://github.com/bghojogh/Density-Based-Classifiers
+    target_date: 2025-10-31
+    arxiv_subject: stat
+    arxiv_subsubject: stat
+    arxiv_categories:
+      - stat.ML
+      - cs.LG
+      - cs.NE
+  2310_12768:
+    id: 2310.12768
+    arxiv_url: https://arxiv.org/abs/2310.12768
+    github_url: https://github.com/linwest/SemantIC
+    target_date: 2025-10-31
+    arxiv_subject: eess
+    arxiv_subsubject: eess
+    arxiv_categories:
+      - eess.SP
+      - cs.AI
+      - cs.IT
+      - cs.LG
+      - cs.NI
+      - math.IT
+  2310_16834:
+    id: 2310.16834
+    arxiv_url: https://arxiv.org/abs/2310.16834
+    github_url: https://github.com/louaaron/Score-Entropy-Discrete-Diffusion
+    target_date: 2025-10-31
+    arxiv_subject: stat
+    arxiv_subsubject: stat
+    arxiv_categories:
+      - stat.ML
+      - cs.CL
+      - cs.LG
+  2311_11749:
+    id: 2311.11749
+    arxiv_url: https://arxiv.org/abs/2311.11749
+    github_url: https://github.com/irmlma/mobility-simulation
+    target_date: 2025-10-31
+    arxiv_subject: physics
+    arxiv_subsubject: physics
+    arxiv_categories:
+      - physics.soc-ph
+      - cs.LG
+      - cs.SI
+  2401_04722:
+    id: 2401.04722
+    arxiv_url: https://arxiv.org/abs/2401.04722
+    github_url: https://github.com/bowang-lab/U-Mamba
+    target_date: 2025-10-31
+    arxiv_subject: eess
+    arxiv_subsubject: eess
+    arxiv_categories:
+      - eess.IV
+      - cs.CV
+      - cs.LG
+  2401_05363:
+    id: 2401.05363
+    arxiv_url: https://arxiv.org/abs/2401.05363
+    github_url: https://github.com/wjq-learning/SleepDG
+    target_date: 2025-10-31
+    arxiv_subject: eess
+    arxiv_subsubject: eess
+    arxiv_categories:
+      - eess.SP
+      - cs.LG
+  2402_04997:
+    id: 2402.04997
+    arxiv_url: https://arxiv.org/abs/2402.04997
+    github_url: https://github.com/andrew-cr/discrete_flow_models
+    target_date: 2025-10-31
+    arxiv_subject: stat
+    arxiv_subsubject: stat
+    arxiv_categories:
+      - stat.ML
+      - cs.LG
+      - q-bio.QM
+  2402_09453:
+    id: 2402.09453
+    arxiv_url: https://arxiv.org/abs/2402.09453
+    github_url: https://github.com/JoshParkSJ/eeg-wgan
+    target_date: 2025-10-31
+    arxiv_subject: eess
+    arxiv_subsubject: eess
+    arxiv_categories:
+      - eess.SP
+      - cs.AI
+      - cs.LG
+  2402_18396:
+    id: 2402.18396
+    arxiv_url: https://arxiv.org/abs/2402.18396
+    github_url: https://github.com/LDeng0205/confidence-bootstrapping
+    target_date: 2025-10-31
+    arxiv_subject: q-bio
+    arxiv_subsubject: q-bio
+    arxiv_categories:
+      - q-bio.BM
+      - cs.LG
+  2403_00748:
+    id: 2403.00748
+    arxiv_url: https://arxiv.org/abs/2403.00748
+    github_url: https://github.com/joaospinto/primal_dual_ilqr
+    target_date: 2025-10-31
+    arxiv_subject: math
+    arxiv_subsubject: math
+    arxiv_categories:
+      - math.OC
+      - cs.RO
+  2403_09827:
+    id: 2403.09827
+    arxiv_url: https://arxiv.org/abs/2403.09827
+    github_url: https://github.com/arcadelab/FastSAM3D
+    target_date: 2025-10-31
+    arxiv_subject: eess
+    arxiv_subsubject: eess
+    arxiv_categories:
+      - eess.IV
+      - cs.CV
+  2403_14066:
+    id: 2403.14066
+    arxiv_url: https://arxiv.org/abs/2403.14066
+    github_url: https://github.com/M3DV/LeFusion
+    target_date: 2025-10-31
+    arxiv_subject: eess
+    arxiv_subsubject: eess
+    arxiv_categories:
+      - eess.IV
+      - cs.CV
+  2403_16899:
+    id: 2403.16899
+    arxiv_url: https://arxiv.org/abs/2403.16899
+    github_url: https://github.com/jsie7/ssm-benchmark
+    target_date: 2025-10-31
+    arxiv_subject: eess
+    arxiv_subsubject: eess
+    arxiv_categories:
+      - eess.SY
+      - cs.CL
+      - cs.LG
+      - cs.SY
+  2406_05992:
+    id: 2406.05992
+    arxiv_url: https://arxiv.org/abs/2406.05992
+    github_url: https://github.com/PixDeep/MHS-VM
+    target_date: 2025-10-31
+    arxiv_subject: eess
+    arxiv_subsubject: eess
+    arxiv_categories:
+      - eess.IV
+      - cs.CV
+  2407_15689:
+    id: 2407.15689
+    arxiv_url: https://arxiv.org/abs/2407.15689
+    github_url: https://github.com/ammarlodhi255/yolov10-fracture-detection
+    target_date: 2025-10-31
+    arxiv_subject: eess
+    arxiv_subsubject: eess
+    arxiv_categories:
+      - eess.IV
+      - cs.CV
+  2408_05877: 
+    id: 2408.05877
+    arxiv_url: https://arxiv.org/abs/2408.05877
+    github_url: https://github.com/kailaisun/Cchead
+    target_date: 2025-10-31
+    arxiv_subject: eess
+    arxiv_subsubject: eess
+    arxiv_categories: 
+        - eess.IV
+  2409_01995:
+    id: 2409.01995
+    arxiv_url: https://arxiv.org/abs/2409.01995
+    github_url: https://github.com/cantabile-kwok/vec2wav2.0
+    target_date: 2025-10-31
+    arxiv_subject: eess
+    arxiv_subsubject: eess
+    arxiv_categories:
+      - eess.AS
+      - cs.AI
+      - cs.SD
+  2409_05274:
+    id: 2409.05274
+    arxiv_url: https://arxiv.org/abs/2409.05274
+    github_url: https://github.com/Shyandram/CPGA-Net_Plus
+    target_date: 2025-10-31
+    arxiv_subject: eess
+    arxiv_subsubject: eess
+    arxiv_categories:
+      - eess.IV
+      - cs.CV
+  2409_06190:
+    id: 2409.0619
+    arxiv_url: https://arxiv.org/abs/2409.06190
+    github_url: https://github.com/XZWY/MSLDM
+    target_date: 2025-10-31
+    arxiv_subject: eess
+    arxiv_subsubject: eess
+    arxiv_categories:
+      - eess.AS
+      - cs.LG
+      - cs.SD
+  2409_06879:
+    id: 2409.06879
+    arxiv_url: https://arxiv.org/abs/2409.06879
+    github_url: https://github.com/zsteve/referencefitting
+    target_date: 2025-10-31
+    arxiv_subject: q-bio
+    arxiv_subsubject: q-bio
+    arxiv_categories:
+      - q-bio.QM
+      - cs.LG
+      - stat.ML
+  2409_13224:
+    id: 2409.13224
+    arxiv_url: https://arxiv.org/abs/2409.13224
+    github_url: https://github.com/nz-gravity/sgvb_psd
+    target_date: 2025-10-31
+    arxiv_subject: physics
+    arxiv_subsubject: gr-qc
+    arxiv_categories:
+      - gr-qc
+      - astro-ph.HE
+      - astro-ph.IM
+      - stat.AP
+  2409_14016:
+    id: 2409.14016
+    arxiv_url: https://arxiv.org/abs/2409.14016
+    github_url: https://github.com/samresume/PreprocessingPipeline-ContRegClassifier-SWANSF
+    target_date: 2025-10-31
+    arxiv_subject: physics
+    arxiv_subsubject: astro-ph
+    arxiv_categories:
+      - astro-ph.SR
+      - cs.AI
+      - cs.LG
+      - stat.ML
+  2410_04542:
+    id: 2410.04542
+    arxiv_url: https://arxiv.org/abs/2410.04542
+    github_url: https://github.com/SeonghwanSeo/RxnFlow
+    target_date: 2025-10-31
+    arxiv_subject: q-bio
+    arxiv_subsubject: q-bio
+    arxiv_categories:
+      - q-bio.BM
+      - cs.LG
+  2410_06885:
+    id: 2410.06885
+    arxiv_url: https://arxiv.org/abs/2410.06885
+    github_url: https://github.com/sinhprous/F5-TTS
+    target_date: 2025-10-31
+    arxiv_subject: eess
+    arxiv_subsubject: eess
+    arxiv_categories:
+      - eess.AS
+      - cs.SD
+  2411_04130:
+    id: 2411.0413
+    arxiv_url: https://arxiv.org/abs/2411.04130
+    github_url: https://github.com/coleygroup/shepherd
+    target_date: 2025-10-31
+    arxiv_subject: q-bio
+    arxiv_subsubject: q-bio
+    arxiv_categories:
+      - q-bio.BM
+      - cs.LG
+  2412_00471:
+    id: 2412.00471
+    arxiv_url: https://arxiv.org/abs/2412.00471
+    github_url: https://github.com/maris205/llama-gene
+    target_date: 2025-10-31
+    arxiv_subject: q-bio
+    arxiv_subsubject: q-bio
+    arxiv_categories:
+      - q-bio.GN
+      - 92-10
+      - J.3
+  2412_04595:
+    id: 2412.04595
+    arxiv_url: https://arxiv.org/abs/2412.04595
+    github_url: https://github.com/HPMolSim/FastSpecSoG.jl
+    target_date: 2025-10-31
+    arxiv_subject: math
+    arxiv_subsubject: math
+    arxiv_categories:
+      - math.NA
+      - cs.NA
+      - physics.comp-ph
+  2412_09331:
+    id: 2412.09331
+    arxiv_url: https://arxiv.org/abs/2412.09331
+    github_url: https://github.com/icon-lab/MambaRoll
+    target_date: 2025-10-31
+    arxiv_subject: eess
+    arxiv_subsubject: eess
+    arxiv_categories:
+      - eess.IV
+      - cs.CV
+  2412_20138:
+    id: 2412.20138
+    arxiv_url: https://arxiv.org/abs/2412.20138
+    github_url: https://github.com/TauricResearch/TradingAgents
+    target_date: 2025-10-31
+    arxiv_subject: math
+    arxiv_subsubject: q-fin
+    arxiv_categories:
+      - q-fin.TR
+      - cs.AI
+      - cs.CE
+      - cs.LG
+  2504_16068:
+    id: 2504.16068
+    arxiv_url: https://arxiv.org/abs/2504.16068
+    github_url: https://github.com/mir-group/nequip
+    target_date: 2025-10-31
+    arxiv_subject: physics
+    arxiv_subsubject: physics
+    arxiv_categories:
+      - physics.comp-ph
+      - cs.LG
+      - physics.chem-ph
+  2505_18810:
+    id: 2505.1881
+    arxiv_url: https://arxiv.org/abs/2505.18810
+    github_url: https://github.com/plkinon/phdae_discrete_gradients
+    target_date: 2025-10-31
+    arxiv_subject: math
+    arxiv_subsubject: math
+    arxiv_categories:
+      - math.NA
+      - cs.CE
+      - cs.NA
+      - cs.RO
+      - cs.SY
+      - eess.SY
+      - math.DS
+
+synthetic_discrepancies_cs:
+  1711_11585:
+    id: 1711.11585
+    arxiv_url: https://arxiv.org/abs/1711.11585
+    arxiv_url_versioned: https://arxiv.org/abs/1711.11585v2
+    github_url: https://github.com/vliu15/pix2pixhd
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CV
+      - cs.GR
+      - cs.LG
+  1811_09245:
+    id: 1811.09245
+    arxiv_url: https://arxiv.org/abs/1811.09245
+    arxiv_url_versioned: https://arxiv.org/abs/1811.09245v2
+    github_url: https://github.com/pfnet-research/tgan2
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CV
+  1911_10194:
+    id: 1911.10194
+    arxiv_url: https://arxiv.org/abs/1911.10194
+    arxiv_url_versioned: https://arxiv.org/abs/1911.10194v3
+    github_url: https://github.com/bowenc0221/panoptic-deeplab
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories: 
+    - cs.CV
+  2001_10667:
+    id: 2001.10667
+    arxiv_url: https://arxiv.org/abs/2001.10667
+    arxiv_url_versioned: https://arxiv.org/abs/2001.10667v1
+    github_url: https://github.com/serenaklm/rumor_detection
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CL
+      - cs.IR
+      - cs.SI
+  2002_00718:
+    id: 2002.00718
+    arxiv_url: https://arxiv.org/abs/2002.00718
+    arxiv_url_versioned: https://arxiv.org/abs/2002.00718v2
+    github_url: https://github.com/fcdl94/MiB
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CV
+  2002_05120:
+    id: 2002.0512
+    arxiv_url: https://arxiv.org/abs/2002.05120
+    arxiv_url_versioned: https://arxiv.org/abs/2002.05120v4
+    github_url: https://github.com/ds4dm/branch-search-trees
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.LG
+      - cs.AI
+      - stat.ML
+  2003_10606:
+    id: 2003.10606
+    arxiv_url: https://arxiv.org/abs/2003.10606
+    arxiv_url_versioned: https://arxiv.org/abs/2003.10606v1
+    github_url: https://github.com/TheShadow29/vognet-pytorch
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories: 
+    - cs.CV
+    - cs.CL
+  2004_09144:
+    id: 2004.09144
+    arxiv_url: https://arxiv.org/abs/2004.09144
+    arxiv_url_versioned: https://arxiv.org/abs/2004.09144v3
+    github_url: https://github.com/mesnico/TERN
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CV
+  2004_10016:
+    id: 2004.10016
+    arxiv_url: https://arxiv.org/abs/2004.10016
+    arxiv_url_versioned: https://arxiv.org/abs/2004.10016v1
+    github_url: https://github.com/MRLoghmani/relative-rotation
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CV
+      - cs.RO
+  2006_01592:
+    id: 2006.01592
+    arxiv_url: https://arxiv.org/abs/2006.01592
+    arxiv_url_versioned: https://arxiv.org/abs/2006.01592v2
+    github_url: https://github.com/kenchan0226/dual_view_review_sum
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CL
+  2006_05218:
+    id: 2006.05218
+    arxiv_url: https://arxiv.org/abs/2006.05218
+    arxiv_url_versioned: https://arxiv.org/abs/2006.05218v2
+    github_url: https://github.com/ioangatop/srVAE
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.LG
+      - cs.CV
+      - stat.ML
+  2006_06958:
+    id: 2006.06958
+    arxiv_url: https://arxiv.org/abs/2006.06958
+    arxiv_url_versioned: https://arxiv.org/abs/2006.06958v1
+    github_url: https://github.com/imirzadeh/stable-continual-learning
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.LG
+      - cs.NE
+      - stat.ML
+  2006_08177:
+    id: 2006.08177
+    arxiv_url: https://arxiv.org/abs/2006.08177
+    arxiv_url_versioned: https://arxiv.org/abs/2006.08177v4
+    github_url: https://github.com/juselara1/dmae
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.LG
+      - cs.CV
+      - stat.ML
+  2006_10637:
+    id: 2006.10637
+    arxiv_url: https://arxiv.org/abs/2006.10637
+    arxiv_url_versioned: https://arxiv.org/abs/2006.10637v3
+    github_url: https://github.com/KimMeen/TGN
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.LG
+      - stat.ML
+  2007_12322:
+    id: 2007.12322
+    arxiv_url: https://arxiv.org/abs/2007.12322
+    arxiv_url_versioned: https://arxiv.org/abs/2007.12322v2
+    github_url: https://github.com/TonghanWang/DOP
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories: 
+    - cs.LG
+    - cs.MA
+    - stat.ML
+  2008_00247:
+    id: 2008.00247
+    arxiv_url: https://arxiv.org/abs/2008.00247
+    arxiv_url_versioned: https://arxiv.org/abs/2008.00247v1
+    github_url: https://github.com/RashedDoha/meta-drn-pytorch
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories: 
+    - cs.CV
+    - cs.LG
+    - eess.IV
+  2011_01921:
+    id: 2011.01921
+    arxiv_url: https://arxiv.org/abs/2011.01921
+    arxiv_url_versioned: https://arxiv.org/abs/2011.01921v2
+    github_url: https://github.com/IBM/QMO
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.LG
+      - q-bio.BM
+  2011_09766:
+    id: 2011.09766
+    arxiv_url: https://arxiv.org/abs/2011.09766
+    arxiv_url_versioned: https://arxiv.org/abs/2011.09766v1
+    github_url: https://github.com/Z-Zheng/FarSeg
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CV
+      - cs.LG
+      - eess.IV
+  2011_10881:
+    id: 2011.10881
+    arxiv_url: https://arxiv.org/abs/2011.10881
+    arxiv_url_versioned: https://arxiv.org/abs/2011.10881v2
+    github_url: https://github.com/Edward-Sun/TSP-Detection
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories: 
+      - cs.CV
+      - cs.LG
+  2012_00131:
+    id: 2012.00131
+    arxiv_url: https://arxiv.org/abs/2012.00131
+    arxiv_url_versioned: https://arxiv.org/abs/2012.00131v1
+    github_url: https://github.com/exalearn/hydronet
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories: 
+    - cs.LG
+    - physics.chem-ph
+  2012_12624:
+    id: 2012.12624
+    arxiv_url: https://arxiv.org/abs/2012.12624
+    arxiv_url_versioned: https://arxiv.org/abs/2012.12624v3
+    github_url: https://github.com/princeton-nlp/DensePhrases
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CL
+  2012_15000:
+    id: 2012.15000
+    arxiv_url: https://arxiv.org/abs/2012.15000
+    arxiv_url_versioned: https://arxiv.org/abs/2012.15000v1
+    github_url: https://github.com/deepsphere/deepsphere-pytorch
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories: 
+      - cs.LG
+      - cs.CV
+      - stat.ML
+  2012_15723:
+    id: 2012.15723
+    arxiv_url: https://arxiv.org/abs/2012.15723
+    arxiv_url_versioned: https://arxiv.org/abs/2012.15723v2
+    github_url: https://github.com/princeton-nlp/LM-BFF
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CL
+      - cs.LG
+  2101_05388:
+    id: 2101.05388
+    arxiv_url: https://arxiv.org/abs/2101.05388
+    arxiv_url_versioned: https://arxiv.org/abs/2101.05388v1
+    github_url: https://github.com/DonsetPG/narya
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.LG
+      - cs.GT
+  2102_02611:
+    id: 2102.02611
+    arxiv_url: https://arxiv.org/abs/2102.02611
+    arxiv_url_versioned: https://arxiv.org/abs/2102.02611v3
+    github_url: https://github.com/dwromero/ckconv
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.LG
+  2102_06514:
+    id: 2102.06514
+    arxiv_url: https://arxiv.org/abs/2102.06514
+    arxiv_url_versioned: https://arxiv.org/abs/2102.06514v3
+    github_url: https://github.com/nerdslab/bgrl
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories: 
+      - cs.LG
+      - cs.SI
+      - stat.ML
+  2102_12781:
+    id: 2102.12781
+    arxiv_url: https://arxiv.org/abs/2102.12781
+    arxiv_url_versioned: https://arxiv.org/abs/2102.12781v3
+    github_url: https://github.com/harshays/inputgradients
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.LG
+      - cs.AI
+      - cs.CV
+      - stat.ML
+  2103_04657:
+    id: 2103.04657
+    arxiv_url: https://arxiv.org/abs/2103.04657
+    arxiv_url_versioned: https://arxiv.org/abs/2103.04657v3
+    github_url: https://github.com/MIRACLE-Center/YOLO_Universal_Anatomical_Landmark_Detection
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CV
+  2104_00954:
+    id: 2104.00954
+    arxiv_url: https://arxiv.org/abs/2104.00954
+    arxiv_url_versioned: https://arxiv.org/abs/2104.00954v1
+    github_url: https://github.com/openclimatefix/skillful_nowcasting
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories: 
+      - cs.LG
+  2104_06979:
+    id: 2104.06979
+    arxiv_url: https://arxiv.org/abs/2104.06979
+    arxiv_url_versioned: https://arxiv.org/abs/2104.06979v3
+    github_url: https://github.com/UKPLab/useb
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CL
+  2104_07012:
+    id: 2104.07012
+    arxiv_url: https://arxiv.org/abs/2104.07012
+    arxiv_url_versioned: https://arxiv.org/abs/2104.07012v2
+    github_url: https://github.com/lucidrains/rela-transformer
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CL
+      - cs.LG
+  2104_13963:
+    id: 2104.13963
+    arxiv_url: https://arxiv.org/abs/2104.13963
+    arxiv_url_versioned: https://arxiv.org/abs/2104.13963v3
+    github_url: https://github.com/facebookresearch/suncet
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CV
+      - cs.AI
+      - cs.LG
+      - eess.IV
+  2106_02689:
+    id: 2106.02689
+    arxiv_url: https://arxiv.org/abs/2106.02689
+    arxiv_url_versioned: https://arxiv.org/abs/2106.02689v3
+    github_url: https://github.com/IBM/RegionViT
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CV
+  2106_02886:
+    id: 2106.02886
+    arxiv_url: https://arxiv.org/abs/2106.02886
+    arxiv_url_versioned: https://arxiv.org/abs/2106.02886v3
+    github_url: https://github.com/TonghanWang/CASEC-MACO-benchmark
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.LG
+  2106_04718:
+    id: 2106.04718
+    arxiv_url: https://arxiv.org/abs/2106.04718
+    arxiv_url_versioned: https://arxiv.org/abs/2106.04718v2
+    github_url: https://github.com/microsoft/fastseq
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CL
+      - cs.LG
+  2106_05234:
+    id: 2106.05234
+    arxiv_url: https://arxiv.org/abs/2106.05234
+    arxiv_url_versioned: https://arxiv.org/abs/2106.05234v5
+    github_url: https://github.com/leffff/graphormer-pyg
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.LG
+      - cs.AI
+  2108_11656:
+    id: 2108.11656
+    arxiv_url: https://arxiv.org/abs/2108.11656
+    arxiv_url_versioned: https://arxiv.org/abs/2108.11656v2
+    github_url: https://github.com/mainuliitkgp/AR-BERT
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CL
+      - cs.IR
+  2111_10367:
+    id: 2111.10367
+    arxiv_url: https://arxiv.org/abs/2111.10367
+    arxiv_url_versioned: https://arxiv.org/abs/2111.10367v3
+    github_url: https://github.com/asappresearch/slue-toolkit
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CL
+      - cs.LG
+      - cs.SD
+      - eess.AS
+  2202_08587:
+    id: 2202.08587
+    arxiv_url: https://arxiv.org/abs/2202.08587
+    arxiv_url_versioned: https://arxiv.org/abs/2202.08587v1
+    github_url: https://github.com/orobix/fwdgrad
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.LG
+      - stat.ML
+  2203_10833:
+    id: 2203.10833
+    arxiv_url: https://arxiv.org/abs/2203.10833
+    arxiv_url_versioned: https://arxiv.org/abs/2203.10833v2
+    github_url: https://github.com/htdt/hyp_metric
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CV
+      - cs.LG
+  2204_04627:
+    id: 2204.04627
+    arxiv_url: https://arxiv.org/abs/2204.04627
+    arxiv_url_versioned: https://arxiv.org/abs/2204.04627v2
+    github_url: https://github.com/Zinni98/Stripformer
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CV
+  2204_07141:
+    id: 2204.07141
+    arxiv_url: https://arxiv.org/abs/2204.07141
+    arxiv_url_versioned: https://arxiv.org/abs/2204.07141v1
+    github_url: https://github.com/ayulockin/TF-MSN
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.LG
+      - cs.AI
+      - cs.CV
+      - eess.IV
+  2210_05598:
+    id: 2210.05598
+    arxiv_url: https://arxiv.org/abs/2210.05598
+    arxiv_url_versioned: https://arxiv.org/abs/2210.05598v3
+    github_url: https://github.com/vietai/ViPubmed
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories: 
+    - cs.CL
+    - cs.AI
+  2210_05916:
+    id: 2210.05916
+    arxiv_url: https://arxiv.org/abs/2210.05916
+    arxiv_url_versioned: https://arxiv.org/abs/2210.05916v3
+    github_url: https://github.com/gokulkarthik/hateclipper
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories: 
+      - cs.CL
+      - cs.CV
+      - cs.LG
+      - cs.MM
+  2211_03256:
+    id: 2211.03256
+    arxiv_url: https://arxiv.org/abs/2211.03256
+    arxiv_url_versioned: https://arxiv.org/abs/2211.03256v2
+    github_url: https://github.com/clovaai/webvicob
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CV
+      - cs.AI
+      - cs.LG
+  2211_08332:
+    id: 2211.08332
+    arxiv_url: https://arxiv.org/abs/2211.08332
+    arxiv_url_versioned: https://arxiv.org/abs/2211.08332v4
+    github_url: https://github.com/SHI-Labs/Versatile-Diffusion
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CV
+  2302_00864:
+    id: 2302.00864
+    arxiv_url: https://arxiv.org/abs/2302.00864
+    arxiv_url_versioned: https://arxiv.org/abs/2302.00864v2
+    github_url: https://github.com/thuml/CLIPood
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.LG
+      - cs.CV
+  2302_01178:
+    id: 2302.01178
+    arxiv_url: https://arxiv.org/abs/2302.01178
+    arxiv_url_versioned: https://arxiv.org/abs/2302.01178v3
+    github_url: https://github.com/camlab-ethz/ConvolutionalNeuralOperator
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.LG
+  2302_01334:
+    id: 2302.01334
+    arxiv_url: https://arxiv.org/abs/2302.01334
+    arxiv_url_versioned: https://arxiv.org/abs/2302.01334v1
+    github_url: https://github.com/ucaszyp/STEPS
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CV
+  2302_06576:
+    id: 2302.06576
+    arxiv_url: https://arxiv.org/abs/2302.06576
+    arxiv_url_versioned: https://arxiv.org/abs/2302.06576v2
+    github_url: https://github.com/GFNOrg/GFlowNet-EM
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.LG
+      - stat.ML
+  2302_07253:
+    id: 2302.07253
+    arxiv_url: https://arxiv.org/abs/2302.07253
+    arxiv_url_versioned: https://arxiv.org/abs/2302.07253v2
+    github_url: https://github.com/Lemon-cmd/energy-transformer-torch
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.LG
+      - cond-mat.dis-nn
+      - cs.CV
+      - q-bio.NC
+      - stat.ML
+  2302_08582:
+    id: 2302.08582
+    arxiv_url: https://arxiv.org/abs/2302.08582
+    arxiv_url_versioned: https://arxiv.org/abs/2302.08582v2
+    github_url: https://github.com/tomekkorbak/pretraining-with-human-feedback
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CL
+      - cs.LG
+  2303_13408:
+    id: 2303.13408
+    arxiv_url: https://arxiv.org/abs/2303.13408
+    arxiv_url_versioned: https://arxiv.org/abs/2303.13408v2
+    github_url: https://github.com/martiansideofthemoon/ai-detection-paraphrases
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CL
+      - cs.CR
+      - cs.LG
+  2303_16058:
+    id: 2303.16058
+    arxiv_url: https://arxiv.org/abs/2303.16058
+    arxiv_url_versioned: https://arxiv.org/abs/2303.16058v2
+    github_url: https://github.com/OpenGVLab/unmasked_teacher
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CV
+  2304_01933:
+    id: 2304.01933
+    arxiv_url: https://arxiv.org/abs/2304.01933
+    arxiv_url_versioned: https://arxiv.org/abs/2304.01933v3
+    github_url: https://github.com/AGI-Edgerunners/LLM-Adapters
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories: 
+      - cs.CL
+  2304_08345:
+    id: 2304.08345
+    arxiv_url: https://arxiv.org/abs/2304.08345
+    arxiv_url_versioned: https://arxiv.org/abs/2304.08345v2
+    github_url: https://github.com/TXH-mercury/VALOR
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.LG
+      - cs.CL
+      - cs.CV
+      - cs.MM
+      - eess.AS
+  2304_08467:
+    id: 2304.08467
+    arxiv_url: https://arxiv.org/abs/2304.08467
+    arxiv_url_versioned: https://arxiv.org/abs/2304.08467v3
+    github_url: https://github.com/jayelm/gisting
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CL
+  2304_09542:
+    id: 2304.09542
+    arxiv_url: https://arxiv.org/abs/2304.09542
+    arxiv_url_versioned: https://arxiv.org/abs/2304.09542v3
+    github_url: https://github.com/sunnweiwei/RankGPT
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CL
+      - cs.IR
+  2305_14387:
+    id: 2305.14387
+    arxiv_url: https://arxiv.org/abs/2305.14387
+    arxiv_url_versioned: https://arxiv.org/abs/2305.14387v4
+    github_url: https://github.com/tatsu-lab/alpaca_farm
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories: 
+      - cs.LG
+      - cs.AI
+      - cs.CL
+  2305_15076:
+    id: 2305.15076
+    arxiv_url: https://arxiv.org/abs/2305.15076
+    arxiv_url_versioned: https://arxiv.org/abs/2305.15076v2
+    github_url: https://github.com/nathanhu0/CaMeLS
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CL
+  2306_05109:
+    id: 2306.05109
+    arxiv_url: https://arxiv.org/abs/2306.05109
+    arxiv_url_versioned: https://arxiv.org/abs/2306.05109v4
+    github_url: https://github.com/rvandewater/YAIB
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.LG
+  2306_09085:
+    id: 2306.09085
+    arxiv_url: https://arxiv.org/abs/2306.09085
+    arxiv_url_versioned: https://arxiv.org/abs/2306.09085v1
+    github_url: https://github.com/TXH-mercury/COSA
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CV
+      - cs.AI
+      - cs.CL
+      - cs.LG
+      - cs.MM
+  2307_14061:
+    id: 2307.14061
+    arxiv_url: https://arxiv.org/abs/2307.14061
+    arxiv_url_versioned: https://arxiv.org/abs/2307.14061v1
+    github_url: https://github.com/Zoky-2020/SGA
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CV
+  2309_05173:
+    id: 2309.05173
+    arxiv_url: https://arxiv.org/abs/2309.05173
+    arxiv_url_versioned: https://arxiv.org/abs/2309.05173v5
+    github_url: https://github.com/ShiZhengyan/DePT
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories: 
+      - cs.CL
+      - cs.AI
+      - cs.CV
+      - cs.LG
+  2310_08370:
+    id: 2310.08370
+    arxiv_url: https://arxiv.org/abs/2310.08370
+    arxiv_url_versioned: https://arxiv.org/abs/2310.08370v2
+    github_url: https://github.com/Nightmare-n/UniPAD
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories: 
+    - cs.CV
+  2311_05419:
+    id: 2311.05419
+    arxiv_url: https://arxiv.org/abs/2311.05419
+    arxiv_url_versioned: https://arxiv.org/abs/2311.05419v2
+    github_url: https://github.com/Spico197/Mirror
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CL
+      - cs.AI
+  2311_09818:
+    id: 2311.09818
+    arxiv_url: https://arxiv.org/abs/2311.09818
+    arxiv_url_versioned: https://arxiv.org/abs/2311.09818v2
+    github_url: https://github.com/stanford-oval/suql
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CL
+      - cs.PL
+  2312_02151:
+    id: 2312.02151
+    arxiv_url: https://arxiv.org/abs/2312.02151
+    arxiv_url_versioned: https://arxiv.org/abs/2312.02151v1
+    github_url: https://github.com/wgcban/mix-bt
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories: 
+    - cs.CV
+    - cs.AI
+    - cs.LG
+  2312_14091:
+    id: 2312.14091
+    arxiv_url: https://arxiv.org/abs/2312.14091
+    arxiv_url_versioned: https://arxiv.org/abs/2312.14091v3
+    github_url: https://github.com/Picsart-AI-Research/HD-Painter
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CV
+  2312_16702:
+    id: 2312.16702
+    arxiv_url: https://arxiv.org/abs/2312.16702
+    arxiv_url_versioned: https://arxiv.org/abs/2312.16702v1
+    github_url: https://github.com/Leolty/tablellm
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CL
+      - cs.AI
+      - cs.DB
+      - cs.LG
+  2402_14289:
+    id: 2402.14289
+    arxiv_url: https://arxiv.org/abs/2402.14289
+    arxiv_url_versioned: https://arxiv.org/abs/2402.14289v1
+    github_url: https://github.com/TinyLLaVA/TinyLLaVA_Factory
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.LG
+      - cs.CL
+  2402_15491:
+    id: 2402.15491
+    arxiv_url: https://arxiv.org/abs/2402.15491
+    arxiv_url_versioned: https://arxiv.org/abs/2402.15491v2
+    github_url: https://github.com/IBM/API-BLEND
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CL
+      - cs.AI
+  2402_17152:
+    id: 2402.17152
+    arxiv_url: https://arxiv.org/abs/2402.17152
+    arxiv_url_versioned: https://arxiv.org/abs/2402.17152v3
+    github_url: https://github.com/meta-recsys/generative-recommenders
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.LG
+      - cs.IR
+  2402_03496:
+    id: 2402.03496
+    arxiv_url: https://arxiv.org/abs/2402.03496
+    arxiv_url_versioned: https://arxiv.org/abs/2402.03496v10
+    github_url: https://github.com/f-dangel/sirfshampoo
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories: 
+      - cs.LG
+      - math.OC
+  2403_07865:
+    id: 2403.07865
+    arxiv_url: https://arxiv.org/abs/2403.07865
+    arxiv_url_versioned: https://arxiv.org/abs/2403.07865v5
+    github_url: https://github.com/AI45Lab/CodeAttack
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CL
+      - cs.AI
+      - cs.CR
+      - cs.LG
+      - cs.SE
+  2403_19925:
+    id: 2403.19925
+    arxiv_url: https://arxiv.org/abs/2403.19925
+    arxiv_url_versioned: https://arxiv.org/abs/2403.19925v1
+    github_url: https://github.com/Toshihiro-Ota/decision-mamba
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.LG
+      - cs.AI
+  2404_03592:
+    id: 2404.03592
+    arxiv_url: https://arxiv.org/abs/2404.03592
+    arxiv_url_versioned: https://arxiv.org/abs/2404.03592v3
+    github_url: https://github.com/stanfordnlp/pyreft
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CL
+      - cs.AI
+      - cs.LG
+  2404_07143:
+    id: 2404.07143
+    arxiv_url: https://arxiv.org/abs/2404.07143
+    arxiv_url_versioned: https://arxiv.org/abs/2404.07143v2
+    github_url: https://github.com/Beomi/InfiniTransformer
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CL
+      - cs.AI
+      - cs.LG
+      - cs.NE
+  2405_11487:
+    id: 2405.11487
+    arxiv_url: https://arxiv.org/abs/2405.11487
+    arxiv_url_versioned: https://arxiv.org/abs/2405.11487v1
+    github_url: https://github.com/katha-ai/RecapStorySumm-CVPR2024
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CV
+  2405_13576:
+    id: 2405.13576
+    arxiv_url: https://arxiv.org/abs/2405.13576
+    arxiv_url_versioned: https://arxiv.org/abs/2405.13576v2
+    github_url: https://github.com/RUC-NLPIR/FlashRAG
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CL
+      - cs.IR
+  2405_13956:
+    id: 2405.13956
+    arxiv_url: https://arxiv.org/abs/2405.13956
+    arxiv_url_versioned: https://arxiv.org/abs/2405.13956v2
+    github_url: https://github.com/claCase/Attention-as-RNN
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories: 
+      - cs.LG
+  2405_17898:
+    id: 2405.17898
+    arxiv_url: https://arxiv.org/abs/2405.17898
+    arxiv_url_versioned: https://arxiv.org/abs/2405.17898v1
+    github_url: https://github.com/HKUDS/FlashST
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.LG
+      - cs.AI
+      - cs.CY
+  2406_11838:
+    id: 2406.11838
+    arxiv_url: https://arxiv.org/abs/2406.11838
+    arxiv_url_versioned: https://arxiv.org/abs/2406.11838v3
+    github_url: https://github.com/LTH14/mar
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CV
+  2406_14275:
+    id: 2406.14275
+    arxiv_url: https://arxiv.org/abs/2406.14275
+    arxiv_url_versioned: https://arxiv.org/abs/2406.14275v2
+    github_url: https://github.com/gersteinlab/step-back-profiling
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CL
+      - cs.AI
+  2406_16554:
+    id: 2406.16554
+    arxiv_url: https://arxiv.org/abs/2406.16554
+    arxiv_url_versioned: https://arxiv.org/abs/2406.16554v1
+    github_url: https://github.com/pjlab-sys4nlp/llama-moe
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CL
+  2406_17245:
+    id: 2406.17245
+    arxiv_url: https://arxiv.org/abs/2406.17245
+    arxiv_url_versioned: https://arxiv.org/abs/2406.17245v2
+    github_url: https://github.com/wenyudu/MIGU
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.LG
+      - cs.AI
+      - cs.CL
+  2407_02398:
+    id: 2407.02398
+    arxiv_url: https://arxiv.org/abs/2407.02398
+    arxiv_url_versioned: https://arxiv.org/abs/2407.02398v1
+    github_url: https://github.com/YangLing0818/consistency_flow_matching
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CV
+  2407_17817:
+    id: 2407.17817
+    arxiv_url: https://arxiv.org/abs/2407.17817
+    arxiv_url_versioned: https://arxiv.org/abs/2407.17817v1
+    github_url: https://github.com/explanare/verbatim-memorization
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CL
+      - cs.LG
+  2409_02060:
+    id: 2409.02060
+    arxiv_url: https://arxiv.org/abs/2409.02060
+    arxiv_url_versioned: https://arxiv.org/abs/2409.02060v2
+    github_url: https://github.com/allenai/OLMoE
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+    - cs.CL
+    - cs.AI
+    - cs.LG
+  2409_04185:
+    id: 2409.04185
+    arxiv_url: https://arxiv.org/abs/2409.04185
+    arxiv_url_versioned: https://arxiv.org/abs/2409.04185v3
+    github_url: https://github.com/tim-lawson/mlsae
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories: 
+      - cs.LG
+      - cs.CL
+  2409_17531:
+    id: 2409.17531
+    arxiv_url: https://arxiv.org/abs/2409.17531
+    arxiv_url_versioned: https://arxiv.org/abs/2409.17531v2
+    github_url: https://github.com/Dmmm1997/SimVG
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CV
+      - cs.AI
+  2410_14379:
+    id: 2410.14379
+    arxiv_url: https://arxiv.org/abs/2410.14379
+    arxiv_url_versioned: https://arxiv.org/abs/2410.14379v2
+    github_url: https://github.com/HUST-SLOW/AnomalyNCD
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CV
+  2412_01108:
+    id: 2412.01108
+    arxiv_url: https://arxiv.org/abs/2412.01108
+    arxiv_url_versioned: https://arxiv.org/abs/2412.01108v1
+    github_url: https://github.com/DeepGraphLearning/S3F
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.LG
+      - q-bio.BM
+  2412_13461:
+    id: 2412.13461
+    arxiv_url: https://arxiv.org/abs/2412.13461
+    arxiv_url_versioned: https://arxiv.org/abs/2412.13461v2
+    github_url: https://github.com/M-3LAB/Look-Inside-for-More
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CV
+      - cs.AI
+      - eess.IV
+  2412_13663:
+    id: 2412.13663
+    arxiv_url: https://arxiv.org/abs/2412.13663
+    arxiv_url_versioned: https://arxiv.org/abs/2412.13663v2
+    github_url: https://github.com/AnswerDotAI/ModernBERT
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CL
+      - cs.AI
+  2501_00958:
+    id: 2501.00958
+    arxiv_url: https://arxiv.org/abs/2501.00958
+    arxiv_url_versioned: https://arxiv.org/abs/2501.00958v4
+    github_url: https://github.com/DAMO-NLP-SG/multimodal_textbook
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CV
+      - cs.CL
+      - cs.LG
+  2501_06019:
+    id: 2501.06019
+    arxiv_url: https://arxiv.org/abs/2501.06019
+    arxiv_url_versioned: https://arxiv.org/abs/2501.06019v4
+    github_url: https://github.com/ChenHongruixuan/BRIGHT
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CV
+      - cs.AI
+      - eess.IV
+      - eess.SP
+  2501_14265:
+    id: 2501.14265
+    arxiv_url: https://arxiv.org/abs/2501.14265
+    arxiv_url_versioned: https://arxiv.org/abs/2501.14265v2
+    github_url: https://github.com/BinCVER/Bayesian-Enhancement-Model
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CV
+  2502_13595:
+    id: 2502.13595
+    arxiv_url: https://arxiv.org/abs/2502.13595
+    arxiv_url_versioned: https://arxiv.org/abs/2502.13595v4
+    github_url: https://github.com/embeddings-benchmark/mteb
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CL
+      - cs.AI
+      - cs.IR
+  2502_14553:
+    id: 2502.14553
+    arxiv_url: https://arxiv.org/abs/2502.14553
+    arxiv_url_versioned: https://arxiv.org/abs/2502.14553v1
+    github_url: https://github.com/ai4sd/multiscale-byte-lm
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CL
+      - cs.AI
+      - cs.LG
+  2502_20134:
+    id: 2502.20134
+    arxiv_url: https://arxiv.org/abs/2502.20134
+    arxiv_url_versioned: https://arxiv.org/abs/2502.20134v4
+    github_url: https://github.com/itaybenou/show-and-tell
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CV
+  2503_01840:
+    id: 2503.0184
+    arxiv_url: https://arxiv.org/abs/2503.01840
+    arxiv_url_versioned: https://arxiv.org/abs/2503.01840v3
+    github_url: https://github.com/SafeAILab/EAGLE
+    target_date: 2025-10-31
+    arxiv_subject: cs
+    arxiv_subsubject: cs
+    arxiv_categories:
+      - cs.CL
+
+reproducibility_reports:
+  nifa:
+    id: 83b7da3ed13f06c13ce82235c8eedf35
+    paper: https://proceedings.neurips.cc/paper_files/paper/2024/file/83b7da3ed13f06c13ce82235c8eedf35-Paper-Conference.pdf
+    arxiv_url: https://arxiv.org/pdf/2406.03052
+    code: https://github.com/CGCL-codes/NIFA
+    reproducibility_paper: https://openreview.net/pdf?id=l5fXUKi8GO
+    reproducibility_code: https://github.com/sjoerdgunneweg/Reassessing-NIFA
+    reproducibility_paper_date: 2025-06-17
+    reproducibility_venue: ML Reproducibility Challenge 2025
+  user-item-fairness:
+    id: cf836efd32fd53493e02d26670f04d46
+    paper: https://proceedings.neurips.cc/paper_files/paper/2024/file/cf836efd32fd53493e02d26670f04d46-Paper-Conference.pdf
+    arxiv_url: https://arxiv.org/pdf/2412.04466
+    code: https://github.com/vschiniah/ArXiv_Recommendation_Research
+    reproducibility_paper: https://openreview.net/pdf?id=vltzxxhzLU
+    reproducibility_code: https://github.com/sanderhonig/RE-User-item-fairness-tradeoffs-in-recommendations
+    reproducibility_paper_date: 2025-06-16
+    reproducibility_venue: ML Reproducibility Challenge 2025
+  competition-of-mechnaisms:
+    id: 2402.11655
+    paper: https://aclanthology.org/2024.acl-long.458.pdf
+    arxiv_url: https://arxiv.org/pdf/2402.11655
+    code: https://github.com/francescortu/comp-mech
+    reproducibility_paper: https://openreview.net/pdf?id=VCG6j3tcAA
+    reproducibility_paper_date: 2025-07-19
+    reproducibility_code: https://github.com/LCPerotti/Competition-Mechanism-Reproducibility
+    reproducibility_venue: ML Reproducibility Challenge 2025
+  competition-of-mechnaisms-2:
+    id: 2402.11655
+    paper: https://aclanthology.org/2024.acl-long.458.pdf
+    arxiv_url: https://arxiv.org/pdf/2402.11655
+    code: https://github.com/francescortu/comp-mech
+    reproducibility_paper: https://openreview.net/pdf?id=15keyzQj9h
+    reproducibility_paper_date: 2025-06-25
+    reproducibility_code: https://github.com/asendotsinski/comp-mech-generalizability
+    reproducibility_venue: ML Reproducibility Challenge 2025
+  an-image-is-worth-1000-lies:
+    id: 2403.09766
+    paper: https://openreview.net/pdf?id=nc5GgFAvtk
+    arxiv_url: https://arxiv.org/pdf/2403.09766
+    code: https://github.com/Haochen-Luo/CroPA
+    reproducibility_paper: https://openreview.net/pdf?id=5L90cl0xtf
+    reproducibility_code: https://github.com/Swadesh06/Revisting_CroPA
+    reproducibility_venue: ML Reproducibility Challenge 2025
+  cooperation-competition-and-maliciousness:
+    id: 2309.17234
+    paper: https://proceedings.neurips.cc/paper_files/paper/2024/file/984dd3db213db2d1454a163b65b84d08-Paper-Datasets_and_Benchmarks_Track.pdf
+    arxiv_url: https://arxiv.org/pdf/2309.17234
+    code: https://github.com/S-Abdelnabi/LLM-Deliberation
+    reproducibility_paper: https://openreview.net/pdf?id=MTrhFmkC45
+    reproducibility_paper_date: 2025-06-20
+    reproducibility_code: https://github.com/cmpatino/llm_negotiation
+    reproducibility_venue: ML Reproducibility Challenge 2025
+  remembering-to-be-fair:
+    id: 2312.04772
+    paper: https://openreview.net/pdf?id=4BIOZSz7zU
+    arxiv_url: https://arxiv.org/pdf/2312.04772
+    code: https://github.com/praal/remembering-to-be-fair
+    reproducibility_paper: https://openreview.net/pdf?id=H6DtMcZf5s
+    reproducibility_code: https://github.com/praal/remembering-to-be-fair
+    reproducibility_venue: ML Reproducibility Challenge 2025
+  slice:
+    id: Bora_SLICE_Stabilized_LIME_for_Consistent_Explanations_for_Image_Classification_CVPR_2024_paper
+    paper: https://openaccess.thecvf.com/content/CVPR2024/papers/Bora_SLICE_Stabilized_LIME_for_Consistent_Explanations_for_Image_Classification_CVPR_2024_paper.pdf
+    appendix: https://openaccess.thecvf.com/content/CVPR2024/supplemental/Bora_SLICE_Stabilized_LIME_CVPR_2024_supplemental.pdf
+    code: https://github.com/rebathip/SLICE-Stabilized-LIME-for-Consistent-Explanations-for-Image-Classification/tree/main
+    reproducibility_paper: https://openreview.net/pdf?id=vKUPXuEzj8
+    reproducibility_paper_date: 2025-05-09
+    reproducibility_code: https://github.com/CSBXAI/slice_reproducibility
+    reproducibility_venue: ML Reproducibility Challenge 2025
+  gnn-boundary:
+    id: WIzzXCVYiH
+    paper: https://openreview.net/pdf?id=WIzzXCVYiH
+    code: https://github.com/yolandalalala/GNNBoundary
+    reproducibility_paper: https://openreview.net/pdf?id=kEUvWFHEsn
+    reproducibility_paper_date: 2025-06-08
+    reproducibility_code: https://github.com/jhb300/re_gnnboundary
+    reproducibility_venue: ML Reproducibility Challenge 2025
+  discover-then-name:
+    id: 2407.14499
+    paper: https://arxiv.org/pdf/2407.14499
+    arxiv_url: https://arxiv.org/pdf/2407.14499
+    code: https://github.com/neuroexplicit-saar/Discover-then-Name
+    reproducibility_paper: https://openreview.net/pdf?id=946cT3Jsq5
+    reproducibility_paper_date: 2025-06-12
+    reproducibility_code: https://github.com/daniuyter/DNCBM-repro
+    reproducibility_venue: ML Reproducibility Challenge 2025
+  cooperation-competition-and-maliciousness-v2:
+    id: 2309.17234-v2
+    paper: https://proceedings.neurips.cc/paper_files/paper/2024/file/984dd3db213db2d1454a163b65b84d08-Paper-Datasets_and_Benchmarks_Track.pdf
+    arxiv_url: https://arxiv.org/pdf/2309.17234
+    code: https://github.com/S-Abdelnabi/LLM-Deliberation
+    reproducibility_paper: https://openreview.net/pdf?id=BVH81SAAh2
+    reproducibility_paper_date: 2025-06-17
+    reproducibility_code: https://github.com/joshrosie/FACT29
+  moderntcn:
+    id: vpJMJerXHU
+    paper: https://openreview.net/pdf?id=vpJMJerXHU
+    code: https://github.com/luodhhh/ModernTCN
+    reproducibility_paper: https://openreview.net/pdf?id=R20kKdWmVZ
+    reproducibility_paper_date: 2025-06-19
+    reproducibility_code: https://github.com/onderakacik/RE-ModernTCN?tab=readme-ov-file
+    reproducibility_venue: ML Reproducibility Challenge 2025
+  decoupling-feature-extraction-and-classification-layers:
+    id: F2Tegvyqlo
+    paper: https://openreview.net/pdf?id=F2Tegvyqlo
+    arxiv_url: https://arxiv.org/pdf/2405.01196
+    code: https://github.com/MJordahn/Decoupled-Layers-for-Calibrated-NNs?tab=readme-ov-file
+    reproducibility_paper: https://openreview.net/pdf?id=5Hwzd48ILf
+    reproducibility_paper_date: 2025-07-11
+    reproducibility_code: https://github.com/ericbanzuzi/nn-feature-decoupling-calibration
+    reproducibility_venue: ML Reproducibility Challenge 2025
+  gnn-interpreter:
+    id: 2209.07924
+    paper: https://openreview.net/pdf?id=rqq6Dh8t4d
+    arxiv_url: https://arxiv.org/pdf/2209.07924
+    code: https://github.com/yolandalalala/GNNInterpreter
+    reproducibility_paper: https://openreview.net/pdf?id=8cYcR23WUo
+    reproducibility_paper_date: 2024-06-06
+    reproducibility_code: https://github.com/MeneerTS/GNNinterpreter_Reproduction
+    reproducibility_venue: ML Reproducibility Challenge 2023
+  explaining-rl-decisions-with-trajectories:
+    id: 2305.04073
+    paper: https://openreview.net/pdf?id=5Egggz1q575
+    arxiv_url: https://arxiv.org/pdf/2305.04073
+    code: https://github.com/shripaddeshmukh/xrl_with_trajectories
+    reproducibility_paper: https://openreview.net/pdf?id=JQoWmeNaC2
+    reproducibility_paper_date: 2024-04-30
+    reproducibility_code: https://github.com/fclio/FACT_assignment
+    reproducibility_venue: ML Reproducibility Challenge 2023
+  pre-train-your-loss:
+    id: b1e7f61f40d68b2177857bfcb195a507
+    paper: https://proceedings.neurips.cc/paper_files/paper/2022/file/b1e7f61f40d68b2177857bfcb195a507-Paper-Conference.pdf
+    arxiv_url: https://arxiv.org/pdf/2205.10279
+    code: https://github.com/hsouri/BayesianTransferLearning
+    reproducibility_paper: https://openreview.net/pdf?id=BbvSU02jLg
+    reproducibility_paper_date: 2024-05-23
+    reproducibility_code: https://github.com/tufts-ml/bdl-transfer-learning
+    reproducibility_venue: ML Reproducibility Challenge 2023
+  fair-attribute-completion-on-graph-with-missing-attributes:
+    id: 2302.12977
+    paper: https://openreview.net/pdf?id=9vcXCMp9VEp
+    arxiv_url: https://arxiv.org/pdf/2302.12977
+    code: https://github.com/donglgcn/FairAC
+    reproducibility_paper: https://openreview.net/pdf?id=ccDi5jtSF7
+    reproducibility_paper_date: 2024-06-16
+    reproducibility_code: https://github.com/oxkitsune/fact
+    reproducibility_venue: ML Reproducibility Challenge 2023
+  post-hoc-cbm:
+    id: 2205.15480
+    paper: https://openreview.net/pdf?id=nA5AZ8CEyow
+    arxiv_url: https://arxiv.org/pdf/2205.15480
+    code: https://github.com/mertyg/post-hoc-cbm
+    reproducibility_paper: https://openreview.net/pdf?id=8UfhCZjOV7
+    reproducibility_paper_date: 2024-05-08
+    reproducibility_code: https://github.com/dgcnz/FACT
+    reproducibility_venue: ML Reproducibility Challenge 2023
+  learning-perturbations-to-explain-time-series-predictions:
+    id: enguehard23a
+    paper: https://proceedings.mlr.press/v202/enguehard23a/enguehard23a.pdf
+    arxiv_url: https://arxiv.org/pdf/2305.18840
+    code: https://github.com/josephenguehard/time_interpret
+    reproducibility_paper: https://openreview.net/pdf?id=fCNqD2IuoD
+    reproducibility_paper_date: 2024-05-18
+    reproducibility_code: https://github.com/anonymous8293/factai
+    reproducibility_venue: ML Reproducibility Challenge 2023
+  explaining-rl-decisions-with-trajectories-v2:
+    id: 2305.04073-v2
+    paper: https://openreview.net/pdf?id=5Egggz1q575
+    arxiv_url: https://arxiv.org/pdf/2305.04073
+    code: https://github.com/shripaddeshmukh/xrl_with_trajectories
+    reproducibility_paper: https://openreview.net/pdf?id=QdeBbK5CSh
+    reproducibility_paper_date: 2024-06-01
+    reproducibility_code:
+    reproducibility_venue: ML Reproducibility Challenge 2023
+  cs-shapley:
+    id: df334022279996b07e0870a629c18857
+    paper: https://proceedings.neurips.cc/paper_files/paper/2022/file/df334022279996b07e0870a629c18857-Paper-Conference.pdf
+    arxiv_url: https://arxiv.org/pdf/2211.06800
+    code: https://github.com/uvanlp/valda
+    reproducibility_paper: https://openreview.net/pdf?id=srFEYJkqD7
+    reproducibility_paper_date: 2024-07-01
+    reproducibility_code: https://github.com/aai-institute/re-classwise-shapley
+    reproducibility_venue: ML Reproducibility Challenge 2023
+  iti-gen:
+    id: 2309.05569
+    paper: https://openaccess.thecvf.com/content/ICCV2023/papers/Zhang_ITI-GEN_Inclusive_Text-to-Image_Generation_ICCV_2023_paper.pdf 
+    appendix: https://openaccess.thecvf.com/content/ICCV2023/supplemental/Zhang_ITI-GEN_Inclusive_Text-to-Image_ICCV_2023_supplemental.pdf
+    arxiv_url: https://arxiv.org/pdf/2309.05569
+    code: https://github.com/humansensinglab/ITI-GEN
+    reproducibility_paper: https://openreview.net/pdf?id=d3Vj360Wi2
+    reproducibility_paper_date: 2024-06-25
+    reproducibility_code: https://github.com/amonroym99/iti-gen-reproducibility
+    reproducibility_venue: ML Reproducibility Challenge 2023
+  robust-fair-clustering:
+    id: 2210.01953
+    paper: https://openreview.net/pdf?id=4LMIZY7gt7h
+    arxiv_url: https://arxiv.org/pdf/2210.01953
+    code: https://github.com/anshuman23/CFC
+    reproducibility_paper: https://openreview.net/pdf?id=Xu1sEPhjqH
+    reproducibility_paper_date: 2024-06-18
+    reproducibility_code: https://github.com/vinloo/robust-fair-clustering-reproducibility
+    reproducibility_venue: ML Reproducibility Challenge 2023
+  cuda-ltr:
+    id: 2302.05499
+    paper: https://openreview.net/pdf?id=RgUPdudkWlN
+    arxiv_url: https://arxiv.org/pdf/2302.05499
+    code: https://github.com/sumyeongahn/CUDA_LTR
+    reproducibility_paper: https://openreview.net/pdf?id=Wm6d44I8St
+    reproducibility_paper_date: 2024-06-11
+    reproducibility_code:
+    reproducibility_venue: ML Reproducibility Challenge 2023
+  robust-fair-clustering-v2:
+    id: 2210.01953
+    paper: https://openreview.net/pdf?id=4LMIZY7gt7h
+    arxiv_url: https://arxiv.org/pdf/2210.01953
+    code: https://github.com/anshuman23/CFC
+    reproducibility_paper: https://openreview.net/pdf?id=H1hLNjwrGy
+    reproducibility_paper_date: 2024-04-15
+    reproducibility_code: https://github.com/iasonsky/FACT-2024
+    reproducibility_venue: ML Reproducibility Challenge 2023
+  lico:
+    id: c2eac51b6353a4441e8b7426f8e8db78
+    paper: https://proceedings.neurips.cc/paper_files/paper/2023/file/c2eac51b6353a4441e8b7426f8e8db78-Paper-Conference.pdf
+    arxiv_url: https://arxiv.org/pdf/2310.09821
+    code: https://github.com/ymLeiFDU/LICO
+    reproducibility_paper: https://openreview.net/pdf?id=Mf1H8X5DVb
+    reproducibility_paper_date: 2024-06-02
+    reproducibility_code: https://github.com/robertdvdk/lico-fact
+    reproducibility_venue: ML Reproducibility Challenge 2023
+  learning-perturbations-to-explain-time-series-predictions-v2:
+    id: enguehard23a-v2
+    paper: https://proceedings.mlr.press/v202/enguehard23a/enguehard23a.pdf
+    arxiv_url: https://arxiv.org/pdf/2305.18840
+    code: https://github.com/josephenguehard/time_interpret
+    reproducibility_paper: https://openreview.net/pdf?id=nPZgtpfgIx
+    reproducibility_paper_date: 2024-06-24
+    reproducibility_code: https://github.com/adamdivak/time_interpret/
+    reproducibility_venue: ML Reproducibility Challenge 2023
+  ei-fairness:
+    id: 2210.06732
+    paper: https://openreview.net/pdf?id=dhYUMMy0_Eg
+    arxiv_url: https://arxiv.org/pdf/2210.06732
+    code: https://github.com/guldoganozgur/ei_fairness
+    reproducibility_paper: https://openreview.net/pdf?id=Yj8fUQGXXL
+    reproducibility_paper_date: 2024-07-12
+    reproducibility_code: https://github.com/JakubTomaszewski/ei_fairness_reproducibility
+    reproducibility_venue: ML Reproducibility Challenge 2023
+  concept-ablation:
+    id: 2303.13516
+    paper: https://openaccess.thecvf.com/content/ICCV2023/papers/Kumari_Ablating_Concepts_in_Text-to-Image_Diffusion_Models_ICCV_2023_paper.pdf
+    arxiv_url: https://arxiv.org/pdf/2303.13516
+    code: https://github.com/nupurkmr9/concept-ablation
+    reproducibility_paper: https://openreview.net/pdf?id=TYYApLzjaQ
+    reproducibility_paper_date: 2024-06-28
+    reproducibility_code:
+    reproducibility_venue: ML Reproducibility Challenge 2023
+  model-guidance:
+    id: 2303.11932
+    paper: https://openaccess.thecvf.com/content/ICCV2023/papers/Rao_Studying_How_to_Efficiently_and_Effectively_Guide_Models_with_Explanations_ICCV_2023_paper.pdf
+    appendix: https://openaccess.thecvf.com/content/ICCV2023/supplemental/Rao_Studying_How_to_ICCV_2023_supplemental.pdf
+    arxiv_url: https://arxiv.org/pdf/2303.11932
+    code: https://github.com/sukrutrao/Model-Guidance
+    reproducibility_paper: https://openreview.net/pdf?id=9ZzASCVhDF
+    reproducibility_paper_date: 2024-08-28
+    reproducibility_code:
+    reproducibility_venue: ML Reproducibility Challenge 2023
+  dig:
+    id: 1_OGWcP1s9w
+    paper: https://openreview.net/pdf?id=1_OGWcP1s9w
+    arxiv_url: https://arxiv.org/pdf/2102.05152
+    code: https://github.com/divelab/DIG
+    reproducibility_paper: https://openreview.net/pdf?id=4WiqHopXQX
+    reproducibility_paper_date: 2024-09-03
+    reproducibility_code: https://github.com/juellsprott/graphair-reproducibility
+    reproducibility_venue: ML Reproducibility Challenge 2023
+  dig-v2:
+    id: 1_OGWcP1s9w-v2
+    paper: https://openreview.net/forum?id=1_OGWcP1s9w
+    arxiv_url: https://arxiv.org/pdf/2102.05152
+    code: https://github.com/divelab/DIG
+    reproducibility_paper: https://zenodo.org/record/16374814/files/article.pdf
+    reproducibility_paper_date: 2023-07-01
+    reproducibility_code: https://zenodo.org/records/13834566
+    reproducibility_venue: ReScience C 2025
+  network-deconvolution:
+    id: 1905.11926
+    paper: https://openreview.net/pdf?id=rkeu30EtvS
+    arxiv_url: https://arxiv.org/pdf/1905.11926
+    code: https://github.com/yechengxi/deconvolution
+    reproducibility_paper: https://zenodo.org/record/15321683/files/article.pdf
+    reproducibility_paper_date: 2025-04-01
+    reproducibility_code: https://github.com/lamps-lab/rep-network-deconvolution
+    reproducibility_venue: ReScience C 2025
+  discriminative-kalman-filter:
+    id: 1608.06622
+    paper: https://arxiv.org/pdf/1608.06622
+    arxiv_url: https://arxiv.org/pdf/1608.06622
+    code: https://github.com/burkh4rt/Discriminative-Kalman-Filter
+    reproducibility_paper: https://zenodo.org/record/15172014/files/article.pdf
+    reproducibility_paper_date: 2025-04-01
+    reproducibility_code: https://github.com/Josuelmet/Discriminative-Kalman-Filter-4.5-Python
+    reproducibility_venue: ReScience C 2025
+  birt:
+    id: 2305.04769
+    paper: https://proceedings.mlr.press/v202/jeeveswaran23a/jeeveswaran23a.pdf
+    arxiv_url: https://arxiv.org/pdf/2305.04769
+    code: https://github.com/NeurAI-Lab/BiRT
+    reproducibility_paper: https://zenodo.org/record/14964875/files/article.pdf
+    reproducibility_paper_date: 2025-03-01
+    reproducibility_code: https://github.com/disha101003/ReScience
+    reproducibility_venue: ReScience C 2025
+  efdm:
+    id: 2203.07740
+    paper: https://openaccess.thecvf.com/content/CVPR2022/papers/Zhang_Exact_Feature_Distribution_Matching_for_Arbitrary_Style_Transfer_and_Domain_CVPR_2022_paper.pdf
+    appendix: https://openaccess.thecvf.com/content/CVPR2022/supplemental/Zhang_Exact_Feature_Distribution_CVPR_2022_supplemental.pdf
+    arxiv_url: https://arxiv.org/pdf/2203.07740
+    code: https://github.com/YBZh/EFDM
+    reproducibility_paper: https://zenodo.org/record/8173652/files/article.pdf
+    reproducibility_paper_date: 2023-07-01
+    reproducibility_code: https://github.com/birdortyedi/efdm-pytorch
+    reproducibility_venue: ReScience C 2023
+  end-to-end-algorithm-synthesis-with-recurrent-networks:
+    id: 2202.05826
+    paper: https://openreview.net/pdf?id=PPjSKy40XUB
+    arxiv_url: https://arxiv.org/pdf/2202.05826
+    code: https://github.com/aks2203/deep-thinking
+    reproducibility_paper: https://zenodo.org/record/8173654/files/article.pdf
+    reproducibility_paper_date: 2023-07-01
+    reproducibility_code: https://github.com/mcleish7/MLRC-deep-thinking
+    reproducibility_venue: ReScience C 2023
+  label-free-xai:
+    id: 2203.01928
+    paper: https://proceedings.mlr.press/v162/crabbe22a/crabbe22a.pdf
+    arxiv_url: https://arxiv.org/pdf/2203.01928
+    code: https://github.com/JonathanCrabbe/Label-Free-XAI
+    reproducibility_paper: https://zenodo.org/record/8173656/files/article.pdf
+    reproducibility_paper_date: 2023-07-01
+    reproducibility_code: https://github.com/EricLangezaal/Re-Label-Free-XAI
+    reproducibility_venue: ReScience C 2023
+  exploring-the-representation-of-word-meanings-in-context:
+    id: 2021.acl-long.281
+    paper: https://aclanthology.org/2021.acl-long.281.pdf
+    arxiv_url: https://arxiv.org/pdf/2106.13553
+    code: https://github.com/marcospln/homonymy_acl21/
+    reproducibility_paper: https://zenodo.org/record/8173658/files/article.pdf
+    reproducibility_paper_date: 2023-07-01
+    reproducibility_code: https://github.com/matteobrv/repro-homonymy-acl21
+    reproducibility_venue: ReScience C 2023
+  intriguing-properties-of-contrastive-losses:
+    id: 2011.02803
+    paper: https://proceedings.neurips.cc/paper/2021/file/628f16b29939d1b060af49f66ae0f7f8-Paper.pdf
+    arxiv_url: https://arxiv.org/pdf/2011.02803
+    code: https://github.com/google-research/simclr/
+    reproducibility_paper: https://zenodo.org/record/8173662/files/article.pdf
+    reproducibility_paper_date: 2023-07-01
+    reproducibility_code: https://github.com/mona251/Intriguing-Properties-of-Contrastive-Losses
+    reproducibility_venue: ReScience C 2023
+  hist:
+    id: Lim_Hypergraph-Induced_Semantic_Tuplet_Loss_for_Deep_Metric_Learning_CVPR_2022_paper
+    paper: https://openaccess.thecvf.com/content/CVPR2022/papers/Lim_Hypergraph-Induced_Semantic_Tuplet_Loss_for_Deep_Metric_Learning_CVPR_2022_paper.pdf
+    appendix: https://openaccess.thecvf.com/content/CVPR2022/supplemental/Lim_Hypergraph-Induced_Semantic_Tuplet_CVPR_2022_supplemental.pdf
+    code: https://github.com/ljin0429/HIST
+    reproducibility_paper: https://zenodo.org/record/8173666/files/article.pdf
+    reproducibility_code: https://github.com/jichengyuan/MLRC2022_HIST
+    reproducibility_venue: ReScience C 2023
+  pre-train-your-loss-v2:
+    id: b1e7f61f40d68b2177857bfcb195a507-v2
+    paper: https://proceedings.neurips.cc/paper_files/paper/2022/file/b1e7f61f40d68b2177857bfcb195a507-Paper-Conference.pdf
+    arxiv_url: https://arxiv.org/pdf/2205.10279
+    code: https://github.com/hsouri/BayesianTransferLearning
+    reproducibility_paper: https://zenodo.org/record/8173668/files/article.pdf
+    reproducibility_paper_date: 2023-07-01
+    reproducibility_code: https://github.com/MartinSpendl/ML-reproducibility-challenge-23
+    reproducibility_venue: ReScience C 2023
+  cartoon-x:
+    id: 2110.03485
+    paper: https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136720439.pdf
+    arxiv_url: https://arxiv.org/pdf/2110.03485
+    code: https://github.com/skmda37/CartoonX
+    reproducibility_paper: https://zenodo.org/record/8173672/files/article.pdf
+    reproducibility_paper_date: 2023-07-01
+    reproducibility_code: https://github.com/JonaRuthardt/MLRC-CartoonX
+    reproducibility_venue: ReScience C 2023
+  label-free-xai-v2:
+    id: 2203.01928-v2
+    paper: https://proceedings.mlr.press/v162/crabbe22a/crabbe22a.pdf
+    arxiv_url: https://arxiv.org/pdf/2203.01928
+    code: https://github.com/JonathanCrabbe/Label-Free-XAI
+    reproducibility_paper: https://zenodo.org/record/8173674/files/article.pdf
+    reproducibility_paper_date: 2023-07-01
+    reproducibility_code: https://github.com/valentinosPariza/Re-Label-Free-XAI
+    reproducibility_venue: ReScience C 2023
+  focus:
+    id: 1911.12199
+    paper: https://arxiv.org/pdf/1911.12199
+    arxiv_url: https://arxiv.org/pdf/1911.12199
+    code: https://github.com/a-lucic/focus
+    reproducibility_paper: https://zenodo.org/record/8173678/files/article.pdf
+    reproducibility_paper_date: 2023-07-01
+    reproducibility_code: https://github.com/kyosek/focus-reproducibility
+    reproducibility_venue: ReScience C 2023
+  fairness-guarantees-under-demographic-shift:
+    id: wbPObLm6ueA
+    paper: https://openreview.net/pdf?id=wbPObLm6ueA
+    code: https://github.com/sgiguere/Fairness-Guarantees-under-Demographic-Shift
+    reproducibility_paper: https://zenodo.org/record/8173680/files/article.pdf
+    reproducibility_paper_date: 2023-07-01
+    reproducibility_code: https://github.com/YasBenAll/fact-ai-project
+    reproducibility_venue: ReScience C 2023
+  dial-summ-eval:
+    id: 2022.naacl-main.418
+    paper: https://aclanthology.org/2022.naacl-main.418.pdf
+    code: https://github.com/kite99520/DialSummEval
+    reproducibility_paper: https://zenodo.org/record/8173682/files/article.pdf
+    reproducibility_paper_date: 2023-07-01
+    reproducibility_code: https://github.com/tricodex/Reproducing_DialSummEval
+    reproducibility_venue: ReScience C 2023
+  faircal:
+    id: 2106.03761
+    paper: https://openreview.net/pdf?id=nRj0NcmSuxb
+    arxiv_url: https://arxiv.org/pdf/2106.03761
+    code: https://github.com/tiagosalvador/faircal
+    reproducibility_paper: https://zenodo.org/record/8173686/files/article.pdf
+    reproducibility_paper_date: 2023-07-01
+    reproducibility_code: https://github.com/margajdon/reproduction-FAIRCAL
+    reproducibility_venue: ReScience C 2023
+  label-free-xai-v3:
+    id: 2203.01928-v3
+    paper: https://proceedings.mlr.press/v162/crabbe22a/crabbe22a.pdf
+    arxiv_url: https://arxiv.org/pdf/2203.01928
+    code: https://github.com/JonathanCrabbe/Label-Free-XAI
+    reproducibility_paper: https://zenodo.org/record/8173688/files/article.pdf
+    reproducibility_paper_date: 2023-07-01
+    reproducibility_code: https://github.com/ayiork/Label-Free-XAI
+    reproducibility_venue: ReScience C 2023
+  fairness-guarantees-under-demographic-shift-v2:
+    id: wbPObLm6ueA-v2
+    paper: https://openreview.net/pdf?id=wbPObLm6ueA
+    code: https://github.com/sgiguere/Fairness-Guarantees-under-Demographic-Shift
+    reproducibility_paper: https://zenodo.org/record/8206607/files/article.pdf
+    reproducibility_paper_date: 2023-07-01
+    reproducibility_code: https://github.com/noanonkes/fact-guarantee
+    reproducibility_venue: ReScience C 2023
+  mlds:
+    id: 2202.00858
+    paper: https://proceedings.mlr.press/v162/agarwal22b/agarwal22b.pdf
+    arxiv_url: https://arxiv.org/pdf/2202.00858
+    code: https://github.com/csinva/imodels
+    reproducibility_paper: https://zenodo.org/record/8173696/files/article.pdf
+    reproducibility_paper_date: 2023-07-01
+    reproducibility_code: https://github.com/do8572/MLDS
+    reproducibility_venue: ReScience C 2023
+  jme-fairness:
+    id: 2205.00048
+    paper: https://dl.acm.org/doi/pdf/10.1145/3477495.3532007
+    arxiv_url: https://arxiv.org/pdf/2205.00048
+    code: https://github.com/haolun-wu/JMEFairness
+    reproducibility_paper: https://zenodo.org/record/8173698/files/article.pdf
+    reproducibility_paper_date: 2023-07-01
+    reproducibility_code: https://github.com/OlineRanum/FACT
+    reproducibility_venue:
+  lavise:
+    id: 2204.04601
+    paper: https://openaccess.thecvf.com/content/CVPR2022/papers/Yang_Explaining_Deep_Convolutional_Neural_Networks_via_Latent_Visual-Semantic_Filter_Attention_CVPR_2022_paper.pdf
+    appendix: https://openaccess.thecvf.com/content/CVPR2022/supplemental/Yang_Explaining_Deep_Convolutional_CVPR_2022_supplemental.zip
+    arxiv_url: https://arxiv.org/pdf/2204.04601
+    code: https://github.com/YuYang0901/LaViSE
+    reproducibility_paper: https://zenodo.org/record/8173713/files/article.pdf
+    reproducibility_paper_date: 2023-07-01
+    reproducibility_code: https://github.com/ErikBuis/FACT2023
+    reproducibility_venue: ReScience C 2023
+  quantifying-societal-bias-amplification-in-image-captioning:
+    id: Hirota_Quantifying_Societal_Bias_Amplification_in_Image_Captioning_CVPR_2022_paper
+    paper: https://openaccess.thecvf.com/content/CVPR2022/papers/Hirota_Quantifying_Societal_Bias_Amplification_in_Image_Captioning_CVPR_2022_paper.pdf
+    appendix: https://openaccess.thecvf.com/content/CVPR2022/supplemental/Hirota_Quantifying_Societal_Bias_CVPR_2022_supplemental.pdf
+    arxiv_url: https://arxiv.org/pdf/2203.15395
+    code: https://github.com/rebnej/lick-caption-bias
+    reproducibility_paper: https://zenodo.org/record/8173715/files/article.pdf
+    reproducibility_paper_date: 2023-07-01
+    reproducibility_code: https://github.com/fbaratov/mlrc-lic-plus-age
+    reproducibility_venue: ReScience C 2023
+  cross-walk:
+    id: 2105.02725
+    paper: https://cdn.aaai.org/ojs/21454/21454-13-25467-1-2-20220628.pdf
+    arxiv_url: https://arxiv.org/pdf/2105.02725
+    code: https://github.com/ahmadkhajehnejad/CrossWalk
+    reproducibility_paper: https://zenodo.org/record/8173717/files/article.pdf
+    reproducibility_paper_date: 2023-07-01
+    reproducibility_code: https://github.com/jonathan-gerb/crosswalk-reproduction
+    reproducibility_venue: ReScience C 2023
+  faircal-v2:
+    id: 2106.03761-v2
+    paper: https://openreview.net/pdf?id=nRj0NcmSuxb
+    arxiv_url: https://arxiv.org/pdf/2106.03761
+    code: https://github.com/tiagosalvador/faircal
+    reproducibility_paper: https://zenodo.org/record/8173719/files/article.pdf
+    reproducibility_paper_date: 2023-07-01
+    reproducibility_code: https://github.com/zseljee/re-faircal
+    reproducibility_venue: ReScience C 2023
+  cartoon-x-v2:
+    id: 2110.03485-v2
+    paper: https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136720439.pdf
+    arxiv_url: https://arxiv.org/pdf/2110.03485
+    code: https://github.com/skmda37/CartoonX
+    reproducibility_paper: https://zenodo.org/record/8173721/files/article.pdf
+    reproducibility_paper_date: 2023-07-01
+    reproducibility_code: https://github.com/KAISER1997/FACTAI_CARTOONX_Reproduce
+    reproducibility_venue: ReScience C 2023
+  lassi:
+    id: 2111.13650
+    paper: https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136730535.pdf
+    arxiv_url: https://arxiv.org/pdf/2111.13650
+    code: https://github.com/eth-sri/lassi
+    reproducibility_paper: https://zenodo.org/record/8173725/files/article.pdf
+    reproducibility_paper_date: 2023-07-01
+    reproducibility_code: https://github.com/Mametchiii/lassi-reproducibility
+    reproducibility_venue: ReScience C 2023
+  vnca:
+    id: 2201.12360
+    paper: https://openreview.net/pdf?id=7fFO4cMBx_9
+    arxiv_url: https://arxiv.org/pdf/2201.12360
+    code: https://github.com/rasmusbergpalm/vnca
+    reproducibility_paper: https://zenodo.org/record/8173729/files/article.pdf
+    reproducibility_paper_date: 2023-07-01
+    reproducibility_code: https://github.com/albertaillet/vnca
+    reproducibility_venue: ReScience C 2023
+  amulap:
+    id: 2022.naacl-main.401
+    paper: https://aclanthology.org/2022.naacl-main.401.pdf
+    arxiv_url: https://arxiv.org/pdf/2204.06305
+    code: https://github.com/HanNight/AMuLaP
+    reproducibility_paper: https://zenodo.org/record/8173735/files/article.pdf
+    reproducibility_paper_date: 2023-07-01
+    reproducibility_code: https://github.com/vicliv/AMuLaP-Reproduction
+    reproducibility_venue: ReScience C 2023
+  g-mixup:
+    id: 2202.07179
+    paper: https://proceedings.mlr.press/v162/han22c/han22c.pdf
+    arxiv_url: https://arxiv.org/pdf/2202.07179
+    code: https://github.com/ahxt/g-mixup
+    reproducibility_paper: https://zenodo.org/record/8173737/files/article.pdf
+    reproducibility_paper_date: 2023-07-01
+    reproducibility_code: https://github.com/shelbycox/EECS-553-GMixup-Reproduction
+    reproducibility_venue: ReScience C 2023
+  quantifying-societal-bias-amplification-in-image-captioning-v2:
+    id: Hirota_Quantifying_Societal_Bias_Amplification_in_Image_Captioning_CVPR_2022_paper-v2
+    paper: https://openaccess.thecvf.com/content/CVPR2022/papers/Hirota_Quantifying_Societal_Bias_Amplification_in_Image_Captioning_CVPR_2022_paper.pdf
+    arxiv_url: https://arxiv.org/pdf/2203.15395
+    code: https://github.com/rebnej/lick-caption-bias
+    reproducibility_paper: https://zenodo.org/record/8173741/files/article.pdf
+    reproducibility_paper_date: 2023-07-01
+    reproducibility_code: https://github.com/eggonz/relic-caption-bias
+    reproducibility_venue: ReScience C 2023
+  cross-walk-v2:
+    id: 2105.02725-v2
+    paper: https://cdn.aaai.org/ojs/21454/21454-13-25467-1-2-20220628.pdf
+    arxiv_url: https://arxiv.org/pdf/2105.02725
+    code: https://github.com/ahmadkhajehnejad/CrossWalk
+    reproducibility_paper: https://zenodo.org/record/8173747/files/article.pdf
+    reproducibility_paper_date: 2023-07-01
+    reproducibility_code: https://github.com/Bentgm17/Fact2022_27
+    reproducibility_venue: ReScience C 2023
+  cross-walk-v3:
+    id: 2105.02725-v3
+    paper: https://cdn.aaai.org/ojs/21454/21454-13-25467-1-2-20220628.pdf
+    arxiv_url: https://arxiv.org/pdf/2105.02725
+    code: https://github.com/ahmadkhajehnejad/CrossWalk
+    reproducibility_paper: https://zenodo.org/record/8173749/files/article.pdf
+    reproducibility_paper_date: 2023-07-01
+    reproducibility_code: https://github.com/Dawlau/FACT-AI
+    reproducibility_venue: ReScience C 2023
+  mae:
+    id: 2111.06377
+    paper: https://openaccess.thecvf.com/content/CVPR2022/papers/He_Masked_Autoencoders_Are_Scalable_Vision_Learners_CVPR_2022_paper.pdf
+    appendix: https://openaccess.thecvf.com/content/CVPR2022/supplemental/He_Masked_Autoencoders_Are_CVPR_2022_supplemental.pdf
+    arxiv_url: https://arxiv.org/pdf/2111.06377
+    code: https://github.com/facebookresearch/mae
+    reproducibility_paper: https://zenodo.org/record/8173751/files/article.pdf
+    reproducibility_paper_date: 2023-07-01
+    reproducibility_code: https://github.com/MLReproHub/SMAE
+    reproducibility_venue: ReScience C 2023
+  dig-v3:
+    id: 2102.05152-v3
+    paper: https://proceedings.mlr.press/v139/yuan21c/yuan21c.pdf
+    appendix: https://proceedings.mlr.press/v139/yuan21c/yuan21c-supp.pdf
+    arxiv_url: https://arxiv.org/pdf/2102.05152
+    code: https://github.com/divelab/DIG
+    reproducibility_paper: https://zenodo.org/record/8173753/files/article.pdf
+    reproducibility_paper_date: 2023-07-01
+    reproducibility_code: https://github.com/ymahlau/subgraphx
+    reproducibility_venue: ReScience C 2023
+  towards-understanding-grokking:
+    id: 2205.10343
+    paper: https://papers.neurips.cc/paper_files/paper/2022/file/dfc310e81992d2e4cedc09ac47eff13e-Paper-Conference.pdf
+    arxiv_url: https://arxiv.org/pdf/2205.10343
+    code: https://github.com/ejmichaud/grokking-squared
+    reproducibility_paper: https://zenodo.org/record/8173755/files/article.pdf
+    reproducibility_paper_date: 2023-07-01
+    reproducibility_code: https://github.com/isadrtdinov/grokking-reproduction
+    reproducibility_venue: ReScience C 2023
+  bet:
+    id: 2206.11251
+    paper: https://proceedings.neurips.cc/paper_files/paper/2022/file/90d17e882adbdda42349db6f50123817-Paper-Conference.pdf
+    arxiv_url: https://arxiv.org/pdf/2206.11251
+    code: https://github.com/notmahi/bet
+    reproducibility_paper: https://zenodo.org/record/8173757/files/article.pdf
+    reproducibility_paper_date: 2023-07-01
+    reproducibility_code: https://github.com/skandermoalla/bet-reproduction
+    reproducibility_venue: ReScience C 2023
+  g-mixup-v2:
+    id: 2202.07179-v2
+    paper: https://proceedings.mlr.press/v162/han22c/han22c.pdf
+    arxiv_url: https://arxiv.org/pdf/2202.07179
+    code: https://github.com/ahxt/g-mixup
+    reproducibility_paper: https://zenodo.org/record/8173650/files/article.pdf
+    reproducibility_paper_date: 2023-07-01
+    reproducibility_code: https://github.com/eomeragic1/g-mixup-reproducibility
+    reproducibility_venue: ReScience C 2023
+  counterfactual-generative-networks:
+    id: 2101.06046
+    paper: https://openreview.net/pdf?id=BXewfAYMmJw
+    arxiv_url: https://arxiv.org/pdf/2101.06046
+    code: https://github.com/autonomousvision/counterfactual_generative_networks
+    reproducibility_paper: https://zenodo.org/record/6574625/files/article.pdf
+    reproducibility_paper_date: 2022-05-01
+    reproducibility_code: https://github.com/ambekarsameer96/FACT_AI
+    reproducibility_venue: ML Reproducibility Challenge 2021
+  when-does-self-supervision-improve-few-shot-learning:
+    id: 1910.03560v2
+    paper: https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123520630.pdf
+    arxiv_url: https://arxiv.org/pdf/1910.03560v2
+    code: https://github.com/cvl-umass/fsl-ssl
+    reproducibility_paper: https://zenodo.org/record/6574629/files/article.pdf
+    reproducibility_paper_date: 2022-05-01
+    reproducibility_code: https://github.com/ashok-arjun/MLRC-2021-Few-Shot-Learning-And-Self-Supervision
+    reproducibility_venue: ML Reproducibility Challenge 2021
+  counterfactual-generative-networks-v2:
+    id: 2101.06046
+    paper: https://openreview.net/pdf?id=BXewfAYMmJw
+    arxiv_url: https://arxiv.org/pdf/2101.06046
+    code: https://github.com/autonomousvision/counterfactual_generative_networks
+    reproducibility_paper: https://zenodo.org/record/6574635/files/article.pdf
+    reproducibility_paper_date: 2022-05-01
+    reproducibility_code: https://github.com/danilodegoede/fact-team3
+    reproducibility_venue: ML Reproducibility Challenge 2021
+  rideshare:
+    id: 2110.03524
+    paper: https://www.ijcai.org/proceedings/2021/0051.pdf
+    arxiv_url: https://arxiv.org/pdf/2110.03524
+    code: https://github.com/naveenr414/ijcai-rideshare
+    reproducibility_paper: https://zenodo.org/record/6574637/files/article.pdf
+    reproducibility_paper_date: 2022-05-01
+    reproducibility_code: https://github.com/reproducibilityaccount/reproducing-ridesharing
+    reproducibility_venue: ML Reproducibility Challenge 2021
+  sks:
+    id: 2021.acl-long.556
+    paper: https://aclanthology.org/2021.acl-long.556.pdf
+    code: https://github.com/1783696285/SKS
+    reproducibility_paper: https://zenodo.org/record/6574639/files/article.pdf
+    reproducibility_paper_date: 2022-05-01
+    reproducibility_code: https://github.com/matteobrv/repro-SKS
+    reproducibility_venue: ML Reproducibility Challenge 2021
+  scouter:
+    id: 2009.06138
+    paper: https://openaccess.thecvf.com/content/ICCV2021/papers/Li_SCOUTER_Slot_Attention-Based_Classifier_for_Explainable_Image_Recognition_ICCV_2021_paper.pdf
+    appendix: https://openaccess.thecvf.com/content/ICCV2021/supplemental/Li_SCOUTER_Slot_Attention-Based_ICCV_2021_supplemental.pdf
+    arxiv_url: https://arxiv.org/pdf/2009.06138
+    code: https://github.com/wbw520/scouter
+    reproducibility_paper: https://zenodo.org/record/6574641/files/article.pdf
+    reproducibility_paper_date: 2022-05-01
+    reproducibility_code: https://github.com/kayatb/reproduce_SCOUTER
+    reproducibility_venue: ML Reproducibility Challenge 2021
+  adabelief-optimizer:
+    id: 2010.07468
+    paper: https://proceedings.neurips.cc/paper/2020/file/d9d4f495e875a2e075a1a4a6e1b9770f-Paper.pdf
+    arxiv_url: https://arxiv.org/pdf/2010.07468
+    code: https://github.com/juntang-zhuang/Adabelief-Optimizer
+    reproducibility_paper: https://zenodo.org/record/6574643/files/article.pdf
+    reproducibility_paper_date: 2022-05-01
+    reproducibility_code: https://github.com/anirudhb11/Adabelief-Optimizer-RC
+    reproducibility_venue: ML Reproducibility Challenge 2021
+  ganspace:
+    id: 2004.02546
+    paper: https://proceedings.neurips.cc/paper/2020/file/6fe43269967adbb64ec6149852b5cc3e-Paper.pdf
+    arxiv_url: https://arxiv.org/pdf/2004.02546
+    code: https://github.com/harskish/ganspace
+    reproducibility_paper: https://zenodo.org/record/6574645/files/article.pdf
+    reproducibility_paper_date: 2022-05-01
+    reproducibility_code: https://github.com/midsterx/ReGANSpace
+    reproducibility_venue: ML Reproducibility Challenge 2021
+  ats-privacy:
+    id: 2212.06322
+    paper: https://arxiv.org/pdf/2212.06322
+    arxiv_url: https://arxiv.org/pdf/2212.06322
+    code: https://github.com/gaow0007/ATSPrivacy
+    reproducibility_paper: https://zenodo.org/record/6574647/files/article.pdf
+    reproducibility_paper_date: 2022-05-01
+    reproducibility_code: https://github.com/stfwn/ats-privacy-replication
+    reproducibility_venue: ML Reproducibility Challenge 2021
+  clusterbased-isotropy-enhancement:
+    id: 2101.00000
+    paper: https://aclanthology.org/2021.acl-short.73.pdf
+    arxiv_url: https://arxiv.org/pdf/2106.01183
+    code: https://github.com/Sara-Rajaee/clusterbased_isotropy_enhancement
+    reproducibility_paper: https://zenodo.org/record/6574649/files/article.pdf
+    reproducibility_paper_date: 2022-05-01
+    reproducibility_code: https://github.com/Benidzu/isotropy_reproduction
+    reproducibility_venue: ML Reproducibility Challenge 2021
+  variational-fair-clustering:
+    id: 1906.08207
+    paper: https://cdn.aaai.org/ojs/17336/17336-13-20830-1-2-20210518.pdf
+    arxiv_url: https://arxiv.org/pdf/1906.08207
+    code: https://github.com/imtiazziko/Variational-Fair-Clustering
+    reproducibility_paper: https://zenodo.org/record/6574653/files/article.pdf
+    reproducibility_paper_date: 2022-05-01
+    reproducibility_code: https://github.com/MarkiemarkF/FACT
+    reproducibility_venue: ML Reproducibility Challenge 2021
+  explaining-in-style:
+    id: 2104.13369
+    paper: https://openaccess.thecvf.com/content/ICCV2021/papers/Lang_Explaining_in_Style_Training_a_GAN_To_Explain_a_Classifier_ICCV_2021_paper.pdf
+    arxiv_url: https://arxiv.org/pdf/2104.13369
+    code: https://github.com/google/explaining-in-style
+    reproducibility_paper: https://zenodo.org/record/6574655/files/article.pdf
+    reproducibility_paper_date: 2022-05-01
+    reproducibility_code: https://github.com/irenepap2/Re_StylEx.git
+    reproducibility_venue: ML Reproducibility Challenge 2021
+  fair-robust:
+    id: 2010.06121
+    paper: https://proceedings.mlr.press/v139/xu21b/xu21b.pdf
+    arxiv_url: https://arxiv.org/pdf/2010.06121
+    code: https://github.com/hannxu123/fair_robust
+    reproducibility_paper: https://zenodo.org/record/6574657/files/article.pdf
+    reproducibility_paper_date: 2022-05-01
+    reproducibility_code: https://github.com/Ian-Hardy/Fair_Robust_Modeling
+    reproducibility_venue: ML Reproducibility Challenge 2021
+  ssl:
+    id: 2102.06810
+    paper: https://proceedings.mlr.press/v139/tian21a/tian21a.pdf
+    arxiv_url: https://arxiv.org/pdf/2102.06810
+    code: https://github.com/facebookresearch/luckmatters/tree/master/ssl
+    reproducibility_paper: https://zenodo.org/record/6574659/files/article.pdf
+    reproducibility_paper_date: 2022-05-01
+    reproducibility_code: https://github.com/miszkur/SelfSupervisedLearning
+    reproducibility_venue: ML Reproducibility Challenge 2021
+  robustdg:
+    id: 2006.07500
+    paper: https://proceedings.mlr.press/v139/mahajan21b/mahajan21b.pdf
+    arxiv_url: https://arxiv.org/pdf/2006.07500
+    code: https://github.com/microsoft/robustdg
+    reproducibility_paper: https://zenodo.org/record/6574661/files/article.pdf
+    reproducibility_paper_date: 2022-05-01
+    reproducibility_code: https://github.com/rjiles/causalmatching
+    reproducibility_venue: ML Reproducibility Challenge 2021
+  exacerbating-algorithmic-bias-through-fairness-attacks:
+    id: 2012.08723
+    paper: https://arxiv.org/pdf/2012.08723
+    arxiv_url: https://arxiv.org/pdf/2012.08723
+    code: https://github.com/Ninarehm/attack
+    reproducibility_paper: https://zenodo.org/record/6574663/files/article.pdf
+    reproducibility_paper_date: 2022-05-01
+    reproducibility_code: https://github.com/DCHamerslag/FACT
+    reproducibility_venue: ML Reproducibility Challenge 2021
+  scmp:
+    id: 2103.01826
+    paper: https://proceedings.mlr.press/v139/levanon21a/levanon21a.pdf
+    arxiv_url: https://arxiv.org/pdf/2103.01826
+    code: https://github.com/SagiLevanon1/scmp
+    reproducibility_paper: https://zenodo.org/record/6574665/files/article.pdf
+    reproducibility_paper_date: 2022-05-01
+    reproducibility_code: https://github.com/GuillyK/FACT-ai
+    reproducibility_venue: ML Reproducibility Challenge 2021
+  explaining-in-style-v2:
+    id: 2104.13369-v2
+    paper: https://openaccess.thecvf.com/content/ICCV2021/papers/Lang_Explaining_in_Style_Training_a_GAN_To_Explain_a_Classifier_ICCV_2021_paper.pdf
+    arxiv_url: https://arxiv.org/pdf/2104.13369
+    code: https://github.com/google/explaining-in-style
+    reproducibility_paper: https://zenodo.org/record/6574667/files/article.pdf
+    reproducibility_paper_date: 2022-05-01
+    reproducibility_code: https://github.com/Gijsvanmeer/FACTinAI
+    reproducibility_venue: ML Reproducibility Challenge 2021
+  exacerbating-algorithmic-bias-through-fairness-attacks-v2:
+    id: 2012.08723-v2
+    paper: https://arxiv.org/pdf/2012.08723
+    arxiv_url: https://arxiv.org/pdf/2012.08723
+    code: https://github.com/Ninarehm/attack 
+    reproducibility_paper: https://zenodo.org/record/6574669/files/article.pdf
+    reproducibility_paper_date: 2022-05-01
+    reproducibility_code: https://github.com/imandrealombardo/FACT-AI
+    reproducibility_venue: ML Reproducibility Challenge 2021
+  bana:
+    id: 2104.00905
+    paper: https://openaccess.thecvf.com/content/CVPR2021/papers/Oh_Background-Aware_Pooling_and_Noise-Aware_Loss_for_Weakly-Supervised_Semantic_Segmentation_CVPR_2021_paper.pdf
+    appendix: https://openaccess.thecvf.com/content/CVPR2021/supplemental/Oh_Background-Aware_Pooling_and_CVPR_2021_supplemental.pdf
+    arxiv_url: https://arxiv.org/pdf/2104.00905
+    code: https://github.com/cvlab-yonsei/BANA
+    reproducibility_paper: https://zenodo.org/record/6574677/files/article.pdf
+    reproducibility_paper_date: 2022-05-01
+    reproducibility_code: https://github.com/karan-uppal3/BANA
+    reproducibility_venue: ML Reproducibility Challenge 2021
+  rewinding-iclr20:
+    id: 2003.02389
+    paper: https://openreview.net/pdf?id=S1gSj0NKvB
+    arxiv_url: https://arxiv.org/pdf/2003.02389
+    code: https://github.com/lottery-ticket/rewinding-iclr20-public
+    reproducibility_paper: https://zenodo.org/record/6574679/files/article.pdf
+    reproducibility_paper_date: 2022-05-01
+    reproducibility_code: https://github.com/gahaalt/reproducing-comparing-rewinding-and-finetuning
+    reproducibility_venue: ML Reproducibility Challenge 2021
+  exacerbating-algorithmic-bias-through-fairness-attacks-v3:
+    id: 2012.08723-v3
+    paper: https://arxiv.org/pdf/2012.08723
+    arxiv_url: https://arxiv.org/pdf/2012.08723
+    code: https://github.com/Ninarehm/attack
+    reproducibility_paper: https://zenodo.org/record/6574681/files/article.pdf
+    reproducibility_paper_date: 2022-05-01
+    reproducibility_code: https://github.com/toliz/fairness-attacks
+    reproducibility_venue: ML Reproducibility Challenge 2021
+  rideshare-v2:
+    id: 2110.03524-v2
+    paper: https://www.ijcai.org/proceedings/2021/0051.pdf
+    arxiv_url: https://arxiv.org/pdf/2110.03524
+    code: https://github.com/naveenr414/ijcai-rideshare
+    reproducibility_paper: https://zenodo.org/record/6574683/files/article.pdf
+    reproducibility_paper_date: 2022-05-01
+    reproducibility_code: https://github.com/Veranep/rideshare-replication
+    reproducibility_venue: ML Reproducibility Challenge 2021
+  gan-2-shape:
+    id: 2011.00844
+    paper: https://openreview.net/forum?id=FGqiDsBUKL0
+    arxiv_url: https://arxiv.org/pdf/2011.00844
+    code: https://github.com/XingangPan/GAN2Shape
+    reproducibility_paper: https://zenodo.org/record/6574685/files/article.pdf
+    reproducibility_paper_date: 2022-05-01
+    reproducibility_code: https://github.com/alessioGalatolo/GAN-2D-to-3D
+    reproducibility_venue: ML Reproducibility Challenge 2021
+  vav-icml:
+    id: 2012.01557
+    paper: https://proceedings.mlr.press/v139/brown21a/brown21a.pdf
+    arxiv_url: https://arxiv.org/pdf/2012.01557
+    code: https://github.com/dsbrown1331/vav-icml
+    reproducibility_paper: https://zenodo.org/record/6574687/files/article.pdf
+    reproducibility_paper_date: 2022-05-01
+    reproducibility_code: https://github.com/AIExL/vav_rc2021
+    reproducibility_venue: ML Reproducibility Challenge 2021
+  learn-reference-pr:
+    id: 2007.14621
+    paper: https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123750426.pdf
+    arxiv_url: https://arxiv.org/pdf/2007.14621
+    code: https://github.com/CSIPlab/learn-reference-pr
+    reproducibility_paper: https://zenodo.org/record/6574695/files/article.pdf
+    reproducibility_paper_date: 2022-05-01
+    reproducibility_code: https://github.com/tuelwer/machine-learning-reproducibility-challenge-2021
+    reproducibility_venue: ML Reproducibility Challenge 2021
+  social-nce:
+    id: 2012.11717
+    paper: https://openaccess.thecvf.com/content/ICCV2021/papers/Liu_Social_NCE_Contrastive_Learning_of_Socially-Aware_Motion_Representations_ICCV_2021_paper.pdf
+    appendix: https://openaccess.thecvf.com/content/ICCV2021/supplemental/Liu_Social_NCE_Contrastive_ICCV_2021_supplemental.pdf
+    arxiv_url: https://arxiv.org/pdf/2012.11717
+    code: https://github.com/vita-epfl/social-nce
+    reproducibility_paper: https://zenodo.org/record/6574697/files/article.pdf
+    reproducibility_paper_date: 2022-05-01
+    reproducibility_code: https://github.com/RoopsaSen/social-nce-trajectron-plus-plus
+    reproducibility_venue: ML Reproducibility Challenge 2021
+  graph-edit-networks:
+    id: dlEJsyHGeaL
+    paper: https://openreview.net/pdf?id=dlEJsyHGeaL
+    code: https://gitlab.com/bpaassen/graph-edit-networks
+    reproducibility_paper: https://zenodo.org/record/6574701/files/article.pdf
+    reproducibility_paper_date: 2022-05-01
+    reproducibility_code: https://github.com/MarusaOrazem/reproducibility_challenge
+    reproducibility_venue: ML Reproducibility Challenge 2021
+  learning-to-count-everything:
+    id: 2104.08391
+    paper: https://openaccess.thecvf.com/content/CVPR2021/papers/Ranjan_Learning_To_Count_Everything_CVPR_2021_paper.pdf
+    appendix: https://openaccess.thecvf.com/content/CVPR2021/supplemental/Ranjan_Learning_To_Count_CVPR_2021_supplemental.pdf
+    arxiv_url: https://arxiv.org/pdf/2104.08391
+    code: https://github.com/cvlab-stonybrook/LearningToCountEverything
+    reproducibility_paper: https://zenodo.org/record/6574703/files/article.pdf
+    reproducibility_paper_date: 2022-05-01
+    reproducibility_code: https://github.com/tersekmatija/re-LearningToCountEverything
+    reproducibility_venue: ML Reproducibility Challenge 2021
+  bad-seeds:
+    id: 2021.acl-long.148
+    paper: https://aclanthology.org/2021.acl-long.148.pdf
+    code: https://github.com/maria-antoniak/bad-seeds
+    reproducibility_paper: https://zenodo.org/record/6574705/files/article.pdf
+    reproducibility_paper_date: 2022-05-01
+    reproducibility_code: https://github.com/thesofakillers/badder-seeds
+    reproducibility_venue: ML Reproducibility Challenge 2021
+  explaining-in-style-v3:
+    id: 2104.13369-v3
+    paper: https://openaccess.thecvf.com/content/ICCV2021/papers/Lang_Explaining_in_Style_Training_a_GAN_To_Explain_a_Classifier_ICCV_2021_paper.pdf
+    arxiv_url: https://arxiv.org/pdf/2104.13369
+    code: https://github.com/google/explaining-in-style
+    reproducibility_paper: https://zenodo.org/record/6574709/files/article.pdf
+    reproducibility_paper_date: 2022-05-01
+    reproducibility_code: https://github.com/NoahVl/Explaining-In-Style-Reproducibility-Study
+    reproducibility_venue: ML Reproducibility Challenge 2021
+  decaf:
+    id: 2110.12884
+    paper: https://proceedings.nips.cc/paper/2021/file/ba9fab001f67381e56e410575874d967-Paper.pdf
+    arxiv_url: https://arxiv.org/pdf/2110.12884
+    code: https://github.com/trentkyono/DECAF
+    reproducibility_paper: https://zenodo.org/record/6574711/files/article.pdf
+    reproducibility_paper_date: 2022-05-01
+    reproducibility_code: https://github.com/ShuaiWang97/UvA_FACT2022
+    reproducibility_venue: ML Reproducibility Challenge 2021
+  ats-privacy-v2: 
+    id: 2212.06322-v2
+    paper: https://arxiv.org/pdf/2212.06322
+    arxiv_url: https://arxiv.org/pdf/2212.06322
+    code: https://github.com/gaow0007/ATSPrivacy
+    reproducibility_paper: https://zenodo.org/record/6574713/files/article.pdf
+    reproducibility_paper_date: 2022-05-01
+    reproducibility_code: https://github.com/Linkerbrain/fact-ai-2021-project
+    reproducibility_venue: ML Reproducibility Challenge 2021
+  gnn-ppi:
+    id: 2105.06709
+    paper: https://www.ijcai.org/proceedings/2021/0506.pdf
+    arxiv_url: https://arxiv.org/pdf/2105.06709
+    code: https://github.com/lvguofeng/GNN_PPI
+    reproducibility_paper: https://zenodo.org/record/6574721/files/article.pdf
+    reproducibility_paper_date: 2022-05-01
+    reproducibility_code: https://github.com/zrimseku/Reproducibility-Challenge
+    reproducibility_venue: ML Reproducibility Challenge 2021
+  nondeterminism-instability:
+    id: 2103.04514
+    paper: https://proceedings.mlr.press/v139/summers21a/summers21a.pdf
+    arxiv_url: https://arxiv.org/pdf/2103.04514
+    code: https://github.com/ceciliaresearch/nondeterminism_instability
+    reproducibility_paper: https://zenodo.org/record/6574623/files/article.pdf
+    reproducibility_paper_date: 2022-05-01
+    reproducibility_code: https://github.com/wi25hoy/MLRC21_Nondeterminism
+    reproducibility_venue: ML Reproducibility Challenge 2021
+  explaining-groups-of-points:
+    id: nihms-1735000
+    paper: https://pmc.ncbi.nlm.nih.gov/articles/PMC8442997/pdf/nihms-1735000.pdf
+    arxiv_url: https://arxiv.org/pdf/2003.01640
+    code: https://github.com/GDPlumb/ELDR
+    reproducibility_paper: https://zenodo.org/record/4835602/files/article.pdf
+    reproducibility_paper_date: 2021-05-01
+    reproducibility_code: https://github.com/elfrink1/FACT
+    reproducibility_venue: ReScience C 2021
+  snake:
+    id: 2006.08195
+    paper: https://papers.neurips.cc/paper_files/paper/2020/file/1160453108d3e537255e9f7b931f4e90-Paper.pdf
+    arxiv_url: https://arxiv.org/pdf/2006.08195
+    code: https://github.com/liu-ziyin/NeurIPS_2020_Snake
+    reproducibility_paper: https://zenodo.org/record/4833389/files/article.pdf
+    reproducibility_paper_date: 2021-05-01
+    reproducibility_code: https://github.com/mayurak47/Reproducibility_Challenge
+    reproducibility_venue: ReScience C 2021
+  deep-fair-clustering:
+    id: Li_Deep_Fair_Clustering_for_Visual_Learning_CVPR_2020_paper
+    paper: https://openaccess.thecvf.com/content_CVPR_2020/papers/Li_Deep_Fair_Clustering_for_Visual_Learning_CVPR_2020_paper.pdf
+    appendix: https://openaccess.thecvf.com/content_CVPR_2020/supplemental/Li_Deep_Fair_Clustering_CVPR_2020_supplemental.pdf
+    code: https://github.com/brandeis-machine-learning/DeepFairClustering
+    reproducibility_paper: https://zenodo.org/record/4833547/files/article.pdf
+    reproducibility_paper_date: 2021-05-01
+    reproducibility_code: https://github.com/topteulen/UVA-FACT
+    reproducibility_venue: ReScience C 2021
+  bayesbinn:
+    id: 2002.10778
+    paper: https://proceedings.mlr.press/v119/meng20a/meng20a.pdf
+    arxiv_url: https://arxiv.org/pdf/2002.10778
+    code: https://github.com/team-approx-bayes/BayesBiNN
+    reproducibility_paper: https://zenodo.org/record/4833681/files/article.pdf
+    reproducibility_paper_date: 2021-05-01
+    reproducibility_code: https://github.com/prateekstark/training-binary-neural-network
+    reproducibility_venue: ReScience C 2021
+  deceptive-attention:
+    id: 2020.acl-main.432
+    paper: https://aclanthology.org/2020.acl-main.432.pdf
+    arxiv_url: https://arxiv.org/pdf/1909.07913
+    code: https://github.com/danishpruthi/deceptive-attention
+    reproducibility_paper: https://zenodo.org/record/4834146/files/article.pdf
+    reproducibility_paper_date: 2021-05-01
+    reproducibility_code: https://github.com/MatPrst/deceptive-attention-reproduced
+    reproducibility_venue: ReScience C 2021
+  pg-explainer:
+    id: 2011.04573
+    paper: https://proceedings.nips.cc/paper/2020/file/e37b08dd3015330dcbb5d6663667b8b8-Paper.pdf
+    arxiv_url: https://arxiv.org/pdf/2011.04573
+    code: https://github.com/flyingdoog/PGExplainer
+    reproducibility_paper: https://zenodo.org/record/4834242/files/article.pdf
+    reproducibility_paper_date: 2021-05-01
+    reproducibility_code: https://github.com/LarsHoldijk/RE-ParameterizedExplainerForGraphNeuralNetworks
+    reproducibility_venue: ReScience C 2021
+  fixmatch:
+    id: 2001.07685
+    paper: https://papers.nips.cc/paper/2020/file/06964dce9addb1c5cb5d6e3d9838f733-Paper.pdf
+    arxiv_url: https://arxiv.org/pdf/2001.07685
+    code: https://github.com/google-research/fixmatch
+    reproducibility_paper: https://zenodo.org/record/4834442/files/article.pdf
+    reproducibility_paper_date: 2021-05-01
+    reproducibility_code: https://github.com/Celiali/FixMatch
+    reproducibility_venue: ReScience C 2021
+  mnad:
+    id: 2003.13228
+    paper: https://openaccess.thecvf.com/content_CVPR_2020/papers/Park_Learning_Memory-Guided_Normality_for_Anomaly_Detection_CVPR_2020_paper.pdf
+    arxiv_url: https://arxiv.org/pdf/2003.13228
+    code: https://github.com/cvlab-yonsei/MNAD
+    reproducibility_paper: https://zenodo.org/record/4834610/files/article.pdf
+    reproducibility_paper_date: 2021-05-01
+    reproducibility_code: https:/github.com/alchemi5t/MNADrc
+    reproducibility_venue: ReScience C 2021
+  sadnet:
+    id: 2001.10291
+    paper: https://www.ecva.net/papers/eccv_2020/papers_ECCV/papers/123750171.pdf
+    arxiv_url: https://arxiv.org/pdf/2001.10291
+    code: https://github.com/JimmyChame/SADNet
+    reproducibility_paper: https://zenodo.org/record/4834672/files/article.pdf
+    reproducibility_paper_date: 2021-05-01
+    reproducibility_code: https://github.com/sami-automatic/SADNet_Replication
+    reproducibility_venue: ReScience C 2021
+  embedkgqa:
+    id: 2020.acl-main.412
+    paper: https://aclanthology.org/2020.acl-main.412.pdf
+    code: https://github.com/malllabiisc/EmbedKGQA
+    reproducibility_paper: https://zenodo.org/record/4834942/files/article.pdf
+    reproducibility_paper_date: 2021-05-01
+    reproducibility_code: https://github.com/jishnujayakumar/MLRC2020-EmbedKGQA
+    reproducibility_venue: ReScience C 2021
+  explaining-groups-of-points-v2:
+    id: nihms-1735000-v2
+    paper: https://pmc.ncbi.nlm.nih.gov/articles/PMC8442997/pdf/nihms-1735000.pdf
+    arxiv_url: https://arxiv.org/pdf/2003.01640
+    code: https://github.com/GDPlumb/ELDR
+    reproducibility_paper: https://zenodo.org/record/4835056/files/article.pdf
+    reproducibility_paper_date: 2021-05-01
+    reproducibility_code: https://github.com/damiaanr/fact-ai
+    reproducibility_venue: ReScience C 2021
+  iflow:
+    id: 1909.12555
+    paper: https://openreview.net/pdf?id=SklOUpEYvB
+    arxiv_url: https://arxiv.org/pdf/1909.12555
+    code: https://github.com/MathsShen/iFlow
+    reproducibility_paper: https://zenodo.org/record/4839595/files/article.pdf
+    reproducibility_paper_date: 2021-05-01
+    reproducibility_code: https://github.com/HiddeLekanne/Reproducibility-Challenge-iFlow
+    reproducibility_venue: ReScience C 2021
+  psetae:
+    id: 1911.07757
+    paper: https://openaccess.thecvf.com/content_CVPR_2020/papers/Garnot_Satellite_Image_Time_Series_Classification_With_Pixel-Set_Encoders_and_Temporal_CVPR_2020_paper.pdf
+    appendix: https://openaccess.thecvf.com/content_CVPR_2020/supplemental/Garnot_Satellite_Image_Time_CVPR_2020_supplemental.pdf
+    arxiv_url: https://arxiv.org/pdf/1911.07757
+    code: https://github.com/VSainteuf/pytorch-psetae
+    reproducibility_paper: https://zenodo.org/record/4835356/files/article.pdf
+    reproducibility_paper_date: 2021-05-01
+    reproducibility_code: https://github.com/maja601/pytorch-psetae
+    reproducibility_venue: ReScience C 2021
+  rigl:
+    id: 1911.11134
+    paper: https://proceedings.mlr.press/v119/evci20a/evci20a.pdf
+    arxiv_url: https://arxiv.org/pdf/1911.11134
+    code: https://github.com/google-research/rigl
+    reproducibility_paper: https://zenodo.org/record/4835564/files/article.pdf
+    reproducibility_paper_date: 2021-05-01
+    reproducibility_code: https://github.com/varun19299/rigl-reproducibility
+    reproducibility_venue: ReScience C 2021
+  interpretable-attention:
+    id: 2020.acl-main.387
+    paper: https://aclanthology.org/2020.acl-main.387.pdf
+    arxiv_url: https://arxiv.org/pdf/2004.14243
+    code: https://github.com/akashkm99/Interpretable-Attention
+    reproducibility_paper: https://zenodo.org/record/4835592/files/article.pdf
+    reproducibility_paper_date: 2021-05-01
+    reproducibility_code: https://github.com/MotherOfUnicorns/FACT_AI_project
+    reproducibility_venue: ReScience C 2021
+  generative-causal-explanations:
+    id: 2006.13913
+    paper: https://proceedings.neurips.cc/paper/2020/file/3a93a609b97ec0ab0ff5539eb79ef33a-Paper.pdf
+    arxiv_url: https://arxiv.org/pdf/2006.13913
+    code: https://github.com/siplab-gt/generative-causal-explanations
+    reproducibility_paper: https://zenodo.org/record/4835600/files/article.pdf
+    reproducibility_paper_date: 2021-05-01
+    reproducibility_code: https://github.com/shin-ee-chen/UvA_FACT_2021
+    reproducibility_venue: ReScience C 2021
+  rethinking-bnn:
+    id: 8fa91caf895d7b553058c4130e719f188fb3ffd2
+    paper: https://proceedings.neurips.cc/paper_files/paper/2019/file/9ca8c9b0996bbf05ae7753d34667a6fd-Paper.pdf
+    arxiv_url: https://arxiv.org/pdf/1906.02107
+    code: https://github.com/plumerai/rethinking-bnn-optimization
+    reproducibility_paper: https://zenodo.org/record/3818607/files/article.pdf
+    reproducibility_paper_date: 2020-05-01
+    reproducibility_code: https://github.com/nancy-nayak/rethinking-bnn
+    reproducibility_venue: NeurIPS 2019 Reproducibility Challenge
+  ncsn:
+    id: 1907.05600
+    paper: https://papers.neurips.cc/paper_files/paper/2019/file/3001ef257407d5a371a96dcd947c7d93-Paper.pdf
+    arxiv_url: https://arxiv.org/pdf/1907.05600
+    code: https://github.com/ermongroup/ncsn
+    reproducibility_paper: https://zenodo.org/record/3818609/files/article.pdf
+    reproducibility_paper_date: 2020-05-01
+    reproducibility_code: https://github.com/Xemnas0/NCSN-TF2.0
+    reproducibility_venue: NeurIPS 2019 Reproducibility Challenge
+  unsupervised-scalable-representation-learning-time-series:
+    id: 1901.10738
+    paper: https://papers.neurips.cc/paper_files/paper/2019/file/53c6de78244e9f528eb3e1cda69699bb-Paper.pdf
+    arxiv_url: https://arxiv.org/pdf/1901.10738
+    code: https://github.com/White-Link/UnsupervisedScalableRepresentationLearningTimeSeries
+    reproducibility_paper: https://zenodo.org/record/3818613/files/article.pdf
+    reproducibility_paper_date: 2020-05-01
+    reproducibility_code: https://github.com/lilfelix/reproducibility_NeurIPS19
+    reproducibility_venue: NeurIPS 2019 Reproducibility Challenge
+  tmc-anon:
+    id: 1806.08593
+    paper: https://proceedings.neurips.cc/paper_files/paper/2019/file/a6197a578fe7778e8d49a95ac425bcfc-Paper.pdf
+    arxiv_url: https://arxiv.org/pdf/1806.08593
+    code: https://github.com/anonymous-78913/tmc-anon
+    reproducibility_paper: https://zenodo.org/record/3818617/files/article.pdf
+    reproducibility_paper_date: 2020-05-01
+    reproducibility_code: https://github.com/LinuNils/TMC_reproduced
+    reproducibility_venue: NeurIPS 2019 Reproducibility Challenge
+  hamiltonian-nn:
+    id: 1906.01563
+    paper: https://proceedings.neurips.cc/paper_files/paper/2019/file/26cd8ecadce0d4efd6cc8a8725cbd1f8-Paper.pdf
+    arxiv_url: https://arxiv.org/pdf/1906.01563
+    code: https://github.com/greydanus/hamiltonian-nn
+    reproducibility_paper: https://zenodo.org/record/3818621/files/article.pdf
+    reproducibility_paper_date: 2020-05-01
+    reproducibility_code: https://github.com/ayushgarg31/HNN-Neurips2019
+    reproducibility_venue: NeurIPS 2019 Reproducibility Challenge
+  zero-shot-knowledge-transfer:
+    id: 1905.09768
+    paper: https://proceedings.neurips.cc/paper_files/paper/2019/file/fe663a72b27bdc613873fbbb512f6f67-Paper.pdf
+    arxiv_url: https://arxiv.org/pdf/1905.09768
+    code: https://github.com/polo5/ZeroShotKnowledgeTransfer
+    reproducibility_paper: https://zenodo.org/record/3818623/files/article.pdf
+    reproducibility_paper_date: 2020-05-01
+    reproducibility_code: https://github.com/AlexandrosFerles/NIPS_2019_Reproducibilty_Challenge_Zero-shot_Knowledge_Transfer_via_Adversarial_Belief_Matching
+    reproducibility_venue: NeurIPS 2019 Reproducibility Challenge
+  mbpo:
+    id: 1906.08253
+    paper: https://proceedings.neurips.cc/paper_files/paper/2019/file/5faf461eff3099671ad63c6f3f094f7f-Paper.pdf
+    arxiv_url: https://arxiv.org/pdf/1906.08253
+    code: https://github.com/JannerM/mbpo
+    reproducibility_paper: https://zenodo.org/record/3818611/files/article.pdf
+    reproducibility_paper_date: 2020-05-01
+    reproducibility_code: https://github.com/jxu43/replication-mbpo
+    reproducibility_venue: NeurIPS 2019 Reproducibility Challenge
+  atari-ari:
+    id: 1906.08226
+    paper: https://proceedings.neurips.cc/paper_files/paper/2019/file/6fb52e71b837628ac16539c1ff911667-Paper.pdf
+    arxiv_url: https://arxiv.org/pdf/1906.08226
+    code: https://github.com/mila-iqia/atari-representation-learning
+    reproducibility_paper: https://zenodo.org/record/3818625/files/article.pdf
+    reproducibility_paper_date: 2020-05-01
+    reproducibility_code: https://github.com/GabrielAlacchi/atari-ari-extensions
+    reproducibility_venue: NeurIPS 2019 Reproducibility Challenge
+  r2d2:
+    id: 1805.08136
+    paper: https://openreview.net/pdf?id=HyxnZh0ct7
+    arxiv_url: https://arxiv.org/pdf/1805.08136
+    code: https://github.com/bertinetto/r2d2
+    reproducibility_paper: https://zenodo.org/record/3160540/files/article.pdf
+    reproducibility_paper_date: 2019-05-01
+    reproducibility_code: https://github.com/ArnoutDevos/r2d2
+    reproducibility_venue: ICLR Reproducibility Challenge 2019
+  variational-sparse-coding:
+    id: tonolini20a
+    paper: https://proceedings.mlr.press/v115/tonolini20a/tonolini20a.pdf
+    code: https://github.com/ftonolini45/Variational_Sparse_Coding
+    reproducibility_paper: https://zenodo.org/record/3161734/files/article.pdf
+    reproducibility_paper_date: 2019-05-01
+    reproducibility_code: https://github.com/Alfo5123/Variational-Sparse-Coding
+    reproducibility_venue: ICLR Reproducibility Challenge 2019
+  h-detach:
+    id: 1810.03023
+    paper: https://openreview.net/pdf?id=ryf7ioRqFX
+    arxiv_url: https://arxiv.org/pdf/1810.03023
+    code: https://github.com/bhargav104/h-detach
+    reproducibility_paper: https://zenodo.org/record/3162114/files/article.pdf
+    reproducibility_paper_date: 2019-05-01
+    reproducibility_code: https://github.com/dido1998/h-detach
+    reproducibility_venue: ICLR Reproducibility Challenge 2019
+  satellite-image-time-series-classification:
+    id: Garnot_Satellite_Image_Time_Series_Classification_With_Pixel-Set_Encoders_and_Temporal_CVPR_2020_paper
+    paper: https://openaccess.thecvf.com/content_CVPR_2020/papers/Garnot_Satellite_Image_Time_Series_Classification_With_Pixel-Set_Encoders_and_Temporal_CVPR_2020_paper.pdf
+    appendix: https://openaccess.thecvf.com/content_CVPR_2020/supplemental/Garnot_Satellite_Image_Time_CVPR_2020_supplemental.pdf
+    arxiv_url: https://arxiv.org/pdf/1911.07757
+    code: https://github.com/VSainteuf/pytorch-psetae
+    reproducibility_paper: https://openreview.net/pdf?id=r87dMGuauCl
+    reproducibility_paper_date: 2021-04-01
+    reproducibility_code: https://github.com/maja601/RC2020-psetae
+    reproducibility_venue: ML Reproducibility Challenge 2020
+  electra:
+    id: r1xMH1BtvB
+    paper: https://openreview.net/pdf?id=r1xMH1BtvB
+    arxiv_url: https://arxiv.org/pdf/2003.10555
+    code: https://github.com/google-research/electra
+    reproducibility_paper: https://arxiv.org/pdf/2104.02756
+    reproducibility_paper_date: 2021-04-06
+    reproducibility_code: https://github.com/cccwam/rc2020_electra
+    reproducibility_venue: ML Reproducibility Challenge 2020
+  weakly-supervised-semantic-segmentation:
+    id:
+    paper: https://openaccess.thecvf.com/content/CVPR2021/papers/Chefer_Transformer_Interpretability_Beyond_Attention_Visualization_CVPR_2021_paper.pdf
+    appendix: https://openaccess.thecvf.com/content/CVPR2021/supplemental/Chefer_Transformer_Interpretability_Beyond_CVPR_2021_supplemental.pdf
+    arxiv_url: https://arxiv.org/pdf/2012.09838
+    code: https://github.com/hilachefer/Transformer-Explainability
+    reproducibility_paper: https://zenodo.org/record/6574631/files/article.pdf
+    reproducibility_paper_date: 2022-05-01
+    reproducibility_code: https://github.com/athaioan/ViT_Affinity_Reproducibility_Challenge
+    reproducibility_venue: ML Reproducibility Challenge 2021
+  adapting-learned-sparse-retrieval:
+    id: 3539618.3591943
+    paper: https://dl.acm.org/doi/pdf/10.1145/3539618.3591943
+    arxiv_url: https://arxiv.org/pdf/2305.18494
+    code: https://github.com/thongnt99/lsr-long
+    reproducibility_paper: https://arxiv.org/pdf/2503.23824
+    reproducibility_paper_date: 2025-03-31
+    reproducibility_code: https://github.com/lionisakis/Reproducibilitiy-lsr-long
+    reproducibility_venue: ECIR 2025
+  poisoning-retrieval-corpora:
+    id: 2023.emnlp-main.849
+    paper: https://aclanthology.org/2023.emnlp-main.849.pdf
+    arxiv_url: https://arxiv.org/pdf/2310.19156
+    code: https://github.com/princeton-nlp/corpus-poisoning
+    reproducibility_paper: https://arxiv.org/pdf/2501.04802
+    reproducibility_paper_date: 2025-03-08
+    reproducibility_code: https://github.com/liyongkang123/hotflip_corpus_poisoning
+    reproducibility_venue: ECIR 2025
+  a-personalized-dense-retrieval-framework:
+    id: 3539618.3591626
+    paper: https://dl.acm.org/doi/pdf/10.1145/3539618.3591626
+    arxiv_url: https://arxiv.org/pdf/2304.13654
+    code: https://github.com/HansiZeng/UIA
+    reproducibility_paper: https://link.springer.com/content/pdf/10.1007/978-3-031-88717-8_10.pdf
+    reproducibility_paper_date: 2025-04-03
+    reproducibility_code: 
+    reproducibility_venue: ECIR 2025
+  bertopic:
+    id: 2203.05794
+    paper: https://arxiv.org/pdf/2203.05794
+    arxiv_url: https://arxiv.org/pdf/2203.05794
+    code: https://github.com/MaartenGr/BERTopic
+    reproducibility_paper: https://link.springer.com/content/pdf/10.1007/978-3-031-56066-8_14.pdf
+    reproducibility_paper_date: 2024-03-15
+    reproducibility_code:
+    reproducibility_venue: ECIR 2024
+  measuring-fairness-in-ranked-results:
+    id: 3477495.3532018
+    paper: https://dl.acm.org/doi/pdf/10.1145/3477495.3532018
+    arxiv_url:
+    code: https://github.com/BoiseState/rank-fairness-metrics
+    reproducibility_paper: https://staff.fnwi.uva.nl/m.derijke/wp-content/papercite-data/pdf/liu-2024-measuring.pdf
+    reproducibility_paper_date: 2024-03-15
+    reproducibility_code: https://github.com/lynEcho/NBR-fairness
+    reproducibility_venue: ECIR 2024
+  improving-passage-retrieval-with-zero-shot-question-generation:
+    id: 2022.emnlp-main.249
+    paper: https://aclanthology.org/2022.emnlp-main.249.pdf
+    arxiv_url: https://arxiv.org/pdf/2204.07496
+    code: https://github.com/DevSinghSachan/unsupervised-passage-reranking
+    reproducibility_paper: https://pure.uva.nl/ws/files/177473152/978-3-031-56066-8_19.pdf
+    reproducibility_paper_date: 2024-03-15
+    reproducibility_code: https://github.com/davidmrau/upr_reproducibility_ecir24
+    reproducibility_venue: ECIR 2024
+  asking-clarifying-questions:
+    id: 3331184.3331265
+    paper: https://dl.acm.org/doi/pdf/10.1145/3331184.3331265
+    arxiv_url: https://arxiv.org/pdf/1907.06554
+    code: https://github.com/aliannejadi/qulac
+    reproducibility_paper: https://link.springer.com/content/pdf/10.1007/978-3-031-28241-6_3.pdf
+    reproducibility_paper_date: 2023-03-16
+    reproducibility_code:
+    reproducibility_venue: ECIR 2023
+  graph-embedding-empowered-entity-retrieval:
+    id: 2005.02843
+    paper: https://arxiv.org/pdf/2005.02843
+    arxiv_url: https://arxiv.org/pdf/2005.02843
+    code: https://github.com/informagi/GEEER
+    reproducibility_paper: https://link.springer.com/content/pdf/10.1007/978-3-031-28241-6_8.pdf
+    reproducibility_paper_date: 2023-03-16
+    reproducibility_code: https://github.com/poojahoza/E3R-Replicability
+    reproducibility_venue: ECIR 2023
+  improving-query-representations-for-dense-retrieval:
+    id: 3459637.3482124
+    paper: https://dl.acm.org/doi/pdf/10.1145/3459637.3482124
+    arxiv_url: https://arxiv.org/pdf/2108.13454
+    code: https://github.com/yuhongqian/ANCE-PRF
+    reproducibility_paper: https://link.springer.com/content/pdf/10.1007/978-3-030-99736-6_40.pdf
+    reproducibility_paper_date: 2022-04-05
+    reproducibility_code: https://github.com/ielab/APR
+    reproducibility_venue: ECIR 2022
+  dpr:
+    id: 2020.emnlp-main.550
+    paper: https://aclanthology.org/2020.emnlp-main.550.pdf
+    arxiv_url: https://arxiv.org/pdf/2004.04906
+    code: https://github.com/facebookresearch/DPR
+    reproducibility_paper: https://link.springer.com/content/pdf/10.1007/978-3-030-99736-6_41.pdf
+    reproducibility_paper_date: 2022-04-05
+    reproducibility_code:
+    reproducibility_venue: ECIR 2022
+  rethink-training-of-bert-rerankers:
+    id: 978-3-030-72240-1_26
+    paper: https://link.springer.com/content/pdf/10.1007/978-3-030-72240-1_26.pdf
+    arxiv_url: https://arxiv.org/pdf/2101.08751
+    code: https://github.com/luyug/Reranker
+    reproducibility_paper: https://link.springer.com/content/pdf/10.1007/978-3-030-99736-6_44.pdf
+    reproducibility_paper_date: 2022-04-05
+    reproducibility_code: https://github.com/castorini/replicate-lce
+    reproducibility_venue: ECIR 2022
+  bert-pli:
+    id: ijcai.2020.484
+    paper: https://www.ijcai.org/proceedings/2020/0484.pdf
+    arxiv_url:
+    code: https://github.com/ThuYShao/BERT-PLI-IJCAI2020
+    reproducibility_paper: https://link.springer.com/content/pdf/10.1007/978-3-030-72240-1_1.pdf
+    reproducibility_paper_date: 2021-03-30
+    reproducibility_code: https://github.com/sophiaalthammer/bert-pli
+    reproducibility_venue: ECIR 2021
+  deeper-text-understanding-for-ir:
+    id: 3331184.3331303
+    paper: https://dl.acm.org/doi/pdf/10.1145/3331184.3331303
+    arxiv_url: https://arxiv.org/pdf/1905.09217
+    code: https://github.com/AdeDZY/SIGIR19-BERT-IR
+    reproducibility_paper: https://link.springer.com/content/pdf/10.1007/978-3-030-72240-1_11.pdf
+    reproducibility_paper_date: 2021-03-30
+    reproducibility_code: https://github.com/crystina-z/MaxP-Reproduction
+    reproducibility_venue: ECIR 2021
+  federated-online-learning-to-rank:
+    id: 3289600.3290968
+    paper: https://dl.acm.org/doi/pdf/10.1145/3289600.3290968
+    arxiv_url:
+    code: https://github.com/facebookresearch/foltr-es
+    reproducibility_paper: https://link.springer.com/content/pdf/10.1007/978-3-030-72240-1_10.pdf
+    reproducibility_paper_date: 2021-03-30
+    reproducibility_code: https://github.com/ielab/foltr
+    reproducibility_venue: ECIR 2021
+  node2vec:
+    id: 2939672.2939754
+    paper: https://dl.acm.org/doi/pdf/10.1145/2939672.2939754
+    arxiv_url: https://arxiv.org/pdf/1607.00653
+    code: https://github.com/aditya-grover/node2vec
+    reproducibility_paper: https://link.springer.com/content/pdf/10.1007/978-3-030-45442-5_8.pdf
+    reproducibility_paper_date: 2020-04-08
+    reproducibility_code: https://github.com/Kombustor/submission-ecir2020-randomwalks
+    reproducibility_venue: ECIR 2020
+  cross-lingual-knowledge-graph-alignment:
+    id: D18-1032
+    paper: https://aclanthology.org/D18-1032.pdf
+    arxiv_url:
+    code: https://github.com/1049451037/GCN-Align
+    reproducibility_paper: https://link.springer.com/content/pdf/10.1007/978-3-030-45442-5_1.pdf
+    reproducibility_paper_date: 2020-04-08
+    reproducibility_code: https://github.com/Valentyn1997/kg-alignment-lessons-learned
+    reproducibility_venue: ECIR 2020
+  ser-oriented-fairness-in-recommendation:
+    id: 3442381.3449866
+    paper: https://dl.acm.org/doi/pdf/10.1145/3442381.3449866
+    arxiv_url: https://arxiv.org/pdf/2104.10671
+    code: https://github.com/rutgerswiselab/user-fairness
+    reproducibility_paper: https://arxiv.org/pdf/2205.08289
+    reproducibility_paper_date: 2022-05-17
+    reproducibility_code: https://github.com/rahmanidashti/FairRecSys
+    reproducibility_venue: SIGIR 2022
+  distilling-dense-representations-for-ranking:
+    id: 3477495.3531721
+    paper: https://arxiv.org/pdf/2010.11386
+    arxiv_url: https://arxiv.org/pdf/2010.11386
+    code: https://github.com/castorini/tct_colbert
+    reproducibility_paper: https://dl.acm.org/doi/pdf/10.1145/3477495.3531721
+    reproducibility_paper_date: 2022-07-07
+    reproducibility_code: https://github.com/Xiao0728/TCT-Repro-VirtualAppendix
+    reproducibility_venue: SIGIR 2022
+  efficiently-teaching-an-effective-dense-retriever:
+    id: 3539618.3591915
+    paper: https://dl.acm.org/doi/pdf/10.1145/3404835.3462891
+    arxiv_url: https://arxiv.org/pdf/2104.06967
+    code: https://github.com/sebastian-hofstaetter/matchmaker
+    reproducibility_paper: https://dl.acm.org/doi/pdf/10.1145/3539618.3591915
+    reproducibility_paper_date: 2023-07-18
+    reproducibility_code: https://github.com/ielab/TAS-B-Reproduction
+    reproducibility_venue: SIGIR 2023
+  colbert:
+    id: 3397271.3401075
+    paper: https://dl.acm.org/doi/pdf/10.1145/3397271.3401075
+    arxiv_url: https://arxiv.org/pdf/2004.12832
+    code: https://github.com/stanford-futuredata/ColBERT
+    reproducibility_paper: https://dl.acm.org/doi/pdf/10.1145/3539618.3591916
+    reproducibility_paper_date: 2023-07-18
+    reproducibility_code: https://github.com/Xiao0728/ColStar_VirtualAppendix
+    reproducibility_venue: SIGIR 2023
+  doc2query-min-min:
+    id: 3626772.3657850
+    paper: https://link.springer.com/content/pdf/10.1007/978-3-031-28238-6_31.pdf
+    arxiv_url: https://arxiv.org/pdf/2301.03266
+    code: https://github.com/terrierteam/pyterrier_doc2query
+    reproducibility_paper: https://dl.acm.org/doi/pdf/10.1145/3626772.3657850
+    reproducibility_paper_date: 2024-07-11
+    reproducibility_code:
+    reproducibility_venue: SIGIR 2024
+  a-large-scale-search-dataset:
+    id: 3626772.3657892
+    paper: https://proceedings.neurips.cc/paper_files/paper/2022/file/07f560092a0edceabf55af32a40eaee3-Paper-Datasets_and_Benchmarks.pdf
+    arxiv_url: https://arxiv.org/pdf/2207.03051
+    code: https://github.com/ChuXiaokai/baidu_ultr_dataset
+    reproducibility_paper: https://dl.acm.org/doi/pdf/10.1145/3626772.3657892
+    reproducibility_paper_date: 2024-07-11
+    reproducibility_code: https://github.com/philipphager/ultr-reproducibility
+    reproducibility_venue: SIGIR 2024
+  plaid:
+    id: 3511808.3557325
+    paper: https://dl.acm.org/doi/pdf/10.1145/3511808.3557325
+    arxiv_url: https://arxiv.org/pdf/2205.09707
+    code: https://github.com/stanford-futuredata/ColBERT
+    reproducibility_paper: https://dl.acm.org/doi/pdf/10.1145/3626772.3657856
+    reproducibility_paper_date: 2024-07-11
+    reproducibility_code: https://github.com/seanmacavaney/plaidrepro
+    reproducibility_venue: SIGIR 2024
+  nevir:
+    id: 2024.eacl-long.139
+    paper: https://aclanthology.org/2024.eacl-long.139.pdf
+    arxiv_url: https://arxiv.org/pdf/2305.07614
+    code: https://github.com/orionw/NevIR
+    reproducibility_paper: https://dl.acm.org/doi/pdf/10.1145/3726302.3730294
+    reproducibility_paper_date: 2025-07-13
+    reproducibility_code: https://github.com/thijmennijdam/NevIR-reproducibility
+    reproducibility_venue: SIGIR 2025
+  dimension-importance-estimation:
+    id: 3626772.3657691
+    paper: https://dl.acm.org/doi/pdf/10.1145/3626772.3657691
+    arxiv_url:
+    code: https://github.com/guglielmof/DIME-SIGIR-2024
+    reproducibility_paper: https://dl.acm.org/doi/pdf/10.1145/3726302.3730318
+    reproducibility_paper_date: 2025-07-13
+    reproducibility_code: https://github.com/pinecone-io/unveiling-dime
+    reproducibility_venue: SIGIR 2025
+  first-faster-improved:
+    id: 2024.emnlp-main.491
+    paper: https://aclanthology.org/2024.emnlp-main.491.pdf
+    arxiv_url: https://arxiv.org/pdf/2406.15657
+    code: https://github.com/gangiswag/llm-reranker
+    reproducibility_paper: https://dl.acm.org/doi/pdf/10.1145/3726302.3730287
+    reproducibility_paper_date: 2025-07-13
+    reproducibility_code: https://github.com/castorini/rank_llm
+    reproducibility_venue: SIGIR 2025
+  caselink:
+    id: 3626772.3657693
+    paper: https://dl.acm.org/doi/pdf/10.1145/3626772.3657693
+    arxiv_url: https://arxiv.org/pdf/2403.17780
+    code: https://github.com/yanran-tang/CaseLink
+    reproducibility_paper: https://dl.acm.org/doi/pdf/10.1145/3726302.3730282
+    reproducibility_paper_date: 2025-07-13
+    reproducibility_code: https://github.com/doGregor/caselink_reproducibility
+    reproducibility_venue: SIGIR 2025
+  umbrela:
+    id: 2406.06519
+    paper: https://arxiv.org/pdf/2406.06519
+    arxiv_url: https://arxiv.org/pdf/2406.06519
+    code: https://github.com/castorini/umbrela
+    reproducibility_paper: https://dl.acm.org/doi/pdf/10.1145/3726302.3730317
+    reproducibility_paper_date: 2025-07-13
+    reproducibility_code: https://github.com/TREMA-UNH/appendix-umbrella-other-llm
+    reproducibility_venue: SIGIR 2025
+  a-setwise-approach-for-effective:
+    id: 3626772.3657813
+    paper: https://dl.acm.org/doi/pdf/10.1145/3626772.3657813
+    arxiv_url: https://arxiv.org/pdf/2310.09497
+    code: https://github.com/ielab/llm-rankers
+    reproducibility_paper: https://dl.acm.org/doi/pdf/10.1145/3726302.3730338
+    reproducibility_paper_date: 2025-07-13
+    reproducibility_code: https://github.com/hltcoe/llm-heapsort-reranking
+    reproducibility_venue: SIGIR 2025
+  a-setwise-approach-for-effective-v2:
+    id: 3626772.3657813-v2
+    paper: https://dl.acm.org/doi/pdf/10.1145/3626772.3657813
+    arxiv_url: https://arxiv.org/pdf/2310.09497
+    code: https://github.com/ielab/llm-rankers
+    reproducibility_paper: https://dl.acm.org/doi/pdf/10.1145/3726302.3730323
+    reproducibility_paper_date: 2025-07-13
+    reproducibility_code: https://github.com/LeonPeric/llm-rankers
+    reproducibility_venue: SIGIR 2025
+  colpali:
+    id: ogjBpZ8uSi
+    paper: https://openreview.net/pdf?id=ogjBpZ8uSi
+    arxiv_url: https://arxiv.org/pdf/2407.01449
+    code: https://github.com/illuin-tech/colpali
+    reproducibility_paper: https://dl.acm.org/doi/pdf/10.1145/3726302.3730285
+    reproducibility_paper_date: 2025-07-13
+    reproducibility_code: https://github.com/JingfenQiao/ColPali-Reproducibility
+    reproducibility_venue: SIGIR 2025
+  xiomatic-causal-interventions:
+    id: 3626772.3657841
+    paper: https://dl.acm.org/doi/pdf/10.1145/3626772.3657841
+    arxiv_url: https://arxiv.org/pdf/2405.02503
+    code: https://github.com/catherineschen/axiomatic-ir-interventions
+    reproducibility_paper: https://dl.acm.org/doi/pdf/10.1145/3726302.3730327
+    reproducibility_paper_date: 2025-07-13
+    reproducibility_code: https://github.com/OliverSavolainen/axiomatic-ir-reproduce
+    reproducibility_venue: SIGIR 2025
+  sentence-embedding-leaks:
+    id: 2023.findings-acl.881
+    paper: https://aclanthology.org/2023.findings-acl.881.pdf
+    arxiv_url: https://arxiv.org/pdf/2305.03010
+    code: https://github.com/HKUST-KnowComp/GEIA
+    reproducibility_paper: https://dl.acm.org/doi/pdf/10.1145/3726302.3730303
+    reproducibility_paper_date: 2025-07-13
+    reproducibility_code: https://github.com/taslanidis/GEIA
+    reproducibility_venue: SIGIR 2025
+  2d-matryoshka-sentence-embeddings:
+    id: 2402.14776
+    paper: https://arxiv.org/pdf/2402.14776
+    arxiv_url: https://arxiv.org/pdf/2402.14776
+    code: https://github.com/SeanLee97/AnglE
+    reproducibility_paper: https://dl.acm.org/doi/pdf/10.1145/3726302.3730330
+    reproducibility_paper_date: 2025-07-13
+    reproducibility_code: https://github.com/ielab/2DMSE-Reproduce
+    reproducibility_venue: SIGIR 2025
+  rethinking-benchmarks:
+    id: 3539618.3591758
+    paper: https://dl.acm.org/doi/pdf/10.1145/3539618.3591758
+    arxiv_url: https://arxiv.org/pdf/2304.10824
+    code: https://github.com/cwj1412/MSCOCO-Flikcr30K_FG
+    reproducibility_paper: https://dl.acm.org/doi/pdf/10.1145/3726302.3730290
+    reproducibility_paper_date: 2025-07-13
+    reproducibility_code: https://github.com/bloomberg/evaluating-cmr-in-mm
+    reproducibility_venue: SIGIR 2025
+  rarr-researching-and-revising:
+    id: 2023.acl-long.910
+    paper: https://aclanthology.org/2023.acl-long.910.pdf
+    arxiv_url: https://arxiv.org/pdf/2210.08726
+    code: https://github.com/anthonywchen/RARR
+    reproducibility_paper: https://dl.acm.org/doi/pdf/10.1145/3726302.3730337
+    reproducibility_paper_date: 2025-07-13
+    reproducibility_code: https://github.com/ielab/rarr-reproducibility
+    reproducibility_venue: SIGIR 2025

@@ -94,7 +94,7 @@ source .venv/bin/activate
 pip install -e .
 ```
 
-**Requirements**: Python 3.8+
+**Requirements**: Python 3.13+
 
 ### Environment Variables
 
@@ -109,6 +109,37 @@ Create a `.env` file in the root directory with the following:
 - `HF_TOKEN`: Hugging Face token for model downloads
 
 **Note**: The dataset files can be used without API keys. API keys are only needed for running inference and evaluation.
+
+### Extracting Pre-generated Results
+
+If you have received the project with compressed archives instead of the full `out/` directory, you can extract them to restore the directory structure.
+
+The archives are split as follows:
+- `data_collection.tar.gz`: Contains all data collection outputs (GitHub classification, validation, reproducibility extraction, etc.)
+- `inference_discrepancy_detection_real.tar.gz`: Contains inference results on real data (both full and code_only)
+- `inference_discrepancy_detection_synthetic_code_only.tar.gz`: Contains inference results on synthetic data (code_only experiments)
+- `inference_discrepancy_detection_synthetic_full.tar.gz`: Contains inference results on synthetic data (full context experiments)
+- `inference_*.tar.gz`: Any other inference-related archives
+
+Each archive contains only the following file types:
+- `generations.jsonl`: Model generation outputs
+- `discrepancy_issues-positives.jsonl`: Classified discrepancy issues
+- `predictions_and_classifications.jsonl`: Predictions and classifications
+- `classifications.json`: Classification results
+- `similarities.jsonl`: Similarity scores
+
+To extract all archives and restore the `out/` directory structure:
+
+```bash
+./extract_out.sh
+```
+
+This script will:
+1. Create the `out/` directory structure if it doesn't exist
+2. Extract each archive to its correct location
+3. Preserve the original directory structure
+
+**Note**: Make sure all archive files are in the project root directory before running the extraction script.
 
 ## Project Structure
 
@@ -128,6 +159,7 @@ scicodeqa-submission-arr-januar-2026/
 │   └── evaluation/                  # Evaluation and metrics computation
 ├── out/                             # Output directory
 │   ├── data_collection/             # Dataset curation outputs
+│   │   ├── github_crawl/            # GitHub repository crawl results
 │   │   ├── github_classification/   # GitHub issue classification
 │   │   ├── github_validation/       # GitHub discrepancy validation
 │   │   ├── reproducibility_extraction/     # Extract discrepancies from papers
@@ -141,6 +173,9 @@ scicodeqa-submission-arr-januar-2026/
 │           └── synthetic/           # Experiments on synthetic data
 │               ├── full/
 │               └── code_only/
+├── out.sh                           # Script to create compressed archives from out/
+├── extract_out.sh                   # Script to extract archives and restore out/
+├── pyproject.toml                    # Project dependencies and configuration
 └── README.md                        # This file
 ```
 
@@ -168,7 +203,7 @@ uv run python scicodeqa/github/crawl.py \
 ```
 For the dataset we use, we crawled all repositories from arXiv between 2020-01-01 and 2025-09-30, and filtered the repositories by the homepage being `arxiv.org`, `openreview.net`, `aclanthology.org`, `doi.org/10.1145`.
 
-For arxiv, the crawl should be performed on a weekly basis, since typically there are many papers. For others, the crawl should can be performed on a monthly basis.
+For arxiv, the crawl should be performed on a weekly basis, since typically there are many papers. For others, the crawl can be performed on a monthly basis.
 
 #### GitHub Issue Classification
 To classify the GitHub issues, we used Qwen3 4B Thinking with Ollama. To reproduce, first make sure have access to an Ollama instance and set the `OLLAMA_API_BASE` environment variable to the host of the Ollama instance. Then, run the following command:
@@ -312,6 +347,8 @@ The `out/` directory contains pre-generated results:
 - `out/data_collection/github_validation/`: Discrepancy validation results
 
 These can be used to compute metrics without re-running inference.
+
+**Note**: If you received the project with compressed archives instead of the full `out/` directory, see the [Setup section](#setup) for instructions on extracting them.
 
 ---
 

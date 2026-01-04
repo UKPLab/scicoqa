@@ -1,0 +1,308 @@
+prompts:
+  github_issue_discrepancy_classification_v2: |
+    You are an assistant that analyzes GitHub issues of scientific code bases.  
+    Your primary goal is to determine if the code repository contains any inconsistency, discrepancy, or mismatch between what is described in the paper and implemented in the code. For this, you analyze a GitHub issue and determine whether it reports a concrete discrepancy.
+
+    A **concrete discrepancy** means the issue clearly describes a mismatch between what is stated in the paper (e.g., formulas, algorithms, hyperparameters, methods, logic, or processes) and what is implemented in the repository's code.  
+
+    Important: Only label issues as a discrepancy if they point to a _specific, concrete difference_ between paper and code.  
+    Do not label general reproducibility problems, missing details, or unrelated bugs as discrepancies.
+
+    ## Not a discrepancy issue
+    Label as **Not a discrepancy issue** if:
+    - The issue is about anything other than a difference between the paper and the code.  
+    - The issue describes reproducibility problems (e.g., different results) but does **not** identify a concrete paper–code mismatch.  
+    - The issue is about missing information needed to reproduce results without pointing to a mismatch.  
+    - The issue is about bugs or errors unrelated to the paper’s described methods or experiments.  
+
+    ## Discrepancy issue
+    Label as **Discrepancy issue** if:
+    - The issue explicitly reports a mismatch between the paper and the code implementation.  
+    - The mismatch can involve hyperparameters, formulas, algorithms, logic, processes, or other settings described in the paper.  
+
+    ## Response Format
+    After analyzing the issue in detail and applying the definitions above, provide your final classification in the structure defined below:
+
+    ### Final Answer
+    ```yaml
+    issue_label: <the issue label: "Not a discrepancy issue" or "Discrepancy issue">
+    ```
+
+    ## Issue
+    ${issue}
+  discrepancy_issue_verification_v2: |
+    Your task is to verify a paper-code discrepancy described in a GitHub issue. Your goal is to verify whether the discrepancy is valid or not.
+   
+    Follow these steps to verify the discrepancy:
+    1. Analyze the issue and ensure you understand exactly the claimed discrepancy between the paper and the code.
+    2. Analyze the paper and the code and understand in detail the relevant paper sections and code files.
+    3. Using your understanding of paper, code, and the discrepancy in the issue, analyze whether the discrepancy is valid or not. A discrepancy is valid, if the claimed discrepancy actually exists and there is a difference between the paper description and the code.
+    4. Provide your final judgement whether the reported discrepancy is valid or not, and if so a summary and the relevant paper sections and code files in the format below:
+    ```yaml
+    is_valid_discrepancy: <yes or no>
+    is_valid_discrepancy_reason: <provide a short explanation for your judgement>
+    discrepancy_summary: <if valid provide the following description, else this should be empty: a summary of the discrepancy between the paper and the code in 3-8 sentences. Your description should contain three parts focusing on the discrepancy: 1) summarize what is described in the paper, 2) summarize what is implemented in the code, and 3) summarize the difference. Do not speculate about the impact.>
+    relevant_paper_sections:
+      - <verbatim quote any parts from the paper that are relevant to the discrepancy>
+      - <if there are multiple relevant parts, paste each of them.>
+    relevant_code_files:
+      - <name any code files that are relevant to the discrepancy by providing the file name>
+      - <if there are multiple relevant code files, paste each of them.>
+    ```
+
+    ## Issue
+    ${issue}
+
+    ## Paper
+    ${paper}
+
+    ## Code
+    ${code}
+  reproducibility_report_discrepancy_extraction_v3: |
+    You are an assistant that analyzes reproducibility reports of scientific papers.
+    Your primary goal is to detect whether the report identifies any discrepancies between the original paper and the original code repository.
+
+    ## What counts as a discrepancy
+    - A concrete paper–code discrepancy means the report clearly describes a mismatch between what is stated in the original paper (e.g., formulas, algorithms, logic, methods, processes, or other settings) and what is implemented in the original code repository.
+    - Each distinct mismatch should be reported as a separate item.
+    - Hyperparameter mismatches (e.g., learning rate, batch size, dropout rate) do not count as discrepancies, since these are typically configurable in code repositories.
+    - If the report only describes differences between reproduced results and original results, without identifying a paper–code mismatch, do not list it.
+    - If the report speculates about a possible mismatch (uncertain or ambiguous wording), still list it, but mark it with confindence: low.
+
+    ## What does not count as a discrepancy
+    - General reproducibility problems (e.g., “we could not match the reported results”).
+    - Missing information in the paper (e.g., “the authors did not specify X”).
+    - Missing implementation in the original code repository (e.g., “the authors did not provide the code for X”).
+    - Bugs or errors in the code that are unrelated to what the paper describes.
+    - Differences between reproduced implementation/results and the original paper.
+
+    ## Output format
+
+    Summarize all discrepancies found in the following structure, providing a description of the discrepancy, evidence supporting the discrepancy as verbatim quotes from the reproducibility report, and a confidence estimate of the authors on the reported discrepancy.
+
+    ```yaml
+    concrete_paper_code_discrepancies:
+      - description: "<3–8 sentence descriptive summary of the first discrepancy>"
+        evidence: 
+          - "<paste any evidence (e.g. a paragraph describing the discrepancy) from the reproducibility report that support the discrepancy.>"
+          - "< If there are multiple evidence, paste each of them.>"
+        confidence: <Estimate of the confidence the authors have on the reported discrepancy. One of: low, medium, high>
+      - ...
+    ```
+
+    If no discrepancies are reported, return:
+
+    ```yaml
+    concrete_paper_code_discrepancies: []
+    ```
+
+    Reproducibility Report:
+    ${paper}
+  reproducibility_report_discrepancy_verification: | 
+    Your task is to verify a paper-code discrepancy described in a reproducibility report. You will be provided with a summary of the discrepancy according to the report, and potentially multiple quotes from the reproducibility report that support the discrepancy. Your goal is to verify whether the discrepancy is valid or not.
+   
+    Follow these steps to verify the discrepancy:
+    1. Analyze the description and evidence from the reproducibility report and ensure you understand exactly the claimed discrepancy between the paper and the code.
+    2. Analyze the paper and the code and understand in detail the relevant paper sections and code files.
+    3. Using your understanding of paper, code, and the reported discrepancy, analyze whether the discrepancy is valid or not. A discrepancy is valid, if the claimed discrepancy actually exists, i.e. the described difference between paper and code exists.
+    4. Provide your final judgement whether the reported discrepancy is valid or not, and if so a summary and the relevant paper sections and code files in the format below:
+    ```yaml
+    is_valid_discrepancy: <yes or no>
+    is_valid_discrepancy_reason: <provide a short explanation for your judgement>
+    discrepancy_summary: <if valid provide the following description, else this should be empty: a summary of the discrepancy between the paper and the code in 3-8 sentences. Your description should contain three parts focusing on the discrepancy: 1) summarize what is described in the paper, 2) summarize what is implemented in the code, and 3) summarize the difference. Do not speculate about the impact.>
+    relevant_paper_sections:
+      - <verbatim quote any parts from the paper that are relevant to the discrepancy>
+      - <if there are multiple relevant parts, paste each of them.>
+    relevant_code_files:
+      - <name any code files that are relevant to the discrepancy by providing the file name>
+      - <if there are multiple relevant code files, paste each of them.>
+    ```
+
+    ## Reproducibility Report with Discrepancy
+    ${discrepancy_in_report}
+
+    ## Paper
+    ${paper}
+
+    ## Code
+    ${code}
+  synthetic_discrepancy_generation_v2: |
+    Your task is to generate ${num_discrepancies} realistic paper–code discrepancies by introducing small, conceptually meaningful modifications to the codebase of the provided research paper.
+    Follow these steps to perform the edit:
+    1. Carefully read and understand both the research paper and the entire code repository provided below. Your goal is to identify the key ideas, methods, and components described in the paper and how they correspond to the implementation in the code.
+    2. Your changes must adhere to the following constraints:
+    - **Small**: The changes must affect a few lines of code or a short function. It may affect multiple files, but only to the extent necessary to create a coherent and realistic discrepancy.
+    - **Relevance**: The changes must relate directly to a core scientific or algorithmic idea of the paper and would likely have an impact on reproducibility of results and validity of claims.
+    - **Significe**: The changes must introduce a conceptual discrepancy — not a simple hyperparameter, or formatting change, or a change that could be fixed via a simple (command line) argument.
+    - **Scope**: The changes should not all rely on already implemented features of the code base, but also implement new features or introduce modifications. Balance between relying on existing features and implementing new features.
+    - **No Comments**: Do not add comments to the changed code which would easily allow to identify the discrepancy.
+    - **No Bugs**: The introduced discrepancies should not be bugs, i.e., code that could be detected as erroneous by inspecting the code itself. The discrepancy must be related to both the paper and the code to be identified.
+    - **No Implications**: The discrepancies must not rely on anything the paper only implies or assumes, but the paper must clearly conflict with the code after the change, or omit an important concept that is implemented in the changed code.
+    3. Your changes can be one of the following types. You can create multiple discrepancies of the same or different types.
+    - **Paper Omission**: Modify the code such that it implements a concept or idea that is not described in the paper.
+    - **Code Omission**: Modify the code such that it drops a specific concept or idea that is described in the paper.
+    - **Difference**: Modify the code such that there is a difference between the paper and the code, i.e., the paper describes one thing and the code implements another, e.g., by changing the order of steps, operations, or core logic.
+    4. Generate ${num_discrepancies} discrepancies in the following strict format:
+    ```md
+    # Discrepancy 1
+    - Type: <choose one from: Paper Omission, Code Omission, Difference>
+    - Description: <a summary of the discrepancy between the paper and the code in 3-8 sentences. When referring to the code, do not mention 'original' or 'modified', but assume the code is published with the modification and discrepancy. Your description should contain three parts focusing on the discrepancy: 1) summarize what is described in the paper, 2) summarize what is implemented in the modified code, and 3) summarize the difference. Do not speculate about the impact.>
+
+    ## Code Changes
+    <<<<<<< ORIGINAL CODE: <relative/path/to/file.py>
+    (paste the relevant lines of the original code exactly as they appear)
+    =======
+    (paste the lines of the modified code containing your change that replace the original code)
+    >>>>>>> DISCREPANCY
+
+    If multiple files are affected, repeat the diff block for each.
+
+    ## Relevant Paper Sections
+    - <verbatim quote any parts from the paper that are relevant to the discrepancy.>
+    - <if there are multiple relevant parts, paste each of them.>
+
+    # Discrepancy 2
+    ...
+    # Discrepancy 3
+    ...
+    ```
+
+    ## Paper
+    ${paper}
+
+    ## Code
+    ${code}
+  synthetic_discrepancy_generation_cs: |
+    Your task is to generate ${num_discrepancies} realistic paper–code discrepancies by introducing small, conceptually meaningful modifications to the codebase of the provided research paper.
+    Follow these steps to perform the edit:
+    1. Carefully read and understand both the research paper and the entire code repository provided below. Your goal is to identify the key ideas, methods, and components described in the paper and how they correspond to the implementation in the code.
+    2. Your changes must adhere to the following constraints:
+    - **Small**: The changes must affect a few lines of code or a short function. It may affect multiple files, but only to the extent necessary to create a coherent and realistic discrepancy.
+    - **Relevance**: The changes must relate directly to a core scientific or algorithmic idea of the paper and would likely have an impact on reproducibility of results and validity of claims.
+    - **Significe**: The changes must introduce a conceptual discrepancy — not a simple hyperparameter, or formatting change, or a change that could be fixed via a simple (command line) argument.
+    - **Scope**: The changes should not all rely on already implemented features of the code base, but also implement new features or introduce modifications. Balance between relying on existing features and implementing new features.
+    - **No Comments**: Do not add comments to the changed code which would easily allow to identify the discrepancy.
+    - **No Bugs**: The introduced discrepancies should not be bugs, i.e., code that could be detected as erroneous by inspecting the code itself. The discrepancy must be related to both the paper and the code to be identified.
+    - **No Implications**: The discrepancies must not rely on anything the paper only implies or assumes, but the paper must clearly conflict with the code after the change, or omit an important concept that is implemented in the changed code.
+    3. Your changes can be one of the following types. You can create multiple discrepancies of the same or different types.
+    - **Paper Omission**: Modify the code such that it implements a concept or idea that is not described in the paper.
+    - **Code Omission**: Modify the code such that it drops a specific concept or idea that is described in the paper.
+    - **Difference**: Modify the code such that there is a difference between the paper and the code, i.e., the paper describes one thing and the code implements another, e.g., by changing the order of steps, operations, or core logic.
+    4. Decide which paper-code discrepancies are most appropriate for the given paper, choosing from the following categories. Note, you can create multiple discrepancies of the same or different types.
+    - **Loss**: changes to loss definition or terms
+    - **Algorithm**: changes in the order of steps, operations, or core logic
+    - **Training**: changes to the learning process, schedule, or optimization
+    - **Evaluation**: changes to evaluation logic, metrics, or scripts
+    - **Model**: architectural or initialization changes
+    - **Data**: dataset usage, preprocessing, augmentation, or filtering
+    - **Other**: other types of discrepancies that are not covered by the above categories but appropriate for the given paper.
+    5. Generate ${num_discrepancies} discrepancies in the following strict format:
+    ```md
+    # Discrepancy 1
+    - Type: <choose one from: Paper Omission, Code Omission, Difference>
+    - Category: <choose one from: Loss, Algorithm, Training, Evaluation, Model, Data, Other>
+    - Description: <a summary of the discrepancy between the paper and the code in 3-8 sentences. When referring to the code, do not mention 'original' or 'modified', but assume the code is published with the modification and discrepancy. Your description should contain three parts focusing on the discrepancy: 1) summarize what is described in the paper, 2) summarize what is implemented in the modified code, and 3) summarize the difference. Do not speculate about the impact.>
+
+    ## Code Changes
+    <<<<<<< ORIGINAL CODE: <relative/path/to/file.py>
+    (paste the relevant lines of the original code exactly as they appear)
+    =======
+    (paste the lines of the modified code containing your change that replace the original code)
+    >>>>>>> DISCREPANCY
+
+    If multiple files are affected, repeat the diff block for each.
+
+    ## Relevant Paper Sections
+    - <verbatim quote any parts from the paper that are relevant to the discrepancy.>
+    - <if there are multiple relevant parts, paste each of them.>
+
+    # Discrepancy 2
+    ...
+    # Discrepancy 3
+    ...
+    ```
+
+    ## Paper
+    ${paper}
+
+    ## Code
+    ${code}
+  discrepancy_evaluation_v2: |
+    Your task is to evaluate whether a reference paper - code discrepancies matches a predicted paper - code discrepancy. Follow these steps:
+
+    1. Analyze which part of the paper or code each discrepancy is describing. Extract the core claims and issues from the reference and predicted discrepancies.
+    2. Analyze whether the core claims are about the same issue, i.e. if they describe the same or different paper-code discrepancies. The two discrepancies might use different wording or one might be more detailed than the other. Focus on whether the issue is the same, even if minor details are different. However, if they describe different issues (even about the same topic or part of the paper or code) they do not match.
+    3. Provide a brief explanation of your reasoning.
+
+    ## Reference Paper-Code Discrepancy
+    ${reference_discrepancy}
+
+    ## Predicted Paper-Code Discrepancy
+    ${predicted_discrepancy}
+
+    ## Answer Format
+    Provide your answer in the following format:
+    ```yaml
+    core_claim_reference: <core claim from reference discrepancy>
+    core_claim_predicted: <core claim from predicted discrepancy>
+    reasoning: <explanation of why the core claims concern the same issue>
+    match: <yes | no>
+    ```
+  discrepancy_generation: |
+    You are an expert in analyzing scientific papers and their code implementations.
+    Your task is to carefully identify concrete discrepancies between what is described in a paper and what is actually implemented in the code.
+
+    ## What counts as a discrepancy
+    - A concrete paper–code discrepancy means a mismatch between what is stated in the original paper (e.g., formulas, algorithms, logic, methods, processes, or other settings) and what is implemented in the original code repository.
+    - Each distinct mismatch should be reported as a separate item.
+    
+    ## What does not count as a discrepancy
+    - Missing information in the paper like hyperparameters (e.g., “the authors did not specify X”).
+    - Hyperparameter mismatches (e.g., learning rate, batch size, dropout rate), since these are typically configurable in code repository.
+    - Missing implementation in the original code repository (e.g., “the authors did not provide the code for X”).
+    - Bugs or errors in the code that are unrelated to what the paper describes.
+
+    ## Output format
+
+    Provide your findings in the following YAML structure:
+
+    ```yaml
+    discrepancies:
+      - <a summary of the discrepancy between the paper and the code in 3-8 sentences. Your description should contain three parts focusing on the discrepancy: 1) summarize what is described in the paper, 2) summarize what is implemented in the code, and 3) summarize the difference. Do not speculate about the impact.>
+      - <if there are multiple discrepancies, put each of them in a separate item.>
+    ```
+
+    ## Paper
+
+    ${paper}
+
+    ## Code
+
+    ${code}
+  discrepancy_generation_code_only: |
+    You are an expert in analyzing scientific papers and their code implementations.
+    Your task is to carefully identify concrete discrepancies between what is described in a paper and what is actually implemented in the code.
+
+    ## What counts as a discrepancy
+    - A concrete paper–code discrepancy means a mismatch between what is stated in the original paper (e.g., formulas, algorithms, logic, methods, processes, or other settings) and what is implemented in the original code repository.
+    - Each distinct mismatch should be reported as a separate item.
+    
+    ## What does not count as a discrepancy
+    - Missing information in the paper like hyperparameters (e.g., “the authors did not specify X”).
+    - Hyperparameter mismatches (e.g., learning rate, batch size, dropout rate), since these are typically configurable in code repository.
+    - Missing implementation in the original code repository (e.g., “the authors did not provide the code for X”).
+    - Bugs or errors in the code that are unrelated to what the paper describes.
+
+    ## Output format
+
+    Provide your findings in the following YAML structure:
+
+    ```yaml
+    discrepancies:
+      - <a summary of the discrepancy between the paper and the code in 3-8 sentences. Your description should contain three parts focusing on the discrepancy: 1) summarize what is described in the paper, 2) summarize what is implemented in the code, and 3) summarize the difference. Do not speculate about the impact.>
+      - <if there are multiple discrepancies, put each of them in a separate item.>
+    ```
+
+    ## Code
+
+    ${code}
