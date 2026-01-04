@@ -7,7 +7,11 @@ wheels/
 .venv
 .ruff_cache
 .cache/
-out/
+# Ignore everything in out/ except .tar.gz files
+out/*
+!out/*.tar.gz
+out/**/*
+!out/**/*.tar.gz
 .env
 log.log
 .DS_Store

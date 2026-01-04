@@ -114,12 +114,12 @@ Create a `.env` file in the root directory with the following:
 
 If you have received the project with compressed archives instead of the full `out/` directory, you can extract them to restore the directory structure.
 
-The archives are split as follows:
-- `data_collection.tar.gz`: Contains all data collection outputs (GitHub classification, validation, reproducibility extraction, etc.)
-- `inference_discrepancy_detection_real.tar.gz`: Contains inference results on real data (both full and code_only)
-- `inference_discrepancy_detection_synthetic_code_only.tar.gz`: Contains inference results on synthetic data (code_only experiments)
-- `inference_discrepancy_detection_synthetic_full.tar.gz`: Contains inference results on synthetic data (full context experiments)
-- `inference_*.tar.gz`: Any other inference-related archives
+The archives are located in the `out/` directory and are split as follows:
+- `out/data_collection.tar.gz`: Contains all data collection outputs (GitHub classification, validation, reproducibility extraction, etc.)
+- `out/inference_discrepancy_detection_real.tar.gz`: Contains inference results on real data (both full and code_only)
+- `out/inference_discrepancy_detection_synthetic_code_only.tar.gz`: Contains inference results on synthetic data (code_only experiments)
+- `out/inference_discrepancy_detection_synthetic_full.tar.gz`: Contains inference results on synthetic data (full context experiments)
+- `out/inference_*.tar.gz`: Any other inference-related archives
 
 Each archive contains only the following file types:
 - `generations.jsonl`: Model generation outputs
@@ -135,11 +135,11 @@ To extract all archives and restore the `out/` directory structure:
 ```
 
 This script will:
-1. Create the `out/` directory structure if it doesn't exist
+1. Look for archives in the `out/` directory
 2. Extract each archive to its correct location
 3. Preserve the original directory structure
 
-**Note**: Make sure all archive files are in the project root directory before running the extraction script.
+**Note**: The archives are created by running `./out.sh`, which compresses the `out/` directory contents and places the archives in the `out/` directory itself.
 
 ## Project Structure
 
