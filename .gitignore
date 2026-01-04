@@ -1,0 +1,16 @@
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+.venv
+.ruff_cache
+.cache/
+out/
+.env
+log.log
+.DS_Store
+.ipynb_checkpoints/
+.task/
+.vscode/
