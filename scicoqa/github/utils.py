@@ -1,7 +1,7 @@
 import logging
 from logging.config import fileConfig
 
-from scicodeqa.github.issue_img_to_text import ISSUE_IMAGE_TO_TEXT
+from scicoqa.github.issue_img_to_text import ISSUE_IMAGE_TO_TEXT
 
 fileConfig("logging.ini")
 logger = logging.getLogger(__name__)

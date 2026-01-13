@@ -9,12 +9,12 @@ from typing import Generator, Literal
 import yaml
 from tqdm import tqdm
 
-from scicodeqa.core import CodeLoader
-from scicodeqa.core.mistral_ocr import MistralOCR
-from scicodeqa.core.prompt import Prompt
-from scicodeqa.core.token_counter import TokenCounter
-from scicodeqa.github.db import GitHubDB
-from scicodeqa.github.utils import comments_to_text, issue_to_text
+from scicoqa.core import CodeLoader
+from scicoqa.core.mistral_ocr import MistralOCR
+from scicoqa.core.prompt import Prompt
+from scicoqa.core.token_counter import TokenCounter
+from scicoqa.github.db import GitHubDB
+from scicoqa.github.utils import comments_to_text, issue_to_text
 
 fileConfig("logging.ini")
 logger = logging.getLogger(__name__)

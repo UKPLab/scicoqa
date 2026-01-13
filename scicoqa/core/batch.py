@@ -223,7 +223,7 @@ class Batch:
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Manage Google Batch jobs for scicodeqa"
+        description="Manage Google Batch jobs for scicoqa"
     )
     subparsers = parser.add_subparsers(dest="command", required=True)
 

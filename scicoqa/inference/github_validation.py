@@ -6,7 +6,7 @@ from pathlib import Path
 import simple_parsing
 from tqdm.contrib.logging import logging_redirect_tqdm
 
-from scicodeqa.core import DiscrepancyExperiment, InferenceArgs
+from scicoqa.core import DiscrepancyExperiment, InferenceArgs
 
 fileConfig("logging.ini")
 logger = logging.getLogger(__name__)
@@ -37,7 +37,7 @@ class DiscrepancyValidationArgs(InferenceArgs):
 
 
 if __name__ == "__main__":
-    with logging_redirect_tqdm(loggers=[logging.root, logging.getLogger("scicodeqa")]):
+    with logging_redirect_tqdm(loggers=[logging.root, logging.getLogger("scicoqa")]):
         args, unknown_args = simple_parsing.parse_known_args(DiscrepancyValidationArgs)
         logger.info(f"DiscrepancyValidationArgs: {args}")
         if unknown_args:

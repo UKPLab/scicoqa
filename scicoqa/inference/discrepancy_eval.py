@@ -12,10 +12,10 @@ from sentence_transformers import SentenceTransformer
 from tqdm import tqdm
 from tqdm.contrib.logging import logging_redirect_tqdm
 
-from scicodeqa.core import InferenceArgs
-from scicodeqa.core.dataset import load_scicoqa
-from scicodeqa.core.llm import AsyncVLLM
-from scicodeqa.core.prompt import Prompt
+from scicoqa.core import InferenceArgs
+from scicoqa.core.dataset import load_scicoqa
+from scicoqa.core.llm import AsyncVLLM
+from scicoqa.core.prompt import Prompt
 
 fileConfig("logging.ini")
 logger = logging.getLogger(__name__)
@@ -577,7 +577,7 @@ class DiscrepancyEvalExperiment:
 
 
 if __name__ == "__main__":
-    with logging_redirect_tqdm(loggers=[logging.root, logging.getLogger("scicodeqa")]):
+    with logging_redirect_tqdm(loggers=[logging.root, logging.getLogger("scicoqa")]):
         args, unknown_args = simple_parsing.parse_known_args(
             DiscrepancyEvalInferenceArgs
         )

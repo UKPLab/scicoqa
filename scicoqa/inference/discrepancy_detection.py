@@ -8,12 +8,12 @@ import simple_parsing
 from tqdm import tqdm
 from tqdm.contrib.logging import logging_redirect_tqdm
 
-from scicodeqa.core import InferenceArgs
-from scicodeqa.core.code_loader import CodeLoader
-from scicodeqa.core.dataset import get_unique_papers
-from scicodeqa.core.experiment import BaseExperiment
-from scicodeqa.core.mistral_ocr import MistralOCR
-from scicodeqa.core.token_counter import TokenCounter
+from scicoqa.core import InferenceArgs
+from scicoqa.core.code_loader import CodeLoader
+from scicoqa.core.dataset import get_unique_papers
+from scicoqa.core.experiment import BaseExperiment
+from scicoqa.core.mistral_ocr import MistralOCR
+from scicoqa.core.token_counter import TokenCounter
 
 fileConfig("logging.ini")
 logger = logging.getLogger(__name__)
@@ -230,7 +230,7 @@ class DiscrepancyDatasetExperiment(BaseExperiment):
 
 
 if __name__ == "__main__":
-    with logging_redirect_tqdm(loggers=[logging.root, logging.getLogger("scicodeqa")]):
+    with logging_redirect_tqdm(loggers=[logging.root, logging.getLogger("scicoqa")]):
         args, unknown_args = simple_parsing.parse_known_args(
             DiscrepancyDatasetInferenceArgs
         )

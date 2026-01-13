@@ -6,7 +6,7 @@ from pathlib import Path
 import simple_parsing
 from tqdm.contrib.logging import logging_redirect_tqdm
 
-from scicodeqa.core import (
+from scicoqa.core import (
     InferenceArgs,
     ReproducibilityReportDiscrepancyVerificationExperiment,
 )
@@ -43,7 +43,7 @@ class ReproducibilityReportDiscrepancyVerificationArgs(InferenceArgs):
 
 
 if __name__ == "__main__":
-    with logging_redirect_tqdm(loggers=[logging.root, logging.getLogger("scicodeqa")]):
+    with logging_redirect_tqdm(loggers=[logging.root, logging.getLogger("scicoqa")]):
         args, unknown_args = simple_parsing.parse_known_args(
             ReproducibilityReportDiscrepancyVerificationArgs
         )

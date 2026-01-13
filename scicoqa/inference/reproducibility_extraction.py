@@ -7,7 +7,7 @@ from typing import Literal
 import simple_parsing
 from tqdm.contrib.logging import logging_redirect_tqdm
 
-from scicodeqa.core import InferenceArgs, ReproducibilityReportExperiment
+from scicoqa.core import InferenceArgs, ReproducibilityReportExperiment
 
 fileConfig("logging.ini")
 logger = logging.getLogger(__name__)
@@ -34,7 +34,7 @@ class ReproducibilityReportsInferenceArgs(InferenceArgs):
 
 
 if __name__ == "__main__":
-    with logging_redirect_tqdm(loggers=[logging.root, logging.getLogger("scicodeqa")]):
+    with logging_redirect_tqdm(loggers=[logging.root, logging.getLogger("scicoqa")]):
         args, unknown_args = simple_parsing.parse_known_args(
             ReproducibilityReportsInferenceArgs
         )

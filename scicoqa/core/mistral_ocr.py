@@ -11,7 +11,7 @@ from pathlib import Path
 import requests
 from mistralai import Mistral
 
-from scicodeqa.core.arxiv_version import ArxivVersionManager
+from scicoqa.core.arxiv_version import ArxivVersionManager
 
 fileConfig("logging.ini")
 logger = logging.getLogger(__name__)

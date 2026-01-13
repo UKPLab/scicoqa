@@ -80,7 +80,7 @@ print(f"Description: {discrepancy['discrepancy_description']}")
 
 **Using the SciCoQA library**:
 ```python
-from scicodeqa.core import load_scicoqa
+from scicoqa.core import load_scicoqa
 
 # Load as pandas DataFrame
 df_real = load_scicoqa(split="real")
@@ -161,7 +161,7 @@ This script will:
 ## Project Structure
 
 ```
-scicodeqa-submission-arr-januar-2026/
+scicoqa-submission-arr-januar-2026/
 ├── data/
 │   ├── scicoqa-real.jsonl           # Real-world discrepancies (81 entries) - local copy
 │   └── scicoqa-synthetic.jsonl      # Synthetic discrepancies (530 entries) - local copy
@@ -169,7 +169,7 @@ scicodeqa-submission-arr-januar-2026/
 │   ├── data.yaml                    # Repository metadata, reproducibility paper info
 │   ├── models.yaml                  # LLM configurations (GPT, Gemini, etc.)
 │   └── prompts.yaml                 # Prompts for discrepancy detection, generation, etc.
-├── scicodeqa/
+├── scicoqa/
 │   ├── core/                        # Core functionality (LLM interface, experiment management)
 │   ├── github/                      # GitHub crawling and issue processing
 │   ├── inference/                   # Inference scripts (discrepancy detection, generation)
@@ -201,8 +201,8 @@ scicodeqa-submission-arr-januar-2026/
 - **HuggingFace Dataset**: [`UKPLab/scicoqa`](https://huggingface.co/datasets/UKPLab/scicoqa) - Primary source for the dataset
 - **Local dataset files** (`data/*.jsonl`): Local copies of the benchmark data in JSON Lines format
 - **Configuration** (`config/*.yaml`): All model, prompt, and data configurations
-- **Inference scripts** (`scicodeqa/inference/*.py`): Run discrepancy detection, synthetic generation, etc.
-- **Core library** (`scicodeqa/core/`): Reusable components for LLM interaction, prompting, dataset loading, and experiment tracking
+- **Inference scripts** (`scicoqa/inference/*.py`): Run discrepancy detection, synthetic generation, etc.
+- **Core library** (`scicoqa/core/`): Reusable components for LLM interaction, prompting, dataset loading, and experiment tracking
 
 ## Dataset Creation
 ### 1. Real Data
@@ -214,7 +214,7 @@ end_date="2025-01-07"
 search_str="arxiv.org"
 filter_homepage_by="${search_str}"
 
-uv run python scicodeqa/github/crawl.py \
+uv run python scicoqa/github/crawl.py \
     --search_str "${search_str}" \
     --qualifiers "sort:stars" "order:desc" "created:${start_date}..${end_date}" \
     --filter_homepage_by "${filter_homepage_by}"
@@ -226,7 +226,7 @@ For arxiv, the crawl should be performed on a weekly basis, since typically ther
 #### GitHub Issue Classification
 To classify the GitHub issues, we used Qwen3 4B Thinking with Ollama. To reproduce, first make sure have access to an Ollama instance and set the `OLLAMA_API_BASE` environment variable to the host of the Ollama instance. Then, run the following command:
 ```bash
-uv run python -m scicodeqa.inference.github_classification --model qwen-3-4b-thinking --prompt github_issue_discrepancy_classification_v2 --dir_suffix qwen_3_4b_think --decoding_config low_temperature
+uv run python -m scicoqa.inference.github_classification --model qwen-3-4b-thinking --prompt github_issue_discrepancy_classification_v2 --dir_suffix qwen_3_4b_think --decoding_config low_temperature
 ```
 
 Using the output of the issue classification, we manually annotated the discrepancies and saved the annotated discrepancies in `discrepancy_issues-positives.jsonl`
@@ -234,18 +234,18 @@ Using the output of the issue classification, we manually annotated the discrepa
 #### GitHub Issue Verification
 Finally, to verify the discrepancies, we used GPT-5.
 ```bash
-uv run python -m scicodeqa.inference.github_validation --model gpt-5 --prompt discrepancy_issue_verification_v2 --dir_suffix gpt_5 --decoding_config gpt_5_high_reasoning --discrepancy_file discrepancy_issues-positives.jsonl --add_comments 
+uv run python -m scicoqa.inference.github_validation --model gpt-5 --prompt discrepancy_issue_verification_v2 --dir_suffix gpt_5 --decoding_config gpt_5_high_reasoning --discrepancy_file discrepancy_issues-positives.jsonl --add_comments 
 ```
 #### Reproducibility Paper Extraction
 To extract the discrepancies from the reproducibility papers, we used GPT-5. To reproduce, run the following command:
 ```bash
-uv run python -m scicodeqa.inference.reproducibility_extraction --prompt reproducibility_report_discrepancy_extraction_v3 --iterate_over reproducibility_paper --model gpt-5 --decoding_config gpt_5_high_reasoning
+uv run python -m scicoqa.inference.reproducibility_extraction --prompt reproducibility_report_discrepancy_extraction_v3 --iterate_over reproducibility_paper --model gpt-5 --decoding_config gpt_5_high_reasoning
 ```
 
 #### Reproducibility Paper Verification
 To verify the discrepancies from the reproducibility papers, we used GPT-5. To reproduce, run the following command:
 ```bash
-uv run python -m scicodeqa.inference.reproducibility_validation --prompt reproducibility_report_discrepancy_verification --model gpt-5 --decoding_config gpt_5_high_reasoning
+uv run python -m scicoqa.inference.reproducibility_validation --prompt reproducibility_report_discrepancy_verification --model gpt-5 --decoding_config gpt_5_high_reasoning
 ```
 
 ### 2. Synthetic Data
@@ -254,7 +254,7 @@ uv run python -m scicodeqa.inference.reproducibility_validation --prompt reprodu
 
 For **Computer Science papers**:
 ```bash
-uv run python -m scicodeqa.inference.synthetic_generation \
+uv run python -m scicoqa.inference.synthetic_generation \
     --model gpt-5 \
     --dir_suffix gpt-5 \
     --decoding_config gpt_5_high_reasoning \
@@ -266,7 +266,7 @@ uv run python -m scicodeqa.inference.synthetic_generation \
 
 For **non-CS papers** (Physics, Biology, etc.):
 ```bash
-uv run python -m scicodeqa.inference.synthetic_generation \
+uv run python -m scicoqa.inference.synthetic_generation \
     --model gpt-5 \
     --dir_suffix gpt-5 \
     --decoding_config gpt_5_high_reasoning \
@@ -297,7 +297,7 @@ The run directory name will automatically include the model name as a suffix (e.
 
 **Example: Run on real data with full context**
 ```bash
-uv run python -m scicodeqa.inference.discrepancy_detection \
+uv run python -m scicoqa.inference.discrepancy_detection \
     --model gpt-5-flex \
     --decoding_config gpt_5_high_reasoning \
     --prompt discrepancy_generation \
@@ -306,7 +306,7 @@ uv run python -m scicodeqa.inference.discrepancy_detection \
 
 **Example: Run on synthetic data with code-only ablation**
 ```bash
-uv run python -m scicodeqa.inference.discrepancy_detection \
+uv run python -m scicoqa.inference.discrepancy_detection \
     --model gpt-5-flex \
     --decoding_config gpt_5_high_reasoning \
     --prompt discrepancy_generation_code_only \
@@ -315,7 +315,7 @@ uv run python -m scicodeqa.inference.discrepancy_detection \
 
 **Example: Use local files instead of HuggingFace**
 ```bash
-uv run python -m scicodeqa.inference.discrepancy_detection \
+uv run python -m scicoqa.inference.discrepancy_detection \
     --model gpt-5-flex \
     --decoding_config gpt_5_high_reasoning \
     --prompt discrepancy_generation \
@@ -331,7 +331,7 @@ Deploy GPT-OSS 20B on VLLM, then run:
 
 ```bash
 GENERATIONS_DIR=out/inference/discrepancy_detection/real/full/discrepancy_gen-002-gpt-5-nano
-uv run python -m scicodeqa.inference.discrepancy_eval \
+uv run python -m scicoqa.inference.discrepancy_eval \
     --model "vllm-gpt-oss-20b" \
     --generations_dir $GENERATIONS_DIR \
     --vllm_server_url "http://localhost:11435/v1" \
@@ -341,7 +341,7 @@ uv run python -m scicodeqa.inference.discrepancy_eval \
 For synthetic data evaluation:
 ```bash
 GENERATIONS_DIR=out/inference/discrepancy_detection/synthetic/full/discrepancy_gen_synthetic-001-gpt-5
-uv run python -m scicodeqa.inference.discrepancy_eval \
+uv run python -m scicoqa.inference.discrepancy_eval \
     --model "vllm-gpt-oss-20b" \
     --generations_dir $GENERATIONS_DIR \
     --vllm_server_url "http://localhost:11435/v1" \
@@ -356,10 +356,10 @@ To compute recall metrics across all runs:
 
 ```bash
 # Compute recall for all experiments
-uv run python -m scicodeqa.evaluation.compute_recall
+uv run python -m scicoqa.evaluation.compute_recall
 
 # Or specify a specific directory
-uv run python -m scicodeqa.evaluation.compute_recall \
+uv run python -m scicoqa.evaluation.compute_recall \
     --base-dir out/inference/discrepancy_detection/real/full
 ```
 

@@ -1,5 +1,5 @@
 """
-Evaluation utilities for SciCodeQA.
+Evaluation utilities for SciCoQA.
 
 This module contains tools for evaluating and analyzing model performance
 on discrepancy detection tasks.

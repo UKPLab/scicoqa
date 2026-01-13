@@ -7,7 +7,7 @@ from pathlib import Path
 import simple_parsing
 from tqdm.contrib.logging import logging_redirect_tqdm
 
-from scicodeqa.core import GitHubIssueExperiment, InferenceArgs
+from scicoqa.core import GitHubIssueExperiment, InferenceArgs
 
 fileConfig("logging.ini")
 logger = logging.getLogger(__name__)
@@ -67,7 +67,7 @@ class IssueClassificationArgs(InferenceArgs):
 
 
 if __name__ == "__main__":
-    with logging_redirect_tqdm(loggers=[logging.root, logging.getLogger("scicodeqa")]):
+    with logging_redirect_tqdm(loggers=[logging.root, logging.getLogger("scicoqa")]):
         args, unknown_args = simple_parsing.parse_known_args(IssueClassificationArgs)
         logger.info(f"IssueClassificationArgs: {args}")
         if unknown_args:

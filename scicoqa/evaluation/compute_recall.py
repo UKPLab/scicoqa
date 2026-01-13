@@ -8,13 +8,13 @@ alternative to the full discrepancy_analysis.ipynb notebook.
 
 Usage:
     # Display results to console
-    python -m scicodeqa.evaluation.compute_recall
+    python -m scicoqa.evaluation.compute_recall
     # Save results to CSV
-    python -m scicodeqa.evaluation.compute_recall -o results.csv
+    python -m scicoqa.evaluation.compute_recall -o results.csv
     # Use top-5 predictions
-    python -m scicodeqa.evaluation.compute_recall --max-rank 5
+    python -m scicoqa.evaluation.compute_recall --max-rank 5
     # Use different eval type
-    python -m scicodeqa.evaluation.compute_recall --eval-type eval
+    python -m scicoqa.evaluation.compute_recall --eval-type eval
 
 Output:
     - Recall Overall: Mean recall across all discrepancies (real + synthetic)

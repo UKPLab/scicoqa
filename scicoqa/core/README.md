@@ -1,4 +1,4 @@
-# SciCodeQA Core Library
+# SciCoQA Core Library
 
 The core libary's purpose is to provide a systematic, reproducible and extensible way to perform inference with LLMs.
 

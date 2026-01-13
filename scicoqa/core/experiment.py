@@ -3,15 +3,15 @@ import json
 import logging
 from logging.config import fileConfig
 
-from scicodeqa.core.args import BaseArgs
-from scicodeqa.core.data_iterator import (
+from scicoqa.core.args import BaseArgs
+from scicoqa.core.data_iterator import (
     DiscrepancyIterator,
     GitHubIssueIterator,
     ReproducibilityReportDiscrepancyVerificationIterator,
     ReproducibilityReportIterator,
 )
-from scicodeqa.core.llm import LLM
-from scicodeqa.core.prompt import Prompt
+from scicoqa.core.llm import LLM
+from scicoqa.core.prompt import Prompt
 
 fileConfig("logging.ini")
 logger = logging.getLogger(__name__)
@@ -151,7 +151,7 @@ class ReproducibilityReportExperiment(BaseExperiment):
 class SyntheticDiscrepancyExperiment(BaseExperiment):
     def __init__(self, args: BaseArgs):
         super().__init__(args)
-        from scicodeqa.core.data_iterator import SyntheticDiscrepancyIterator
+        from scicoqa.core.data_iterator import SyntheticDiscrepancyIterator
 
         self.synthetic_discrepancy_iterator = SyntheticDiscrepancyIterator(
             data_config_path=args.data_config_file,
