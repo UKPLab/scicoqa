@@ -1,5 +1,9 @@
 # SciCoQA: Quality Assurance for Scientific Paper-Code Alignment
 
+[![Code](https://img.shields.io/badge/GitHub-Code-black?logo=github)](https://github.com/UKPLab/scicoqa)
+[![Dataset](https://img.shields.io/badge/🤗-Dataset-yellow)](https://huggingface.co/datasets/UKPLab/scicoqa)
+[![arXiv](https://img.shields.io/badge/arXiv-Paper-b31b1b?logo=arxiv)](https://arxiv.org/abs/tbd)
+
 A dataset and codebase for detecting discrepancies between scientific publications and their code implementations.
 
 
