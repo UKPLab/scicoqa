@@ -20,10 +20,13 @@ A dataset and codebase for detecting discrepancies between scientific publicatio
 
 ## Dataset
 
-The dataset consists of paper-code discrepancies in JSON Lines format:
+The dataset is available on HuggingFace: [**UKPLab/scicoqa**](https://huggingface.co/datasets/UKPLab/scicoqa)
 
-- **`data/scicoqa-real.jsonl`**: 81 real-world discrepancies from GitHub issues and reproducibility papers
-- **`data/scicoqa-synthetic.jsonl`**: 530 synthetically generated discrepancies
+It consists of paper-code discrepancies with two splits:
+- **`real`**: 81 real-world discrepancies from GitHub issues and reproducibility papers
+- **`synthetic`**: 530 synthetically generated discrepancies
+
+Local copies are also available in `data/` as JSON Lines files.
 
 ### Data Format
 
@@ -33,11 +36,13 @@ Each entry contains:
 - **Discrepancy details**: Description of the mismatch between paper and code
 - **Relevant paper sections**: Quotes from the paper
 - **Relevant code files**: List of code files where the discrepancy occurs
-- **Origin metadata**: Source (GitHub issue or reproducibility paper)
+- **Origin metadata**: Source (GitHub issue, reproducibility paper, or synthetic)
+- **Changed code** (synthetic only): Code files and snippets that were modified
 
 Example entry:
 ```json
 {
+  "discrepancy_id": "63197a77",
   "paper_url": "https://arxiv.org/abs/2106.09685",
   "paper_url_versioned": "https://arxiv.org/pdf/2106.09685v2.pdf",
   "code_url": "https://github.com/microsoft/LoRA",
@@ -46,7 +51,8 @@ Example entry:
   "relevant_paper_sections": ["We use a random Gaussian initialization..."],
   "relevant_code_files": ["loralib/layers.py"],
   "origin_type": "GitHub Issue",
-  "is_valid_discrepancy": true
+  "discrepancy_type": "Difference",
+  "discrepancy_category": "Model"
 }
 ```
 
@@ -54,23 +60,34 @@ Example entry:
 
 ## Quick Start
 
-**Load the dataset**:
+**Load the dataset from HuggingFace**:
 ```python
-import json
+from datasets import load_dataset
 
-# Load real-world discrepancies
-with open('data/scicoqa-real.jsonl', 'r') as f:
-    real_data = [json.loads(line) for line in f]
+# Load from HuggingFace Hub
+dataset = load_dataset("UKPLab/scicoqa")
 
-# Load synthetic discrepancies
-with open('data/scicoqa-synthetic.jsonl', 'r') as f:
-    synthetic_data = [json.loads(line) for line in f]
+# Access splits
+real_data = dataset["real"]
+synthetic_data = dataset["synthetic"]
 
 # Access discrepancy information
 discrepancy = real_data[0]
 print(f"Paper: {discrepancy['paper_url']}")
 print(f"Code: {discrepancy['code_url']}")
 print(f"Description: {discrepancy['discrepancy_description']}")
+```
+
+**Using the SciCoQA library**:
+```python
+from scicodeqa.core import load_scicoqa
+
+# Load as pandas DataFrame
+df_real = load_scicoqa(split="real")
+df_synthetic = load_scicoqa(split="synthetic")
+
+# Or load from local files
+df_real = load_scicoqa(split="real", use_local=True)
 ```
 
 ---
@@ -146,8 +163,8 @@ This script will:
 ```
 scicodeqa-submission-arr-januar-2026/
 ├── data/
-│   ├── scicoqa-real.jsonl           # Real-world discrepancies (81 entries)
-│   └── scicoqa-synthetic.jsonl      # Synthetic discrepancies (530 entries)
+│   ├── scicoqa-real.jsonl           # Real-world discrepancies (81 entries) - local copy
+│   └── scicoqa-synthetic.jsonl      # Synthetic discrepancies (530 entries) - local copy
 ├── config/
 │   ├── data.yaml                    # Repository metadata, reproducibility paper info
 │   ├── models.yaml                  # LLM configurations (GPT, Gemini, etc.)
@@ -181,10 +198,11 @@ scicodeqa-submission-arr-januar-2026/
 
 ### Key Files
 
-- **Dataset files** (`data/*.jsonl`): Main benchmark data in JSON Lines format
+- **HuggingFace Dataset**: [`UKPLab/scicoqa`](https://huggingface.co/datasets/UKPLab/scicoqa) - Primary source for the dataset
+- **Local dataset files** (`data/*.jsonl`): Local copies of the benchmark data in JSON Lines format
 - **Configuration** (`config/*.yaml`): All model, prompt, and data configurations
 - **Inference scripts** (`scicodeqa/inference/*.py`): Run discrepancy detection, synthetic generation, etc.
-- **Core library** (`scicodeqa/core/`): Reusable components for LLM interaction, prompting, and experiment tracking
+- **Core library** (`scicodeqa/core/`): Reusable components for LLM interaction, prompting, dataset loading, and experiment tracking
 
 ## Dataset Creation
 ### 1. Real Data
@@ -262,10 +280,12 @@ uv run python -m scicodeqa.inference.synthetic_generation \
 
 ## Inference
 To run inference, run the following command.
-Settings:
-- `REAL_DATA`: Whether to use the real-world scientific paper-code discrepancies dataset. If `1`, use `data/scicoqa-real.jsonl`, otherwise use `data/scicoqa-synthetic.jsonl`.
-- `CODE_ONLY`: Whether to run the ablation experiment or not, ie. providing only the code to and not the paper text. If `1`, use `discrepancy_generation_code_only`, otherwise use `discrepancy_generation`.
-- `MODEL`: The model to use for inference. See `config/models.yaml` for the available models.
+
+**Parameters**:
+- `--dataset_split`: Dataset split to use (`real` or `synthetic`). Default: `real`.
+- `--prompt`: Prompt template. Use `discrepancy_generation` for full context or `discrepancy_generation_code_only` for the code-only ablation.
+- `--model`: The model to use for inference. See `config/models.yaml` for available models.
+- `--use_local`: (Optional) Use local JSONL files instead of HuggingFace Hub.
 
 **Note**: The output directory is automatically determined based on the dataset and prompt:
 - Real + Full context → `out/inference/discrepancy_detection/real/full/`
@@ -275,23 +295,32 @@ Settings:
 
 The run directory name will automatically include the model name as a suffix (e.g., `discrepancy_gen-001-gpt-5` for real data, `discrepancy_gen_synthetic-001-gpt-5` for synthetic data). You can override this by explicitly setting `--dir_suffix`.
 
+**Example: Run on real data with full context**
 ```bash
-REAL_DATA=1
-CODE_ONLY=0
-MODEL=gpt-5-flex
+uv run python -m scicodeqa.inference.discrepancy_detection \
+    --model gpt-5-flex \
+    --decoding_config gpt_5_high_reasoning \
+    --prompt discrepancy_generation \
+    --dataset_split real
+```
 
-if [ $REAL_DATA -eq 1 ]; then
-    DISCREPANCY_FILE=data/scicoqa-real.jsonl
-else
-    DISCREPANCY_FILE=data/scicoqa-synthetic.jsonl
-fi
-if [ $CODE_ONLY -eq 1 ]; then
-    PROMPT=discrepancy_generation_code_only
-else
-    PROMPT=discrepancy_generation
-fi
+**Example: Run on synthetic data with code-only ablation**
+```bash
+uv run python -m scicodeqa.inference.discrepancy_detection \
+    --model gpt-5-flex \
+    --decoding_config gpt_5_high_reasoning \
+    --prompt discrepancy_generation_code_only \
+    --dataset_split synthetic
+```
 
-uv run python -m scicodeqa.inference.discrepancy_detection --model $MODEL --decoding_config gpt_5_high_reasoning --prompt $PROMPT --discrepancies_file $DISCREPANCY_FILE
+**Example: Use local files instead of HuggingFace**
+```bash
+uv run python -m scicodeqa.inference.discrepancy_detection \
+    --model gpt-5-flex \
+    --decoding_config gpt_5_high_reasoning \
+    --prompt discrepancy_generation \
+    --dataset_split real \
+    --use_local
 ```
 
 ## Evaluation
@@ -305,7 +334,18 @@ GENERATIONS_DIR=out/inference/discrepancy_detection/real/full/discrepancy_gen-00
 uv run python -m scicodeqa.inference.discrepancy_eval \
     --model "vllm-gpt-oss-20b" \
     --generations_dir $GENERATIONS_DIR \
-    --vllm_server_url "http://localhost:11435/v1"
+    --vllm_server_url "http://localhost:11435/v1" \
+    --dataset_split real
+```
+
+For synthetic data evaluation:
+```bash
+GENERATIONS_DIR=out/inference/discrepancy_detection/synthetic/full/discrepancy_gen_synthetic-001-gpt-5
+uv run python -m scicodeqa.inference.discrepancy_eval \
+    --model "vllm-gpt-oss-20b" \
+    --generations_dir $GENERATIONS_DIR \
+    --vllm_server_url "http://localhost:11435/v1" \
+    --dataset_split synthetic
 ```
 
 This creates an `eval_v2` directory in the generations directory with evaluation results.

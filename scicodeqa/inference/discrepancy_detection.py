@@ -10,6 +10,7 @@ from tqdm.contrib.logging import logging_redirect_tqdm
 
 from scicodeqa.core import InferenceArgs
 from scicodeqa.core.code_loader import CodeLoader
+from scicodeqa.core.dataset import get_unique_papers
 from scicodeqa.core.experiment import BaseExperiment
 from scicodeqa.core.mistral_ocr import MistralOCR
 from scicodeqa.core.token_counter import TokenCounter
@@ -21,7 +22,12 @@ logger = logging.getLogger(__name__)
 @dataclass(kw_only=True)
 class DiscrepancyDatasetInferenceArgs(InferenceArgs):
     prompt: str = "discrepancy_generation"
-    discrepancies_file: Path = Path("data") / "scicoqa-real.jsonl"
+    # Dataset split: 'real' or 'synthetic'
+    dataset_split: str = "real"
+    # Use local JSONL files instead of HuggingFace Hub
+    use_local: bool = False
+    # Path to local JSONL file (only used if use_local=True)
+    local_path: Path | None = None
     output_base_dir: Path = (
         Path("out") / "inference" / "discrepancy_detection" / "real" / "full"
     )
@@ -31,29 +37,33 @@ class DiscrepancyDatasetInferenceArgs(InferenceArgs):
         super().__post_init__()
 
         # Determine dataset type (real vs synthetic)
-        is_synthetic = "synthetic" in self.discrepancies_file.name
-        
+        is_synthetic = self.dataset_split == "synthetic"
+
         # Determine if code-only mode from prompt
         is_code_only = "code_only" in self.prompt
-        
+
         # Build the path based on dataset and mode
         dataset_dir = "synthetic" if is_synthetic else "real"
         mode_dir = "code_only" if is_code_only else "full"
-        
+
         self.output_base_dir = (
             Path("out") / "inference" / "discrepancy_detection" / dataset_dir / mode_dir
         )
-        
+
         # Adjust dir_prefix for synthetic
         if is_synthetic:
             self.dir_prefix = self.dir_prefix + "_synthetic"
-        
+
         self.apply_code_changes = is_synthetic
-        
+
         if is_synthetic:
             logger.info("Using synthetic discrepancies dataset")
         if is_code_only:
             logger.info("Using code-only mode (ablation)")
+        if self.use_local:
+            logger.info(f"Using local dataset files: {self.local_path or 'default'}")
+        else:
+            logger.info("Loading dataset from HuggingFace Hub: UKPLab/scicoqa")
 
         exp_dir_name = self.get_exp_dir_name(self.output_base_dir)
         self.output_dir = self.output_base_dir / exp_dir_name
@@ -68,21 +78,25 @@ class DiscrepancyDatasetIterator:
 
     def __init__(
         self,
-        discrepancies_file: Path,
         output_dir: Path,
         prompt,
         model: str,
         tokenizer: str,
         model_max_tokens: int,
+        dataset_split: str = "real",
+        use_local: bool = False,
+        local_path: Path | None = None,
         debug: bool = False,
         debug_break_after: int = 1,
         apply_code_changes: bool = False,
     ):
-        self.discrepancies_file = discrepancies_file
         self.output_dir = output_dir
         self.prompt = prompt
         self.model = model
         self.model_max_tokens = model_max_tokens
+        self.dataset_split = dataset_split
+        self.use_local = use_local
+        self.local_path = local_path
         self.debug = debug
         self.debug_break_after = debug_break_after
         self.apply_code_changes = apply_code_changes
@@ -91,8 +105,13 @@ class DiscrepancyDatasetIterator:
         # Initialize OCR for papers
         self.mistral_ocr = MistralOCR()
 
-        # Load unique papers
-        self.unique_papers = self._load_unique_papers()
+        # Load unique papers from HuggingFace or local file
+        self.unique_papers = get_unique_papers(
+            split=self.dataset_split,
+            use_local=self.use_local,
+            local_path=self.local_path,
+            apply_code_changes=self.apply_code_changes,
+        )
         logger.info(
             f"Found {len(self.unique_papers)} unique papers in discrepancies dataset"
         )
@@ -107,43 +126,6 @@ class DiscrepancyDatasetIterator:
                     generation = json.loads(line)
                     self.already_processed.add(generation["paper"]["id"])
             logger.info(f"Found {len(self.already_processed)} already processed papers")
-
-    def _load_unique_papers(self) -> list[dict]:
-        """Load unique papers from discrepancies JSONL file."""
-        if not self.discrepancies_file.exists():
-            raise FileNotFoundError(
-                f"Discrepancies file not found: {self.discrepancies_file}"
-            )
-
-        papers_dict = {}
-        with open(self.discrepancies_file, "r") as f:
-            for line in f:
-                if not line.strip():
-                    continue
-                entry = json.loads(line)
-                paper_url = entry.get("paper_url_versioned")
-                code_url = entry.get("code_url")
-                target_date = entry.get("discrepancy_date")
-
-                # Create paper dict in format expected by iterator
-                if paper_url not in papers_dict.keys():
-                    papers_dict[paper_url] = {
-                        "id": paper_url.split("/")[
-                            -1
-                        ],  # Use arxiv ID or last part of URL
-                        "arxiv_url": paper_url,
-                        "github_url": code_url,
-                        "target_date": target_date,
-                    }
-
-                if self.apply_code_changes:
-                    if "changed_code_files" not in papers_dict[paper_url].keys():
-                        papers_dict[paper_url]["changed_code_files"] = []
-                    papers_dict[paper_url]["changed_code_files"].extend(
-                        entry["changed_code_files"]
-                    )
-
-        return list(papers_dict.values())
 
     def __call__(self, **kwargs):
         return self.__iter__(**kwargs)
@@ -222,12 +204,14 @@ class DiscrepancyDatasetExperiment(BaseExperiment):
     def __init__(self, args: DiscrepancyDatasetInferenceArgs):
         super().__init__(args)
         self.iterator = DiscrepancyDatasetIterator(
-            discrepancies_file=args.discrepancies_file,
             output_dir=args.output_dir,
             prompt=self.prompt,
             model=args.model,
             tokenizer=self.get_tokenizer(),
             model_max_tokens=self.llm.model_config["max_context_size"],
+            dataset_split=args.dataset_split,
+            use_local=args.use_local,
+            local_path=args.local_path,
             debug=args.debug,
             debug_break_after=args.debug_break_after,
             apply_code_changes=args.apply_code_changes,

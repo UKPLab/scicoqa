@@ -8,6 +8,7 @@ from .data_iterator import (
     ReproducibilityReportDiscrepancyVerificationIterator,
     SyntheticDiscrepancyIterator,
 )
+from .dataset import get_unique_papers, load_scicoqa, load_scicoqa_as_records
 from .experiment import (
     BaseExperiment,
     DiscrepancyExperiment,
@@ -40,4 +41,7 @@ __all__ = [
     "ReproducibilityReportExperiment",
     "ReproducibilityReportDiscrepancyVerificationExperiment",
     "SyntheticDiscrepancyExperiment",
+    "load_scicoqa",
+    "load_scicoqa_as_records",
+    "get_unique_papers",
 ]

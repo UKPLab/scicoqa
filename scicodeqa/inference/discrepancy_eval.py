@@ -13,6 +13,7 @@ from tqdm import tqdm
 from tqdm.contrib.logging import logging_redirect_tqdm
 
 from scicodeqa.core import InferenceArgs
+from scicodeqa.core.dataset import load_scicoqa
 from scicodeqa.core.llm import AsyncVLLM
 from scicodeqa.core.prompt import Prompt
 
@@ -27,7 +28,12 @@ class DiscrepancyEvalInferenceArgs(InferenceArgs):
     similarity_model: str = "google/embeddinggemma-300m"
     vllm_server_url: str = "http://localhost:11435/v1"
     prompt: str = "discrepancy_evaluation_v2"
-    discrepancies_file: Path = Path("data") / "scicoqa-real.jsonl"
+    # Dataset split: 'real' or 'synthetic'
+    dataset_split: str = "real"
+    # Use local JSONL files instead of HuggingFace Hub
+    use_local: bool = False
+    # Path to local JSONL file (only used if use_local=True)
+    local_path: Path | None = None
     dir_prefix: str = "eval_v2"
     concurrency: int = 128
     seed: int = 42
@@ -55,6 +61,11 @@ class DiscrepancyEvalInferenceArgs(InferenceArgs):
         # Output directory is a subdirectory of the generations directory
         self.output_dir = self.generations_dir / self.dir_prefix
 
+        if self.use_local:
+            logger.info(f"Using local dataset files: {self.local_path or 'default'}")
+        else:
+            logger.info("Loading dataset from HuggingFace Hub: UKPLab/scicoqa")
+
 
 class DiscrepancyEvalIterator:
     """Iterator that yields (reference_discrepancy, predicted_discrepancy) pairs."""
@@ -62,21 +73,25 @@ class DiscrepancyEvalIterator:
     def __init__(
         self,
         generations_file: Path,
-        discrepancies_file: Path,
         output_dir: Path,
         prompt: Prompt,
+        dataset_split: str = "real",
+        use_local: bool = False,
+        local_path: Path | None = None,
         debug: bool = False,
         debug_break_after: int = 10,
     ):
         self.generations_file = generations_file
-        self.discrepancies_file = discrepancies_file
         self.output_dir = output_dir
         self.prompt = prompt
+        self.dataset_split = dataset_split
+        self.use_local = use_local
+        self.local_path = local_path
         self.debug = debug
         self.debug_break_after = debug_break_after
 
         # Load and merge data
-        discrepancy_df = self._load_discrepancies_df(self.discrepancies_file)
+        discrepancy_df = self._load_discrepancies_df()
         generations_df = self._load_generations_df(self.generations_file)
 
         # Merge on normalized paper URLs
@@ -107,8 +122,12 @@ class DiscrepancyEvalIterator:
                     self.already_processed.add(key)
             logger.info(f"Found {len(self.already_processed)} already processed")
 
-    def _load_discrepancies_df(self, discrepancies_file: Path) -> pd.DataFrame:
-        df = pd.read_json(discrepancies_file, lines=True)
+    def _load_discrepancies_df(self) -> pd.DataFrame:
+        df = load_scicoqa(
+            split=self.dataset_split,
+            use_local=self.use_local,
+            local_path=self.local_path,
+        )
         # Normalize URLs for matching
         df["paper_url_normalized"] = (
             df["paper_url_versioned"]
@@ -355,9 +374,11 @@ class DiscrepancyEvalExperiment:
         # Initialize iterator
         self.iterator = DiscrepancyEvalIterator(
             generations_file=args.generations_file,
-            discrepancies_file=args.discrepancies_file,
             output_dir=args.output_dir,
             prompt=self.prompt,
+            dataset_split=args.dataset_split,
+            use_local=args.use_local,
+            local_path=args.local_path,
             debug=args.debug,
             debug_break_after=args.debug_break_after,
         )
