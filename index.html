@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="SciCoQA: Quality Assurance for Scientific Paper-Code Alignment">
+  <meta name="description" content="A benchmark dataset for detecting discrepancies between scientific papers and their code implementations. 81 real-world + 530 synthetic discrepancies.">
+  <meta name="keywords" content="SciCoQA, paper-code alignment, discrepancy detection, scientific reproducibility, machine learning, NLP, benchmark dataset">
+  <meta name="author" content="UKP Lab, Technical University of Darmstadt">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Ubiquitous Knowledge Processing (UKP) Lab - Technical University of Darmstadt">
+  <meta property="og:title" content="SciCoQA: Quality Assurance for Scientific Paper-Code Alignment">
+  <meta property="og:description" content="A benchmark dataset for detecting discrepancies between scientific papers and their code implementations.">
+  <meta property="og:url" content="https://ukplab.github.io/scicoqa">
+  <meta property="og:image" content="https://ukplab.github.io/scicoqa/static/images/social_preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@UKPLab">
+  <meta name="twitter:title" content="SciCoQA: Quality Assurance for Scientific Paper-Code Alignment">
+  <meta name="twitter:description" content="A benchmark dataset for detecting discrepancies between scientific papers and their code implementations.">
+  <meta name="twitter:image" content="https://ukplab.github.io/scicoqa/static/images/social_preview.png">
+
+  <!-- Academic/Research Specific -->
+  <meta name="citation_title" content="SciCoQA: Quality Assurance for Scientific Paper-Code Alignment">
+  <meta name="citation_author" content="Baumgärtner, Tim">
+  <meta name="citation_author" content="Gurevych, Iryna">
+  <meta name="citation_publication_date" content="2026">
+
+  <title>SciCoQA: Quality Assurance for Scientific Paper-Code Alignment</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="apple-touch-icon" href="static/images/favicon.ico">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  
+  <!-- Syntax Highlighting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+  
+  <style>
+    /* Fix Prism code block styling */
+    pre[class*="language-"] {
+      padding: 1em;
+      overflow: auto;
+    }
+    pre[class*="language-"] code {
+      font-size: 1em !important;
+      background: none;
+      padding: 0;
+    }
+    pre[class*="language-"] code *,
+    pre[class*="language-"] code .token {
+      font-size: inherit !important;
+      line-height: inherit !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+    pre[class*="language-"] code .token.number {
+      font-size: inherit !important;
+      display: inline !important;
+      vertical-align: baseline !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      border: none !important;
+    }
+    /* Hide line numbers if they appear */
+    .line-numbers-rows {
+      display: none !important;
+    }
+  </style>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Custom Styles -->
+  <style>
+    /* Reduce space between hero section and teaser figure */
+    .hero.teaser {
+      padding-top: 0;
+    }
+    .hero.teaser .hero-body {
+      padding-top: 1rem;
+    }
+    
+    /* Modern minimal carousel styling */
+    .discrepancy-carousel-container {
+      position: relative;
+    }
+    
+    /* Minimal arrows - override all bulma carousel defaults */
+    .discrepancy-carousel-container .slider-navigation-previous,
+    .discrepancy-carousel-container .slider-navigation-next,
+    .discrepancy-carousel-container .carousel-nav-left,
+    .discrepancy-carousel-container .carousel-nav-right,
+    .discrepancy-carousel-container [class*="navigation-previous"],
+    .discrepancy-carousel-container [class*="navigation-next"] {
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+      width: 28px !important;
+      height: 28px !important;
+      opacity: 0.3;
+      transition: opacity 0.2s ease;
+    }
+    
+    .discrepancy-carousel-container .slider-navigation-previous:hover,
+    .discrepancy-carousel-container .slider-navigation-next:hover,
+    .discrepancy-carousel-container .carousel-nav-left:hover,
+    .discrepancy-carousel-container .carousel-nav-right:hover,
+    .discrepancy-carousel-container [class*="navigation-previous"]:hover,
+    .discrepancy-carousel-container [class*="navigation-next"]:hover {
+      opacity: 0.7;
+      background: transparent !important;
+    }
+    
+    /* Make arrow chevrons thinner */
+    .discrepancy-carousel-container [class*="navigation"]::before {
+      border-width: 1.5px !important;
+      border-color: #666 !important;
+    }
+    
+    /* Minimal pagination dots */
+    .discrepancy-carousel-container .slider-pagination .slider-page,
+    .discrepancy-carousel-container .carousel-pagination .pagination-item,
+    .discrepancy-carousel-container [class*="pagination"] button,
+    .discrepancy-carousel-container [class*="pagination"] span {
+      width: 6px !important;
+      height: 6px !important;
+      min-width: 6px !important;
+      min-height: 6px !important;
+      background: #ccc !important;
+      border: none !important;
+      border-radius: 50% !important;
+      margin: 0 4px !important;
+      padding: 0 !important;
+      transition: all 0.2s ease;
+    }
+    
+    .discrepancy-carousel-container .slider-pagination .slider-page.is-active,
+    .discrepancy-carousel-container .carousel-pagination .pagination-item.is-active,
+    .discrepancy-carousel-container [class*="pagination"] button.is-active,
+    .discrepancy-carousel-container [class*="pagination"] span.is-active {
+      background: #363636 !important;
+      transform: scale(1.3);
+    }
+    
+    /* Clean card styling for carousel */
+    #discrepancy-carousel .card {
+      box-shadow: none;
+      border: 1px solid #eaeaea;
+      border-radius: 8px;
+      background: #fff;
+    }
+    
+    #discrepancy-carousel .card-content {
+      padding: 1rem 1.25rem;
+    }
+  </style>
+
+  <!-- JavaScript -->
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/bulma-slider.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+</head>
+
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">SciCoQA: Quality Assurance for Scientific Paper-Code Alignment</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=pwDGJYsAAAAJ&hl=en" target="_blank">Tim Baumgärtner</a> and <a href="https://scholar.google.com/citations?user=t3A39e8AAAAJ&hl=en" target="_blank">Iryna Gurevych</a>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Ubiquitous Knowledge Processing (UKP) Lab</span><br><span class="author-block">Technical University of Darmstadt</span>
+            <!-- <span class="author-block"><br>Conference Name 2026</span> -->
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- Paper PDF Link -->
+              <!-- <span class="link-block">
+                <a href="https://arxiv.org/pdf/XXXX.XXXXX.pdf" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span> -->
+
+              <!-- arXiv Link -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/XXXX.XXXXX" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- GitHub Link -->
+              <span class="link-block">
+                <a href="https://github.com/UKPLab/scicoqa" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+
+
+              <!-- Dataset Link -->
+              <span class="link-block">
+                <a href="https://huggingface.co/datasets/UKPLab/scicoqa" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    🤗
+                  </span>
+                  <span>Data</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Teaser Figure -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/scicoqa-overview.svg" alt="Overview of the SciCoQA dataset creation process" style="width: 100%; margin-bottom: -4rem; margin-top: -1rem;">
+      <p class="content has-text-justified">
+        <strong>Overview of the creation of SciCoQA:</strong> We source real-world data from Reproducibility papers and GitHub issues. For the former, paper-code discrepancies are extracted from the paper with GPT-5, for the latter, issues are pre-filtered using Qwen3. Next, all candidates are manually filtered to remove any that do not fit our discrepancy definition. Finally, all paper-code discrepancies are verified with GPT-5. For synthetic data, we generate discrepancies using GPT-5 for AI and other computational domains.
+      </p>
+    </div>
+  </div>
+</section>
+<!-- End Teaser Figure -->
+
+<!-- Paper Abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We present <strong>SciCoQA</strong>, a dataset for detecting discrepancies between scientific publications and their codebases to ensure faithful implementations. We construct SciCoQA from GitHub issues and reproducibility papers, and to scale our dataset, we propose a synthetic data generation method for constructing paper-code discrepancies. We analyze the paper-code discrepancies in detail and propose discrepancy types and categories to better understand the occurring mismatches.
+          </p>
+          <p>
+            In total, our dataset consists of <strong>611 paper-code discrepancies</strong> (81 real, 530 synthetic), spanning diverse computational science disciplines, including AI, Physics, Quantitative Biology, and others. Our evaluation of <strong>21 LLMs</strong> highlights the difficulty of SciCoQA, particularly for instances involving omitted paper details, long-context inputs, and data outside the models' pre-training corpus. The best performing model in our evaluation, GPT-5, can only detect <strong>45.7%</strong> of real-world paper-code discrepancies.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Paper Abstract -->
+
+<!-- Motivation: Example Figure -->
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-3">Paper-Code Discrepancies</h2>
+        <div class="content">
+          <p class="has-text-justified">
+            The "reproducibility crisis" in AI and across science casts doubt on the reliability of research. While publishing code is now standard practice, the <em>availability</em> of code does not guarantee <em>consistency</em> with the scientific text. Implementation details can diverge from their descriptions, introducing performance variations that go unreported—from "mathiness" where equations simulate technical depth while actual gains stem from undocumented tricks, to evaluation metrics that differ in implementation, rendering scientific comparisons invalid.
+          </p>
+
+          <div class="box has-background-info-light" style="border-left: 4px solid #336FA2; margin-bottom: 2rem;">
+            <h4 class="title is-6 has-text-info-dark has-text-justified">📖 Definition: Paper-Code Discrepancy</h4>
+            <p class="has-text-justified" style="margin-bottom: 0.75rem;">
+              A semantic conflict between the scientific method described
+              in the publication and its actual implementation in the codebase, such that the code does not faithfully reproduce the reported method. This mismatch must be <em>meaningful</em>, implying a fundamental alteration to the scientific logic, experimental protocol, or mathematical formulation described in the text.
+            </p>
+            <p class="has-text-justified" style="margin-bottom: 0.75rem;">
+              These discrepancies manifest as three distinct types:
+            </p>
+            <ul style="margin-bottom: 0.75rem; list-style: none; padding-left: 0; text-align: left;">
+              <li>✅ <strong>Differences</strong> — the code implements a logic distinct from the paper's description (e.g., L1 vs. L2 normalization)</li>
+              <li>✅ <strong>Paper omissions</strong> — the code includes critical components missing from the text</li>
+              <li>✅ <strong>Code omissions</strong> — a step described in the paper is absent from the repository</li>
+            </ul>
+            <p class="has-text-justified" style="margin-bottom: 0.75rem; text-align: left;">
+              We distinguish these from engineering artifacts:
+            </p>
+            <ul style="margin-bottom: 0.75rem; list-style: none; padding-left: 0; text-align: left;">
+              <li>❌ <strong>Bugs</strong> — independent of the paper's scientific description</li>
+              <li>❌ <strong>Hyperparameter mismatches</strong> — if the code supports the paper's settings via configuration files or CLI arguments</li>
+              <li>❌ <strong>Trivial implementation details</strong> — standard engineering practices typically omitted from scientific descriptions (e.g., adding noise to a denominator for numerical stability)</li>
+            </ul>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Motivation -->
+
+<!-- Real Examples -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">SciCoQA Examples</h2>
+
+      <p class="has-text-justified has-text-grey" style="margin-bottom: 1.5rem;">
+        Our dataset covers <strong>81 real-world discrepancies</strong> from Machine Learning, Computer Vision, and NLP domains, plus <strong>530 synthetic examples</strong> spanning additional domains including Physics, Quantitative Biology, Statistics, Math, and EE & Systems Science.
+      </p>
+      
+      <!-- Domain Coverage Tags -->
+      <div class="columns" style="margin-bottom: 2rem;">
+        <div class="column" style="flex: 0 0 43%; max-width: 43%;">
+          <div class="box" style="border-left: 4px solid #C93334; padding: 0.5rem; height: 100%;">
+            <span class="tag is-medium" style="background-color: #C93334; color: #fff;">Real-World</span>
+            <span class="has-text-grey is-size-7" style="margin-left: 0.75rem;">81 discrepancies</span>
+            <div class="tags are-medium" style="margin-top: 0.5rem;">
+              <span class="tag is-light"><i class="fas fa-brain" style="margin-right: 0.5rem;"></i>Machine Learning</span>
+              <span class="tag is-light"><i class="fas fa-eye" style="margin-right: 0.5rem;"></i>Computer Vision</span>
+              <span class="tag is-light"><i class="fas fa-language" style="margin-right: 0.5rem;"></i>Natural Language Processing</span>
+            </div>
+          </div>
+        </div>
+        <div class="column" style="flex: 0 0 57%; max-width: 57%;">
+          <div class="box" style="border-left: 4px solid #336FA2; padding: 0.5rem; height: 100%;">
+            <span class="tag is-medium" style="background-color: #336FA2; color: #fff;">Synthetic</span>
+            <span class="has-text-grey is-size-7" style="margin-left: 0.75rem;">530 discrepancies</span>
+            <div class="tags are-medium" style="margin-top: 0.5rem;">
+              <span class="tag is-light"><i class="fas fa-brain" style="margin-right: 0.5rem;"></i>ML</span>
+              <span class="tag is-light"><i class="fas fa-eye" style="margin-right: 0.5rem;"></i>CV</span>
+              <span class="tag is-light"><i class="fas fa-language" style="margin-right: 0.5rem;"></i>NLP</span>
+              <span class="tag is-light"><i class="fas fa-microchip" style="margin-right: 0.5rem;"></i>EE & Systems</span>
+              <span class="tag is-light"><i class="fas fa-atom" style="margin-right: 0.5rem;"></i>Physics</span>
+              <span class="tag is-light"><i class="fas fa-dna" style="margin-right: 0.5rem;"></i>Quant. Biology</span>
+              <span class="tag is-light"><i class="fas fa-chart-line" style="margin-right: 0.5rem;"></i>Statistics</span>
+              <span class="tag is-light"><i class="fas fa-square-root-alt" style="margin-right: 0.5rem;"></i>Math</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="has-text-justified has-text-grey" style="margin-bottom: 1.5rem;">
+        The discrepancies in the SciCoQA dataset are sourced from GitHub issues and reproducibility papers, as well as synthetically generated discrepancies. A discrepancy descriptions consists of three components: A summary of what the <span style="background-color: rgba(50, 115, 220, 0.15); padding: 2px 4px; border-radius: 2px;"><strong>Paper</strong></span> claims, what the <span style="background-color: rgba(220, 53, 69, 0.15); padding: 2px 4px; border-radius: 2px;"><strong>Code</strong></span> implements, and what the <span style="background-color: rgba(102, 51, 153, 0.15); padding: 2px 4px; border-radius: 2px;"><strong>Difference</strong></span> is. We show summarized examples of each type and category below.
+      </p>
+      
+      <!-- Example 1: FiLM (Paper Omission - Algorithm) -->
+      <div class="box" style="margin-bottom: 1.5rem;">
+        <div class="columns">
+          <div class="column is-2">
+            <p class="is-size-7 has-text-grey" style="margin-bottom: 0.25rem;">TYPE</p>
+            <p class="is-size-6" style="margin-bottom: 0.5rem;"><strong>Paper Omission</strong></p>
+            <p class="is-size-7 has-text-grey" style="margin-bottom: 0.25rem;">CATEGORY</p>
+            <p class="is-size-6"><strong>Algorithm</strong></p>
+          </div>
+          <div class="column" style="border-left: 1px solid #dbdbdb; padding-left: 1.5rem;">
+            <p class="is-size-7 has-text-grey" style="margin-bottom: 0.5rem;">
+              <a href="https://arxiv.org/abs/2011.02512" target="_blank"><strong>FiLM: Visual Reasoning with a General Conditioning Layer</strong></a>
+            </p>
+            <p><span style="background-color: rgba(50, 115, 220, 0.15); padding: 2px 4px; border-radius: 2px;">Describes FiLM conditioning using unconstrained affine transforms <em>σ ⊙ f + μ</em> produced by linear layers.</span> <span style="background-color: rgba(220, 53, 69, 0.15); padding: 2px 4px; border-radius: 2px;">Applies sigmoid activation to both <em>σ</em> and <em>μ</em>, constraining coefficients to (0,1) range.</span> <span style="background-color: rgba(102, 51, 153, 0.15); padding: 2px 4px; border-radius: 2px;">Code restricts FiLM coefficients to positive bounded values, unlike paper's unconstrained coefficients.</span></p>
+            <p class="has-text-grey is-size-7" style="margin-top: 0.75rem;">
+              <i class="fas fa-file-alt"></i> Source: <a href="https://openreview.net/pdf?id=r1e8EaNKwB" target="_blank">Reproducibility Paper</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Example 2: FedNova (Code Omission - Training) -->
+      <div class="box" style="margin-bottom: 1.5rem;">
+        <div class="columns">
+          <div class="column is-2">
+            <p class="is-size-7 has-text-grey" style="margin-bottom: 0.25rem;">TYPE</p>
+            <p class="is-size-6" style="margin-bottom: 0.5rem;"><strong>Code Omission</strong></p>
+            <p class="is-size-7 has-text-grey" style="margin-bottom: 0.25rem;">CATEGORY</p>
+            <p class="is-size-6"><strong>Training</strong></p>
+          </div>
+          <div class="column" style="border-left: 1px solid #dbdbdb; padding-left: 1.5rem;">
+            <p class="is-size-7 has-text-grey" style="margin-bottom: 0.5rem;">
+              <a href="https://arxiv.org/abs/2007.07481" target="_blank"><strong>FedNova: Tackling the Objective Inconsistency Problem in Federated Optimization</strong></a>
+            </p>
+            <p><span style="background-color: rgba(50, 115, 220, 0.15); padding: 2px 4px; border-radius: 2px;">Each worker performs <em>τ local updates</em> per round and accumulates gradients across batches.</span> <span style="background-color: rgba(220, 53, 69, 0.15); padding: 2px 4px; border-radius: 2px;">Worker loop processes only <em>one minibatch</em> and breaks; multi-step accumulation code is commented out.</span> <span style="background-color: rgba(102, 51, 153, 0.15); padding: 2px 4px; border-radius: 2px;">Code implements single local update (τ=1) instead of accumulating τ updates as described.</span></p>
+            <p class="has-text-grey is-size-7" style="margin-top: 0.75rem;">
+              <i class="fas fa-file-alt"></i> Source: <a href="https://openreview.net/pdf?id=HJlnB3VKPS" target="_blank">Reproducibility Paper</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Example 3: Optimal Transport (Difference - Loss) -->
+      <div class="box" style="margin-bottom: 1.5rem;">
+        <div class="columns">
+          <div class="column is-2">
+            <p class="is-size-7 has-text-grey" style="margin-bottom: 0.25rem;">TYPE</p>
+            <p class="is-size-6" style="margin-bottom: 0.5rem;"><strong>Difference</strong></p>
+            <p class="is-size-7 has-text-grey" style="margin-bottom: 0.25rem;">CATEGORY</p>
+            <p class="is-size-6"><strong>Loss</strong></p>
+          </div>
+          <div class="column" style="border-left: 1px solid #dbdbdb; padding-left: 1.5rem;">
+            <p class="is-size-7 has-text-grey" style="margin-bottom: 0.5rem;">
+              <a href="https://arxiv.org/abs/2010.04159" target="_blank"><strong>Optimal Transport for Explainable Clustering</strong></a>
+            </p>
+            <p><span style="background-color: rgba(50, 115, 220, 0.15); padding: 2px 4px; border-radius: 2px;">Penalizes negative values of ξ using <em>min(ξ, 0)²</em> to enforce admissibility constraints.</span> <span style="background-color: rgba(220, 53, 69, 0.15); padding: 2px 4px; border-radius: 2px;">Uses <em>torch.clamp(ξ, min=0)²</em>, penalizing positive ξ values instead.</span> <span style="background-color: rgba(102, 51, 153, 0.15); padding: 2px 4px; border-radius: 2px;">Code penalizes opposite sign from paper's definition—penalizes valid constraints instead of violations.</span></p>
+            <p class="has-text-grey is-size-7" style="margin-top: 0.75rem;">
+              <i class="fas fa-file-alt"></i> Source: <a href="https://openreview.net/pdf?id=S1l1skBKPH" target="_blank">Reproducibility Paper</a>
+            </p>
+          </div>
+        </div>
+      </div>
+  </div>
+</section>
+<!-- End Real Examples -->
+
+<!-- Discrepancy Taxonomy -->
+<section class="section hero">
+  <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Discrepancy Taxonomy</h2>
+      <p class="has-text-centered has-text-grey" style="margin-bottom: 0rem;">
+        We categorize discrepancies by <strong>type</strong> (how they manifest) and <strong>category</strong> (what component is affected).
+      </p>
+      
+      <div class="columns">
+        <!-- Types -->
+        <div class="column">
+          <div class="box" style="height: 100%;">
+            <h3 class="title is-6 has-text-centered">
+              <span class="icon has-text-info"><i class="fas fa-shapes"></i></span>
+              Discrepancy Types
+            </h3>
+            <div class="content">
+              <p><strong>Difference</strong>: Paper and code describe/implement conflicting approaches</p>
+              <p><strong>Paper Omission</strong>: Implementation detail missing from the paper description</p>
+              <p><strong>Code Omission</strong>: Paper describes something not present in the code</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Categories -->
+        <div class="column">
+          <div class="box" style="height: 100%;">
+            <h3 class="title is-6 has-text-centered">
+              <span class="icon has-text-success"><i class="fas fa-layer-group"></i></span>
+              Discrepancy Categories
+            </h3>
+            <div class="content">
+              <p><strong>Algorithm</strong>: Differences step order, operations, core logic</p>
+              <p><strong>Model</strong>: Architectural or initialization difference</p>
+              <p><strong>Loss</strong>: Alterations to loss definitions or terms</p>
+              <p><strong>Evaluation</strong>: Modifications to evaluation logic or metrics</p>
+              <p><strong>Data</strong>: Dataset usage, preprocessing, augmentation, filtering</p>
+              <p><strong>Training</strong>: Changes to the learning process, schedule, optimization</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Distribution Charts -->
+      <div class="columns is-centered" style="margin-top: 1.5rem;">
+        <div class="column is-6">
+          <p class="has-text-centered has-text-weight-semibold" style="margin-bottom: 0.5rem;">Distribution by Type</p>
+          <div id="chart-discrepancy-type" style="width: 100%;"></div>
+        </div>
+        <div class="column is-6">
+          <p class="has-text-centered has-text-weight-semibold" style="margin-bottom: 0.5rem;">Distribution by Category</p>
+          <div id="chart-discrepancy-category" style="width: 100%;"></div>
+        </div>
+      </div>
+      <p class="has-text-centered has-text-grey is-size-7">
+        Distribution of discrepancy types and categories in the SciCoQA dataset. Hover for exact results per subset.
+      </p>
+      
+      <!-- Load Taxonomy Charts -->
+      <script src="https://d3js.org/d3.v5.min.js"></script>
+      <script src="https://mpld3.github.io/js/mpld3.v0.5.12.js"></script>
+      <script>
+      (function() {
+        // Wait for mpld3 to be available
+        function loadTaxonomyCharts() {
+          if (typeof mpld3 === 'undefined') {
+            setTimeout(loadTaxonomyCharts, 100);
+            return;
+          }
+          
+          // Register tooltip plugin
+          mpld3.register_plugin("htmltooltip", HtmlTooltipPlugin);
+          HtmlTooltipPlugin.prototype = Object.create(mpld3.Plugin.prototype);
+          HtmlTooltipPlugin.prototype.constructor = HtmlTooltipPlugin;
+          HtmlTooltipPlugin.prototype.requiredProps = ["id"];
+          HtmlTooltipPlugin.prototype.defaultProps = {labels:null, target:null, hoffset:0, voffset:10, targets:null};
+          function HtmlTooltipPlugin(fig, props){
+              mpld3.Plugin.call(this, fig, props);
+          };
+          HtmlTooltipPlugin.prototype.draw = function(){
+              var obj = mpld3.get_element(this.props.id);
+              var labels = this.props.labels;
+              var tooltip = d3.select("body").append("div")
+                  .attr("class", "mpld3-tooltip")
+                  .style("position", "absolute")
+                  .style("z-index", "10")
+                  .style("visibility", "hidden");
+              obj.elements()
+                  .on("mouseover", function(d, i){
+                      tooltip.html(labels[i]).style("visibility", "visible");
+                  })
+                  .on("mousemove", function(d, i){
+                      tooltip.style("top", d3.event.pageY + 10 + "px")
+                             .style("left", d3.event.pageX + "px");
+                  })
+                  .on("mouseout", function(d, i){
+                      tooltip.style("visibility", "hidden");
+                  });
+          };
+          
+          // Load Type chart
+          fetch('static/images/chart-discrepancy-type.json')
+            .then(r => r.json())
+            .then(data => mpld3.draw_figure("chart-discrepancy-type", data))
+            .catch(err => console.error('Type chart error:', err));
+          
+          // Load Category chart
+          fetch('static/images/chart-discrepancy-category.json')
+            .then(r => r.json())
+            .then(data => mpld3.draw_figure("chart-discrepancy-category", data))
+            .catch(err => console.error('Category chart error:', err));
+        }
+        loadTaxonomyCharts();
+      })();
+      </script>
+  </div>
+</section>
+<!-- End Discrepancy Taxonomy -->
+
+
+<!-- Results -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Evaluation Results</h2>
+    <p class="has-text-centered has-text-grey" style="margin-bottom: 2rem;">
+      Can AI reliably detect when scientific papers and code don't match? Our evaluation of 21 LLMs reveals a concerning reality: while models can identify some discrepancies, they miss most real-world cases that threaten scientific integrity.
+    </p>
+
+    <!-- How We Evaluated -->
+    <div class="content" style="margin-bottom: 2rem;">
+      <h4 class="title is-5">How We Evaluated</h4>
+      <p>We tested 21 LLMs in a zero-shot setting: given the full-text paper (preprocessed to mardown format) and the codebase (containing only relevant code files), the model generates a list of discrepancies it finds. Subseqnelty, each generated discrepancy is compared against the ground-truth discrepancies for that paper. The comparison is performed by an LLM-Judge, in our case GPT-OSS 20B. Finally, the recall can be computed, dividing the number of discrepancies that were "matched" against a ground truth by the total number of discrepancies in the dataset.</p>
+      
+      <!-- Inference Pipeline Flowchart -->
+      <div style="margin: 0; text-align: center;">
+        <img src="static/images/inference-pipeline-5.svg" alt="Inference pipeline flowchart showing paper excerpt and code snippet as inputs, model inference, generated discrepancy, LLM judge evaluation, and final match/no match output" style="max-width: 100%; height: auto; 
+        ">
+        <p class="has-text-grey is-size-7" style="margin-top: 0.5rem;">
+          Overview of the inference and evaluation pipeline for SciCoQA.
+        </p>
+      </div>
+    </div>
+
+    <!-- Main Results -->
+    <div style="margin-bottom: 2rem;">
+      <h4 class="title is-5" style="margin-bottom: 1rem;">Main Results</h4>
+      Executing the above pipeline yields the folling results:
+      <div id="chart-main-performance" style="max-width: 960px; margin: 0 auto;"></div>
+      <p class="has-text-grey is-size-7 has-text-centered" style="margin-bottom: 1rem;">
+        Recall scores across 21 LLMs on real-world vs synthetic discrepancies. Hover for exact values.
+      </p>
+    </div>
+
+    <!-- Key Finding -->
+    <div class="box has-background-warning-light" style="border-left: 4px solid #f39c12; margin-bottom: 2rem;">
+      <h4 class="title is-6 has-text-warning-dark">💡 Key Finding</h4>
+      <p class="is-size-6 has-text-weight-semibold mb-3">
+        Even the best model (GPT-5) achieves only <strong>45.7% recall</strong> on real-world discrepancies — far too low for reliable quality assurance in scientific publishing.
+      </p>
+    </div>
+
+    <!-- Precision Analysis -->
+    <div class="content" style="margin-bottom: 2rem;">
+      <h4 class="title is-5">Precision Analysis</h4>
+      <p>To investigate precision, we manually annotated predictions from top models on 12 NLP papers. We verfied each prediction and decided whether it is a valid paper-code discrepancy or not. This yieled a total of 67 pooled discrepancies. We then computed preicision and recall on this pooled set for each model.</p>
+    </div>
+
+    <!-- Precision Analysis Table -->
+    <div class="has-text-centered" style="margin-bottom: 2rem;">
+      <div class="table-container" style="max-width: 700px; margin: 0 auto;">
+        <table class="table is-striped is-narrow is-fullwidth">
+          <thead>
+            <tr>
+              <th style="text-align: right;"></th>
+              <th>GPT-5</th>
+              <th>Gemini 2.5 Pro</th>
+              <th>GPT-OSS 20B</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align: left;"><strong>True Positives</strong></td>
+              <td>38</td>
+              <td>29</td>
+              <td>40</td>
+            </tr>
+            <tr style="border-bottom: 2px solid #dbdbdb;">
+              <td style="text-align: left;"><strong>False Positives</strong></td>
+              <td>8</td>
+              <td>2</td>
+              <td>20</td>
+            </tr>
+            <tr class="has-background-light">
+              <td style="text-align: left;"><strong>Precision</strong></td>
+              <td>82.6%</td>
+              <td>93.5%</td>
+              <td>66.7%</td>
+            </tr>
+            <tr>
+              <td style="text-align: left;"><strong>Recall</strong></td>
+              <td>56.7%</td>
+              <td>43.3%</td>
+              <td>59.7%</td>
+            </tr>
+            <tr>
+              <td style="text-align: left;"><strong>F1</strong></td>
+              <td>67.3%</td>
+              <td>59.2%</td>
+              <td>63.0%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="has-text-grey is-size-7" style="margin-top: 0.5rem;">Performance on 67 pooled discrepancies from 12 NLP papers</p>
+    </div>
+    
+    <!-- mpld3 Chart Scripts -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://mpld3.github.io/js/mpld3.v0.5.12.js"></script>
+    <script>
+    (function() {
+      // Register tooltip plugin
+      mpld3.register_plugin("htmltooltip", HtmlTooltipPlugin);
+      HtmlTooltipPlugin.prototype = Object.create(mpld3.Plugin.prototype);
+      HtmlTooltipPlugin.prototype.constructor = HtmlTooltipPlugin;
+      HtmlTooltipPlugin.prototype.requiredProps = ["id"];
+      HtmlTooltipPlugin.prototype.defaultProps = {labels:null, target:null, hoffset:0, voffset:10, targets:null};
+      function HtmlTooltipPlugin(fig, props){
+        mpld3.Plugin.call(this, fig, props);
+      };
+      HtmlTooltipPlugin.prototype.draw = function(){
+        var obj = mpld3.get_element(this.props.id);
+        var labels = this.props.labels;
+        var tooltip = d3.select("body").append("div")
+          .attr("class", "mpld3-tooltip")
+          .style("position", "absolute")
+          .style("z-index", "10")
+          .style("visibility", "hidden")
+          .style("background", "white")
+          .style("border", "1px solid #ccc")
+          .style("padding", "8px")
+          .style("border-radius", "4px")
+          .style("font-size", "12px")
+          .style("box-shadow", "0 2px 4px rgba(0,0,0,0.1)");
+        obj.elements()
+          .on("mouseover", function(d, i){
+            tooltip.html(labels[i]).style("visibility", "visible");
+          })
+          .on("mousemove", function(d, i){
+            tooltip.style("top", d3.event.pageY + 10 + "px").style("left", d3.event.pageX + 10 + "px");
+          })
+          .on("mouseout", function(d, i){
+            tooltip.style("visibility", "hidden");
+          });
+      };
+      
+      // Load and render chart from JSON
+      fetch('static/images/chart-main-performance.json')
+        .then(response => response.json())
+        .then(data => {
+          mpld3.draw_figure("chart-main-performance", data);
+        })
+        .catch(err => {
+          console.error('Failed to load chart:', err);
+          document.getElementById('chart-main-performance').innerHTML = 
+            '<p class="has-text-danger">Chart failed to load. Please refresh.</p>';
+        });
+    })();
+    </script>
+    
+    <!-- Error Analysis Cards -->
+    <div style="margin-bottom: 2rem;">
+      <h4 class="title is-5" style="margin-bottom: 1.5rem;">Error Analysis</h4>
+      <p>Our evaluation and manual error analysis revealed the folliowng failure modes: </p>
+      <div class="columns">
+        <div class="column">
+          <div class="card" style="height: 100%; border-left: 4px solid #ff6b6b;">
+            <div class="card-content">
+              <div class="content">
+                <h5 class="title is-6">✂️ Paper Omissions</h5>
+                <p>Models miss discrepancies where critical implementation details are present in code but absent from the paper description. These account for the majority of detection failures.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="card" style="height: 100%; border-left: 4px solid #4ecdc4;">
+            <div class="card-content">
+              <div class="content">
+                <h5 class="title is-6">📏 Long Context</h5>
+                <p>Performance drops significantly when analyzing large codebases (100k+ tokens), where models struggle to maintain coherence across extended inputs.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="card" style="height: 100%; border-left: 4px solid #45b7d1;">
+            <div class="card-content">
+              <div class="content">
+                <h5 class="title is-6">🆕 Recent Papers</h5>
+                <p>Models perform worse on papers published after their training cutoff, showing degradation on "non-contaminated" data outside their pre-training corpus.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Implications -->
+    <div class="content">
+      <h4 class="title is-5">What This Means for Science</h4>
+      <div class="columns">
+        <div class="column">
+          <p><strong>For Scientific Publishing:</strong> The 45.7% recall rate shows that current AI tools cannot reliably ensure paper-code alignment, highlighting the need for improved quality assurance processes in scientific publishing.</p>
+        </div>
+        <div class="column">
+          <p><strong>For AI-Assisted Research:</strong> Autonomous scientific systems and AI research assistants require specialized training to detect subtle implementation discrepancies that could affect experimental reproducibility.</p>
+        </div>
+      </div>
+      <div class="columns" style="margin-top: 1rem;">
+        <div class="column">
+          <p><strong>For Peer Review:</strong> Human reviewers should prioritize checking code-paper alignment, especially for complex algorithms, loss functions, and evaluation metrics where discrepancies are most likely to occur.</p>
+        </div>
+        <div class="column">
+          <p><strong>For Future Research:</strong> Developing better methods for automated paper-code consistency checking is crucial as AI systems take on larger roles in scientific discovery and validation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Results -->
+
+<!-- Quick Start -->
+<section class="section hero">
+  <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Get Started</h2>
+      <p class="has-text-centered has-text-grey" style="margin-bottom: 2rem;">
+        Here we share the resources to get started on working on this important problem and exploring the SciCoQA dataset.
+      </p>
+      <div class="columns">
+        <div class="column">
+          <div class="card" style="height: 100%; border-left: 4px solid #ffd21e;">
+            <div class="card-content">
+              <div class="content">
+                <h5 class="title is-6">🤗 Dataset</h5>
+                <p>The SciCoQA dataset is available on <a href="https://huggingface.co/datasets/UKPLab/scicoqa" target="_blank">Hugging Face</a> for convenient access and integration into any project.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="card" style="height: 100%; border-left: 4px solid #000000;">
+            <div class="card-content">
+              <div class="content">
+                <h5 class="title is-6">💻 Code</h5>
+                <p>The complete codebase for SciCoQA, including data collection, inference and evaluation scripts, is available on <a href="https://github.com/UKPLab/scicoqa" target="_blank">GitHub</a>.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="columns is-centered">
+        <div class="column" style="max-width:none; flex: none;">
+          <pre style="white-space: pre; overflow-x: auto; font-size: 1em; padding: 1.25em 1.5em; min-width: 650px;"><code class="language-python">from datasets import load_dataset
+
+# Load SciCoQA from HuggingFace Hub
+dataset = load_dataset("UKPLab/scicoqa")
+
+# Access the different subsets
+real_data = dataset["real"]            # subset of 81 real-world discrepancies
+synthetic_data = dataset["synthetic"]  # subset of 530 synthetic examples
+
+# Explore a discrepancy
+example = real_data[0]
+print(f"Paper: {example['paper_url_versioned']}")           # static URL to the paper
+print(f"Code: {example['code_url_versioned']}")             # static URL to the code
+print(f"Discrepancy: {example['discrepancy_description']}") # description of the discrepancy
+print(f"Type: {example['discrepancy_type']}")               # type of the discrepancy
+print(f"Category: {example['discrepancy_category']}")       # category of the discrepancy
+</code></pre>
+        </div>
+      </div>
+      <p class="has-text-centered has-text-grey is-size-7" style="margin-top: 0.5rem;">
+        Example code for loading and exploring the SciCoQA dataset from Hugging Face.
+      </p>
+  </div>
+</section>
+<!-- End Quick Start -->
+
+<!-- BibTeX Citation -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">BibTeX</h2>
+      <p class="has-text-centered has-text-grey" style="margin-bottom: 2rem;">
+        If you found this work useful or used the dataset, please consider citing it.
+      </p>
+      <div class="columns is-centered">
+        <div class="column is-10">
+          <pre><code>@article{scicoqa2026,
+  title     = {SciCoQA: Quality Assurance for Scientific Paper-Code Alignment},
+  author    = {Baumg{\"a}rtner, Tim and Gurevych, Iryna},
+  journal   = {arXiv preprint arXiv:XXXX.XXXXX},
+  year      = {2026},
+  url       = {https://github.com/UKPLab/scicoqa}
+}</code></pre>
+        </div>
+      </div>
+  </div>
+</section>
+<!-- End BibTeX Citation -->
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> 
+            which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer.
+            <br>
+            This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
