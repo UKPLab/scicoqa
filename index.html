@@ -258,7 +258,7 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img src="static/images/scicoqa-overview.svg" alt="Overview of the SciCoQA dataset creation process" style="width: 100%; margin-bottom: -4rem; margin-top: -1rem;">
+      <img src="static/images/scicoqa-overview.svg" alt="Overview of the SciCoQA dataset creation process" style="width: 100%; margin-bottom: 0rem; margin-top: -1rem;">
       <p class="content has-text-justified">
         <strong>Overview of the creation of SciCoQA:</strong> We source real-world data from Reproducibility papers and GitHub issues. For the former, paper-code discrepancies are extracted from the paper with GPT-5, for the latter, issues are pre-filtered using Qwen3. Next, all candidates are manually filtered to remove any that do not fit our discrepancy definition. Finally, all paper-code discrepancies are verified with GPT-5. For synthetic data, we generate discrepancies using GPT-5 for AI and other computational domains.
       </p>
@@ -370,7 +370,7 @@
       </div>
 
       <p class="has-text-justified has-text-grey" style="margin-bottom: 1.5rem;">
-        The discrepancies in the SciCoQA dataset are sourced from GitHub issues and reproducibility papers, as well as synthetically generated discrepancies. A discrepancy descriptions consists of three components: A summary of what the <span style="background-color: rgba(50, 115, 220, 0.15); padding: 2px 4px; border-radius: 2px;"><strong>Paper</strong></span> claims, what the <span style="background-color: rgba(220, 53, 69, 0.15); padding: 2px 4px; border-radius: 2px;"><strong>Code</strong></span> implements, and what the <span style="background-color: rgba(102, 51, 153, 0.15); padding: 2px 4px; border-radius: 2px;"><strong>Difference</strong></span> is. We show summarized examples of each type and category below.
+        The discrepancies in the SciCoQA dataset are sourced from GitHub issues and reproducibility papers, as well as synthetically generated discrepancies. A discrepancy description consists of three components: A summary of what the <span style="background-color: rgba(50, 115, 220, 0.15); padding: 2px 4px; border-radius: 2px;"><strong>Paper</strong></span> claims, what the <span style="background-color: rgba(220, 53, 69, 0.15); padding: 2px 4px; border-radius: 2px;"><strong>Code</strong></span> implements, and what the <span style="background-color: rgba(102, 51, 153, 0.15); padding: 2px 4px; border-radius: 2px;"><strong>Difference</strong></span> is. We show summarized examples of each type and category below.
       </p>
       
       <!-- Example 1: FiLM (Paper Omission - Algorithm) -->
@@ -471,7 +471,7 @@
               Discrepancy Categories
             </h3>
             <div class="content">
-              <p><strong>Algorithm</strong>: Differences step order, operations, core logic</p>
+              <p><strong>Algorithm</strong>: Differences in step order, operations, core logic</p>
               <p><strong>Model</strong>: Architectural or initialization difference</p>
               <p><strong>Loss</strong>: Alterations to loss definitions or terms</p>
               <p><strong>Evaluation</strong>: Modifications to evaluation logic or metrics</p>
@@ -569,8 +569,8 @@
 
     <!-- How We Evaluated -->
     <div class="content" style="margin-bottom: 2rem;">
-      <h4 class="title is-5">How We Evaluated</h4>
-      <p>We tested 21 LLMs in a zero-shot setting: given the full-text paper (preprocessed to mardown format) and the codebase (containing only relevant code files), the model generates a list of discrepancies it finds. Subseqnelty, each generated discrepancy is compared against the ground-truth discrepancies for that paper. The comparison is performed by an LLM-Judge, in our case GPT-OSS 20B. Finally, the recall can be computed, dividing the number of discrepancies that were "matched" against a ground truth by the total number of discrepancies in the dataset.</p>
+      <h4 class="title is-5">Inference Pipeline</h4>
+      <p>We tested 21 LLMs in a zero-shot setting: given the full-text paper (preprocessed to markdown format) and the codebase (containing only relevant code files), the model generates a list of discrepancies it finds. Subsequently, each generated discrepancy is compared against the ground-truth discrepancies for that paper. The comparison is performed by an LLM-Judge, in our case GPT-OSS 20B. Finally, the recall can be computed, dividing the number of discrepancies that were "matched" against a ground truth by the total number of discrepancies in the dataset.</p>
       
       <!-- Inference Pipeline Flowchart -->
       <div style="margin: 0; text-align: center;">
@@ -585,7 +585,7 @@
     <!-- Main Results -->
     <div style="margin-bottom: 2rem;">
       <h4 class="title is-5" style="margin-bottom: 1rem;">Main Results</h4>
-      Executing the above pipeline yields the folling results:
+      Executing the above pipeline yields the following results:
       <div id="chart-main-performance" style="max-width: 960px; margin: 0 auto;"></div>
       <p class="has-text-grey is-size-7 has-text-centered" style="margin-bottom: 1rem;">
         Recall scores across 21 LLMs on real-world vs synthetic discrepancies. Hover for exact values.
@@ -603,7 +603,7 @@
     <!-- Precision Analysis -->
     <div class="content" style="margin-bottom: 2rem;">
       <h4 class="title is-5">Precision Analysis</h4>
-      <p>To investigate precision, we manually annotated predictions from top models on 12 NLP papers. We verfied each prediction and decided whether it is a valid paper-code discrepancy or not. This yieled a total of 67 pooled discrepancies. We then computed preicision and recall on this pooled set for each model.</p>
+      <p>To investigate precision, we manually annotated predictions from top models on 12 NLP papers. We verified each prediction and decided whether it is a valid paper-code discrepancy or not. This yielded a total of 67 pooled discrepancies. We then computed precision and recall on this pooled set for each model.</p>
     </div>
 
     <!-- Precision Analysis Table -->
@@ -712,7 +712,7 @@
     <!-- Error Analysis Cards -->
     <div style="margin-bottom: 2rem;">
       <h4 class="title is-5" style="margin-bottom: 1.5rem;">Error Analysis</h4>
-      <p>Our evaluation and manual error analysis revealed the folliowng failure modes: </p>
+      <p>Our evaluation and manual error analysis revealed the following failure modes: </p>
       <div class="columns">
         <div class="column">
           <div class="card" style="height: 100%; border-left: 4px solid #ff6b6b;">
