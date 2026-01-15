@@ -3,92 +3,94 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  
   <!-- Primary Meta Tags -->
   <meta name="title" content="SciCoQA: Quality Assurance for Scientific Paper-Code Alignment">
   <meta name="description" content="A benchmark dataset for detecting discrepancies between scientific papers and their code implementations. 81 real-world + 530 synthetic discrepancies.">
   <meta name="keywords" content="SciCoQA, paper-code alignment, discrepancy detection, scientific reproducibility, machine learning, NLP, benchmark dataset">
-  <meta name="author" content="UKP Lab, Technical University of Darmstadt">
+  <meta name="author" content="Tim Baumgärtner, Iryna Gurevych">
   <meta name="robots" content="index, follow">
   <meta name="language" content="English">
-
+  
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article">
-  <meta property="og:site_name" content="Ubiquitous Knowledge Processing (UKP) Lab - Technical University of Darmstadt">
+  <meta property="og:site_name" content="Ubiquitous Knowledge Processing Lab - Technical University of Darmstadt">
   <meta property="og:title" content="SciCoQA: Quality Assurance for Scientific Paper-Code Alignment">
   <meta property="og:description" content="A benchmark dataset for detecting discrepancies between scientific papers and their code implementations.">
   <meta property="og:url" content="https://ukplab.github.io/scicoqa">
   <meta property="og:image" content="https://ukplab.github.io/scicoqa/static/images/social_preview.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="SciCoQA: Quality Assurance for Scientific Paper-Code Alignment - Research Preview">
+  <meta property="article:published_time" content="2026-01-01T00:00:00.000Z">
+  <meta property="article:author" content="Tim Baumgärtner">
+  <meta property="article:section" content="Research">
+  <meta property="article:tag" content="paper-code alignment">
+  <meta property="article:tag" content="discrepancy detection">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@UKPLab">
+  <meta name="twitter:creator" content="@UKPLab">
   <meta name="twitter:title" content="SciCoQA: Quality Assurance for Scientific Paper-Code Alignment">
   <meta name="twitter:description" content="A benchmark dataset for detecting discrepancies between scientific papers and their code implementations.">
   <meta name="twitter:image" content="https://ukplab.github.io/scicoqa/static/images/social_preview.png">
+  <meta name="twitter:image:alt" content="SciCoQA: Quality Assurance for Scientific Paper-Code Alignment - Research Preview">
 
   <!-- Academic/Research Specific -->
   <meta name="citation_title" content="SciCoQA: Quality Assurance for Scientific Paper-Code Alignment">
   <meta name="citation_author" content="Baumgärtner, Tim">
   <meta name="citation_author" content="Gurevych, Iryna">
   <meta name="citation_publication_date" content="2026">
+  <meta name="citation_conference_title" content="arXiv preprint">
+  <meta name="citation_pdf_url" content="https://arxiv.org/pdf/XXXX.XXXXX.pdf">
+  
+  <!-- Additional SEO -->
+  <meta name="theme-color" content="#2563eb">
+  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
   <title>SciCoQA: Quality Assurance for Scientific Paper-Code Alignment</title>
-
-  <!-- Favicon -->
+  
+  <!-- Favicon and App Icons -->
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link rel="apple-touch-icon" href="static/images/favicon.ico">
-
-  <!-- CSS -->
+  
+  <!-- Critical CSS - Load synchronously -->
   <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
   
-  <!-- Syntax Highlighting -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+  <!-- Non-critical CSS - Load asynchronously -->
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   
-  <style>
-    /* Fix Prism code block styling */
-    pre[class*="language-"] {
-      padding: 1em;
-      overflow: auto;
-    }
-    pre[class*="language-"] code {
-      font-size: 1em !important;
-      background: none;
-      padding: 0;
-    }
-    pre[class*="language-"] code *,
-    pre[class*="language-"] code .token {
-      font-size: inherit !important;
-      line-height: inherit !important;
-      padding: 0 !important;
-      margin: 0 !important;
-    }
-    pre[class*="language-"] code .token.number {
-      font-size: inherit !important;
-      display: inline !important;
-      vertical-align: baseline !important;
-      padding: 0 !important;
-      margin: 0 !important;
-      border: none !important;
-    }
-    /* Hide line numbers if they appear */
-    .line-numbers-rows {
-      display: none !important;
-    }
-  </style>
-
-  <!-- Fonts -->
+  <!-- Fallback for browsers that don't support preload -->
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+  
+  <!-- Syntax Highlighting -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css">
+  </noscript>
+  
+  <!-- Fonts - Optimized loading -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
+  
   <!-- Custom Styles -->
   <style>
     /* Reduce space between hero section and teaser figure */
@@ -172,87 +174,226 @@
     #discrepancy-carousel .card-content {
       padding: 1rem 1.25rem;
     }
+    
+    /* Fix Prism code block styling */
+    pre[class*="language-"] {
+      padding: 1em;
+      overflow: auto;
+    }
+    pre[class*="language-"] code {
+      font-size: 1em !important;
+      background: none;
+      padding: 0;
+    }
+    pre[class*="language-"] code *,
+    pre[class*="language-"] code .token {
+      font-size: inherit !important;
+      line-height: inherit !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+    pre[class*="language-"] code .token.number {
+      font-size: inherit !important;
+      display: inline !important;
+      vertical-align: baseline !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      border: none !important;
+    }
+    /* Hide line numbers if they appear */
+    .line-numbers-rows {
+      display: none !important;
+    }
   </style>
-
-  <!-- JavaScript -->
+  
+  <!-- Defer non-critical JavaScript -->
   <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
   <script defer src="static/js/bulma-carousel.min.js"></script>
   <script defer src="static/js/bulma-slider.min.js"></script>
   <script defer src="static/js/index.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+  
+  <!-- Structured Data for Academic Papers -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "SciCoQA: Quality Assurance for Scientific Paper-Code Alignment",
+    "description": "A benchmark dataset for detecting discrepancies between scientific papers and their code implementations. 81 real-world + 530 synthetic discrepancies.",
+    "author": [
+      {
+        "@type": "Person",
+        "name": "Tim Baumgärtner",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Ubiquitous Knowledge Processing Lab, Technical University of Darmstadt"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Iryna Gurevych",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Ubiquitous Knowledge Processing Lab, Technical University of Darmstadt"
+        }
+      }
+    ],
+    "datePublished": "2026-01-01",
+    "publisher": {
+      "@type": "Organization",
+      "name": "arXiv"
+    },
+    "url": "https://ukplab.github.io/scicoqa",
+    "image": "https://ukplab.github.io/scicoqa/static/images/social_preview.png",
+    "keywords": ["SciCoQA", "paper-code alignment", "discrepancy detection", "scientific reproducibility", "machine learning", "NLP", "benchmark dataset"],
+    "abstract": "We present SciCoQA, a dataset for detecting discrepancies between scientific publications and their codebases to ensure faithful implementations. We construct SciCoQA from GitHub issues and reproducibility papers, and to scale our dataset, we propose a synthetic data generation method for constructing paper-code discrepancies. We analyze the paper-code discrepancies in detail and propose discrepancy types and categories to better understand the occurring mismatches. In total, our dataset consists of 611 paper-code discrepancies (81 real, 530 synthetic), spanning diverse computational science disciplines, including AI, Physics, Quantitative Biology, and others. Our evaluation of 21 LLMs highlights the difficulty of SciCoQA, particularly for instances involving omitted paper details, long-context inputs, and data outside the models' pre-training corpus. The best performing model in our evaluation, GPT-5, can only detect 45.7% of real-world paper-code discrepancies.",
+    "citation": "@article{scicoqa2026, title={SciCoQA: Quality Assurance for Scientific Paper-Code Alignment}, author={Baumg{\"a}rtner, Tim and Gurevych, Iryna}, journal={arXiv preprint arXiv:XXXX.XXXXX}, year={2026}, url={https://github.com/UKPLab/scicoqa}}",
+    "isAccessibleForFree": true,
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "mainEntity": {
+      "@type": "WebPage",
+      "@id": "https://ukplab.github.io/scicoqa"
+    },
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "Paper-Code Alignment"
+      },
+      {
+        "@type": "Thing", 
+        "name": "Discrepancy Detection"
+      },
+      {
+        "@type": "Thing",
+        "name": "Scientific Reproducibility"
+      }
+    ]
+  }
+  </script>
+  
+  <!-- Website/Organization Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Ubiquitous Knowledge Processing Lab",
+    "url": "https://www.ukp.tu-darmstadt.de/",
+    "logo": "https://ukplab.github.io/scicoqa/static/images/favicon.ico",
+    "sameAs": [
+      "https://twitter.com/UKPLab",
+      "https://github.com/UKPLab"
+    ]
+  }
+  </script>
 </head>
-
 <body>
 
-<section class="hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">SciCoQA: Quality Assurance for Scientific Paper-Code Alignment</h1>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=pwDGJYsAAAAJ&hl=en" target="_blank">Tim Baumgärtner</a> and <a href="https://scholar.google.com/citations?user=t3A39e8AAAAJ&hl=en" target="_blank">Iryna Gurevych</a>
-            </span>
-          </div>
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
 
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">Ubiquitous Knowledge Processing (UKP) Lab</span><br><span class="author-block">Technical University of Darmstadt</span>
-            <!-- <span class="author-block"><br>Conference Name 2026</span> -->
+  <!-- More Works Dropdown -->
+  <div class="more-works-container">
+    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
+      <i class="fas fa-flask"></i>
+      More Works
+      <i class="fas fa-chevron-down dropdown-arrow"></i>
+    </button>
+    <div class="more-works-dropdown" id="moreWorksDropdown">
+      <div class="dropdown-header">
+        <h4>More Works from UKP Lab</h4>
+        <button class="close-btn" onclick="toggleMoreWorks()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="works-list">
+        <a href="https://aclanthology.org/2025.naacl-long.22/" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>PeerQA: A Scientific Question Answering Dataset from Peer Reviews</h5>
+            <p>A scientific Question Answerig dataset annotated from peer reviews. </p>
+            <span class="work-venue">NAACL 2025</span>
           </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+        <a href="https://aclanthology.org/2025.emnlp-main.1476/" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>The Good, the Bad and the Constructive: Automatically Measuring Peer Review’s Utility for Authors</h5>
+            <p>A dataset with fine-grained aspects of peer review utility for paper authors.</p>
+            <span class="work-venue">EMNLP 2025</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+        <a href="https://arxiv.org/abs/2508.21422" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>Automatic Reviewers Fail to Detect Faulty Reasoning in Research Papers: A New Counterfactual Evaluation Framework</h5>
+            <p>A counterfactual evaluation framework and dataset to assess whether automatic reviewers can detect faulty research logic.</p>
+            <span class="work-venue">Conference/Journal 2023</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+      </div>
+    </div>
+  </div>
 
+  <main id="main-content">
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
           <div class="column has-text-centered">
-            <div class="publication-links">
-              <!-- Paper PDF Link -->
-              <!-- <span class="link-block">
-                <a href="https://arxiv.org/pdf/XXXX.XXXXX.pdf" target="_blank"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
-              </span> -->
-
-              <!-- arXiv Link -->
-              <span class="link-block">
-                <a href="https://arxiv.org/abs/XXXX.XXXXX" target="_blank"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
+            <h1 class="title is-1 publication-title">SciCoQA: Quality Assurance for Scientific Paper-Code Alignment</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=pwDGJYsAAAAJ&hl=en" target="_blank">Tim Baumgärtner</a> and <a href="https://scholar.google.com/citations?user=t3A39e8AAAAJ&hl=en" target="_blank">Iryna Gurevych</a>
               </span>
-              <!-- GitHub Link -->
-              <span class="link-block">
-                <a href="https://github.com/UKPLab/scicoqa" target="_blank"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="fab fa-github"></i>
-                  </span>
-                  <span>Code</span>
-                </a>
-              </span>
+            </div>
 
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Ubiquitous Knowledge Processing Lab</span><br><span class="author-block">Technical University of Darmstadt</span>
+            </div>
 
-              <!-- Dataset Link -->
-              <span class="link-block">
-                <a href="https://huggingface.co/datasets/UKPLab/scicoqa" target="_blank"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    🤗
-                  </span>
-                  <span>Data</span>
-                </a>
-              </span>
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- arXiv Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/XXXX.XXXXX" target="_blank"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <!-- GitHub Link -->
+                <span class="link-block">
+                  <a href="https://github.com/UKPLab/scicoqa" target="_blank"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                <!-- Dataset Link -->
+                <span class="link-block">
+                  <a href="https://huggingface.co/datasets/UKPLab/scicoqa" target="_blank"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      🤗
+                    </span>
+                    <span>Data</span>
+                  </a>
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 <!-- Teaser Figure -->
 <section class="hero teaser">
@@ -334,7 +475,7 @@
   <div class="container is-max-desktop">
       <h2 class="title is-3 has-text-centered">SciCoQA Examples</h2>
 
-      <p class="has-text-justified has-text-grey" style="margin-bottom: 1.5rem;">
+      <p class="has-text-justified" style="margin-bottom: 1.5rem;">
         Our dataset covers <strong>81 real-world discrepancies</strong> from Machine Learning, Computer Vision, and NLP domains, plus <strong>530 synthetic examples</strong> spanning additional domains including Physics, Quantitative Biology, Statistics, Math, and EE & Systems Science.
       </p>
       
@@ -369,7 +510,7 @@
         </div>
       </div>
 
-      <p class="has-text-justified has-text-grey" style="margin-bottom: 1.5rem;">
+      <p class="has-text-justified" style="margin-bottom: 1.5rem;">
         The discrepancies in the SciCoQA dataset are sourced from GitHub issues and reproducibility papers, as well as synthetically generated discrepancies. A discrepancy description consists of three components: A summary of what the <span style="background-color: rgba(50, 115, 220, 0.15); padding: 2px 4px; border-radius: 2px;"><strong>Paper</strong></span> claims, what the <span style="background-color: rgba(220, 53, 69, 0.15); padding: 2px 4px; border-radius: 2px;"><strong>Code</strong></span> implements, and what the <span style="background-color: rgba(102, 51, 153, 0.15); padding: 2px 4px; border-radius: 2px;"><strong>Difference</strong></span> is. We show summarized examples of each type and category below.
       </p>
       
@@ -443,7 +584,7 @@
 <section class="section hero">
   <div class="container is-max-desktop">
       <h2 class="title is-3 has-text-centered">Discrepancy Taxonomy</h2>
-      <p class="has-text-centered has-text-grey" style="margin-bottom: 0rem;">
+      <p class="has-text-centered has-text-grey" style="margin-bottom: 2rem;">
         We categorize discrepancies by <strong>type</strong> (how they manifest) and <strong>category</strong> (what component is affected).
       </p>
       
@@ -574,8 +715,7 @@
       
       <!-- Inference Pipeline Flowchart -->
       <div style="margin: 0; text-align: center;">
-        <img src="static/images/inference-pipeline-5.svg" alt="Inference pipeline flowchart showing paper excerpt and code snippet as inputs, model inference, generated discrepancy, LLM judge evaluation, and final match/no match output" style="max-width: 100%; height: auto; 
-        ">
+        <img src="static/images/inference-pipeline-5.svg" alt="Inference pipeline flowchart showing paper excerpt and code snippet as inputs, model inference, generated discrepancy, LLM judge evaluation, and final match/no match output" style="max-width: 100%; height: auto;">
         <p class="has-text-grey is-size-7" style="margin-top: 0.5rem;">
           Overview of the inference and evaluation pipeline for SciCoQA.
         </p>
@@ -588,7 +728,7 @@
       Executing the above pipeline yields the following results:
       <div id="chart-main-performance" style="max-width: 960px; margin: 0 auto;"></div>
       <p class="has-text-grey is-size-7 has-text-centered" style="margin-bottom: 1rem;">
-        Recall scores across 21 LLMs on real-world vs synthetic discrepancies. Hover for exact values.
+        Recall scores across the 10 top-performing LLMs on real-world and synthetic discrepancies. Hover for exact values.
       </p>
     </div>
 
@@ -832,44 +972,50 @@ print(f"Category: {example['discrepancy_category']}")       # category of the di
 <!-- End Quick Start -->
 
 <!-- BibTeX Citation -->
-<section class="section hero is-light">
+<section class="section hero is-light" id="BibTeX">
   <div class="container is-max-desktop">
       <h2 class="title is-3 has-text-centered">BibTeX</h2>
       <p class="has-text-centered has-text-grey" style="margin-bottom: 2rem;">
         If you found this work useful or used the dataset, please consider citing it.
       </p>
-      <div class="columns is-centered">
-        <div class="column is-10">
-          <pre><code>@article{scicoqa2026,
+      <div style="display: flex; justify-content: center;">
+        <pre id="bibtex-code" style="display: inline-block; margin: 0 auto;"><code>@article{scicoqa2026,
   title     = {SciCoQA: Quality Assurance for Scientific Paper-Code Alignment},
-  author    = {Baumg{\"a}rtner, Tim and Gurevych, Iryna},
+  author    = {Baumgärtner, Tim and Gurevych, Iryna},
   journal   = {arXiv preprint arXiv:XXXX.XXXXX},
   year      = {2026},
   url       = {https://github.com/UKPLab/scicoqa}
 }</code></pre>
-        </div>
+      </div>
+      <div class="has-text-centered" style="margin-top: 1rem;">
+        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+          <i class="fas fa-copy"></i>
+          <span class="copy-text">Copy</span>
+        </button>
       </div>
   </div>
 </section>
 <!-- End BibTeX Citation -->
 
-<footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> 
-            which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer.
-            <br>
-            This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> 
+              which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+              You are free to borrow the source code of this website, we just ask that you link back to this page in the footer.
+              <br>
+              This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
 </body>
 </html>
