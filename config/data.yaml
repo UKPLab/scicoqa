@@ -3757,3 +3757,327 @@ reproducibility_reports:
     reproducibility_paper_date: 2025-07-13
     reproducibility_code: https://github.com/ielab/rarr-reproducibility
     reproducibility_venue: SIGIR 2025
+  adapting-learned-sparse-retrieval:
+    id: 3539618.3591943
+    paper: https://dl.acm.org/doi/pdf/10.1145/3539618.3591943
+    arxiv_url: https://arxiv.org/pdf/2305.18494
+    code: https://github.com/thongnt99/lsr-long
+    reproducibility_paper: https://arxiv.org/pdf/2503.23824
+    reproducibility_paper_date: 2025-03-31
+    reproducibility_code: https://github.com/lionisakis/Reproducibilitiy-lsr-long
+    reproducibility_venue: ECIR 2025
+  poisoning-retrieval-corpora:
+    id: 2023.emnlp-main.849
+    paper: https://aclanthology.org/2023.emnlp-main.849.pdf
+    arxiv_url: https://arxiv.org/pdf/2310.19156
+    code: https://github.com/princeton-nlp/corpus-poisoning
+    reproducibility_paper: https://arxiv.org/pdf/2501.04802
+    reproducibility_paper_date: 2025-03-08
+    reproducibility_code: https://github.com/liyongkang123/hotflip_corpus_poisoning
+    reproducibility_venue: ECIR 2025
+  a-personalized-dense-retrieval-framework:
+    id: 3539618.3591626
+    paper: https://dl.acm.org/doi/pdf/10.1145/3539618.3591626
+    arxiv_url: https://arxiv.org/pdf/2304.13654
+    code: https://github.com/HansiZeng/UIA
+    reproducibility_paper: https://link.springer.com/content/pdf/10.1007/978-3-031-88717-8_10.pdf
+    reproducibility_paper_date: 2025-04-03
+    reproducibility_code: 
+    reproducibility_venue: ECIR 2025
+  bertopic:
+    id: 2203.05794
+    paper: https://arxiv.org/pdf/2203.05794
+    arxiv_url: https://arxiv.org/pdf/2203.05794
+    code: https://github.com/MaartenGr/BERTopic
+    reproducibility_paper: https://link.springer.com/content/pdf/10.1007/978-3-031-56066-8_14.pdf
+    reproducibility_paper_date: 2024-03-15
+    reproducibility_code:
+    reproducibility_venue: ECIR 2024
+  measuring-fairness-in-ranked-results:
+    id: 3477495.3532018
+    paper: https://dl.acm.org/doi/pdf/10.1145/3477495.3532018
+    arxiv_url:
+    code: https://github.com/BoiseState/rank-fairness-metrics
+    reproducibility_paper: https://staff.fnwi.uva.nl/m.derijke/wp-content/papercite-data/pdf/liu-2024-measuring.pdf
+    reproducibility_paper_date: 2024-03-15
+    reproducibility_code: https://github.com/lynEcho/NBR-fairness
+    reproducibility_venue: ECIR 2024
+  improving-passage-retrieval-with-zero-shot-question-generation:
+    id: 2022.emnlp-main.249
+    paper: https://aclanthology.org/2022.emnlp-main.249.pdf
+    arxiv_url: https://arxiv.org/pdf/2204.07496
+    code: https://github.com/DevSinghSachan/unsupervised-passage-reranking
+    reproducibility_paper: https://pure.uva.nl/ws/files/177473152/978-3-031-56066-8_19.pdf
+    reproducibility_paper_date: 2024-03-15
+    reproducibility_code: https://github.com/davidmrau/upr_reproducibility_ecir24
+    reproducibility_venue: ECIR 2024
+  asking-clarifying-questions:
+    id: 3331184.3331265
+    paper: https://dl.acm.org/doi/pdf/10.1145/3331184.3331265
+    arxiv_url: https://arxiv.org/pdf/1907.06554
+    code: https://github.com/aliannejadi/qulac
+    reproducibility_paper: https://link.springer.com/content/pdf/10.1007/978-3-031-28241-6_3.pdf
+    reproducibility_paper_date: 2023-03-16
+    reproducibility_code:
+    reproducibility_venue: ECIR 2023
+  graph-embedding-empowered-entity-retrieval:
+    id: 2005.02843
+    paper: https://arxiv.org/pdf/2005.02843
+    arxiv_url: https://arxiv.org/pdf/2005.02843
+    code: https://github.com/informagi/GEEER
+    reproducibility_paper: https://link.springer.com/content/pdf/10.1007/978-3-031-28241-6_8.pdf
+    reproducibility_paper_date: 2023-03-16
+    reproducibility_code: https://github.com/poojahoza/E3R-Replicability
+    reproducibility_venue: ECIR 2023
+  improving-query-representations-for-dense-retrieval:
+    id: 3459637.3482124
+    paper: https://dl.acm.org/doi/pdf/10.1145/3459637.3482124
+    arxiv_url: https://arxiv.org/pdf/2108.13454
+    code: https://github.com/yuhongqian/ANCE-PRF
+    reproducibility_paper: https://link.springer.com/content/pdf/10.1007/978-3-030-99736-6_40.pdf
+    reproducibility_paper_date: 2022-04-05
+    reproducibility_code: https://github.com/ielab/APR
+    reproducibility_venue: ECIR 2022
+  dpr:
+    id: 2020.emnlp-main.550
+    paper: https://aclanthology.org/2020.emnlp-main.550.pdf
+    arxiv_url: https://arxiv.org/pdf/2004.04906
+    code: https://github.com/facebookresearch/DPR
+    reproducibility_paper: https://link.springer.com/content/pdf/10.1007/978-3-030-99736-6_41.pdf
+    reproducibility_paper_date: 2022-04-05
+    reproducibility_code:
+    reproducibility_venue: ECIR 2022
+  rethink-training-of-bert-rerankers:
+    id: 978-3-030-72240-1_26
+    paper: https://link.springer.com/content/pdf/10.1007/978-3-030-72240-1_26.pdf
+    arxiv_url: https://arxiv.org/pdf/2101.08751
+    code: https://github.com/luyug/Reranker
+    reproducibility_paper: https://link.springer.com/content/pdf/10.1007/978-3-030-99736-6_44.pdf
+    reproducibility_paper_date: 2022-04-05
+    reproducibility_code: https://github.com/castorini/replicate-lce
+    reproducibility_venue: ECIR 2022
+  bert-pli:
+    id: ijcai.2020.484
+    paper: https://www.ijcai.org/proceedings/2020/0484.pdf
+    arxiv_url:
+    code: https://github.com/ThuYShao/BERT-PLI-IJCAI2020
+    reproducibility_paper: https://link.springer.com/content/pdf/10.1007/978-3-030-72240-1_1.pdf
+    reproducibility_paper_date: 2021-03-30
+    reproducibility_code: https://github.com/sophiaalthammer/bert-pli
+    reproducibility_venue: ECIR 2021
+  deeper-text-understanding-for-ir:
+    id: 3331184.3331303
+    paper: https://dl.acm.org/doi/pdf/10.1145/3331184.3331303
+    arxiv_url: https://arxiv.org/abs/1905.09217
+    code: https://github.com/AdeDZY/SIGIR19-BERT-IR
+    reproducibility_paper: https://link.springer.com/content/pdf/10.1007/978-3-030-72240-1_11.pdf
+    reproducibility_paper_date: 2021-03-30
+    reproducibility_code: https://github.com/crystina-z/MaxP-Reproduction
+    reproducibility_venue: ECIR 2021
+  federated-online-learning-to-rank:
+    id: 3289600.3290968
+    paper: https://dl.acm.org/doi/pdf/10.1145/3289600.3290968
+    arxiv_url:
+    code: https://github.com/facebookresearch/foltr-es
+    reproducibility_paper: https://link.springer.com/content/pdf/10.1007/978-3-030-72240-1_10.pdf
+    reproducibility_paper_date: 2021-03-30
+    reproducibility_code: https://github.com/ielab/foltr
+    reproducibility_venue: ECIR 2021
+  node2vec:
+    id: 2939672.2939754
+    paper: https://dl.acm.org/doi/pdf/10.1145/2939672.2939754
+    arxiv_url: https://arxiv.org/pdf/1607.00653
+    code: https://github.com/aditya-grover/node2vec
+    reproducibility_paper: https://link.springer.com/content/pdf/10.1007/978-3-030-45442-5_8.pdf
+    reproducibility_paper_date: 2020-04-08
+    reproducibility_code: https://github.com/Kombustor/submission-ecir2020-randomwalks
+    reproducibility_venue: ECIR 2020
+  cross-lingual-knowledge-graph-alignment:
+    id: D18-1032
+    paper: https://aclanthology.org/D18-1032.pdf
+    arxiv_url:
+    code: https://github.com/1049451037/GCN-Align
+    reproducibility_paper: https://link.springer.com/content/pdf/10.1007/978-3-030-45442-5_1.pdf
+    reproducibility_paper_date: 2020-04-08
+    reproducibility_code: https://github.com/Valentyn1997/kg-alignment-lessons-learned
+    reproducibility_venue: ECIR 2020
+  ser-oriented-fairness-in-recommendation:
+    id: 3442381.3449866
+    paper: https://dl.acm.org/doi/pdf/10.1145/3442381.3449866
+    arxiv_url: https://arxiv.org/pdf/2104.10671
+    code: https://github.com/rutgerswiselab/user-fairness
+    reproducibility_paper: https://arxiv.org/pdf/2205.08289
+    reproducibility_paper_date: 2022-05-17
+    reproducibility_code: https://github.com/rahmanidashti/FairRecSys
+    reproducibility_venue: SIGIR 2022
+  distilling-dense-representations-for-ranking:
+    id: 3477495.3531721
+    paper: https://arxiv.org/pdf/2010.11386
+    arxiv_url: https://arxiv.org/pdf/2010.11386
+    code: https://github.com/castorini/tct_colbert
+    reproducibility_paper: https://dl.acm.org/doi/pdf/10.1145/3477495.3531721
+    reproducibility_paper_date: 2022-07-07
+    reproducibility_code: https://github.com/Xiao0728/TCT-Repro-VirtualAppendix
+    reproducibility_venue: SIGIR 2022
+  efficiently-teaching-an-effective-dense-retriever:
+    id: 3539618.3591915
+    paper: https://dl.acm.org/doi/pdf/10.1145/3404835.3462891
+    arxiv_url: https://arxiv.org/pdf/2104.06967
+    code: https://github.com/sebastian-hofstaetter/tas-balanced-dense-retrieval
+    reproducibility_paper: https://dl.acm.org/doi/pdf/10.1145/3539618.3591915
+    reproducibility_paper_date: 2023-07-18
+    reproducibility_code: https://github.com/ielab/TAS-B-Reproduction
+    reproducibility_venue: SIGIR 2023
+  colbert:
+    id: 3397271.3401075
+    paper: https://dl.acm.org/doi/pdf/10.1145/3397271.3401075
+    arxiv_url: https://arxiv.org/pdf/2004.12832
+    code: https://github.com/stanford-futuredata/ColBERT
+    reproducibility_paper: https://dl.acm.org/doi/pdf/10.1145/3539618.3591916
+    reproducibility_paper_date: 2023-07-18
+    reproducibility_code: https://github.com/Xiao0728/ColStar_VirtualAppendix
+    reproducibility_venue: SIGIR 2023
+  doc2query-min-min:
+    id: 3626772.3657850
+    paper: https://link.springer.com/content/pdf/10.1007/978-3-031-28238-6_31.pdf
+    arxiv_url: https://arxiv.org/pdf/2301.03266
+    code: https://github.com/terrierteam/pyterrier_doc2query
+    reproducibility_paper: https://dl.acm.org/doi/pdf/10.1145/3626772.3657850
+    reproducibility_paper_date: 2024-07-11
+    reproducibility_code:
+    reproducibility_venue: SIGIR 2024
+  a-large-scale-search-dataset:
+    id: 3626772.3657892
+    paper: https://proceedings.neurips.cc/paper_files/paper/2022/file/07f560092a0edceabf55af32a40eaee3-Paper-Datasets_and_Benchmarks.pdf
+    arxiv_url: https://arxiv.org/pdf/2207.03051
+    code: https://github.com/ChuXiaokai/baidu_ultr_dataset
+    reproducibility_paper: https://dl.acm.org/doi/pdf/10.1145/3626772.3657892
+    reproducibility_paper_date: 2024-07-11
+    reproducibility_code: https://github.com/philipphager/ultr-reproducibility
+    reproducibility_venue: SIGIR 2024
+  plaid:
+    id: 3511808.3557325
+    paper: https://dl.acm.org/doi/pdf/10.1145/3511808.3557325
+    arxiv_url: https://arxiv.org/pdf/2205.09707
+    code: https://github.com/stanford-futuredata/ColBERT
+    reproducibility_paper: https://dl.acm.org/doi/pdf/10.1145/3626772.3657856
+    reproducibility_paper_date: 2024-07-11
+    reproducibility_code: https://github.com/seanmacavaney/plaidrepro
+    reproducibility_venue: SIGIR 2024
+  nevir:
+    id: 2024.eacl-long.139
+    paper: https://aclanthology.org/2024.eacl-long.139.pdf
+    arxiv_url: https://arxiv.org/pdf/2305.07614
+    code: https://github.com/orionw/NevIR
+    reproducibility_paper: https://dl.acm.org/doi/pdf/10.1145/3726302.3730294
+    reproducibility_paper_date: 2025-07-13
+    reproducibility_code: https://github.com/thijmennijdam/NevIR-reproducibility
+    reproducibility_venue: SIGIR 2025
+  dimension-importance-estimation:
+    id: 3626772.3657691
+    paper: https://dl.acm.org/doi/pdf/10.1145/3626772.3657691
+    arxiv_url:
+    code: https://github.com/guglielmof/DIME-SIGIR-2024
+    reproducibility_paper: https://dl.acm.org/doi/pdf/10.1145/3726302.3730318
+    reproducibility_paper_date: 2025-07-13
+    reproducibility_code: https://github.com/pinecone-io/unveiling-dime
+    reproducibility_venue: SIGIR 2025
+  first-faster-improved:
+    id: 2024.emnlp-main.491
+    paper: https://aclanthology.org/2024.emnlp-main.491.pdf
+    arxiv_url: https://arxiv.org/pdf/2406.15657
+    code: https://github.com/gangiswag/llm-reranker
+    reproducibility_paper: https://dl.acm.org/doi/pdf/10.1145/3726302.3730287
+    reproducibility_paper_date: 2025-07-13
+    reproducibility_code: https://github.com/castorini/rank_llm
+    reproducibility_venue: SIGIR 2025
+  caselink:
+    id: 3626772.3657693
+    paper: https://dl.acm.org/doi/pdf/10.1145/3626772.3657693
+    arxiv_url: https://arxiv.org/pdf/2403.17780
+    code: https://github.com/yanran-tang/CaseLink
+    reproducibility_paper: https://dl.acm.org/doi/pdf/10.1145/3726302.3730282
+    reproducibility_paper_date: 2025-07-13
+    reproducibility_code: https://github.com/doGregor/caselink_reproducibility
+    reproducibility_venue: SIGIR 2025
+  umbrela:
+    id: 2406.06519
+    paper: https://arxiv.org/pdf/2406.06519
+    arxiv_url: https://arxiv.org/pdf/2406.06519
+    code: https://github.com/castorini/umbrela
+    reproducibility_paper: https://dl.acm.org/doi/pdf/10.1145/3726302.3730317
+    reproducibility_paper_date: 2025-07-13
+    reproducibility_code: https://github.com/TREMA-UNH/appendix-umbrella-other-llm
+    reproducibility_venue: SIGIR 2025
+  a-setwise-approach-for-effective:
+    id: 3626772.3657813
+    paper: https://dl.acm.org/doi/pdf/10.1145/3626772.3657813
+    arxiv_url: https://arxiv.org/pdf/2310.09497
+    code: https://github.com/ielab/llm-rankers
+    reproducibility_paper: https://dl.acm.org/doi/pdf/10.1145/3726302.3730338
+    reproducibility_paper_date: 2025-07-13
+    reproducibility_code: https://github.com/hltcoe/llm-heapsort-reranking
+    reproducibility_venue: SIGIR 2025
+  a-setwise-approach-for-effective-v2:
+    id: 3626772.3657813-v2
+    paper: https://dl.acm.org/doi/pdf/10.1145/3626772.3657813
+    arxiv_url: https://arxiv.org/pdf/2310.09497
+    code: https://github.com/ielab/llm-rankers
+    reproducibility_paper: https://dl.acm.org/doi/pdf/10.1145/3726302.3730323
+    reproducibility_paper_date: 2025-07-13
+    reproducibility_code: https://github.com/LeonPeric/llm-rankers
+    reproducibility_venue: SIGIR 2025
+  colpali:
+    id: ogjBpZ8uSi
+    paper: https://openreview.net/pdf?id=ogjBpZ8uSi
+    arxiv_url: https://arxiv.org/pdf/2407.01449
+    code: https://github.com/illuin-tech/colpali
+    reproducibility_paper: https://dl.acm.org/doi/pdf/10.1145/3726302.3730285
+    reproducibility_paper_date: 2025-07-13
+    reproducibility_code: https://github.com/JingfenQiao/ColPali-Reproducibility
+    reproducibility_venue: SIGIR 2025
+  xiomatic-causal-interventions:
+    id: 3626772.3657841
+    paper: https://dl.acm.org/doi/pdf/10.1145/3626772.3657841
+    arxiv_url: https://arxiv.org/pdf/2405.02503
+    code: https://github.com/catherineschen/axiomatic-ir-interventions
+    reproducibility_paper: https://dl.acm.org/doi/pdf/10.1145/3726302.3730327
+    reproducibility_paper_date: 2025-07-13
+    reproducibility_code: https://github.com/OliverSavolainen/axiomatic-ir-reproduce
+    reproducibility_venue: SIGIR 2025
+  sentence-embedding-leaks:
+    id: 2023.findings-acl.881
+    paper: https://aclanthology.org/2023.findings-acl.881.pdf
+    arxiv_url: https://arxiv.org/pdf/2305.03010
+    code: https://github.com/HKUST-KnowComp/GEIA
+    reproducibility_paper: https://dl.acm.org/doi/pdf/10.1145/3726302.3730303
+    reproducibility_paper_date: 2025-07-13
+    reproducibility_code: https://github.com/taslanidis/GEIA
+    reproducibility_venue: SIGIR 2025
+  2d-matryoshka-sentence-embeddings:
+    id: 2402.14776
+    paper: https://arxiv.org/pdf/2402.14776
+    arxiv_url: https://arxiv.org/pdf/2402.14776
+    code: https://github.com/SeanLee97/AnglE
+    reproducibility_paper: https://dl.acm.org/doi/pdf/10.1145/3726302.3730330
+    reproducibility_paper_date: 2025-07-13
+    reproducibility_code: https://github.com/ielab/2DMSE-Reproduce
+    reproducibility_venue: SIGIR 2025
+  rethinking-benchmarks:
+    id: 3539618.3591758
+    paper: https://dl.acm.org/doi/pdf/10.1145/3539618.3591758
+    arxiv_url: https://arxiv.org/pdf/2304.10824
+    code: https://github.com/cwj1412/MSCOCO-Flikcr30K_FG
+    reproducibility_paper: https://dl.acm.org/doi/pdf/10.1145/3726302.3730290
+    reproducibility_paper_date: 2025-07-13
+    reproducibility_code: https://github.com/bloomberg/evaluating-cmr-in-mm
+    reproducibility_venue: SIGIR 2025
+  rarr-researching-and-revising:
+    id: 2023.acl-long.910
+    paper: https://aclanthology.org/2023.acl-long.910.pdf
+    arxiv_url: https://arxiv.org/pdf/2210.08726
+    code: https://github.com/anthonywchen/RARR
+    reproducibility_paper: https://dl.acm.org/doi/pdf/10.1145/3726302.3730337
+    reproducibility_paper_date: 2025-07-13
+    reproducibility_code: https://github.com/ielab/rarr-reproducibility
+    reproducibility_venue: SIGIR 2025
