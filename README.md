@@ -7,10 +7,10 @@
     <img src="https://img.shields.io/badge/GitHub-Code-black?logo=github" alt="Code">
   </a>
   <a href="https://huggingface.co/datasets/UKPLab/scicoqa">
-    <img src="https://img.shields.io/badge/🤗-Dataset-yellow" alt="Dataset">
+    <img src="https://img.shields.io/badge/Hugging%20Face-Data-FFD21E?logo=huggingface" alt="Dataset">
   </a>
   <a href="https://huggingface.co/spaces/UKPLab/scicoqa">
-    <img src="https://img.shields.io/badge/🤗-Dataset-yellow" alt="Demo">
+    <img src="https://img.shields.io/badge/Hugging%20Face-Demo-blueviolet?logo=huggingface" alt="Demo">
   </a>
 </p>
 
