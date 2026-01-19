@@ -10,7 +10,7 @@
     <img src="https://img.shields.io/badge/🤗-Dataset-yellow" alt="Dataset">
   </a>
   <a href="https://huggingface.co/spaces/UKPLab/scicoqa">
-    <img src="https://img.shields.io/badge/Spaces-Demo-blueviolet?logo=huggingface" alt="Demo">
+    <img src="https://img.shields.io/badge/🤗-Dataset-yellow" alt="Demo">
   </a>
 </p>
 
