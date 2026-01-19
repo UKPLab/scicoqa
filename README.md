@@ -1,8 +1,18 @@
 # SciCoQA: Quality Assurance for Scientific Paper-Code Alignment
-
-[![Code](https://img.shields.io/badge/GitHub-Code-black?logo=github)](https://github.com/UKPLab/scicoqa)
-[![Dataset](https://img.shields.io/badge/🤗-Dataset-yellow)](https://huggingface.co/datasets/UKPLab/scicoqa)
-[![arXiv](https://img.shields.io/badge/arXiv-Paper-b31b1b?logo=arxiv)](https://arxiv.org/abs/tbd)
+<p align="center">
+  <a href="https://arxiv.org/abs/tbd">
+    <img src="https://img.shields.io/badge/arXiv-Paper-b31b1b?logo=arxiv" alt="arXiv">
+  </a>
+  <a href="https://github.com/UKPLab/scicoqa">
+    <img src="https://img.shields.io/badge/GitHub-Code-black?logo=github" alt="Code">
+  </a>
+  <a href="https://huggingface.co/datasets/UKPLab/scicoqa">
+    <img src="https://img.shields.io/badge/🤗-Dataset-yellow" alt="Dataset">
+  </a>
+  <a href="https://huggingface.co/spaces/UKPLab/scicoqa">
+    <img src="https://img.shields.io/badge/Spaces-Demo-blueviolet?logo=huggingface" alt="Demo">
+  </a>
+</p>
 
 A dataset and codebase for detecting discrepancies between scientific publications and their code implementations.
 
