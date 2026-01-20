@@ -410,7 +410,7 @@ These can be used to compute metrics without re-running inference.
 
 This project uses dual licensing:
 
-- **Code**: MIT License - see the [LICENSE](LICENSE) file for details
+- **Code**: Apache 2.0 - see the [LICENSE](LICENSE) file for details
 - **Dataset** (`data/*.jsonl`): [Creative Commons Attribution 4.0 International (CC-BY 4.0)](https://creativecommons.org/licenses/by/4.0/)
 
 When using the dataset, please provide appropriate attribution as specified in the CC-BY 4.0 license.
