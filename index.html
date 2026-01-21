@@ -110,80 +110,6 @@
       padding-top: 1rem;
     }
     
-    /* Modern minimal carousel styling */
-    .discrepancy-carousel-container {
-      position: relative;
-    }
-    
-    /* Minimal arrows - override all bulma carousel defaults */
-    .discrepancy-carousel-container .slider-navigation-previous,
-    .discrepancy-carousel-container .slider-navigation-next,
-    .discrepancy-carousel-container .carousel-nav-left,
-    .discrepancy-carousel-container .carousel-nav-right,
-    .discrepancy-carousel-container [class*="navigation-previous"],
-    .discrepancy-carousel-container [class*="navigation-next"] {
-      background: transparent !important;
-      border: none !important;
-      box-shadow: none !important;
-      width: 28px !important;
-      height: 28px !important;
-      opacity: 0.3;
-      transition: opacity 0.2s ease;
-    }
-    
-    .discrepancy-carousel-container .slider-navigation-previous:hover,
-    .discrepancy-carousel-container .slider-navigation-next:hover,
-    .discrepancy-carousel-container .carousel-nav-left:hover,
-    .discrepancy-carousel-container .carousel-nav-right:hover,
-    .discrepancy-carousel-container [class*="navigation-previous"]:hover,
-    .discrepancy-carousel-container [class*="navigation-next"]:hover {
-      opacity: 0.7;
-      background: transparent !important;
-    }
-    
-    /* Make arrow chevrons thinner */
-    .discrepancy-carousel-container [class*="navigation"]::before {
-      border-width: 1.5px !important;
-      border-color: #666 !important;
-    }
-    
-    /* Minimal pagination dots */
-    .discrepancy-carousel-container .slider-pagination .slider-page,
-    .discrepancy-carousel-container .carousel-pagination .pagination-item,
-    .discrepancy-carousel-container [class*="pagination"] button,
-    .discrepancy-carousel-container [class*="pagination"] span {
-      width: 6px !important;
-      height: 6px !important;
-      min-width: 6px !important;
-      min-height: 6px !important;
-      background: #ccc !important;
-      border: none !important;
-      border-radius: 50% !important;
-      margin: 0 4px !important;
-      padding: 0 !important;
-      transition: all 0.2s ease;
-    }
-    
-    .discrepancy-carousel-container .slider-pagination .slider-page.is-active,
-    .discrepancy-carousel-container .carousel-pagination .pagination-item.is-active,
-    .discrepancy-carousel-container [class*="pagination"] button.is-active,
-    .discrepancy-carousel-container [class*="pagination"] span.is-active {
-      background: #363636 !important;
-      transform: scale(1.3);
-    }
-    
-    /* Clean card styling for carousel */
-    #discrepancy-carousel .card {
-      box-shadow: none;
-      border: 1px solid #eaeaea;
-      border-radius: 8px;
-      background: #fff;
-    }
-    
-    #discrepancy-carousel .card-content {
-      padding: 1rem 1.25rem;
-    }
-    
     /* Fix Prism code block styling */
     pre[class*="language-"] {
       padding: 1em;
@@ -213,6 +139,68 @@
     .line-numbers-rows {
       display: none !important;
     }
+    /* Floating TOC Container */
+    .toc-floating {
+      position: fixed;
+      right: 2rem;       /* 2rem from the right edge */
+      top: 30%;          /* Vertically centered-ish */
+      width: 150px;
+      z-index: 100;
+      display: block;    /* Visible by default on big screens */
+    }
+
+    /* The Links */
+    .toc-floating ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      border-left: 2px solid #eee; /* The subtle vertical line */
+    }
+
+    .toc-floating li {
+      margin-bottom: 0.8rem;
+      padding-left: 1rem;
+      position: relative;
+    }
+
+    .toc-floating a {
+      text-decoration: none;
+      color: #b0b0b0;    /* Passive gray color */
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      display: block;
+    }
+
+    /* Hover State */
+    .toc-floating a:hover {
+      color: #4a4a4a;
+      transform: translateX(5px); /* Tiny nudge movement */
+    }
+
+    /* Active State (Added by JS) */
+    .toc-floating a.active {
+      color: #3273dc;    /* Your theme's primary blue */
+      font-weight: 700;
+    }
+
+    /* The "Active" Indicator Line */
+    .toc-floating a.active::before {
+      content: '';
+      position: absolute;
+      left: -2px; /* Moves it over the gray border */
+      top: 0;
+      height: 100%;
+      width: 2px;
+      background-color: #3273dc; /* Active line color */
+    }
+
+    /* HIDE on smaller screens (Crucial for "Fitting Well") */
+    @media screen and (max-width: 1400px) {
+      .toc-floating {
+        display: none;
+      }
+    }
   </style>
   
   <!-- Defer non-critical JavaScript -->
@@ -223,6 +211,7 @@
   <script defer src="static/js/index.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
   
   <!-- Structured Data for Academic Papers -->
   <script type="application/ld+json">
@@ -256,7 +245,15 @@
     },
     "url": "https://ukplab.github.io/scicoqa",
     "image": "https://ukplab.github.io/scicoqa/static/images/social_preview.png",
-    "keywords": ["SciCoQA", "paper-code alignment", "discrepancy detection", "scientific reproducibility", "machine learning", "NLP", "benchmark dataset"],
+    "keywords": [
+      "SciCoQA",
+      "paper-code alignment",
+      "discrepancy detection",
+      "scientific reproducibility",
+      "machine learning",
+      "NLP",
+      "benchmark dataset"
+    ],
     "abstract": "We present SciCoQA, a dataset for detecting discrepancies between scientific publications and their codebases to ensure faithful implementations. We construct SciCoQA from GitHub issues and reproducibility papers, and to scale our dataset, we propose a synthetic data generation method for constructing paper-code discrepancies. We analyze the paper-code discrepancies in detail and propose discrepancy types and categories to better understand the occurring mismatches. In total, our dataset consists of 611 paper-code discrepancies (81 real, 530 synthetic), spanning diverse computational science disciplines, including AI, Physics, Quantitative Biology, and others. Our evaluation of 21 LLMs highlights the difficulty of SciCoQA, particularly for instances involving omitted paper details, long-context inputs, and data outside the models' pre-training corpus. The best performing model in our evaluation, GPT-5, can only detect 45.7% of real-world paper-code discrepancies.",
     "citation": "@article{scicoqa-baumgaertner-etal-2026, title={{SciCoQA: Quality Assurance for Scientific Paper--Code Alignment}},  author={Tim Baumgärtner and Iryna Gurevych}, year={2026}, eprint={2601.12910}, archivePrefix={arXiv}, primaryClass={cs.CL}, url={https://arxiv.org/abs/2601.12910}}",
     "isAccessibleForFree": true,
@@ -271,7 +268,7 @@
         "name": "Paper-Code Alignment"
       },
       {
-        "@type": "Thing", 
+        "@type": "Thing",
         "name": "Discrepancy Detection"
       },
       {
@@ -299,12 +296,25 @@
 </head>
 <body>
 
+  <nav class="toc-floating">
+    <ul>
+      <li><a href="#abstract" class="toc-link">Abstract</a></li>
+      <li><a href="#paper-code-discrepancies" class="toc-link">Paper-Code Discrepancies</a></li>
+      <li><a href="#examples" class="toc-link">Examples</a></li>
+      <li><a href="#taxonomy" class="toc-link">Taxonomy</a></li>
+      <li><a href="#evaluation" class="toc-link">Evaluation</a></li>
+      <li><a href="#getting-started" class="toc-link">Getting Started</a></li>
+      <li><a href="#BibTeX" class="toc-link">BibTeX</a></li>
+    </ul>
+  </nav>
+
   <!-- Scroll to Top Button -->
   <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
     <i class="fas fa-chevron-up"></i>
   </button>
 
   <!-- More Works Dropdown -->
+  <!--
   <div class="more-works-container">
     <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
       <i class="fas fa-flask"></i>
@@ -346,6 +356,7 @@
       </div>
     </div>
   </div>
+  -->
 
   <main id="main-content">
   <section class="hero">
@@ -428,7 +439,7 @@
 <!-- End Teaser Figure -->
 
 <!-- Paper Abstract -->
-<section class="section hero is-light">
+<section class="section hero is-light" id="abstract">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -448,7 +459,7 @@
 <!-- End Paper Abstract -->
 
 <!-- Motivation: Example Figure -->
-<section class="section hero">
+<section class="section hero" id="paper-code-discrepancies">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column">
@@ -490,7 +501,7 @@
 <!-- End Motivation -->
 
 <!-- Real Examples -->
-<section class="section hero is-light">
+<section class="section hero is-light" id="examples">
   <div class="container is-max-desktop">
       <h2 class="title is-3 has-text-centered">SciCoQA Examples</h2>
 
@@ -600,7 +611,7 @@
 <!-- End Real Examples -->
 
 <!-- Discrepancy Taxonomy -->
-<section class="section hero">
+<section class="section hero" id="taxonomy">
   <div class="container is-max-desktop">
       <h2 class="title is-3 has-text-centered">Discrepancy Taxonomy</h2>
       <p class="has-text-centered has-text-grey" style="margin-bottom: 2rem;">
@@ -713,6 +724,31 @@
         }
         loadTaxonomyCharts();
       })();
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            const id = entry.target.getAttribute("id");
+            if (entry.intersectionRatio > 0) {
+              // Remove active class from all links
+              document.querySelectorAll('.toc-link').forEach(link => {
+                link.classList.remove('active');
+              });
+              
+              // Add active class to the visible section's link
+              const activeLink = document.querySelector(`.toc-link[href="#${id}"]`);
+              if (activeLink) {
+                activeLink.classList.add('active');
+              }
+            }
+          });
+        }, { rootMargin: "-30% 0px -70% 0px" }); // Triggers when section is near top of viewport
+
+        // Track all sections that have an ID
+        document.querySelectorAll('section[id]').forEach((section) => {
+          observer.observe(section);
+        });
+      });
       </script>
   </div>
 </section>
@@ -720,7 +756,7 @@
 
 
 <!-- Results -->
-<section class="section hero is-light">
+<section class="section hero is-light" id="evaluation">
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">Evaluation</h2>
     <p class="has-text-centered has-text-grey" style="margin-bottom: 2rem;">
@@ -933,7 +969,7 @@
 <!-- End Results -->
 
 <!-- Quick Start -->
-<section class="section hero">
+<section class="section hero" id="getting-started">
   <div class="container is-max-desktop">
       <h2 class="title is-3 has-text-centered">Getting Started</h2>
       <p class="has-text-centered has-text-grey" style="margin-bottom: 2rem;">
