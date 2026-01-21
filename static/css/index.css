@@ -188,7 +188,7 @@ body {
     height: 2px;
     bottom: -2px;
     left: 0;
-    background: var(--gradient-accent);
+    background: linear-gradient(90deg, #667eea 0%, #2563eb 100%);
     transition: var(--transition);
 }
 
@@ -316,17 +316,19 @@ body {
   margin-bottom: 2rem !important;
   position: relative;
   padding-bottom: 1rem;
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .title.is-3::after {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
+  left: 0;
+  width: 100%;
   height: 3px;
-  background: var(--gradient-accent);
+  background: linear-gradient(90deg, #667eea 0%, #2563eb 100%);
   border-radius: 2px;
 }
 

@@ -43,6 +43,15 @@ function copyBibTeX() {
     const copyText = button.querySelector('.copy-text');
     
     if (bibtexElement) {
+        // Trigger confetti animation
+        if (typeof confetti !== 'undefined') {
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+        }
+        
         navigator.clipboard.writeText(bibtexElement.textContent).then(function() {
             // Success feedback
             button.classList.add('copied');
