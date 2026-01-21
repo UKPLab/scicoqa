@@ -1,6 +1,6 @@
 # SciCoQA: Quality Assurance for Scientific Paper-Code Alignment
 <p align="center">
-  <a href="https://arxiv.org/abs/tbd">
+  <a href="https://arxiv.org/abs/2601.12910">
     <img src="https://img.shields.io/badge/arXiv-Paper-b31b1b?logo=arxiv" alt="arXiv">
   </a>
   <a href="https://github.com/UKPLab/scicoqa">
