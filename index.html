@@ -43,7 +43,7 @@
   <meta name="citation_author" content="Gurevych, Iryna">
   <meta name="citation_publication_date" content="2026">
   <meta name="citation_conference_title" content="arXiv preprint">
-  <meta name="citation_pdf_url" content="https://arxiv.org/pdf/XXXX.XXXXX.pdf">
+  <meta name="citation_pdf_url" content="https://arxiv.org/pdf/2601.12910">
   
   <!-- Additional SEO -->
   <meta name="theme-color" content="#2563eb">
@@ -249,7 +249,7 @@
         }
       }
     ],
-    "datePublished": "2026-01-01",
+    "datePublished": "2026-01-19",
     "publisher": {
       "@type": "Organization",
       "name": "arXiv"
@@ -258,7 +258,7 @@
     "image": "https://ukplab.github.io/scicoqa/static/images/social_preview.png",
     "keywords": ["SciCoQA", "paper-code alignment", "discrepancy detection", "scientific reproducibility", "machine learning", "NLP", "benchmark dataset"],
     "abstract": "We present SciCoQA, a dataset for detecting discrepancies between scientific publications and their codebases to ensure faithful implementations. We construct SciCoQA from GitHub issues and reproducibility papers, and to scale our dataset, we propose a synthetic data generation method for constructing paper-code discrepancies. We analyze the paper-code discrepancies in detail and propose discrepancy types and categories to better understand the occurring mismatches. In total, our dataset consists of 611 paper-code discrepancies (81 real, 530 synthetic), spanning diverse computational science disciplines, including AI, Physics, Quantitative Biology, and others. Our evaluation of 21 LLMs highlights the difficulty of SciCoQA, particularly for instances involving omitted paper details, long-context inputs, and data outside the models' pre-training corpus. The best performing model in our evaluation, GPT-5, can only detect 45.7% of real-world paper-code discrepancies.",
-    "citation": "@article{scicoqa2026, title={SciCoQA: Quality Assurance for Scientific Paper-Code Alignment}, author={Baumg{\"a}rtner, Tim and Gurevych, Iryna}, journal={arXiv preprint arXiv:XXXX.XXXXX}, year={2026}, url={https://github.com/UKPLab/scicoqa}}",
+    "citation": "@article{scicoqa-baumgaertner-etal-2026, title={{SciCoQA: Quality Assurance for Scientific Paper--Code Alignment}},  author={Tim Baumgärtner and Iryna Gurevych}, year={2026}, eprint={2601.12910}, archivePrefix={arXiv}, primaryClass={cs.CL}, url={https://arxiv.org/abs/2601.12910}}",
     "isAccessibleForFree": true,
     "license": "https://creativecommons.org/licenses/by/4.0/",
     "mainEntity": {
@@ -368,7 +368,7 @@
               <div class="publication-links">
                 <!-- arXiv Link -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/XXXX.XXXXX" target="_blank"
+                  <a href="https://arxiv.org/pdf/2601.12910" target="_blank"
                      class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -1009,13 +1009,18 @@ print(f"Category: {example['discrepancy_category']}")       # category of the di
         If you found this work useful or used the dataset, please consider citing it.
       </p>
       <div style="display: flex; justify-content: center;">
-        <pre id="bibtex-code" style="display: inline-block; margin: 0 auto;"><code>@article{scicoqa2026,
-  title     = {SciCoQA: Quality Assurance for Scientific Paper-Code Alignment},
-  author    = {Baumgärtner, Tim and Gurevych, Iryna},
-  journal   = {arXiv preprint arXiv:XXXX.XXXXX},
-  year      = {2026},
-  url       = {https://github.com/UKPLab/scicoqa}
-}</code></pre>
+        <pre id="bibtex-code" style="display: inline-block; margin: 0 auto;">
+          <code>
+@article{scicoqa-baumgaertner-etal-2026,
+  title={{SciCoQA: Quality Assurance for Scientific Paper--Code Alignment}}, 
+  author={Tim Baumgärtner and Iryna Gurevych},
+  year={2026},
+  eprint={2601.12910},
+  archivePrefix={arXiv},
+  primaryClass={cs.CL},
+  url={https://arxiv.org/abs/2601.12910}
+}
+</code></pre>
       </div>
       <div class="has-text-centered" style="margin-top: 1rem;">
         <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
