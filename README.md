@@ -1,18 +1,12 @@
 # SciCoQA: Quality Assurance for Scientific Paper-Code Alignment
-<p align="center">
-  <a href="https://arxiv.org/abs/2601.12910">
-    <img src="https://img.shields.io/badge/arXiv-Paper-b31b1b?logo=arxiv" alt="arXiv">
-  </a>
-  <a href="https://github.com/UKPLab/scicoqa">
-    <img src="https://img.shields.io/badge/GitHub-Code-black?logo=github" alt="Code">
-  </a>
-  <a href="https://huggingface.co/datasets/UKPLab/scicoqa">
-    <img src="https://img.shields.io/badge/Hugging%20Face-Data-FFD21E?logo=huggingface" alt="Dataset">
-  </a>
-  <a href="https://huggingface.co/spaces/UKPLab/scicoqa">
-    <img src="https://img.shields.io/badge/Hugging%20Face-Demo-blueviolet?logo=huggingface" alt="Demo">
-  </a>
-</p>
+<div align="center">
+
+[![ArXiv](https://img.shields.io/badge/arXiv-Paper-b31b1b?logo=arxiv)](https://arxiv.org/abs/2601.12910)
+[![GitHub](https://img.shields.io/badge/GitHub-Code-black?logo=github)](https://github.com/UKPLab/scicoqa)
+[![Hugging Face Dataset](https://img.shields.io/badge/Hugging%20Face-Data-FFD21E?logo=huggingface)](https://huggingface.co/datasets/UKPLab/scicoqa)
+[![Hugging Face Demo](https://img.shields.io/badge/Hugging%20Face-Demo-blueviolet?logo=huggingface)](https://huggingface.co/spaces/UKPLab/scicoqa)
+
+</div>
 
 A dataset and codebase for detecting discrepancies between scientific publications and their code implementations.
 
