@@ -3,6 +3,7 @@
 
 [![ArXiv](https://img.shields.io/badge/arXiv-Paper-b31b1b?logo=arxiv)](https://arxiv.org/abs/2601.12910)
 [![GitHub](https://img.shields.io/badge/GitHub-Code-black?logo=github)](https://github.com/UKPLab/scicoqa)
+[![Blog](https://img.shields.io/badge/Project%20Page-Blog-007acc?logo=google-chrome&logoColor=white)](https://ukplab.github.io/scicoqa)
 [![Hugging Face Dataset](https://img.shields.io/badge/Hugging%20Face-Data-FFD21E?logo=huggingface)](https://huggingface.co/datasets/UKPLab/scicoqa)
 [![Hugging Face Demo](https://img.shields.io/badge/Hugging%20Face-Demo-blueviolet?logo=huggingface)](https://huggingface.co/spaces/UKPLab/scicoqa)
 
