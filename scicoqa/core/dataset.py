@@ -18,7 +18,7 @@ DEFAULT_VERSION = "v1.1"
 
 
 def load_scicoqa(
-    split: str = "real",
+    split: str = "real",  # 'real', 'synthetic', or 'pooled'
     version: str = DEFAULT_VERSION,
     use_local: bool = False,
     local_path: Path | None = None,
@@ -26,7 +26,7 @@ def load_scicoqa(
     """Load SciCoQA dataset from HuggingFace or local JSONL file.
 
     Args:
-        split: Dataset split to load ('real' or 'synthetic').
+        split: Dataset split to load ('real', 'synthetic', or 'pooled').
         version: Dataset version (e.g. 'v1.0', 'v1.1'). Defaults to latest.
         use_local: If True, load from local JSONL files instead of HuggingFace.
         local_path: Path to local JSONL file. If None and use_local=True,
@@ -114,7 +114,7 @@ def _columnar_to_row_format(col_dict: dict, keys: list[str]) -> list[dict]:
 
 
 def load_scicoqa_as_records(
-    split: str = "real",
+    split: str = "real",  # 'real', 'synthetic', or 'pooled'
     version: str = DEFAULT_VERSION,
     use_local: bool = False,
     local_path: Path | None = None,
@@ -125,7 +125,7 @@ def load_scicoqa_as_records(
     dictionaries, which is the format expected by some parts of the codebase.
 
     Args:
-        split: Dataset split to load ('real' or 'synthetic').
+        split: Dataset split to load ('real', 'synthetic', or 'pooled').
         version: Dataset version (e.g. 'v1.0', 'v1.1'). Defaults to latest.
         use_local: If True, load from local JSONL files instead of HuggingFace.
         local_path: Path to local JSONL file.
@@ -140,7 +140,7 @@ def load_scicoqa_as_records(
 
 
 def get_unique_papers(
-    split: str = "real",
+    split: str = "real",  # 'real', 'synthetic', or 'pooled'
     version: str = DEFAULT_VERSION,
     use_local: bool = False,
     local_path: Path | None = None,
@@ -153,7 +153,7 @@ def get_unique_papers(
     for synthetic data.
 
     Args:
-        split: Dataset split to load ('real' or 'synthetic').
+        split: Dataset split to load ('real', 'synthetic', or 'pooled').
         version: Dataset version (e.g. 'v1.0', 'v1.1'). Defaults to latest.
         use_local: If True, load from local JSONL files instead of HuggingFace.
         local_path: Path to local JSONL file.
