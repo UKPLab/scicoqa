@@ -15,6 +15,7 @@ decoding_config:
     reasoning_effort: "high"
   gpt_5_high_reasoning:
     reasoning_effort: "high"
+  # used for gemini 2 models
   high_temperature_gemini_thinking:
     temperature: 1.0
     top_p: 1.0
@@ -22,6 +23,11 @@ decoding_config:
     thinking:
       type: "enabled"
       budget_tokens: 24576
+  # used for gemini 3 models
+  high_temperature_gemini_thinking_reasoning_effort_only:
+    temperature: 1.0
+    top_p: 1.0
+    reasoning_effort: "high"
 
 models:
   gpt-5:
@@ -81,6 +87,14 @@ models:
     rate_limits:
       requests_per_minute: 10000
       tokens_per_minute: 10000000
+
+  gemini-3.1-pro-preview:
+    name: gemini/gemini-3.1-pro-preview
+    tokenizer: gemini/gemini-3.1-pro-preview
+    max_context_size: 1047576
+    rate_limits:
+      requests_per_minute: 4000
+      tokens_per_minute: 4000000
 
   gemini-2.5-pro:
     name: gemini/gemini-2.5-pro

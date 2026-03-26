@@ -18,3 +18,4 @@ log.log
 .ipynb_checkpoints/
 .task/
 .vscode/
+data/papers/*

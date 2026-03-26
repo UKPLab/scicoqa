@@ -4,7 +4,6 @@ This module provides utilities for loading the SciCoQA dataset from HuggingFace
 or local JSONL files.
 """
 
-import json
 import logging
 from pathlib import Path
 
@@ -15,20 +14,23 @@ logger = logging.getLogger(__name__)
 
 # HuggingFace dataset identifier
 HF_DATASET_ID = "UKPLab/scicoqa"
+DEFAULT_VERSION = "v1.1"
 
 
 def load_scicoqa(
-    split: str = "real",
+    split: str = "real",  # 'real', 'synthetic', or 'pooled'
+    version: str = DEFAULT_VERSION,
     use_local: bool = False,
     local_path: Path | None = None,
 ) -> pd.DataFrame:
     """Load SciCoQA dataset from HuggingFace or local JSONL file.
 
     Args:
-        split: Dataset split to load ('real' or 'synthetic').
+        split: Dataset split to load ('real', 'synthetic', or 'pooled').
+        version: Dataset version (e.g. 'v1.0', 'v1.1'). Defaults to latest.
         use_local: If True, load from local JSONL files instead of HuggingFace.
         local_path: Path to local JSONL file. If None and use_local=True,
-            defaults to 'data/scicoqa-{split}.jsonl'.
+            defaults to 'data/scicoqa-{split}-{version}.jsonl'.
 
     Returns:
         DataFrame containing the dataset.
@@ -36,17 +38,19 @@ def load_scicoqa(
     if use_local:
         # Load from local JSONL file
         if local_path is None:
-            local_path = Path("data") / f"scicoqa-{split}.jsonl"
+            local_path = Path("data") / f"scicoqa-{split}-{version}.jsonl"
 
         if not local_path.exists():
             raise FileNotFoundError(f"Local dataset file not found: {local_path}")
 
-        logger.info(f"Loading SciCoQA {split} split from local file: {local_path}")
+        logger.info(f"Loading SciCoQA {split} {version} from local file: {local_path}")
         df = pd.read_json(local_path, lines=True)
     else:
         # Load from HuggingFace Hub
-        logger.info(f"Loading SciCoQA {split} split from HuggingFace: {HF_DATASET_ID}")
-        dataset = load_dataset(HF_DATASET_ID, split=split)
+        logger.info(
+            f"Loading SciCoQA {split} {version} from HuggingFace: {HF_DATASET_ID}"
+        )
+        dataset = load_dataset(HF_DATASET_ID, name=version, split=split)
         df = dataset.to_pandas()
 
         # Convert struct columns back to list-of-dicts format for compatibility
@@ -61,7 +65,7 @@ def load_scicoqa(
                 keys=["original_file", "original_code", "changed_code"],
             )
 
-    logger.info(f"Loaded {len(df)} entries from SciCoQA {split} split")
+    logger.info(f"Loaded {len(df)} entries from SciCoQA {split} {version}")
     return df
 
 
@@ -110,7 +114,8 @@ def _columnar_to_row_format(col_dict: dict, keys: list[str]) -> list[dict]:
 
 
 def load_scicoqa_as_records(
-    split: str = "real",
+    split: str = "real",  # 'real', 'synthetic', or 'pooled'
+    version: str = DEFAULT_VERSION,
     use_local: bool = False,
     local_path: Path | None = None,
 ) -> list[dict]:
@@ -120,19 +125,23 @@ def load_scicoqa_as_records(
     dictionaries, which is the format expected by some parts of the codebase.
 
     Args:
-        split: Dataset split to load ('real' or 'synthetic').
+        split: Dataset split to load ('real', 'synthetic', or 'pooled').
+        version: Dataset version (e.g. 'v1.0', 'v1.1'). Defaults to latest.
         use_local: If True, load from local JSONL files instead of HuggingFace.
         local_path: Path to local JSONL file.
 
     Returns:
         List of dictionaries containing the dataset records.
     """
-    df = load_scicoqa(split=split, use_local=use_local, local_path=local_path)
+    df = load_scicoqa(
+        split=split, version=version, use_local=use_local, local_path=local_path
+    )
     return df.to_dict(orient="records")
 
 
 def get_unique_papers(
-    split: str = "real",
+    split: str = "real",  # 'real', 'synthetic', or 'pooled'
+    version: str = DEFAULT_VERSION,
     use_local: bool = False,
     local_path: Path | None = None,
     apply_code_changes: bool = False,
@@ -144,7 +153,8 @@ def get_unique_papers(
     for synthetic data.
 
     Args:
-        split: Dataset split to load ('real' or 'synthetic').
+        split: Dataset split to load ('real', 'synthetic', or 'pooled').
+        version: Dataset version (e.g. 'v1.0', 'v1.1'). Defaults to latest.
         use_local: If True, load from local JSONL files instead of HuggingFace.
         local_path: Path to local JSONL file.
         apply_code_changes: If True, aggregate code changes for each paper.
@@ -152,7 +162,9 @@ def get_unique_papers(
     Returns:
         List of unique paper dictionaries.
     """
-    df = load_scicoqa(split=split, use_local=use_local, local_path=local_path)
+    df = load_scicoqa(
+        split=split, version=version, use_local=use_local, local_path=local_path
+    )
 
     papers_dict = {}
     for _, entry in df.iterrows():

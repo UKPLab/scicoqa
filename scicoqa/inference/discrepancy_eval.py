@@ -30,11 +30,13 @@ class DiscrepancyEvalInferenceArgs(InferenceArgs):
     prompt: str = "discrepancy_evaluation_v2"
     # Dataset split: 'real' or 'synthetic'
     dataset_split: str = "real"
+    # Dataset version (e.g. 'v1.0', 'v1.1')
+    dataset_version: str = "v1.1"
     # Use local JSONL files instead of HuggingFace Hub
     use_local: bool = False
     # Path to local JSONL file (only used if use_local=True)
     local_path: Path | None = None
-    dir_prefix: str = "eval_v2"
+    dir_prefix: str = "eval"
     concurrency: int = 128
     seed: int = 42
     answer_field: str = "match"
@@ -76,6 +78,7 @@ class DiscrepancyEvalIterator:
         output_dir: Path,
         prompt: Prompt,
         dataset_split: str = "real",
+        dataset_version: str = "v1.1",
         use_local: bool = False,
         local_path: Path | None = None,
         debug: bool = False,
@@ -85,6 +88,7 @@ class DiscrepancyEvalIterator:
         self.output_dir = output_dir
         self.prompt = prompt
         self.dataset_split = dataset_split
+        self.dataset_version = dataset_version
         self.use_local = use_local
         self.local_path = local_path
         self.debug = debug
@@ -118,16 +122,59 @@ class DiscrepancyEvalIterator:
             with open(generations_file_out, "r") as f:
                 for line in f:
                     gen = json.loads(line)
-                    key = f"{gen['discrepancy_id']}_{gen['generation'][:50]}"
+                    gt_source = gen.get("gt_source", "single")
+                    key = (
+                        f"{gen['discrepancy_id']}_{gt_source}_"
+                        f"{gen['generation'][:50]}"
+                    )
                     self.already_processed.add(key)
             logger.info(f"Found {len(self.already_processed)} already processed")
 
     def _load_discrepancies_df(self) -> pd.DataFrame:
         df = load_scicoqa(
             split=self.dataset_split,
+            version=self.dataset_version,
             use_local=self.use_local,
             local_path=self.local_path,
         )
+
+        # Auto-detect GT format by finding all discrepancy_description_* columns
+        desc_cols = [
+            c for c in df.columns if c.startswith("discrepancy_description_")
+        ]
+
+        if desc_cols:
+            # Melt all discrepancy_description_* columns into rows
+            dfs = []
+            for col in desc_cols:
+                gt_source = col.replace("discrepancy_description_", "")
+                dfs.append(
+                    df.assign(
+                        discrepancy_description=df[col],
+                        gt_source=gt_source,
+                    )
+                )
+            df = pd.concat(dfs, ignore_index=True)
+            df = df.dropna(subset=["discrepancy_description"])
+            df = df[df["discrepancy_description"].str.strip() != ""]
+            logger.info(
+                f"Loaded {len(df)} discrepancy rows "
+                f"(multi GT: {', '.join(desc_cols)})"
+            )
+        elif "discrepancy_description" in df.columns:
+            # Single GT field
+            df["gt_source"] = "single"
+            logger.info(
+                f"Loaded {len(df)} discrepancy rows "
+                "(single GT: discrepancy_description)"
+            )
+        else:
+            raise ValueError(
+                "Dataset must have either "
+                "'discrepancy_description' or "
+                "'discrepancy_description_*' columns"
+            )
+
         # Normalize URLs for matching
         df["paper_url_normalized"] = (
             df["paper_url_versioned"]
@@ -234,7 +281,8 @@ class DiscrepancyEvalIterator:
         """Get all items to process."""
         items = []
         for row in self.df.itertuples():
-            key = f"{row.discrepancy_id}_{row.generation[:50]}"
+            gt_source = row.gt_source
+            key = f"{row.discrepancy_id}_{gt_source}_{row.generation[:50]}"
             if key in self.already_processed:
                 continue
 
@@ -242,6 +290,7 @@ class DiscrepancyEvalIterator:
                 {
                     "discrepancy_id": row.discrepancy_id,
                     "discrepancy_description": row.discrepancy_description,
+                    "gt_source": gt_source,
                     "generation": row.generation,
                     "paper_url": getattr(row, "paper_url_versioned", None),
                     "origin": getattr(row, "origin", None),
@@ -262,6 +311,7 @@ class DiscrepancyEvalIterator:
                 {
                     "discrepancy_id": row.discrepancy_id,
                     "discrepancy_description": row.discrepancy_description,
+                    "gt_source": row.gt_source,
                     "generation": row.generation,
                     "paper_url": getattr(row, "paper_url_versioned", None),
                     "origin": getattr(row, "origin", None),
@@ -339,8 +389,9 @@ class DiscrepancyEvalExperiment:
             with open(self.similarities_file, "r") as f:
                 for line in f:
                     similarity_record = json.loads(line)
+                    gt_source = similarity_record.get("gt_source", "single")
                     key = (
-                        f"{similarity_record['discrepancy_id']}_"
+                        f"{similarity_record['discrepancy_id']}_{gt_source}_"
                         f"{similarity_record['generation'][:50]}"
                     )
                     self.already_computed_similarities.add(key)
@@ -377,6 +428,7 @@ class DiscrepancyEvalExperiment:
             output_dir=args.output_dir,
             prompt=self.prompt,
             dataset_split=args.dataset_split,
+            dataset_version=args.dataset_version,
             use_local=args.use_local,
             local_path=args.local_path,
             debug=args.debug,
@@ -400,6 +452,7 @@ class DiscrepancyEvalExperiment:
         self.output_dir.mkdir(parents=True, exist_ok=True)
         evaluation = {
             "discrepancy_id": item["discrepancy_id"],
+            "gt_source": item["gt_source"],
             "generation": item["generation"],
             "answer": answer,
             "reasoning": response.get("choices", [{}])[0]
@@ -457,6 +510,7 @@ class DiscrepancyEvalExperiment:
         self.similarities_dir.mkdir(parents=True, exist_ok=True)
         similarity_record = {
             "discrepancy_id": item["discrepancy_id"],
+            "gt_source": item["gt_source"],
             "generation": item["generation"],
             "similarity": similarity,
         }
@@ -485,7 +539,10 @@ class DiscrepancyEvalExperiment:
             # Compute and save similarities for all items
             items_to_compute_similarity = []
             for item in all_items:
-                key = f"{item['discrepancy_id']}_{item['generation'][:50]}"
+                key = (
+                    f"{item['discrepancy_id']}_{item['gt_source']}_"
+                    f"{item['generation'][:50]}"
+                )
                 if key not in self.already_computed_similarities:
                     items_to_compute_similarity.append(item)
 
@@ -530,7 +587,10 @@ class DiscrepancyEvalExperiment:
         logger.info("Computing similarities...")
         items_to_compute_similarity = []
         for item in items:
-            key = f"{item['discrepancy_id']}_{item['generation'][:50]}"
+            key = (
+                f"{item['discrepancy_id']}_{item['gt_source']}_"
+                f"{item['generation'][:50]}"
+            )
             if key not in self.already_computed_similarities:
                 items_to_compute_similarity.append(item)
 
