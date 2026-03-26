@@ -49,7 +49,7 @@ It consists of paper-code discrepancies with two splits:
 
 Further, we release a split with annotated predictions from GPT-5, Gemini 2.5 Pro and GPT OSS 20B:
 
-* `pooled`: 103 annotated predictions from 20 NLP and CV papers, plus the 26 real discrepancies in those papers
+* `b`: 103 annotated predictions from 20 NLP and CV papers, plus the 26 real discrepancies in those papers
 
 Local copies are also available in `data/` as JSON Lines files.
 
