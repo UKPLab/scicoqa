@@ -24,6 +24,8 @@ class DiscrepancyDatasetInferenceArgs(InferenceArgs):
     prompt: str = "discrepancy_generation"
     # Dataset split: 'real' or 'synthetic'
     dataset_split: str = "real"
+    # Dataset version (e.g. 'v1.0', 'v1.1')
+    dataset_version: str = "v1.1"
     # Use local JSONL files instead of HuggingFace Hub
     use_local: bool = False
     # Path to local JSONL file (only used if use_local=True)
@@ -84,6 +86,7 @@ class DiscrepancyDatasetIterator:
         tokenizer: str,
         model_max_tokens: int,
         dataset_split: str = "real",
+        dataset_version: str = "v1.1",
         use_local: bool = False,
         local_path: Path | None = None,
         debug: bool = False,
@@ -95,6 +98,7 @@ class DiscrepancyDatasetIterator:
         self.model = model
         self.model_max_tokens = model_max_tokens
         self.dataset_split = dataset_split
+        self.dataset_version = dataset_version
         self.use_local = use_local
         self.local_path = local_path
         self.debug = debug
@@ -108,6 +112,7 @@ class DiscrepancyDatasetIterator:
         # Load unique papers from HuggingFace or local file
         self.unique_papers = get_unique_papers(
             split=self.dataset_split,
+            version=self.dataset_version,
             use_local=self.use_local,
             local_path=self.local_path,
             apply_code_changes=self.apply_code_changes,
@@ -210,6 +215,7 @@ class DiscrepancyDatasetExperiment(BaseExperiment):
             tokenizer=self.get_tokenizer(),
             model_max_tokens=self.llm.model_config["max_context_size"],
             dataset_split=args.dataset_split,
+            dataset_version=args.dataset_version,
             use_local=args.use_local,
             local_path=args.local_path,
             debug=args.debug,

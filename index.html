@@ -4,9 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://ukplab.github.io/scicoqa/">
+
   <!-- Primary Meta Tags -->
-  <meta name="title" content="SciCoQA: Quality Assurance for Scientific Paper-Code Alignment">
-  <meta name="description" content="A benchmark dataset for detecting discrepancies between scientific papers and their code implementations. 81 real-world + 530 synthetic discrepancies.">
+  <meta name="description" content="SciCoQA: a benchmark of 635 paper-code discrepancies for evaluating whether scientific code faithfully implements what the paper describes. Covers AI, Physics, Biology, and more.">
   <meta name="keywords" content="SciCoQA, paper-code alignment, discrepancy detection, scientific reproducibility, machine learning, NLP, benchmark dataset">
   <meta name="author" content="Tim Baumgärtner, Iryna Gurevych">
   <meta name="robots" content="index, follow">
@@ -44,11 +46,12 @@
   <meta name="citation_publication_date" content="2026">
   <meta name="citation_conference_title" content="arXiv preprint">
   <meta name="citation_pdf_url" content="https://arxiv.org/pdf/2601.12910">
+  <meta name="citation_arxiv_id" content="2601.12910">
   
   <!-- Additional SEO -->
   <meta name="theme-color" content="#2563eb">
   <meta name="msapplication-TileColor" content="#2563eb">
-  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   
   <!-- Preconnect for performance -->
@@ -78,16 +81,12 @@
   <link rel="stylesheet" href="static/css/index.css">
   
   <!-- Non-critical CSS - Load asynchronously -->
-  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   
   <!-- Fallback for browsers that don't support preload -->
   <noscript>
-    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
-    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   </noscript>
   
@@ -205,9 +204,7 @@
   
   <!-- Defer non-critical JavaScript -->
   <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script defer src="static/js/bulma-carousel.min.js"></script>
-  <script defer src="static/js/bulma-slider.min.js"></script>
+
   <script defer src="static/js/index.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
@@ -219,7 +216,7 @@
     "@context": "https://schema.org",
     "@type": "ScholarlyArticle",
     "headline": "SciCoQA: Quality Assurance for Scientific Paper-Code Alignment",
-    "description": "A benchmark dataset for detecting discrepancies between scientific papers and their code implementations. 81 real-world + 530 synthetic discrepancies.",
+    "description": "A benchmark dataset for detecting discrepancies between scientific papers and their code implementations. 92 real-world + 543 synthetic discrepancies.",
     "author": [
       {
         "@type": "Person",
@@ -254,7 +251,7 @@
       "NLP",
       "benchmark dataset"
     ],
-    "abstract": "We present SciCoQA, a dataset for detecting discrepancies between scientific publications and their codebases to ensure faithful implementations. We construct SciCoQA from GitHub issues and reproducibility papers, and to scale our dataset, we propose a synthetic data generation method for constructing paper-code discrepancies. We analyze the paper-code discrepancies in detail and propose discrepancy types and categories to better understand the occurring mismatches. In total, our dataset consists of 611 paper-code discrepancies (81 real, 530 synthetic), spanning diverse computational science disciplines, including AI, Physics, Quantitative Biology, and others. Our evaluation of 21 LLMs highlights the difficulty of SciCoQA, particularly for instances involving omitted paper details, long-context inputs, and data outside the models' pre-training corpus. The best performing model in our evaluation, GPT-5, can only detect 45.7% of real-world paper-code discrepancies.",
+    "abstract": "We present SciCoQA, a dataset for detecting discrepancies between scientific publications and their codebases to ensure faithful implementations. We construct SciCoQA from GitHub issues and reproducibility papers, and to scale our dataset, we propose a synthetic data generation method for constructing paper-code discrepancies. We analyze the paper-code discrepancies in detail and propose discrepancy types and categories to better understand the occurring mismatches. In total, our dataset consists of 635 paper-code discrepancies (92 real, 543 synthetic), covering the AI domain from real-world data and extending to Physics, Quantitative Biology, and other computational sciences through synthetic data. Our evaluation of 22 LLMs demonstrates the difficulty of SciCoQA, particularly for instances involving omitted paper details, long-context inputs, and data outside the models' pre-training corpus. The best performing models in our evaluation, Gemini 3.1 Pro and GPT-5 Mini, detect only 46.7% of real-world paper-code discrepancies.",
     "citation": "@article{scicoqa-baumgaertner-etal-2026, title={{SciCoQA: Quality Assurance for Scientific Paper--Code Alignment}},  author={Tim Baumgärtner and Iryna Gurevych}, year={2026}, eprint={2601.12910}, archivePrefix={arXiv}, primaryClass={cs.CL}, url={https://arxiv.org/abs/2601.12910}}",
     "isAccessibleForFree": true,
     "license": "https://creativecommons.org/licenses/by/4.0/",
@@ -263,6 +260,14 @@
       "@id": "https://ukplab.github.io/scicoqa"
     },
     "about": [
+      {
+        "@type": "Thing",
+        "name": "Reproducibility"
+      },
+      {
+        "@type": "Thing",
+        "name": "Software Engineering"
+      },
       {
         "@type": "Thing",
         "name": "Paper-Code Alignment"
@@ -312,51 +317,6 @@
   <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
     <i class="fas fa-chevron-up"></i>
   </button>
-
-  <!-- More Works Dropdown -->
-  <!--
-  <div class="more-works-container">
-    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
-      <i class="fas fa-flask"></i>
-      More Works
-      <i class="fas fa-chevron-down dropdown-arrow"></i>
-    </button>
-    <div class="more-works-dropdown" id="moreWorksDropdown">
-      <div class="dropdown-header">
-        <h4>More Works from UKP Lab</h4>
-        <button class="close-btn" onclick="toggleMoreWorks()">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-      <div class="works-list">
-        <a href="https://aclanthology.org/2025.naacl-long.22/" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>PeerQA: A Scientific Question Answering Dataset from Peer Reviews</h5>
-            <p>A scientific Question Answering dataset annotated from peer reviews. </p>
-            <span class="work-venue">NAACL 2025</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <a href="https://aclanthology.org/2025.emnlp-main.1476/" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>The Good, the Bad and the Constructive: Automatically Measuring Peer Review’s Utility for Authors</h5>
-            <p>A dataset with fine-grained aspects of peer review utility for paper authors.</p>
-            <span class="work-venue">EMNLP 2025</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <a href="https://arxiv.org/abs/2508.21422" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Automatic Reviewers Fail to Detect Faulty Reasoning in Research Papers: A New Counterfactual Evaluation Framework</h5>
-            <p>A counterfactual evaluation framework and dataset to assess whether automatic reviewers can detect faulty research logic.</p>
-            <span class="work-venue">arXiv 2025</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-  -->
 
   <main id="main-content">
   <section class="hero">
@@ -429,9 +389,9 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img src="static/images/scicoqa-overview.svg" alt="Overview of the SciCoQA dataset creation process" style="width: 100%; margin-bottom: 0rem; margin-top: -1rem;">
+      <img src="static/images/scicoqa-overview-v1.1.svg" alt="Overview of the SciCoQA dataset creation process" style="width: 100%; margin-bottom: 0rem; margin-top: -1rem;">
       <p class="content has-text-justified">
-        <strong>Overview of the creation of SciCoQA:</strong> We source real-world data from Reproducibility papers and GitHub issues. For the former, paper-code discrepancies are extracted from the paper with GPT-5, for the latter, issues are pre-filtered using Qwen3. Next, all candidates are manually filtered to remove any that do not fit our discrepancy definition. Finally, all paper-code discrepancies are verified with GPT-5. For synthetic data, we generate discrepancies using GPT-5 for AI and other computational domains.
+        <strong>Overview of the creation of SciCoQA:</strong> We source real-world data from reproducibility papers and GitHub issues. For the former, paper-code discrepancies are extracted from the paper with GPT-5, for the latter, issues are pre-filtered using Qwen3. Next, all candidates are manually filtered to remove any that do not fit our discrepancy definition. Finally, all paper-code discrepancies are verified with Gemini 3.1 and GPT-5. For synthetic data, we generate discrepancies using GPT-5 for AI and other computational domains.
       </p>
     </div>
   </div>
@@ -446,10 +406,10 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present <strong>SciCoQA</strong>, a dataset for detecting discrepancies between scientific publications and their codebases to ensure faithful implementations. We construct SciCoQA from GitHub issues and reproducibility papers, and to scale our dataset, we propose a synthetic data generation method for constructing paper-code discrepancies. We analyze the paper-code discrepancies in detail and propose discrepancy types and categories to better understand the occurring mismatches.
+            We present <strong>SciCoQA</strong>, a dataset for detecting discrepancies between scientific publications and their codebases to ensure faithful implementations. We construct SciCoQA from GitHub issues and reproducibility papers, and to scale our dataset, we propose a synthetic data generation method for constructing paper-code discrepancies. We analyze the paper-code discrepancies in detail and propose discrepancy types and categories to better understand the occurring mismatches. 
           </p>
           <p>
-            In total, our dataset consists of <strong>611 paper-code discrepancies</strong> (81 real, 530 synthetic), spanning diverse computational science disciplines, including AI, Physics, Quantitative Biology, and others. Our evaluation of <strong>21 LLMs</strong> highlights the difficulty of SciCoQA, particularly for instances involving omitted paper details, long-context inputs, and data outside the models' pre-training corpus. The best performing model in our evaluation, GPT-5, can only detect <strong>45.7%</strong> of real-world paper-code discrepancies.
+            In total, our dataset consists of <strong>635 paper-code discrepancies</strong> (92 real, 543 synthetic), covering the AI domain from real-world data and extending to Physics, Quantitative Biology, and other computational sciences through synthetic data. Our evaluation of <strong>22 LLMs</strong> demonstrates the difficulty of SciCoQA, particularly for instances involving omitted paper details, long-context inputs, and data outside the models' pre-training corpus. The best performing models in our evaluation, Gemini 3.1 Pro and GPT-5 Mini, detect only <strong>46.7%</strong> of real-world paper-code discrepancies.
           </p>
         </div>
       </div>
@@ -506,7 +466,7 @@
       <h2 class="title is-3 has-text-centered">SciCoQA Examples</h2>
 
       <p class="has-text-justified" style="margin-bottom: 1.5rem;">
-        Our dataset covers <strong>81 real-world discrepancies</strong> from Machine Learning, Computer Vision, and NLP domains, plus <strong>530 synthetic examples</strong> spanning additional domains including Physics, Quantitative Biology, Statistics, Math, and EE & Systems Science.
+        Our dataset covers <strong>92 real-world discrepancies</strong> from Machine Learning, Computer Vision, and NLP domains, plus <strong>543 synthetic examples</strong> spanning additional domains including Physics, Quantitative Biology, Statistics, Math, and EE & Systems Science.
       </p>
       
       <!-- Domain Coverage Tags -->
@@ -514,7 +474,7 @@
         <div class="column" style="flex: 0 0 43%; max-width: 43%;">
           <div class="box" style="border-left: 4px solid #C93334; padding: 0.5rem; height: 100%;">
             <span class="tag is-medium" style="background-color: #C93334; color: #fff;">Real-World</span>
-            <span class="has-text-grey is-size-7" style="margin-left: 0.75rem;">81 discrepancies</span>
+            <span class="has-text-grey is-size-7" style="margin-left: 0.75rem;">92 discrepancies</span>
             <div class="tags are-medium" style="margin-top: 0.5rem;">
               <span class="tag is-light"><i class="fas fa-brain" style="margin-right: 0.5rem;"></i>Machine Learning</span>
               <span class="tag is-light"><i class="fas fa-eye" style="margin-right: 0.5rem;"></i>Computer Vision</span>
@@ -525,7 +485,7 @@
         <div class="column" style="flex: 0 0 57%; max-width: 57%;">
           <div class="box" style="border-left: 4px solid #336FA2; padding: 0.5rem; height: 100%;">
             <span class="tag is-medium" style="background-color: #336FA2; color: #fff;">Synthetic</span>
-            <span class="has-text-grey is-size-7" style="margin-left: 0.75rem;">530 discrepancies</span>
+            <span class="has-text-grey is-size-7" style="margin-left: 0.75rem;">543 discrepancies</span>
             <div class="tags are-medium" style="margin-top: 0.5rem;">
               <span class="tag is-light"><i class="fas fa-brain" style="margin-right: 0.5rem;"></i>ML</span>
               <span class="tag is-light"><i class="fas fa-eye" style="margin-right: 0.5rem;"></i>CV</span>
@@ -657,11 +617,11 @@
       <div class="columns is-centered" style="margin-top: 1.5rem;">
         <div class="column is-6">
           <p class="has-text-centered has-text-weight-semibold" style="margin-bottom: 0.5rem;">Distribution by Type</p>
-          <div id="chart-discrepancy-type" style="width: 100%;"></div>
+          <div id="chart-discrepancy-type-v11" style="width: 100%;"></div>
         </div>
         <div class="column is-6">
           <p class="has-text-centered has-text-weight-semibold" style="margin-bottom: 0.5rem;">Distribution by Category</p>
-          <div id="chart-discrepancy-category" style="width: 100%;"></div>
+          <div id="chart-discrepancy-category-v11" style="width: 100%;"></div>
         </div>
       </div>
       <p class="has-text-centered has-text-grey is-size-7">
@@ -696,14 +656,22 @@
                   .attr("class", "mpld3-tooltip")
                   .style("position", "absolute")
                   .style("z-index", "10")
-                  .style("visibility", "hidden");
+                  .style("visibility", "hidden")
+                  .style("background", "white")
+                  .style("border", "1px solid #ccc")
+                  .style("padding", "8px")
+                  .style("border-radius", "4px")
+                  .style("font-size", "12px")
+                  .style("box-shadow", "0 2px 4px rgba(0,0,0,0.1)");
               obj.elements()
                   .on("mouseover", function(d, i){
                       tooltip.html(labels[i]).style("visibility", "visible");
                   })
-                  .on("mousemove", function(d, i){
-                      tooltip.style("top", d3.event.pageY + 10 + "px")
-                             .style("left", d3.event.pageX + "px");
+                  .on("mousemove", function(event) {
+                      // d3 v5 uses d3.event; v6+ passes event as first arg
+                      if (!event || !event.pageY) event = d3.event;
+                      tooltip.style("top", (event.pageY + 10) + "px")
+                             .style("left", (event.pageX + 10) + "px");
                   })
                   .on("mouseout", function(d, i){
                       tooltip.style("visibility", "hidden");
@@ -711,15 +679,15 @@
           };
           
           // Load Type chart
-          fetch('static/images/chart-discrepancy-type.json')
+          fetch('static/images/chart-discrepancy-type-v1.1.json')
             .then(r => r.json())
-            .then(data => mpld3.draw_figure("chart-discrepancy-type", data))
+            .then(data => mpld3.draw_figure("chart-discrepancy-type-v11", data))
             .catch(err => console.error('Type chart error:', err));
           
           // Load Category chart
-          fetch('static/images/chart-discrepancy-category.json')
+          fetch('static/images/chart-discrepancy-category-v1.1.json')
             .then(r => r.json())
-            .then(data => mpld3.draw_figure("chart-discrepancy-category", data))
+            .then(data => mpld3.draw_figure("chart-discrepancy-category-v11", data))
             .catch(err => console.error('Category chart error:', err));
         }
         loadTaxonomyCharts();
@@ -760,17 +728,17 @@
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">Evaluation</h2>
     <p class="has-text-centered has-text-grey" style="margin-bottom: 2rem;">
-      Can AI reliably detect when scientific papers and code don't match? Our evaluation of 21 LLMs reveals a concerning reality: while models can identify some discrepancies, they miss most real-world cases that threaten scientific integrity.
+      Can AI reliably detect when scientific papers and code don't match? Our evaluation of 22 LLMs reveals a concerning reality: while models can identify some discrepancies, they miss most real-world cases that threaten scientific integrity.
     </p>
 
     <!-- How We Evaluated -->
     <div class="content" style="margin-bottom: 2rem;">
-      <h4 class="title is-5">Inference Pipeline</h4>
-      <p>We tested 21 LLMs in a zero-shot setting: given the full-text paper (preprocessed to markdown format) and the codebase (containing only relevant code files), the model generates a list of discrepancies it finds. Subsequently, each generated discrepancy is compared against the ground-truth discrepancies for that paper. The comparison is performed by an LLM-Judge, in our case GPT-OSS 20B. Finally, the recall can be computed, dividing the number of discrepancies that were "matched" against a ground truth by the total number of discrepancies in the dataset.</p>
+      <h3 class="title is-5">Inference Pipeline</h3>
+      <p>We tested 22 LLMs in a zero-shot setting: given the full-text paper (preprocessed to markdown format) and the codebase (containing only relevant code files), the model generates a list of discrepancies it finds. Subsequently, each generated discrepancy is compared against the ground-truth discrepancies for that paper. The comparison is performed by an LLM-Judge, in our case GPT-OSS 20B. Finally, the recall can be computed, dividing the number of discrepancies that were "matched" against a ground truth by the total number of discrepancies in the dataset.</p>
       
       <!-- Inference Pipeline Flowchart -->
       <div style="margin: 0; text-align: center;">
-        <img src="static/images/inference-pipeline-5.svg" alt="Inference pipeline flowchart showing paper excerpt and code snippet as inputs, model inference, generated discrepancy, LLM judge evaluation, and final match/no match output" style="max-width: 100%; height: auto;">
+        <img src="static/images/inference-pipeline-5.svg" alt="Inference pipeline flowchart showing paper excerpt and code snippet as inputs, model inference, generated discrepancy, LLM judge evaluation, and final match/no match output" style="max-width: 100%; height: auto;" loading="lazy">
         <p class="has-text-grey is-size-7" style="margin-top: 0.5rem;">
           Overview of the inference and evaluation pipeline for SciCoQA.
         </p>
@@ -779,7 +747,7 @@
 
     <!-- Main Results -->
     <div style="margin-bottom: 2rem;">
-      <h4 class="title is-5" style="margin-bottom: 1rem;">Main Results</h4>
+      <h3 class="title is-5" style="margin-bottom: 1rem;">Main Results</h3>
       Executing the above pipeline yields the following results:
       <div id="chart-main-performance" style="max-width: 960px; margin: 0 auto;"></div>
       <p class="has-text-grey is-size-7 has-text-centered" style="margin-bottom: 1rem;">
@@ -789,16 +757,16 @@
 
     <!-- Key Finding -->
     <div class="box has-background-warning-light" style="border-left: 4px solid #f39c12; margin-bottom: 2rem;">
-      <h4 class="title is-6 has-text-warning-dark">💡 Key Finding</h4>
+      <h3 class="title is-6 has-text-warning-dark">💡 Key Finding</h3>
       <p class="is-size-6 has-text-weight-semibold mb-3">
-        Even the best model (GPT-5) achieves only <strong>45.7% recall</strong> on real-world discrepancies — far too low for reliable quality assurance in scientific publishing.
+        Even the best models (Gemini 3.1 Pro and GPT-5 Mini) achieve only <strong>46.7% recall</strong> on real-world discrepancies — far too low for reliable quality assurance in scientific publishing.
       </p>
     </div>
 
     <!-- Precision Analysis -->
     <div class="content" style="margin-bottom: 2rem;">
-      <h4 class="title is-5">Precision Analysis</h4>
-      <p>To investigate precision, we manually annotated predictions from top models on 12 NLP papers. We verified each prediction and decided whether it is a valid paper-code discrepancy or not. This yielded a total of 67 pooled discrepancies. We then computed precision and recall on this pooled set for each model.</p>
+      <h3 class="title is-5">Precision Analysis</h3>
+      <p>To investigate precision, we manually annotated predictions from top models on 20 NLP and CV papers. We verified each prediction and decided whether it is a valid paper-code discrepancy or not. This yielded a total of 129 pooled discrepancies. We then computed precision and recall on this pooled set for each model.</p>
     </div>
 
     <!-- Precision Analysis Table -->
@@ -816,97 +784,66 @@
           <tbody>
             <tr>
               <td style="text-align: left;"><strong>True Positives</strong></td>
-              <td>38</td>
-              <td>29</td>
-              <td>40</td>
+              <td>66</td>
+              <td>55</td>
+              <td>72</td>
             </tr>
             <tr style="border-bottom: 2px solid #dbdbdb;">
               <td style="text-align: left;"><strong>False Positives</strong></td>
-              <td>8</td>
-              <td>2</td>
-              <td>20</td>
+              <td>9</td>
+              <td>3</td>
+              <td>31</td>
             </tr>
             <tr class="has-background-light">
               <td style="text-align: left;"><strong>Precision</strong></td>
-              <td>82.6%</td>
-              <td>93.5%</td>
-              <td>66.7%</td>
+              <td>88.0%</td>
+              <td>94.6%</td>
+              <td>69.9%</td>
             </tr>
             <tr>
               <td style="text-align: left;"><strong>Recall</strong></td>
-              <td>56.7%</td>
-              <td>43.3%</td>
-              <td>59.7%</td>
+              <td>51.2%</td>
+              <td>41.1%</td>
+              <td>55.8%</td>
             </tr>
             <tr>
               <td style="text-align: left;"><strong>F1</strong></td>
-              <td>67.3%</td>
-              <td>59.2%</td>
-              <td>63.0%</td>
+              <td>64.7%</td>
+              <td>57.3%</td>
+              <td>62.1%</td>
             </tr>
           </tbody>
         </table>
       </div>
-      <p class="has-text-grey is-size-7" style="margin-top: 0.5rem;">Performance on 67 pooled discrepancies from 12 NLP papers</p>
+      <p class="has-text-grey is-size-7" style="margin-top: 0.5rem;">Performance on 129 pooled discrepancies from 20 NLP and CV papers.</p>
     </div>
     
-    <!-- mpld3 Chart Scripts -->
-    <script src="https://d3js.org/d3.v5.min.js"></script>
-    <script src="https://mpld3.github.io/js/mpld3.v0.5.12.js"></script>
     <script>
     (function() {
-      // Register tooltip plugin
-      mpld3.register_plugin("htmltooltip", HtmlTooltipPlugin);
-      HtmlTooltipPlugin.prototype = Object.create(mpld3.Plugin.prototype);
-      HtmlTooltipPlugin.prototype.constructor = HtmlTooltipPlugin;
-      HtmlTooltipPlugin.prototype.requiredProps = ["id"];
-      HtmlTooltipPlugin.prototype.defaultProps = {labels:null, target:null, hoffset:0, voffset:10, targets:null};
-      function HtmlTooltipPlugin(fig, props){
-        mpld3.Plugin.call(this, fig, props);
-      };
-      HtmlTooltipPlugin.prototype.draw = function(){
-        var obj = mpld3.get_element(this.props.id);
-        var labels = this.props.labels;
-        var tooltip = d3.select("body").append("div")
-          .attr("class", "mpld3-tooltip")
-          .style("position", "absolute")
-          .style("z-index", "10")
-          .style("visibility", "hidden")
-          .style("background", "white")
-          .style("border", "1px solid #ccc")
-          .style("padding", "8px")
-          .style("border-radius", "4px")
-          .style("font-size", "12px")
-          .style("box-shadow", "0 2px 4px rgba(0,0,0,0.1)");
-        obj.elements()
-          .on("mouseover", function(d, i){
-            tooltip.html(labels[i]).style("visibility", "visible");
+      // Reuse d3/mpld3/HtmlTooltipPlugin already loaded by taxonomy section
+      function loadPerformanceChart() {
+        if (typeof mpld3 === 'undefined') {
+          setTimeout(loadPerformanceChart, 100);
+          return;
+        }
+        fetch('static/images/chart-main-performance-v1.1.json')
+          .then(response => response.json())
+          .then(data => {
+            mpld3.draw_figure("chart-main-performance", data);
           })
-          .on("mousemove", function(d, i){
-            tooltip.style("top", d3.event.pageY + 10 + "px").style("left", d3.event.pageX + 10 + "px");
-          })
-          .on("mouseout", function(d, i){
-            tooltip.style("visibility", "hidden");
+          .catch(err => {
+            console.error('Failed to load chart:', err);
+            document.getElementById('chart-main-performance').innerHTML =
+              '<p class="has-text-danger">Chart failed to load. Please refresh.</p>';
           });
-      };
-      
-      // Load and render chart from JSON
-      fetch('static/images/chart-main-performance.json')
-        .then(response => response.json())
-        .then(data => {
-          mpld3.draw_figure("chart-main-performance", data);
-        })
-        .catch(err => {
-          console.error('Failed to load chart:', err);
-          document.getElementById('chart-main-performance').innerHTML = 
-            '<p class="has-text-danger">Chart failed to load. Please refresh.</p>';
-        });
+      }
+      loadPerformanceChart();
     })();
     </script>
     
     <!-- Error Analysis Cards -->
     <div style="margin-bottom: 2rem;">
-      <h4 class="title is-5" style="margin-bottom: 1.5rem;">Error Analysis</h4>
+      <h3 class="title is-5" style="margin-bottom: 1.5rem;">Error Analysis</h3>
       <p>Our evaluation and manual error analysis revealed the following failure modes: </p>
       <div class="columns">
         <div class="column">
@@ -946,10 +883,10 @@
 
     <!-- Implications -->
     <div class="content">
-      <h4 class="title is-5">What This Means for Science</h4>
+      <h3 class="title is-5">What This Means for Science</h3>
       <div class="columns">
         <div class="column">
-          <p><strong>For Scientific Publishing:</strong> The 45.7% recall rate shows that current AI tools cannot reliably check paper-code alignment, highlighting the need for human-in-the-loop verification in scientific publishing.</p>
+          <p><strong>For Scientific Publishing:</strong> The 46.7% recall rate shows that current AI tools cannot reliably check paper-code alignment, highlighting the need for human-in-the-loop verification in scientific publishing.</p>
         </div>
         <div class="column">
           <p><strong>For AI-Assisted Research:</strong> Similarly, the output of autonomous AI-Scientists can not reliably be checked for paper-code alignment using LLMs. Ensuring that the AI-Scientist's discovery is credible requires human verification of the paper and code.</p>
@@ -1017,16 +954,18 @@
 dataset = load_dataset("UKPLab/scicoqa")
 
 # Access the different subsets
-real_data = dataset["real"]            # subset of 81 real-world discrepancies
-synthetic_data = dataset["synthetic"]  # subset of 530 synthetic examples
+real_data = dataset["real"]            # 92 real-world discrepancies
+synthetic_data = dataset["synthetic"]  # 543 synthetic examples
+pooled_data = dataset["pooled"]        # 129 pooled annotations
 
 # Explore a discrepancy
 example = real_data[0]
-print(f"Paper: {example['paper_url_versioned']}")           # static URL to the paper
-print(f"Code: {example['code_url_versioned']}")             # static URL to the code
-print(f"Discrepancy: {example['discrepancy_description']}") # description of the discrepancy
-print(f"Type: {example['discrepancy_type']}")               # type of the discrepancy
-print(f"Category: {example['discrepancy_category']}")       # category of the discrepancy
+print(f"Paper: {example['paper_url_versioned']}")                   # static URL to the paper
+print(f"Code: {example['code_url_versioned']}")                     # static URL to the code
+print(f"Discrepancy: {example['discrepancy_description_gpt']}")     # description of the discrepancy generated by GPT-5
+print(f"Discrepancy: {example['discrepancy_description_gemini']}")  # description of the discrepancy generated by Gemini
+print(f"Type: {example['discrepancy_type']}")                       # type of the discrepancy
+print(f"Category: {example['discrepancy_category']}")               # category of the discrepancy
 </code></pre>
         </div>
       </div>
