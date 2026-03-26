@@ -10,13 +10,21 @@
 
 </div>
 
-A dataset and codebase for detecting discrepancies between scientific publications and their code implementations.
+A dataset and codebase for detecting discrepancies between scientific publications and their code implementations. Our evaluation of 22 LLMs shows that even the best model detects only 46.7% of real-world paper-code discrepancies. See the [project page](https://ukplab.github.io/scicoqa) for interactive results.
 
 ![Overview of the SciCoQA dataset creation process](figs/overview.svg)
 
+**Quick install:**
+
+```python
+from datasets import load_dataset
+dataset = load_dataset("UKPLab/scicoqa")
+real_data = dataset["real"]       	# 92 real-world discrepancies
+synthetic_data = dataset["synthetic"]   # 543 synthetic discrepancies
+```
+
 ## Table of Contents
 
-- [News](#news)
 - [Dataset](#dataset)
 - [Quick Start](#quick-start)
 - [Setup](#setup)
@@ -24,27 +32,11 @@ A dataset and codebase for detecting discrepancies between scientific publicatio
 - [Dataset Creation](#dataset-creation)
 - [Inference](#inference)
 - [Evaluation](#evaluation)
+- [Citation](#citation)
 - [License](#license)
+- [News](#news)
 
 ---
-
-## News
-
-### 20/03/2026: SciCoQA V1.1 + Gemini 3.1 Pro Evals + Extended Human Validation Data
-
-#### SciCoQA V1.1
-
-We added 11 new real-world and 13 additional synthetic discrepancies. The additional real-world data was obtained by running the final Verify + Rephrase step also with Gemini 3.1 Pro. Now most samples in the data have two discrepancy descriptions. There are few cases where only one of the models judged the discrepancy to be valid. For these we have manually verified them and only included valid ones. Further we added 13 additional synthetic discrepancies that were labeled as *Paper Omissions*, as we found these to be the most challenging cases for LLMs to detect. They were initially discarded during synthetic data sampling, but we have now added them. The updated data is available in [Hugging Face](https://huggingface.co/datasets/UKPLab/scicoqa) and in the data dir. For all the new data we also added the predictions and evals of the previously evaluated models.
-
-#### Gemini 3.1 Pro Evals
-
-We added Gemini 3.1 Pro evaluations and the results can be found in the paper. As before, we release all predictions from the model.
-
-#### Extended Human Validation Data
-
-We further release the data from our precision analysis. Specifically, we looked at GPT-5, Gemini 2.5 Pro and GPT-OSS 20B's predictions on 20 papers from NLP and CV and validate whether the detected discrepancies by these models actually exist or not. This data gives a more complete picture on the *Precision* of models.
-
-You can find the pooled data in [data/scicoqa-pooled-v1.1.jsonl](./data/scicoqa-pooled-v1.1.jsonl) or on [HuggingFace](https://huggingface.co/datasets/UKPLab/scicoqa/viewer/default/pooled).
 
 ## Dataset
 
@@ -73,7 +65,8 @@ Each entry contains:
 - **Origin metadata**: Source (GitHub issue, reproducibility paper, or synthetic)
 - **Changed code** (synthetic only): Code files and snippets that were modified
 
-Example entry:
+<details>
+<summary>Example entry (click to expand)</summary>
 
 ```json
 {
@@ -88,42 +81,21 @@ Example entry:
   "origin_discrepancy_text": "AB matrix initialization in layers.py does not conform ...",
   "is_valid_discrepancy_gemini": true,
   "is_valid_discrepancy_gpt": true,
-  "is_valid_discrepancy_reason_gemini": "The paper states that matrix A is initialized ...",
-  "is_valid_discrepancy_reason_gpt": "The paper states that A should be randomly ...",
   "discrepancy_description_gemini": "The paper describes the initialization of the low-rank ...",
   "discrepancy_description_gpt": "In Section 4.1, the paper specifies an initialization ...",
-  "relevant_paper_sections_gemini": [
-    "We use a random Gaussian initialization for $A$ and zero for $B$, so $\\Delta W=B ..."
-  ],
-  "relevant_paper_sections_gpt": [
-    "We use a random Gaussian initialization for A and zero for B, so ΔW=BA is zero ..."
-  ],
-  "relevant_code_files_gemini": [
-    "loralib/layers.py"
-  ],
-  "relevant_code_files_gpt": [
-    "loralib/layers.py"
-  ],
-  "changed_code_files": {
-    "file_name": [],
-    "discrepancy_code": []
-  },
-  "changed_code_snippets": {
-    "original_file": [],
-    "original_code": [],
-    "changed_code": []
-  },
+  "relevant_paper_sections_gemini": ["We use a random Gaussian initialization for $A$ ..."],
+  "relevant_paper_sections_gpt": ["We use a random Gaussian initialization for A ..."],
+  "relevant_code_files_gemini": ["loralib/layers.py"],
+  "relevant_code_files_gpt": ["loralib/layers.py"],
   "discrepancy_type": "Difference",
   "discrepancy_category": "Model",
   "arxiv_subject": "cs",
-  "arxiv_categories": [
-    "cs.CL",
-    "cs.AI",
-    "cs.LG"
-  ],
+  "arxiv_categories": ["cs.CL", "cs.AI", "cs.LG"],
   "arxiv_year": 2021
 }
 ```
+
+</details>
 
 ---
 
@@ -454,11 +426,16 @@ To compute recall metrics across all runs:
 uv run python -m scicoqa.evaluation.compute_recall --eval-type eval-gpt-oss-20b
 ```
 
-This outputs recall scores broken down by:
+Example output:
 
-- Real vs. Synthetic
-- Code-only vs. Full context
-- Overall performance metrics
+```
+                  Model  Recall Overall (%)  Recall Real (%)  Recall Synthetic (%)
+                  GPT-5                65.8             41.3                  70.0
+             GPT-5 Mini                61.7             46.7                  64.3
+         Gemini 3.1 Pro                55.0             46.7                  56.4
+         Gemini 2.5 Pro                47.1             39.1                  48.4
+                    ...
+```
 
 ### Available Models
 
@@ -481,6 +458,22 @@ The `out/` directory contains pre-generated results:
 
 These can be used to compute metrics without re-running inference.
 
+## Citation
+
+If you use SciCoQA in your research, please cite:
+
+```bibtex
+@article{scicoqa-baumgaertner-etal-2026,
+  title={{SciCoQA: Quality Assurance for Scientific Paper--Code Alignment}},
+  author={Tim Baumg{\"a}rtner and Iryna Gurevych},
+  year={2026},
+  eprint={2601.12910},
+  archivePrefix={arXiv},
+  primaryClass={cs.CL},
+  url={https://arxiv.org/abs/2601.12910}
+}
+```
+
 ## License
 
 This project uses dual licensing:
@@ -489,3 +482,26 @@ This project uses dual licensing:
 - **Dataset** (`data/*.jsonl`): [Creative Commons Attribution 4.0 International (CC-BY 4.0)](https://creativecommons.org/licenses/by/4.0/)
 
 When using the dataset, please provide appropriate attribution as specified in the CC-BY 4.0 license.
+
+---
+
+<details>
+<summary><h2>News</h2></summary>
+
+### 20/03/2026: SciCoQA V1.1 + Gemini 3.1 Pro Evals + Extended Human Validation Data
+
+#### SciCoQA V1.1
+
+We added 11 new real-world and 13 additional synthetic discrepancies. The additional real-world data was obtained by running the final Verify + Rephrase step also with Gemini 3.1 Pro. Now most samples in the data have two discrepancy descriptions. There are few cases where only one of the models judged the discrepancy to be valid. For these we have manually verified them and only included valid ones. Further we added 13 additional synthetic discrepancies that were labeled as *Paper Omissions*, as we found these to be the most challenging cases for LLMs to detect. They were initially discarded during synthetic data sampling, but we have now added them. The updated data is available in [Hugging Face](https://huggingface.co/datasets/UKPLab/scicoqa) and in the data dir. For all the new data we also added the predictions and evals of the previously evaluated models.
+
+#### Gemini 3.1 Pro Evals
+
+We added Gemini 3.1 Pro evaluations and the results can be found in the paper. As before, we release all predictions from the model.
+
+#### Extended Human Validation Data
+
+We further release the data from our precision analysis. Specifically, we looked at GPT-5, Gemini 2.5 Pro and GPT-OSS 20B's predictions on 20 papers from NLP and CV and validate whether the detected discrepancies by these models actually exist or not. This data gives a more complete picture on the *Precision* of models.
+
+You can find the pooled data in [data/scicoqa-pooled-v1.1.jsonl](./data/scicoqa-pooled-v1.1.jsonl) or on [HuggingFace](https://huggingface.co/datasets/UKPLab/scicoqa/viewer/default/pooled).
+
+</details>
