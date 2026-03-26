@@ -38,11 +38,13 @@ We added 11 new real-world and 13 additional synthetic discrepancies. The additi
 
 #### Gemini 3.1 Pro Evals
 
-We added Gemini 3.1  evaluations and the results can be found in the paper. As before, we release all predictions from the model.
+We added Gemini 3.1 Pro evaluations and the results can be found in the paper. As before, we release all predictions from the model.
 
 #### Extended Human Validation Data
 
 We further release the data from our precision analysis. Specifically, we looked at GPT-5, Gemini 2.5 Pro and GPT-OSS 20B's predictions on 20 papers from NLP and CV and validate whether the detected discrepancies by these models actually exist or not. This data gives a more complete picture on the *Precision* of models.
+
+You can find the pooled data in [data/scicoqa-pooled-v1.1.jsonl](./data/scicoqa-pooled-v1.1.jsonl) or on [HuggingFace](https://huggingface.co/datasets/UKPLab/scicoqa/viewer/default/pooled).
 
 ## Dataset
 
@@ -52,6 +54,10 @@ It consists of paper-code discrepancies with two splits:
 
 - **`real`**: 92 real-world discrepancies from GitHub issues and reproducibility papers
 - **`synthetic`**: 543 synthetically generated discrepancies
+
+Further, we release a split with annotated predictions from GPT-5, Gemini 2.5 Pro and GPT OSS 20B:
+
+* `pooled`: 103 annotated predictions from 20 NLP and CV papers, plus the 26 real discrepancies in those papers
 
 Local copies are also available in `data/` as JSON Lines files.
 
@@ -134,6 +140,7 @@ dataset = load_dataset("UKPLab/scicoqa")
 # Access splits
 real_data = dataset["real"]
 synthetic_data = dataset["synthetic"]
+pooled_data = dataset["pooled"]
 
 # Access discrepancy information
 discrepancy = real_data[0]
@@ -150,6 +157,7 @@ from scicoqa.core import load_scicoqa
 # Load as pandas DataFrame
 df_real = load_scicoqa(split="real")
 df_synthetic = load_scicoqa(split="synthetic")
+df_pooled = load_scicoqa(split="pooled")
 
 # Or load from local files
 df_real = load_scicoqa(split="real", use_local=True)
@@ -222,12 +230,13 @@ To extract all archives and restore the `out/` directory structure:
 ## Project Structure
 
 ```
-scicoqa-submission-arr-januar-2026/
+scicoqa/
 ├── data/
 │   ├── scicoqa-real-v1.0.jsonl      		# Real-world discrepancies (81 entries)
-│   ├── scicoqa-real-v1.1.jsonl      		# Real-world discrepancies (92 entries), updated version with 11 new discrepancies
-│   └── scicoqa-synthetic-v1.0.jsonl 		# Synthetic discrepancies (530 entries)
-│   └── scicoqa-synthetic-v1.1.jsonl 		# Synthetic discrepancies (543 entries), updated version with 13 new discrepancies
+│   ├── scicoqa-real-v1.1.jsonl      		# Real-world discrepancies (92 entries)
+│   ├── scicoqa-synthetic-v1.0.jsonl 		# Synthetic discrepancies (530 entries)
+│   ├── scicoqa-synthetic-v1.1.jsonl 		# Synthetic discrepancies (543 entries)
+│   └── scicoqa-pooled-v1.1.jsonl    		# Pooled annotated discrepancies (103 entries) + 26 real discrepancies (129 total)
 ├── config/
 │   ├── data.yaml                    		# Repository metadata, reproducibility paper info
 │   ├── models.yaml                  		# LLM configurations (GPT, Gemini, etc.)
@@ -253,7 +262,8 @@ scicoqa-submission-arr-januar-2026/
 │           └── synthetic/           		# Experiments on synthetic data
 │               ├── full/
 │               └── code_only/
-├── extract_out.sh                   		# Script to extract archives and restore out/
+├── scripts/
+│   └── uncompress_out.sh                   	# Script to extract archives and restore out/
 ├── pyproject.toml                    		# Project dependencies and configuration
 └── README.md                        		# This file
 ```
@@ -374,7 +384,7 @@ To run inference, run the following command.
 - Synthetic + Full context → `out/inference/discrepancy_detection/synthetic/full/`
 - Synthetic + Code only → `out/inference/discrepancy_detection/synthetic/code_only/`
 
-The run directory name will automatically include the model name as a suffix (e.g., `discrepancy_gen-001-gpt-5` for real data, `discrepancy_gen_synthetic-001-gpt-5` for synthetic data). You can override this by explicitly setting `--dir_suffix`.
+The run directory name will automatically include the model name as a suffix (e.g., `discrepancy_gen-001-gpt-5` for real data, `discrepancy_gen_synthetic-001-gpt-5` for synthetic data). You can override this with `--dir_suffix`.
 
 **Example: Run on real data with full context**
 
@@ -414,7 +424,7 @@ uv run python -m scicoqa.inference.discrepancy_detection \
 Deploy GPT-OSS 20B on VLLM, then run:
 
 ```bash
-GENERATIONS_DIR=out/inference/discrepancy_detection/real/full/discrepancy_gen-002-gpt-5-nano
+GENERATIONS_DIR=out/inference/discrepancy_detection/real/full/gpt-5-nano
 uv run python -m scicoqa.inference.discrepancy_eval \
     --model "vllm-gpt-oss-20b" \
     --generations_dir $GENERATIONS_DIR \
@@ -425,7 +435,7 @@ uv run python -m scicoqa.inference.discrepancy_eval \
 For synthetic data evaluation:
 
 ```bash
-GENERATIONS_DIR=out/inference/discrepancy_detection/synthetic/full/discrepancy_gen_synthetic-001-gpt-5
+GENERATIONS_DIR=out/inference/discrepancy_detection/synthetic/full/gpt-5
 uv run python -m scicoqa.inference.discrepancy_eval \
     --model "vllm-gpt-oss-20b" \
     --generations_dir $GENERATIONS_DIR \
@@ -433,7 +443,7 @@ uv run python -m scicoqa.inference.discrepancy_eval \
     --dataset_split synthetic
 ```
 
-This creates an `eval_v2` directory in the generations directory with evaluation results.
+This creates an `eval` directory in the generations directory with evaluation results.
 
 ### Computing Recall
 
@@ -441,11 +451,7 @@ To compute recall metrics across all runs:
 
 ```bash
 # Compute recall for all experiments
-uv run python -m scicoqa.evaluation.compute_recall
-
-# Or specify a specific directory
-uv run python -m scicoqa.evaluation.compute_recall \
-    --base-dir out/inference/discrepancy_detection/real/full
+uv run python -m scicoqa.evaluation.compute_recall --eval-type eval-gpt-oss-20b
 ```
 
 This outputs recall scores broken down by:
@@ -458,7 +464,7 @@ This outputs recall scores broken down by:
 
 Models are configured in `config/models.yaml`:
 
-**Proprietary**: GPT-5 (variants), Gemini 2.5 (variants)
+**Proprietary**: GPT-5 (variants), Gemini 2.5 (variants), Gemini 3.1 Pro
 
 **Open-weight** (via VLLM/Ollama): GPT-OSS, Qwen3, DeepSeek, Nemotron, Devstral, Magistral
 
@@ -471,7 +477,7 @@ The `out/` directory contains pre-generated results:
 - `out/inference/discrepancy_detection/real/full/`: Model predictions on real data (full context)
 - `out/inference/discrepancy_detection/real/code_only/`: Code-only ablation on real data
 - `out/inference/discrepancy_detection/synthetic/full/`: Predictions on synthetic data
-- `out/data_collection/github_validation/`: Discrepancy validation results
+- `out/inference/discrepancy_detection/synthetic/code_only/`: Code-only ablation on synthetic data
 
 These can be used to compute metrics without re-running inference.
 
