@@ -36,7 +36,7 @@ class DiscrepancyEvalInferenceArgs(InferenceArgs):
     use_local: bool = False
     # Path to local JSONL file (only used if use_local=True)
     local_path: Path | None = None
-    dir_prefix: str = "eval_v2"
+    dir_prefix: str = "eval"
     concurrency: int = 128
     seed: int = 42
     answer_field: str = "match"
