@@ -19,8 +19,9 @@ A dataset and codebase for detecting discrepancies between scientific publicatio
 ```python
 from datasets import load_dataset
 dataset = load_dataset("UKPLab/scicoqa")
-real_data = dataset["real"]       	# 92 real-world discrepancies
-synthetic_data = dataset["synthetic"]   # 543 synthetic discrepancies
+real_data = dataset["real"]       	   # 92 real-world discrepancies
+synthetic_data = dataset["synthetic"]  # 543 synthetic discrepancies
+pooled_data = dataset["pooled"]        # 129 annotated discrepancies from model predictions
 ```
 
 ## Table of Contents
