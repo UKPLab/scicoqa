@@ -147,6 +147,13 @@
     }
     .container { max-width: 960px; margin: 0 auto; padding: 0 28px; }
 
+    /* ==================== BASE CARD ==================== */
+    .card {
+      background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
+      box-shadow: var(--shadow-sm); transition: all 0.25s;
+    }
+    .card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+
     /* ==================== NAV ==================== */
     .topnav {
       position: sticky; top: 0; z-index: 100;
@@ -261,12 +268,7 @@
 
     /* ==================== STATS ==================== */
     .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-    .stat-card {
-      background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
-      padding: 28px 20px; text-align: center; box-shadow: var(--shadow-sm);
-      transition: all 0.25s;
-    }
-    .stat-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    .stat-card { padding: 28px 20px; text-align: center; }
     .stat-number {
       display: block; font-family: 'JetBrains Mono', monospace; font-size: 2rem;
       font-weight: 700; color: var(--accent); line-height: 1.2;
@@ -441,10 +443,8 @@
 
     /* ==================== DOMAIN CARDS ==================== */
     .domain-row { display: grid; grid-template-columns: 43% 57%; gap: 16px; margin-bottom: 28px; }
-    .domain-card {
-      background: #fff; border-radius: var(--radius); padding: 16px 20px;
-      border: 1px solid var(--border); box-shadow: var(--shadow-sm);
-    }
+    .domain-card { padding: 16px 20px; }
+    .domain-card:hover { transform: none; box-shadow: var(--shadow-sm); }
     .domain-card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
     .domain-badge {
       display: inline-block; font-size: 0.78rem; font-weight: 700; color: #fff;
@@ -462,12 +462,7 @@
     .domain-tag i { font-size: 0.68rem; }
 
     /* ==================== EXAMPLE CARDS ==================== */
-    .example-card {
-      background: #fff; border-radius: var(--radius); padding: 24px;
-      border: 1px solid var(--border); box-shadow: var(--shadow-sm);
-      margin-bottom: 16px; transition: all 0.25s;
-    }
-    .example-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    .example-card { padding: 24px; margin-bottom: 16px; }
     .example-card-header { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
     .badge {
       display: inline-block; font-size: 0.7rem; font-weight: 700; padding: 3px 10px;
@@ -560,35 +555,21 @@
 
     /* ==================== GETTING STARTED ==================== */
     .resource-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 32px; }
-    .taxonomy-card-new {
-      background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
-      padding: 12px 14px; transition: all 0.25s; box-shadow: var(--shadow-sm);
-    }
-    .taxonomy-card-new:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    .taxonomy-card-new { padding: 12px 14px; }
     .taxonomy-card-new .tc-title { font-size: 0.88rem; font-weight: 700; color: var(--text); margin-bottom: 3px; }
     .taxonomy-card-new .tc-title i { margin-right: 5px; font-size: 0.78rem; }
     .taxonomy-card-new .tc-desc { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45; }
 
-    .conclusion-card {
-      background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
-      padding: 18px 20px; border-top: 3px solid var(--accent);
-      transition: all 0.25s; box-shadow: var(--shadow-sm);
-    }
-    .conclusion-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    .conclusion-card { padding: 18px 20px; border-top: 3px solid var(--accent); }
     .conclusion-card h4 { font-size: 0.88rem; font-weight: 700; color: var(--text); margin-bottom: 6px; }
     .conclusion-card h4 i { margin-right: 5px; color: var(--accent); font-size: 0.78rem; }
     .conclusion-card p { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.55; }
 
-    .resource-card {
-      background: #fff; border-radius: var(--radius); padding: 28px 20px;
-      border: 1px solid var(--border); box-shadow: var(--shadow-sm);
-      transition: all 0.25s; position: relative; overflow: hidden;
-    }
+    .resource-card { padding: 28px 20px; position: relative; overflow: hidden; }
     .resource-card::before {
       content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
       background: linear-gradient(90deg, var(--accent), var(--accent-light)); opacity: 0; transition: opacity 0.3s;
     }
-    .resource-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
     .resource-card:hover::before { opacity: 1; }
     .resource-card .card-icon {
       width: 36px; height: 36px; border-radius: 10px; display: flex;
@@ -812,10 +793,7 @@
     .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
 
     /* Analysis error card (inline in evaluation) */
-    .analysis-card {
-      background: #fff; border: 1px solid var(--border); border-radius: 8px;
-      padding: 10px 12px; flex: 1;
-    }
+    .analysis-card { padding: 10px 12px; flex: 1; border-radius: 8px; }
     .analysis-card-title { font-size: 0.88rem; font-weight: 700; color: var(--text); margin-bottom: 2px; }
     .analysis-card-title i { margin-right: 5px; font-size: 0.72rem; }
     .analysis-card-desc { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45; }
@@ -921,10 +899,10 @@
           <p>In total, our dataset consists of 635 paper-code discrepancies (92 real, 543 synthetic), covering the AI domain from real-world data and extending to Physics, Quantitative Biology, and other computational sciences through synthetic data. Our evaluation of 22 LLMs demonstrates the difficulty of SciCoQA, particularly for instances involving omitted paper details, long-context inputs, and data outside the models' pre-training corpus. The best performing models in our evaluation, Gemini 3.1 Pro and GPT-5 Mini, detect only 46.7% of real-world paper-code discrepancies.</p>
         </div>
         <div class="stats-grid" style="margin-top: 28px;">
-          <div class="stat-card fade-up"><span class="stat-number" data-target="635">0</span><span class="stat-label">Paper-Code Discrepancies</span></div>
-          <div class="stat-card fade-up stagger-1"><span class="stat-number" data-target="6">0</span><span class="stat-label">Scientific Domains</span></div>
-          <div class="stat-card fade-up stagger-2"><span class="stat-number" data-target="22">0</span><span class="stat-label">LLMs Evaluated</span></div>
-          <div class="stat-card fade-up stagger-3"><span class="stat-number" data-target="46.7" data-suffix="%" data-decimals="1">0</span><span class="stat-label">Best Real-World Recall</span></div>
+          <div class="card stat-card fade-up"><span class="stat-number" data-target="635">0</span><span class="stat-label">Paper-Code Discrepancies</span></div>
+          <div class="card stat-card fade-up stagger-1"><span class="stat-number" data-target="6">0</span><span class="stat-label">Scientific Domains</span></div>
+          <div class="card stat-card fade-up stagger-2"><span class="stat-number" data-target="22">0</span><span class="stat-label">LLMs Evaluated</span></div>
+          <div class="card stat-card fade-up stagger-3"><span class="stat-number" data-target="46.7" data-suffix="%" data-decimals="1">0</span><span class="stat-label">Best Real-World Recall</span></div>
         </div>
       </div>
     </section>
@@ -1031,15 +1009,15 @@
 
           <p style="font-weight: 600; color: var(--text); margin-bottom: 8px; font-size: 0.88rem;">These discrepancies manifest as three types:</p>
           <div class="grid-3" style="margin-bottom: 14px;">
-            <div class="taxonomy-card-new border-teal">
+            <div class="card taxonomy-card-new border-teal">
               <div class="tc-title"><i class="fa-solid fa-arrows-left-right" style="color: var(--teal);"></i> Difference</div>
               <div class="tc-desc">Code implements a logic distinct from the paper (e.g., L1 vs. L2 normalization)</div>
             </div>
-            <div class="taxonomy-card-new border-teal">
+            <div class="card taxonomy-card-new border-teal">
               <div class="tc-title"><i class="fa-solid fa-file-circle-minus" style="color: var(--teal);"></i> Paper Omission</div>
               <div class="tc-desc">Code includes critical components missing from the paper description</div>
             </div>
-            <div class="taxonomy-card-new border-teal">
+            <div class="card taxonomy-card-new border-teal">
               <div class="tc-title"><i class="fa-solid fa-code" style="color: var(--teal);"></i> Code Omission</div>
               <div class="tc-desc">A step described in the paper is absent from the repository</div>
             </div>
@@ -1047,15 +1025,15 @@
 
           <p style="font-weight: 600; color: var(--text); margin-bottom: 8px; font-size: 0.88rem;">We distinguish these from engineering artifacts:</p>
           <div class="grid-3">
-            <div class="taxonomy-card-new" style="opacity: 0.65;">
+            <div class="card taxonomy-card-new" style="opacity: 0.65;">
               <div class="tc-title" style="color: var(--text-secondary);"><i class="fa-solid fa-times" style="color: var(--text-secondary); opacity: 0.5;"></i> Bugs</div>
               <div class="tc-desc">Independent of the paper's scientific description</div>
             </div>
-            <div class="taxonomy-card-new" style="opacity: 0.65;">
+            <div class="card taxonomy-card-new" style="opacity: 0.65;">
               <div class="tc-title" style="color: var(--text-secondary);"><i class="fa-solid fa-times" style="color: var(--text-secondary); opacity: 0.5;"></i> Hyperparameters</div>
               <div class="tc-desc">Configurable via CLI arguments or config files</div>
             </div>
-            <div class="taxonomy-card-new" style="opacity: 0.65;">
+            <div class="card taxonomy-card-new" style="opacity: 0.65;">
               <div class="tc-title" style="color: var(--text-secondary);"><i class="fa-solid fa-times" style="color: var(--text-secondary); opacity: 0.5;"></i> Trivial Details</div>
               <div class="tc-desc">Standard engineering practices (e.g., numerical stability)</div>
             </div>
@@ -1071,8 +1049,8 @@
         <h2>SciCoQA <span class="title-gradient">Examples</span></h2>
 
         <div class="domain-row fade-up">
-          <div class="domain-card" style="border-left: 4px solid var(--accent);">
-            <div class="domain-card-header">
+          <div class="card domain-card" style="border-left: 4px solid var(--accent);">
+            <div class="card domain-card-header">
               <span class="domain-badge real">Real-World</span>
               <span class="domain-count">92 discrepancies</span>
             </div>
@@ -1082,8 +1060,8 @@
               <span class="domain-tag"><i class="fa-solid fa-language"></i> NLP</span>
             </div>
           </div>
-          <div class="domain-card" style="border-left: 4px solid var(--teal);">
-            <div class="domain-card-header">
+          <div class="card domain-card" style="border-left: 4px solid var(--teal);">
+            <div class="card domain-card-header">
               <span class="domain-badge synthetic">Synthetic</span>
               <span class="domain-count">543 discrepancies</span>
             </div>
@@ -1105,8 +1083,8 @@
         </p>
 
         <!-- Example 1 -->
-        <div class="example-card fade-up">
-          <div class="example-card-header">
+        <div class="card example-card fade-up">
+          <div class="card example-card-header">
             <span class="badge badge-type">Paper Omission</span>
             <span class="badge badge-category">Algorithm</span>
           </div>
@@ -1120,8 +1098,8 @@
         </div>
 
         <!-- Example 2 -->
-        <div class="example-card fade-up">
-          <div class="example-card-header">
+        <div class="card example-card fade-up">
+          <div class="card example-card-header">
             <span class="badge badge-type">Code Omission</span>
             <span class="badge badge-category">Training</span>
           </div>
@@ -1135,8 +1113,8 @@
         </div>
 
         <!-- Example 3 -->
-        <div class="example-card fade-up">
-          <div class="example-card-header">
+        <div class="card example-card fade-up">
+          <div class="card example-card-header">
             <span class="badge badge-type">Difference</span>
             <span class="badge badge-category">Loss</span>
           </div>
@@ -1161,15 +1139,15 @@
         <!-- 3 type cards -->
         <h3 class="fade-up" style="font-size: 1.1rem; margin-bottom: 10px;">Discrepancy <span style="background: linear-gradient(135deg, var(--accent), var(--teal)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Types</span></h3>
         <div class="fade-up" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 24px;">
-          <div class="taxonomy-card-new border-teal">
+          <div class="card taxonomy-card-new border-teal">
             <div class="tc-title"><i class="fa-solid fa-arrows-left-right" style="color: var(--teal);"></i> Difference</div>
             <div class="tc-desc">Paper and code describe conflicting approaches</div>
           </div>
-          <div class="taxonomy-card-new border-teal">
+          <div class="card taxonomy-card-new border-teal">
             <div class="tc-title"><i class="fa-solid fa-file-circle-minus" style="color: var(--teal);"></i> Paper Omission</div>
             <div class="tc-desc">Code includes components missing from the paper</div>
           </div>
-          <div class="taxonomy-card-new border-teal">
+          <div class="card taxonomy-card-new border-teal">
             <div class="tc-title"><i class="fa-solid fa-code" style="color: var(--teal);"></i> Code Omission</div>
             <div class="tc-desc">Paper describes a step absent from the code</div>
           </div>
@@ -1178,27 +1156,27 @@
         <!-- 6 category cards in a 3x2 grid -->
         <h3 class="fade-up" style="font-size: 1.1rem; margin-bottom: 10px;">Discrepancy <span style="background: linear-gradient(135deg, var(--accent), var(--amber)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Categories</span></h3>
         <div class="fade-up" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 28px;">
-          <div class="taxonomy-card-new border-amber">
+          <div class="card taxonomy-card-new border-amber">
             <div class="tc-title"><i class="fa-solid fa-diagram-project" style="color: var(--amber);"></i> Algorithm</div>
             <div class="tc-desc">Step order, operations, or core logic differs between paper and code</div>
           </div>
-          <div class="taxonomy-card-new border-amber">
+          <div class="card taxonomy-card-new border-amber">
             <div class="tc-title"><i class="fa-solid fa-cubes" style="color: var(--amber);"></i> Model</div>
             <div class="tc-desc">Architectural choices or initialization methods don't match</div>
           </div>
-          <div class="taxonomy-card-new border-amber">
+          <div class="card taxonomy-card-new border-amber">
             <div class="tc-title"><i class="fa-solid fa-scale-unbalanced" style="color: var(--amber);"></i> Loss</div>
             <div class="tc-desc">Loss function definition, terms, or weighting differs</div>
           </div>
-          <div class="taxonomy-card-new border-amber">
+          <div class="card taxonomy-card-new border-amber">
             <div class="tc-title"><i class="fa-solid fa-chart-bar" style="color: var(--amber);"></i> Evaluation</div>
             <div class="tc-desc">Evaluation metrics, logic, or test scripts computed differently</div>
           </div>
-          <div class="taxonomy-card-new border-amber">
+          <div class="card taxonomy-card-new border-amber">
             <div class="tc-title"><i class="fa-solid fa-database" style="color: var(--amber);"></i> Data</div>
             <div class="tc-desc">Dataset usage, preprocessing, augmentation, or filtering differs</div>
           </div>
-          <div class="taxonomy-card-new border-amber">
+          <div class="card taxonomy-card-new border-amber">
             <div class="tc-title"><i class="fa-solid fa-graduation-cap" style="color: var(--amber);"></i> Training</div>
             <div class="tc-desc">Learning process, schedule, or optimization strategy changed</div>
           </div>
@@ -1393,17 +1371,17 @@
             <h3>Error Analysis</h3>
             <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 12px;">Our evaluation and manual error analysis revealed three main failure modes for discrepancy detection:</p>
             <div style="display: flex; flex-direction: column; gap: 8px; flex: 1;">
-              <div class="analysis-card" style="border-left: 3px solid var(--accent);">
-                <div class="analysis-card-title"><i class="fa-solid fa-scissors" style="color: var(--accent);"></i> Paper Omissions</div>
-                <div class="analysis-card-desc">Models struggle when implementation details exist in code but are never mentioned in the paper. With no textual anchor to match against, LLMs have no signal to detect the mismatch. This is the majority of failures.</div>
+              <div class="card analysis-card" style="border-left: 3px solid var(--accent);">
+                <div class="card analysis-card-title"><i class="fa-solid fa-scissors" style="color: var(--accent);"></i> Paper Omissions</div>
+                <div class="card analysis-card-desc">Models struggle when implementation details exist in code but are never mentioned in the paper. With no textual anchor to match against, LLMs have no signal to detect the mismatch. This is the majority of failures.</div>
               </div>
-              <div class="analysis-card" style="border-left: 3px solid var(--teal);">
-                <div class="analysis-card-title"><i class="fa-solid fa-ruler" style="color: var(--teal);"></i> Long Context</div>
-                <div class="analysis-card-desc">Performance drops significantly on large codebases exceeding 100k tokens. Models struggle to maintain coherence across the full paper and multi-file repositories simultaneously, missing discrepancies buried deep in the code.</div>
+              <div class="card analysis-card" style="border-left: 3px solid var(--teal);">
+                <div class="card analysis-card-title"><i class="fa-solid fa-ruler" style="color: var(--teal);"></i> Long Context</div>
+                <div class="card analysis-card-desc">Performance drops significantly on large codebases exceeding 100k tokens. Models struggle to maintain coherence across the full paper and multi-file repositories simultaneously, missing discrepancies buried deep in the code.</div>
               </div>
-              <div class="analysis-card" style="border-left: 3px solid var(--amber);">
-                <div class="analysis-card-title"><i class="fa-solid fa-clock-rotate-left" style="color: var(--amber);"></i> Recent Papers</div>
-                <div class="analysis-card-desc">Models perform worse on papers published after their training cutoff, showing degradation on non-contaminated data. This suggests detection ability on older papers may partly stem from memorization.</div>
+              <div class="card analysis-card" style="border-left: 3px solid var(--amber);">
+                <div class="card analysis-card-title"><i class="fa-solid fa-clock-rotate-left" style="color: var(--amber);"></i> Recent Papers</div>
+                <div class="card analysis-card-desc">Models perform worse on papers published after their training cutoff, showing degradation on non-contaminated data. This suggests detection ability on older papers may partly stem from memorization.</div>
               </div>
             </div>
           </div>
@@ -1418,19 +1396,19 @@
         <div class="section-label">Takeaways</div>
         <h2><span class="title-gradient">Conclusions</span></h2>
         <div class="fade-up" class="grid-2">
-          <div class="conclusion-card">
+          <div class="card conclusion-card">
             <h4><i class="fa-solid fa-newspaper"></i> Publishing</h4>
             <p>46.7% recall means AI can't reliably check alignment&mdash;human-in-the-loop verification remains essential.</p>
           </div>
-          <div class="conclusion-card">
+          <div class="card conclusion-card">
             <h4><i class="fa-solid fa-robot"></i> AI Scientists</h4>
             <p>Autonomous AI-generated code can't be reliably verified by LLMs alone&mdash;human oversight needed.</p>
           </div>
-          <div class="conclusion-card">
+          <div class="card conclusion-card">
             <h4><i class="fa-solid fa-eye-slash"></i> Paper Omissions</h4>
             <p>The hardest discrepancy type to detect&mdash;details present in code but missing from the paper remain largely invisible to LLMs.</p>
           </div>
-          <div class="conclusion-card">
+          <div class="card conclusion-card">
             <h4><i class="fa-solid fa-flask"></i> Future Work</h4>
             <p>Better automated paper-code consistency methods are crucial as AI scales in scientific discovery.</p>
           </div>
@@ -1446,16 +1424,16 @@
         <p class="subsection-text fade-up" style="margin-bottom: 24px;">Everything you need to explore the SciCoQA dataset and work on this important problem.</p>
 
         <div class="resource-grid fade-up">
-          <div class="resource-card">
-            <div class="resource-card-head"><div class="card-icon ci-amber"><i class="fa-solid fa-database"></i></div><h4>Dataset</h4></div>
+          <div class="card resource-card">
+            <div class="card resource-card-head"><div class="card-icon ci-amber"><i class="fa-solid fa-database"></i></div><h4>Dataset</h4></div>
             <p>Available on <a href="https://huggingface.co/datasets/UKPLab/scicoqa" target="_blank">Hugging Face</a> for easy access and integration.</p>
           </div>
-          <div class="resource-card">
-            <div class="resource-card-head"><div class="card-icon ci-dark"><i class="fa-brands fa-github"></i></div><h4>Code</h4></div>
+          <div class="card resource-card">
+            <div class="card resource-card-head"><div class="card-icon ci-dark"><i class="fa-brands fa-github"></i></div><h4>Code</h4></div>
             <p>The complete codebase for data collection, inference, and evaluation is on <a href="https://github.com/UKPLab/scicoqa" target="_blank">GitHub</a>.</p>
           </div>
-          <div class="resource-card">
-            <div class="resource-card-head"><div class="card-icon ci-blue"><i class="fa-solid fa-display"></i></div><h4>Demo</h4></div>
+          <div class="card resource-card">
+            <div class="card resource-card-head"><div class="card-icon ci-blue"><i class="fa-solid fa-display"></i></div><h4>Demo</h4></div>
             <p>Try discrepancy detection interactively in our <a href="https://huggingface.co/spaces/UKPLab/scicoqa" target="_blank">Hugging Face Space</a> demo.</p>
           </div>
         </div>
