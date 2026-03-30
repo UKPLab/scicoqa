@@ -1370,16 +1370,16 @@
             <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 12px;">Our evaluation and manual error analysis revealed three main failure modes for discrepancy detection:</p>
             <div style="display: flex; flex-direction: column; gap: 8px; flex: 1;">
               <div class="card analysis-card" style="border-left: 3px solid var(--accent);">
-                <div class="card analysis-card-title"><i class="fa-solid fa-scissors" style="color: var(--accent);"></i> Paper Omissions</div>
-                <div class="card analysis-card-desc">Models struggle when implementation details exist in code but are never mentioned in the paper. With no textual anchor to match against, LLMs have no signal to detect the mismatch. This is the majority of failures.</div>
+                <div class="card-title"><i class="fa-solid fa-scissors" style="color: var(--accent);"></i> Paper Omissions</div>
+                <div class="card-desc">Models struggle when implementation details exist in code but are never mentioned in the paper. With no textual anchor to match against, LLMs have no signal to detect the mismatch. This is the majority of failures.</div>
               </div>
               <div class="card analysis-card" style="border-left: 3px solid var(--teal);">
-                <div class="card analysis-card-title"><i class="fa-solid fa-ruler" style="color: var(--teal);"></i> Long Context</div>
-                <div class="card analysis-card-desc">Performance drops significantly on large codebases exceeding 100k tokens. Models struggle to maintain coherence across the full paper and multi-file repositories simultaneously, missing discrepancies buried deep in the code.</div>
+                <div class="card-title"><i class="fa-solid fa-ruler" style="color: var(--teal);"></i> Long Context</div>
+                <div class="card-desc">Performance drops significantly on large codebases exceeding 100k tokens. Models struggle to maintain coherence across the full paper and multi-file repositories simultaneously, missing discrepancies buried deep in the code.</div>
               </div>
               <div class="card analysis-card" style="border-left: 3px solid var(--amber);">
-                <div class="card analysis-card-title"><i class="fa-solid fa-clock-rotate-left" style="color: var(--amber);"></i> Recent Papers</div>
-                <div class="card analysis-card-desc">Models perform worse on papers published after their training cutoff, showing degradation on non-contaminated data. This suggests detection ability on older papers may partly stem from memorization.</div>
+                <div class="card-title"><i class="fa-solid fa-clock-rotate-left" style="color: var(--amber);"></i> Recent Papers</div>
+                <div class="card-desc">Models perform worse on papers published after their training cutoff, showing degradation on non-contaminated data. This suggests detection ability on older papers may partly stem from memorization.</div>
               </div>
             </div>
           </div>
