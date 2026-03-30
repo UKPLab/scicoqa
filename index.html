@@ -6,34 +6,49 @@
 
   <link rel="canonical" href="https://ukplab.github.io/scicoqa/">
 
-  <meta name="description" content="SciCoQA: a benchmark of 635 paper-code discrepancies for evaluating whether scientific code faithfully implements what the paper describes. Covers AI, Physics, Biology, and more.">
-  <meta name="keywords" content="SciCoQA, paper-code alignment, discrepancy detection, scientific reproducibility, machine learning, NLP, benchmark dataset">
+  <meta name="description" content="SciCoQA: 635 paper-code discrepancies (92 real, 543 synthetic) across AI, Physics, Biology, and more. We evaluate 22 LLMs — even the best detect only 46.7% of real discrepancies. Dataset, code, and demo available.">
+  <meta name="keywords" content="SciCoQA, paper-code alignment, discrepancy detection, scientific reproducibility, code verification, machine learning, NLP, computer vision, benchmark dataset, LLM evaluation, reproducibility crisis, AI quality assurance">
   <meta name="author" content="Tim Baumgärtner, Iryna Gurevych">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+  <meta name="language" content="English">
+  <meta name="theme-color" content="#1e3a5f">
 
+  <!-- Open Graph -->
   <meta property="og:type" content="article">
-  <meta property="og:site_name" content="Ubiquitous Knowledge Processing Lab - Technical University of Darmstadt">
+  <meta property="og:site_name" content="UKP Lab - Technical University of Darmstadt">
   <meta property="og:title" content="SciCoQA: Quality Assurance for Scientific Paper-Code Alignment">
-  <meta property="og:description" content="A benchmark dataset for detecting discrepancies between scientific papers and their code implementations.">
+  <meta property="og:description" content="635 paper-code discrepancies benchmark. 22 LLMs evaluated — best models detect only 46.7% of real discrepancies. Dataset, code, and interactive demo available.">
   <meta property="og:url" content="https://ukplab.github.io/scicoqa">
   <meta property="og:image" content="https://ukplab.github.io/scicoqa/static/images/social_preview.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="article:published_time" content="2026-01-01T00:00:00.000Z">
+  <meta property="og:image:alt" content="SciCoQA: Quality Assurance for Scientific Paper-Code Alignment">
+  <meta property="article:published_time" content="2026-01-19T00:00:00.000Z">
+  <meta property="article:modified_time" content="2026-03-30T00:00:00.000Z">
   <meta property="article:author" content="Tim Baumgärtner">
+  <meta property="article:section" content="Research">
+  <meta property="article:tag" content="paper-code alignment">
+  <meta property="article:tag" content="discrepancy detection">
+  <meta property="article:tag" content="scientific reproducibility">
+  <meta property="article:tag" content="LLM evaluation">
 
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@UKPLab">
   <meta name="twitter:title" content="SciCoQA: Quality Assurance for Scientific Paper-Code Alignment">
-  <meta name="twitter:description" content="A benchmark dataset for detecting discrepancies between scientific papers and their code implementations.">
+  <meta name="twitter:description" content="635 paper-code discrepancies benchmark. Best LLMs detect only 46.7% of real discrepancies.">
   <meta name="twitter:image" content="https://ukplab.github.io/scicoqa/static/images/social_preview.png">
+  <meta name="twitter:image:alt" content="SciCoQA project page showing title and research links">
 
+  <!-- Academic / Google Scholar -->
   <meta name="citation_title" content="SciCoQA: Quality Assurance for Scientific Paper-Code Alignment">
   <meta name="citation_author" content="Baumgärtner, Tim">
   <meta name="citation_author" content="Gurevych, Iryna">
-  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_publication_date" content="2026/01/19">
   <meta name="citation_pdf_url" content="https://arxiv.org/pdf/2601.12910">
   <meta name="citation_arxiv_id" content="2601.12910">
+  <meta name="citation_language" content="en">
+  <meta name="citation_keywords" content="paper-code alignment; discrepancy detection; scientific reproducibility; benchmark dataset">
 
   <title>SciCoQA: Quality Assurance for Scientific Paper-Code Alignment</title>
 
@@ -54,16 +69,50 @@
     "@context": "https://schema.org",
     "@type": "ScholarlyArticle",
     "headline": "SciCoQA: Quality Assurance for Scientific Paper-Code Alignment",
-    "description": "A benchmark dataset for detecting discrepancies between scientific papers and their code implementations. 92 real-world + 543 synthetic discrepancies.",
+    "alternativeHeadline": "A benchmark of 635 paper-code discrepancies for evaluating LLMs on scientific code verification",
+    "description": "We present SciCoQA, a dataset for detecting discrepancies between scientific publications and their codebases. 92 real-world and 543 synthetic discrepancies across AI, Physics, Biology, and more. Evaluation of 22 LLMs shows the best models detect only 46.7% of real discrepancies.",
+    "abstract": "We present SciCoQA, a dataset for detecting discrepancies between scientific publications and their codebases to ensure faithful implementations. In total, our dataset consists of 635 paper-code discrepancies (92 real, 543 synthetic), covering AI and extending to Physics, Quantitative Biology, and other computational sciences. Our evaluation of 22 LLMs demonstrates the difficulty of SciCoQA — the best performing models detect only 46.7% of real-world paper-code discrepancies.",
     "author": [
-      { "@type": "Person", "name": "Tim Baumgärtner", "affiliation": { "@type": "Organization", "name": "UKP Lab, Technical University of Darmstadt" } },
-      { "@type": "Person", "name": "Iryna Gurevych", "affiliation": { "@type": "Organization", "name": "UKP Lab, Technical University of Darmstadt" } }
+      { "@type": "Person", "name": "Tim Baumgärtner", "url": "https://scholar.google.com/citations?user=pwDGJYsAAAAJ", "affiliation": { "@type": "Organization", "name": "UKP Lab, Technical University of Darmstadt", "url": "https://www.ukp.tu-darmstadt.de" } },
+      { "@type": "Person", "name": "Iryna Gurevych", "url": "https://scholar.google.com/citations?user=t3A39e8AAAAJ", "affiliation": { "@type": "Organization", "name": "UKP Lab, Technical University of Darmstadt", "url": "https://www.ukp.tu-darmstadt.de" } }
     ],
     "datePublished": "2026-01-19",
-    "publisher": { "@type": "Organization", "name": "arXiv" },
+    "dateModified": "2026-03-30",
+    "publisher": { "@type": "Organization", "name": "arXiv", "url": "https://arxiv.org" },
     "url": "https://ukplab.github.io/scicoqa",
+    "mainEntityOfPage": "https://ukplab.github.io/scicoqa",
+    "image": "https://ukplab.github.io/scicoqa/static/images/social_preview.png",
     "isAccessibleForFree": true,
-    "license": "https://creativecommons.org/licenses/by/4.0/"
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "inLanguage": "en",
+    "keywords": ["paper-code alignment", "discrepancy detection", "scientific reproducibility", "benchmark dataset", "LLM evaluation", "code verification"],
+    "about": [
+      { "@type": "Thing", "name": "Scientific Reproducibility" },
+      { "@type": "Thing", "name": "Paper-Code Alignment" },
+      { "@type": "Thing", "name": "Large Language Models" }
+    ],
+    "citation": "@article{scicoqa-baumgaertner-etal-2026, title={SciCoQA: Quality Assurance for Scientific Paper--Code Alignment}, author={Tim Baumgärtner and Iryna Gurevych}, year={2026}, eprint={2601.12910}, archivePrefix={arXiv}, primaryClass={cs.CL}}"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "name": "SciCoQA",
+    "description": "635 paper-code discrepancies (92 real-world, 543 synthetic) for evaluating whether scientific code faithfully implements what the paper describes.",
+    "url": "https://huggingface.co/datasets/UKPLab/scicoqa",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "creator": [
+      { "@type": "Person", "name": "Tim Baumgärtner" },
+      { "@type": "Person", "name": "Iryna Gurevych" }
+    ],
+    "distribution": {
+      "@type": "DataDownload",
+      "encodingFormat": "application/jsonlines",
+      "contentUrl": "https://huggingface.co/datasets/UKPLab/scicoqa"
+    },
+    "measurementTechnique": "LLM-based discrepancy detection and human annotation",
+    "variableMeasured": "Paper-code discrepancies across scientific domains"
   }
   </script>
 
