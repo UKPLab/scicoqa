@@ -525,12 +525,12 @@
     }
     .table-wrapper table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
     .table-wrapper thead th {
-      background: var(--text); color: #fff; font-weight: 600; padding: 14px 18px;
-      text-align: left; white-space: nowrap; font-size: 0.78rem;
+      background: var(--text); color: #fff; font-weight: 600; padding: 12px 10px;
+      text-align: left; font-size: 0.78rem; white-space: nowrap;
       text-transform: uppercase; letter-spacing: 0.5px;
     }
     .table-wrapper thead th:not(:first-child) { text-align: center; }
-    .table-wrapper tbody td { padding: 12px 18px; border-bottom: 1px solid var(--border); }
+    .table-wrapper tbody td { padding: 10px 10px; border-bottom: 1px solid var(--border); }
     .table-wrapper tbody td:not(:first-child) { text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; }
     .table-wrapper tbody tr:last-child td { border-bottom: none; }
     .table-wrapper tbody tr:hover { background: var(--surface); }
@@ -790,10 +790,11 @@
 
     /* Grid layouts */
     .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .grid-2 > * { min-width: 0; }
     .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
 
     /* Analysis error card (inline in evaluation) */
-    .analysis-card { padding: 10px 12px; flex: 1; border-radius: 8px; }
+    .analysis-card { padding: 8px 10px; border-radius: 8px; }
     /* .analysis-card-title and .analysis-card-desc use .card-title and .card-desc */
 
     /* ==================== ANIMATIONS ==================== */
@@ -1344,12 +1345,12 @@
         <h2><span class="title-gradient">Analysis</span></h2>
 
         <!-- Precision + Error Analysis side by side -->
-        <div class="fade-up" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 28px; align-items: stretch;">
+        <div class="fade-up grid-2" style="margin-bottom: 28px; align-items: stretch;">
           <!-- Precision -->
-          <div>
+          <div style="display: flex; flex-direction: column;">
             <h3>Precision Analysis</h3>
             <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 12px;">Manual annotation of top model predictions on 20 NLP and CV papers (129 pooled discrepancies).</p>
-            <div class="table-wrapper">
+            <div class="table-wrapper" style="flex: 1;">
               <table>
                 <thead>
                   <tr><th></th><th>GPT-5</th><th>Gemini 2.5 Pro</th><th>GPT-OSS 20B</th></tr>
@@ -1368,18 +1369,18 @@
           <div style="display: flex; flex-direction: column;">
             <h3>Error Analysis</h3>
             <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 12px;">Our evaluation and manual error analysis revealed three main failure modes for discrepancy detection:</p>
-            <div style="display: flex; flex-direction: column; gap: 8px; flex: 1;">
+            <div style="display: flex; flex-direction: column; gap: 6px;">
               <div class="card analysis-card" style="border-left: 3px solid var(--accent);">
                 <div class="card-title"><i class="fa-solid fa-scissors" style="color: var(--accent);"></i> Paper Omissions</div>
-                <div class="card-desc">Models struggle when implementation details exist in code but are never mentioned in the paper. With no textual anchor to match against, LLMs have no signal to detect the mismatch. This is the majority of failures.</div>
+                <div class="card-desc">Models miss details present in code but absent from the paper — no textual anchor to match against. Majority of failures.</div>
               </div>
               <div class="card analysis-card" style="border-left: 3px solid var(--teal);">
                 <div class="card-title"><i class="fa-solid fa-ruler" style="color: var(--teal);"></i> Long Context</div>
-                <div class="card-desc">Performance drops significantly on large codebases exceeding 100k tokens. Models struggle to maintain coherence across the full paper and multi-file repositories simultaneously, missing discrepancies buried deep in the code.</div>
+                <div class="card-desc">Performance drops on codebases exceeding 100k tokens — models lose coherence across long papers and multi-file repos.</div>
               </div>
               <div class="card analysis-card" style="border-left: 3px solid var(--amber);">
                 <div class="card-title"><i class="fa-solid fa-clock-rotate-left" style="color: var(--amber);"></i> Recent Papers</div>
-                <div class="card-desc">Models perform worse on papers published after their training cutoff, showing degradation on non-contaminated data. This suggests detection ability on older papers may partly stem from memorization.</div>
+                <div class="card-desc">Worse on papers after the training cutoff — suggests detection on older papers may partly stem from memorization.</div>
               </div>
             </div>
           </div>
