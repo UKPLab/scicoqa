@@ -523,9 +523,10 @@
     .resource-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
     .resource-card:hover::before { opacity: 1; }
     .resource-card .card-icon {
-      width: 48px; height: 48px; border-radius: 12px; display: flex;
-      align-items: center; justify-content: center; font-size: 1.2rem; margin-bottom: 14px;
+      width: 36px; height: 36px; border-radius: 10px; display: flex;
+      align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0;
     }
+    .resource-card-head { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
     .card-icon.ci-amber { background: #fffbeb; color: var(--amber); }
     .card-icon.ci-dark { background: #f1f5f9; color: var(--text); }
     .card-icon.ci-blue { background: var(--blue-wash); color: var(--blue); }
@@ -548,7 +549,7 @@
     .code-dot.green { background: #27c93f; }
     .code-block pre {
       padding: 20px 24px; overflow-x: auto;
-      font-family: 'JetBrains Mono', monospace; font-size: 0.82rem;
+      font-family: 'JetBrains Mono', monospace; font-size: 0.84rem;
       line-height: 1.7; color: #e2e8f0; margin: 0;
     }
     .code-block .kw { color: #c678dd; }
@@ -607,6 +608,111 @@
     .scroll-top.visible { opacity: 1; transform: translateY(0); }
     .scroll-top:hover { background: var(--accent-dark); transform: translateY(-2px); }
 
+    /* ==================== SLIDE MODE ==================== */
+    .slide-toggle-btn {
+      background: none; border: 1px solid var(--border); border-radius: 8px;
+      padding: 5px 10px; cursor: pointer; color: var(--text-secondary);
+      font-size: 0.78rem; transition: all 0.2s; display: flex; align-items: center;
+      margin-left: 8px; gap: 5px; font-family: 'DM Sans', sans-serif; font-weight: 600;
+    }
+    .slide-toggle-btn:hover { color: var(--accent); border-color: var(--accent); background: var(--accent-wash); }
+    .slide-controls {
+      display: none; position: fixed; bottom: 32px; left: 50%; transform: translateX(-50%);
+      z-index: 200; background: rgba(26,26,46,0.92); backdrop-filter: blur(12px);
+      border-radius: 100px; padding: 8px 20px; gap: 16px; align-items: center;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    }
+    .slide-progress { display: flex; align-items: center; gap: 3px; }
+    .slide-dot {
+      width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,0.2);
+      cursor: pointer; transition: all 0.25s; position: relative;
+    }
+    .slide-dot:hover { background: rgba(255,255,255,0.5); transform: scale(1.3); }
+    .slide-dot.dot-active { background: #fff; width: 24px; border-radius: 4px; }
+    .slide-dot-tip {
+      display: none; position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%);
+      background: var(--text); color: #fff; font-size: 0.6rem; font-weight: 600;
+      padding: 3px 8px; border-radius: 5px; white-space: nowrap; margin-bottom: 8px;
+      font-family: 'DM Sans', sans-serif; pointer-events: none;
+    }
+    .slide-dot:hover .slide-dot-tip { display: block; }
+    .slide-nav-btn {
+      background: none; border: none; color: #94a3b8; cursor: pointer;
+      font-size: 1rem; padding: 6px 10px; border-radius: 8px; transition: all 0.2s;
+    }
+    .slide-nav-btn:hover { color: #fff; background: rgba(255,255,255,0.1); }
+    .slide-exit-btn { margin-left: 4px; border-left: 1px solid rgba(255,255,255,0.15); padding-left: 14px; }
+
+    body.slide-mode { overflow: hidden; }
+    body.slide-mode .topnav {
+      background: rgba(26,26,46,0.95); backdrop-filter: blur(16px);
+      border-bottom-color: rgba(255,255,255,0.1);
+    }
+    body.slide-mode .topnav-title { color: #e2e8f0; }
+    body.slide-mode .topnav-inner { justify-content: flex-start; gap: 16px; }
+    body.slide-mode .topnav-links { display: none; }
+    body.slide-mode .slide-toggle-btn { color: #e2e8f0; border-color: rgba(255,255,255,0.2); margin-left: auto; }
+    body.slide-mode .slide-toggle-btn:hover { background: rgba(255,255,255,0.1); color: #fff; }
+    body.slide-mode .slide-controls { display: flex; }
+    body.slide-mode .scroll-top { display: none !important; }
+    body.slide-mode footer { display: none; }
+
+    body.slide-mode section.hero,
+    body.slide-mode section.links,
+    body.slide-mode .section,
+    body.slide-mode .section-alt {
+      position: fixed; top: 48px; left: 0; right: 0;
+      height: calc(100vh - 48px);
+      overflow-y: auto;
+      display: flex; align-items: flex-start; justify-content: center;
+      opacity: 0; visibility: hidden; pointer-events: none;
+      transition: opacity 0.35s ease, transform 0.35s ease;
+      transform: translateX(30px);
+      z-index: 50; padding: 48px 0 80px;
+      background: var(--bg);
+    }
+    body.slide-mode .section-alt { background: var(--bg); border: none; }
+    body.slide-mode .section { background: var(--bg); }
+    body.slide-mode section.hero { text-align: center; padding-top: 0; padding-bottom: 0; align-items: center; }
+    body.slide-mode .section .container,
+    body.slide-mode .section-alt .container { max-width: 1100px; }
+    body.slide-mode section.hero::before { display: none; }
+    body.slide-mode section.hero .container { position: static; }
+    body.slide-mode section.links {
+      height: auto; padding: 0; background: transparent;
+      /* Position at bottom third of viewport */
+      top: auto; bottom: 18vh;
+    }
+    body.slide-mode section.slide-active {
+      opacity: 1; visibility: visible; pointer-events: auto; transform: translateX(0);
+    }
+    body.slide-mode section.slide-exit-left { opacity: 0; transform: translateX(-30px); }
+    body.slide-mode section.slide-exit-right { opacity: 0; transform: translateX(30px); }
+    body.slide-mode .fade-up { opacity: 1 !important; transform: none !important; }
+
+    /* Slide mode: compact overrides for content-heavy sections */
+    body.slide-mode .section,
+    body.slide-mode .section-alt { padding: 32px 0 70px; }
+    body.slide-mode .section h2,
+    body.slide-mode .section-alt h2 { margin-bottom: 14px; font-size: 1.7rem; }
+    body.slide-mode .section h3,
+    body.slide-mode .section-alt h3 { margin-bottom: 8px; }
+    body.slide-mode .subsection { margin-bottom: 20px; }
+    body.slide-mode .subsection-text { margin-bottom: 12px; }
+    body.slide-mode .example-card { padding: 14px 16px; margin-bottom: 10px; }
+    body.slide-mode .domain-row { margin-bottom: 16px; }
+    body.slide-mode .key-finding { margin-bottom: 16px; padding: 14px 18px; }
+    body.slide-mode .figure-wrapper { padding: 10px 8px; margin-bottom: 6px; }
+    body.slide-mode .definition-box { padding: 18px 20px; margin: 16px 0; }
+    body.slide-mode .resource-grid { margin-bottom: 16px; }
+
+    @media (max-width: 768px) {
+      body.slide-mode section.hero,
+      body.slide-mode .section,
+      body.slide-mode .section-alt { align-items: flex-start; padding: 20px 0; }
+      .slide-controls { bottom: 16px; padding: 6px 14px; gap: 10px; }
+    }
+
     /* ==================== ANIMATIONS ==================== */
     .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1); }
     .fade-up.visible { opacity: 1; transform: translateY(0); }
@@ -648,21 +754,24 @@
     <div class="topnav-inner">
       <a href="#" class="topnav-title">SciCoQA</a>
       <div class="topnav-links">
-        <a href="#abstract" data-section="abstract">Abstract</a>
+        <a href="#overview" data-section="overview">Collection</a>
         <a href="#discrepancies" data-section="discrepancies">Discrepancies</a>
         <a href="#examples" data-section="examples">Examples</a>
         <a href="#taxonomy" data-section="taxonomy">Taxonomy</a>
         <a href="#evaluation" data-section="evaluation">Evaluation</a>
+        <a href="#analysis" data-section="analysis">Analysis</a>
         <a href="#start" data-section="start">Get Started</a>
         <a href="#citation" data-section="citation">Cite</a>
       </div>
+      <button class="slide-toggle-btn" id="slideToggle" onclick="toggleSlideMode()" title="Presentation mode">
+        <i class="fa-solid fa-display"></i> <span class="slide-toggle-label">Slides</span>
+      </button>
     </div>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
     <div class="container">
-      <div class="venue-badge"><i class="ai ai-arxiv"></i> arXiv 2026</div>
       <h1 class="paper-title">SciCoQA: Quality Assurance for Scientific <span class="title-gradient">Paper-Code Alignment</span></h1>
       <div class="authors">
         <a href="https://scholar.google.com/citations?user=pwDGJYsAAAAJ&hl=en" target="_blank">Tim Baumg&auml;rtner</a> and
@@ -682,16 +791,29 @@
         <a href="https://github.com/UKPLab/scicoqa" class="link-btn" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
         <a href="https://huggingface.co/datasets/UKPLab/scicoqa" class="link-btn" target="_blank"><i class="fa-solid fa-database"></i> Data</a>
         <a href="https://huggingface.co/spaces/UKPLab/scicoqa" class="link-btn" target="_blank"><i class="fa-solid fa-display"></i> Demo</a>
+        <button class="link-btn" onclick="copyBibtex()" style="cursor:pointer;"><i class="fa-solid fa-quote-left"></i> <span class="hero-cite-text">Cite</span></button>
       </div>
     </div>
   </section>
 
   <main>
 
-    <!-- STATS -->
-    <section class="section-alt" id="stats">
+    <!-- TL;DR + STATS -->
+    <section class="section-alt" id="abstract">
       <div class="container">
-        <div class="stats-grid">
+        <div class="section-label">Summary</div>
+        <h2><span class="title-gradient">TL;DR</span></h2>
+        <p class="abstract-tldr fade-up">
+          We present <strong>SciCoQA</strong>, a benchmark of <strong>635 paper-code discrepancies</strong> (92 real-world, 543 synthetic) across AI, Physics, Biology, and more. We evaluate <strong>22 LLMs</strong> on detecting these mismatches&mdash;even the best models find only <strong>46.7%</strong> of real discrepancies, far from reliable scientific quality assurance.
+        </p>
+        <button class="abstract-toggle fade-up" onclick="toggleAbstract()">
+          <i class="fa-solid fa-chevron-down" style="font-size:0.65rem;margin-right:4px"></i> Full abstract
+        </button>
+        <div class="abstract-full" id="abstract-full">
+          <p>We present SciCoQA, a dataset for detecting discrepancies between scientific publications and their codebases to ensure faithful implementations. We construct SciCoQA from GitHub issues and reproducibility papers, and to scale our dataset, we propose a synthetic data generation method for constructing paper-code discrepancies. We analyze the paper-code discrepancies in detail and propose discrepancy types and categories to better understand the occurring mismatches.</p>
+          <p>In total, our dataset consists of 635 paper-code discrepancies (92 real, 543 synthetic), covering the AI domain from real-world data and extending to Physics, Quantitative Biology, and other computational sciences through synthetic data. Our evaluation of 22 LLMs demonstrates the difficulty of SciCoQA, particularly for instances involving omitted paper details, long-context inputs, and data outside the models' pre-training corpus. The best performing models in our evaluation, Gemini 3.1 Pro and GPT-5 Mini, detect only 46.7% of real-world paper-code discrepancies.</p>
+        </div>
+        <div class="stats-grid" style="margin-top: 28px;">
           <div class="stat-card fade-up"><span class="stat-number" data-target="635">0</span><span class="stat-label">Paper-Code Discrepancies</span></div>
           <div class="stat-card fade-up stagger-1"><span class="stat-number" data-target="6">0</span><span class="stat-label">Scientific Domains</span></div>
           <div class="stat-card fade-up stagger-2"><span class="stat-number" data-target="22">0</span><span class="stat-label">LLMs Evaluated</span></div>
@@ -703,8 +825,8 @@
     <!-- OVERVIEW FIGURE (web-native) -->
     <section class="section" id="overview">
       <div class="container">
-        <div class="section-label">Overview</div>
-        <h2>How SciCoQA Was <span class="title-gradient">Built</span></h2>
+        <div class="section-label">Data Collection</div>
+        <h2>How SciCoQA Was <span class="title-gradient">Collected</span></h2>
         <div class="figure-wrapper fade-up" style="padding: 12px 10px;">
           <div class="pipe-diagram">
 
@@ -786,28 +908,10 @@
       </div>
     </section>
 
-    <!-- ABSTRACT / TL;DR -->
-    <section class="section-alt" id="abstract">
-      <div class="container">
-        <div class="section-label">Summary</div>
-        <h2><span class="title-gradient">TL;DR</span></h2>
-        <p class="abstract-tldr fade-up">
-          We present <strong>SciCoQA</strong>, a benchmark of <strong>635 paper-code discrepancies</strong> (92 real-world, 543 synthetic) across AI, Physics, Biology, and more. We evaluate <strong>22 LLMs</strong> on detecting these mismatches&mdash;even the best models find only <strong>46.7%</strong> of real discrepancies, far from reliable scientific quality assurance.
-        </p>
-        <button class="abstract-toggle fade-up" onclick="toggleAbstract()">
-          <i class="fa-solid fa-chevron-down" style="font-size:0.65rem;margin-right:4px"></i> Full abstract
-        </button>
-        <div class="abstract-full" id="abstract-full">
-          <p>We present SciCoQA, a dataset for detecting discrepancies between scientific publications and their codebases to ensure faithful implementations. We construct SciCoQA from GitHub issues and reproducibility papers, and to scale our dataset, we propose a synthetic data generation method for constructing paper-code discrepancies. We analyze the paper-code discrepancies in detail and propose discrepancy types and categories to better understand the occurring mismatches.</p>
-          <p>In total, our dataset consists of 635 paper-code discrepancies (92 real, 543 synthetic), covering the AI domain from real-world data and extending to Physics, Quantitative Biology, and other computational sciences through synthetic data. Our evaluation of 22 LLMs demonstrates the difficulty of SciCoQA, particularly for instances involving omitted paper details, long-context inputs, and data outside the models' pre-training corpus. The best performing models in our evaluation, Gemini 3.1 Pro and GPT-5 Mini, detect only 46.7% of real-world paper-code discrepancies.</p>
-        </div>
-      </div>
-    </section>
-
     <!-- PAPER-CODE DISCREPANCIES -->
-    <section class="section" id="discrepancies">
+    <section class="section-alt" id="discrepancies">
       <div class="container">
-        <div class="section-label">Motivation</div>
+        <div class="section-label">Definition</div>
         <h2>Paper-Code <span class="title-gradient">Discrepancies</span></h2>
         <p class="subsection-text fade-up" style="margin-bottom: 24px;">
           Publishing code is now standard practice, but the <em>availability</em> of code does not guarantee <em>consistency</em> with the scientific text. Implementation details can diverge from their descriptions&mdash;from equations that differ in code, to evaluation metrics computed differently than described&mdash;introducing unreported performance variations that undermine scientific comparisons.
@@ -854,7 +958,7 @@
     </section>
 
     <!-- EXAMPLES -->
-    <section class="section-alt" id="examples">
+    <section class="section" id="examples">
       <div class="container">
         <div class="section-label">Dataset</div>
         <h2>SciCoQA <span class="title-gradient">Examples</span></h2>
@@ -941,7 +1045,7 @@
     </section>
 
     <!-- TAXONOMY -->
-    <section class="section" id="taxonomy">
+    <section class="section-alt" id="taxonomy">
       <div class="container">
         <div class="section-label">Classification</div>
         <h2>Discrepancy <span class="title-gradient">Taxonomy</span></h2>
@@ -995,21 +1099,68 @@
 
         <!-- Charts -->
         <div class="charts-row fade-up">
+          <!-- Type Distribution -->
           <div class="chart-container">
             <h4>Distribution by Type</h4>
-            <div id="chart-discrepancy-type-v11" style="width: 100%;"></div>
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+              <span style="font-size: 0.66rem; display: flex; align-items: center; gap: 4px;"><span style="width: 10px; height: 10px; border-radius: 2px; background: var(--accent); display: inline-block;"></span> Real</span>
+              <span style="font-size: 0.66rem; display: flex; align-items: center; gap: 4px;"><span style="width: 10px; height: 10px; border-radius: 2px; background: var(--teal); display: inline-block;"></span> Synthetic</span>
+            </div>
+            <div style="position: relative; height: 160px; border-bottom: 1.5px solid var(--border); border-left: 1.5px solid var(--border); margin-left: 28px;">
+              <div style="position:absolute;left:0;right:0;bottom:33%;border-top:1px dashed #e8ecf0;"></div>
+              <div style="position:absolute;left:0;right:0;bottom:66%;border-top:1px dashed #e8ecf0;"></div>
+              <div style="position:absolute;left:-26px;bottom:-1px;font-size:0.55rem;color:var(--text-secondary);">0%</div>
+              <div style="position:absolute;left:-26px;bottom:32%;font-size:0.55rem;color:var(--text-secondary);">30%</div>
+              <div style="position:absolute;left:-26px;bottom:65%;font-size:0.55rem;color:var(--text-secondary);">60%</div>
+              <div class="bar-group" style="left:5%;width:24%;"><div class="bar-tooltip">Real: 55.4% · Synth: 78.1%</div><div class="bar real bar-animate" data-h="69.3%"></div><div class="bar synth bar-animate" data-h="97.6%"></div></div>
+              <div class="bar-group" style="left:37%;width:24%;"><div class="bar-tooltip">Real: 13.0% · Synth: 10.1%</div><div class="bar real bar-animate" data-h="16.3%"></div><div class="bar synth bar-animate" data-h="12.6%"></div></div>
+              <div class="bar-group" style="left:69%;width:24%;"><div class="bar-tooltip">Real: 31.5% · Synth: 11.8%</div><div class="bar real bar-animate" data-h="39.4%"></div><div class="bar synth bar-animate" data-h="14.8%"></div></div>
+            </div>
+            <div style="display:flex;margin-left:28px;margin-top:4px;">
+              <div style="width:33%;text-align:center;font-size:0.6rem;color:var(--text-secondary);">Difference</div>
+              <div style="width:33%;text-align:center;font-size:0.6rem;color:var(--text-secondary);">Code Om.</div>
+              <div style="width:33%;text-align:center;font-size:0.6rem;color:var(--text-secondary);">Paper Om.</div>
+            </div>
           </div>
+          <!-- Category Distribution -->
           <div class="chart-container">
             <h4>Distribution by Category</h4>
-            <div id="chart-discrepancy-category-v11" style="width: 100%;"></div>
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+              <span style="font-size: 0.66rem; display: flex; align-items: center; gap: 4px;"><span style="width: 10px; height: 10px; border-radius: 2px; background: var(--accent); display: inline-block;"></span> Real</span>
+              <span style="font-size: 0.66rem; display: flex; align-items: center; gap: 4px;"><span style="width: 10px; height: 10px; border-radius: 2px; background: var(--teal); display: inline-block;"></span> Synthetic</span>
+            </div>
+            <div style="position: relative; height: 160px; border-bottom: 1.5px solid var(--border); border-left: 1.5px solid var(--border); margin-left: 28px;">
+              <div style="position:absolute;left:0;right:0;bottom:33%;border-top:1px dashed #e8ecf0;"></div>
+              <div style="position:absolute;left:0;right:0;bottom:66%;border-top:1px dashed #e8ecf0;"></div>
+              <div style="position:absolute;left:-26px;bottom:-1px;font-size:0.55rem;color:var(--text-secondary);">0%</div>
+              <div style="position:absolute;left:-26px;bottom:32%;font-size:0.55rem;color:var(--text-secondary);">10%</div>
+              <div style="position:absolute;left:-26px;bottom:65%;font-size:0.55rem;color:var(--text-secondary);">20%</div>
+              <div class="bar-group" style="left:1%;width:13%;"><div class="bar-tooltip">Real: 25.0% · Synth: 25.5%</div><div class="bar real bar-animate" data-h="82.5%"></div><div class="bar synth bar-animate" data-h="84.2%"></div></div>
+              <div class="bar-group" style="left:17%;width:13%;"><div class="bar-tooltip">Real: 12.0% · Synth: 20.6%</div><div class="bar real bar-animate" data-h="39.6%"></div><div class="bar synth bar-animate" data-h="68.0%"></div></div>
+              <div class="bar-group" style="left:33%;width:13%;"><div class="bar-tooltip">Real: 23.9% · Synth: 12.6%</div><div class="bar real bar-animate" data-h="78.9%"></div><div class="bar synth bar-animate" data-h="41.6%"></div></div>
+              <div class="bar-group" style="left:49%;width:13%;"><div class="bar-tooltip">Real: 9.8% · Synth: 16.1%</div><div class="bar real bar-animate" data-h="32.3%"></div><div class="bar synth bar-animate" data-h="53.1%"></div></div>
+              <div class="bar-group" style="left:65%;width:13%;"><div class="bar-tooltip">Real: 12.0% · Synth: 13.6%</div><div class="bar real bar-animate" data-h="39.6%"></div><div class="bar synth bar-animate" data-h="44.9%"></div></div>
+              <div class="bar-group" style="left:81%;width:13%;"><div class="bar-tooltip">Real: 17.4% · Synth: 11.5%</div><div class="bar real bar-animate" data-h="57.4%"></div><div class="bar synth bar-animate" data-h="38.0%"></div></div>
+            </div>
+            <div style="display:flex;margin-left:28px;margin-top:4px;">
+              <div style="width:16.6%;text-align:center;font-size:0.55rem;color:var(--text-secondary);">Algorithm</div>
+              <div style="width:16.6%;text-align:center;font-size:0.55rem;color:var(--text-secondary);">Model</div>
+              <div style="width:16.6%;text-align:center;font-size:0.55rem;color:var(--text-secondary);">Loss</div>
+              <div style="width:16.6%;text-align:center;font-size:0.55rem;color:var(--text-secondary);">Evaluation</div>
+              <div style="width:16.6%;text-align:center;font-size:0.55rem;color:var(--text-secondary);">Data</div>
+              <div style="width:16.6%;text-align:center;font-size:0.55rem;color:var(--text-secondary);">Training</div>
+            </div>
           </div>
         </div>
-        <p class="chart-note fade-up">Distribution of discrepancy types and categories in the SciCoQA dataset. Hover for exact results per subset.</p>
+        <p class="chart-note fade-up">Distribution of discrepancy types and categories in SciCoQA. Hover for exact values per subset.</p>
+        <!-- Hidden mpld3 containers for when served locally -->
+        <div id="chart-discrepancy-type-v11" style="display: none;"></div>
+        <div id="chart-discrepancy-category-v11" style="display: none;"></div>
       </div>
     </section>
 
     <!-- EVALUATION -->
-    <section class="section-alt" id="evaluation">
+    <section class="section" id="evaluation">
       <div class="container">
         <div class="section-label">Experiments</div>
         <h2><span class="title-gradient">Evaluation</span></h2>
@@ -1111,8 +1262,17 @@
           <p><strong>Key Finding:</strong> Even the best models (Gemini 3.1 Pro and GPT-5 Mini) achieve only <strong>46.7% recall</strong> on real-world discrepancies&mdash;far too low for reliable quality assurance in scientific publishing.</p>
         </div>
 
+      </div>
+    </section>
+
+    <!-- ANALYSIS -->
+    <section class="section-alt" id="analysis">
+      <div class="container">
+        <div class="section-label">Deep Dive</div>
+        <h2><span class="title-gradient">Analysis</span></h2>
+
         <!-- Precision + Error Analysis side by side -->
-        <div class="fade-up" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 28px;">
+        <div class="fade-up" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 28px; align-items: stretch;">
           <!-- Precision -->
           <div>
             <h3>Precision Analysis</h3>
@@ -1133,44 +1293,50 @@
             </div>
           </div>
           <!-- Error Analysis -->
-          <div>
+          <div style="display: flex; flex-direction: column;">
             <h3>Error Analysis</h3>
             <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 12px;">Our evaluation and manual error analysis revealed three main failure modes for discrepancy detection:</p>
-            <div style="display: flex; flex-direction: column; gap: 8px;">
-              <div style="background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; border-left: 3px solid var(--accent);">
+            <div style="display: flex; flex-direction: column; gap: 8px; flex: 1;">
+              <div style="background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; border-left: 3px solid var(--accent); flex: 1;">
                 <div style="font-size: 0.84rem; font-weight: 700; color: var(--text); margin-bottom: 2px;"><i class="fa-solid fa-scissors" style="margin-right: 5px; font-size: 0.72rem; color: var(--accent);"></i> Paper Omissions</div>
-                <div style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.4;">Models miss discrepancies where critical details are in code but absent from the paper. Majority of failures.</div>
+                <div style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.4;">Models struggle when implementation details exist in code but are never mentioned in the paper. With no textual anchor to match against, LLMs have no signal to detect the mismatch. This is the majority of failures.</div>
               </div>
-              <div style="background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; border-left: 3px solid var(--teal);">
+              <div style="background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; border-left: 3px solid var(--teal); flex: 1;">
                 <div style="font-size: 0.84rem; font-weight: 700; color: var(--text); margin-bottom: 2px;"><i class="fa-solid fa-ruler" style="margin-right: 5px; font-size: 0.72rem; color: var(--teal);"></i> Long Context</div>
-                <div style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.4;">Performance drops on large codebases (100k+ tokens) where models lose coherence.</div>
+                <div style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.4;">Performance drops significantly on large codebases exceeding 100k tokens. Models struggle to maintain coherence across the full paper and multi-file repositories simultaneously, missing discrepancies buried deep in the code.</div>
               </div>
-              <div style="background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; border-left: 3px solid var(--amber);">
+              <div style="background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; border-left: 3px solid var(--amber); flex: 1;">
                 <div style="font-size: 0.84rem; font-weight: 700; color: var(--text); margin-bottom: 2px;"><i class="fa-solid fa-clock-rotate-left" style="margin-right: 5px; font-size: 0.72rem; color: var(--amber);"></i> Recent Papers</div>
-                <div style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.4;">Worse on papers after the training cutoff&mdash;degradation on non-contaminated data.</div>
+                <div style="font-size: 0.78rem; color: var(--text-secondary); line-height: 1.4;">Models perform worse on papers published after their training cutoff, showing degradation on non-contaminated data. This suggests detection ability on older papers may partly stem from memorization.</div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Implications - compact -->
-        <h3 class="fade-up">Conclusions</h3>
-        <div class="fade-up" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;">
-          <div style="background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 14px;">
-            <div style="font-size: 0.78rem; font-weight: 700; color: var(--text); margin-bottom: 4px;"><i class="fa-solid fa-newspaper" style="margin-right: 4px; color: var(--accent); font-size: 0.7rem;"></i> Publishing</div>
-            <div style="font-size: 0.74rem; color: var(--text-secondary); line-height: 1.4;">46.7% recall means AI can't reliably check alignment&mdash;human-in-the-loop verification remains essential.</div>
+      </div>
+    </section>
+
+    <!-- CONCLUSIONS -->
+    <section class="section" id="conclusions">
+      <div class="container">
+        <div class="section-label">Takeaways</div>
+        <h2><span class="title-gradient">Conclusions</span></h2>
+        <div class="fade-up" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;">
+          <div style="background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px;">
+            <div style="font-size: 0.95rem; font-weight: 700; color: var(--text); margin-bottom: 6px;"><i class="fa-solid fa-newspaper" style="margin-right: 5px; color: var(--accent); font-size: 0.85rem;"></i> Publishing</div>
+            <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55;">46.7% recall means AI can't reliably check alignment&mdash;human-in-the-loop verification remains essential.</div>
           </div>
-          <div style="background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 14px;">
-            <div style="font-size: 0.78rem; font-weight: 700; color: var(--text); margin-bottom: 4px;"><i class="fa-solid fa-robot" style="margin-right: 4px; color: var(--accent); font-size: 0.7rem;"></i> AI Scientists</div>
-            <div style="font-size: 0.74rem; color: var(--text-secondary); line-height: 1.4;">Autonomous AI-generated code can't be reliably verified by LLMs alone&mdash;human oversight needed.</div>
+          <div style="background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px;">
+            <div style="font-size: 0.95rem; font-weight: 700; color: var(--text); margin-bottom: 6px;"><i class="fa-solid fa-robot" style="margin-right: 5px; color: var(--accent); font-size: 0.85rem;"></i> AI Scientists</div>
+            <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55;">Autonomous AI-generated code can't be reliably verified by LLMs alone&mdash;human oversight needed.</div>
           </div>
-          <div style="background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 14px;">
-            <div style="font-size: 0.78rem; font-weight: 700; color: var(--text); margin-bottom: 4px;"><i class="fa-solid fa-eye-slash" style="margin-right: 4px; color: var(--accent); font-size: 0.7rem;"></i> Paper Omissions</div>
-            <div style="font-size: 0.74rem; color: var(--text-secondary); line-height: 1.4;">The hardest discrepancy type to detect&mdash;details present in code but missing from the paper remain largely invisible to LLMs.</div>
+          <div style="background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px;">
+            <div style="font-size: 0.95rem; font-weight: 700; color: var(--text); margin-bottom: 6px;"><i class="fa-solid fa-eye-slash" style="margin-right: 5px; color: var(--accent); font-size: 0.85rem;"></i> Paper Omissions</div>
+            <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55;">The hardest discrepancy type to detect&mdash;details present in code but missing from the paper remain largely invisible to LLMs.</div>
           </div>
-          <div style="background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 14px;">
-            <div style="font-size: 0.78rem; font-weight: 700; color: var(--text); margin-bottom: 4px;"><i class="fa-solid fa-flask" style="margin-right: 4px; color: var(--accent); font-size: 0.7rem;"></i> Future Work</div>
-            <div style="font-size: 0.74rem; color: var(--text-secondary); line-height: 1.4;">Better automated paper-code consistency methods are crucial as AI scales in scientific discovery.</div>
+          <div style="background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px;">
+            <div style="font-size: 0.95rem; font-weight: 700; color: var(--text); margin-bottom: 6px;"><i class="fa-solid fa-flask" style="margin-right: 5px; color: var(--accent); font-size: 0.85rem;"></i> Future Work</div>
+            <div style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.55;">Better automated paper-code consistency methods are crucial as AI scales in scientific discovery.</div>
           </div>
         </div>
       </div>
@@ -1185,18 +1351,15 @@
 
         <div class="resource-grid fade-up">
           <div class="resource-card">
-            <div class="card-icon ci-amber"><i class="fa-solid fa-database"></i></div>
-            <h4>Dataset</h4>
-            <p>SciCoQA is available on <a href="https://huggingface.co/datasets/UKPLab/scicoqa" target="_blank">Hugging Face</a> for convenient access and integration into any project.</p>
+            <div class="resource-card-head"><div class="card-icon ci-amber"><i class="fa-solid fa-database"></i></div><h4>Dataset</h4></div>
+            <p>Available on <a href="https://huggingface.co/datasets/UKPLab/scicoqa" target="_blank">Hugging Face</a> for easy access and integration.</p>
           </div>
           <div class="resource-card">
-            <div class="card-icon ci-dark"><i class="fa-brands fa-github"></i></div>
-            <h4>Code</h4>
+            <div class="resource-card-head"><div class="card-icon ci-dark"><i class="fa-brands fa-github"></i></div><h4>Code</h4></div>
             <p>The complete codebase for data collection, inference, and evaluation is on <a href="https://github.com/UKPLab/scicoqa" target="_blank">GitHub</a>.</p>
           </div>
           <div class="resource-card">
-            <div class="card-icon ci-blue"><i class="fa-solid fa-display"></i></div>
-            <h4>Demo</h4>
+            <div class="resource-card-head"><div class="card-icon ci-blue"><i class="fa-solid fa-display"></i></div><h4>Demo</h4></div>
             <p>Try discrepancy detection interactively in our <a href="https://huggingface.co/spaces/UKPLab/scicoqa" target="_blank">Hugging Face Space</a> demo.</p>
           </div>
         </div>
@@ -1275,6 +1438,16 @@ example = real_data[<span class="num">0</span>]
     <i class="fa-solid fa-chevron-up"></i>
   </button>
 
+  <!-- SLIDE CONTROLS -->
+  <div class="slide-controls" id="slideControls">
+    <button class="slide-nav-btn" onclick="slideNav(-1)" aria-label="Previous slide"><i class="fa-solid fa-chevron-left"></i></button>
+    <div class="slide-progress" id="slideProgress"></div>
+    <button class="slide-nav-btn" onclick="slideNav(1)" aria-label="Next slide"><i class="fa-solid fa-chevron-right"></i></button>
+    <button class="slide-nav-btn" onclick="slideFontSize(-1)" aria-label="Decrease font"><i class="fa-solid fa-minus"></i></button>
+    <button class="slide-nav-btn" onclick="slideFontSize(1)" aria-label="Increase font"><i class="fa-solid fa-plus"></i></button>
+    <button class="slide-nav-btn slide-exit-btn" onclick="toggleSlideMode()" aria-label="Exit slide mode"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+
   <!-- SCRIPTS -->
   <script src="https://d3js.org/d3.v5.min.js"></script>
   <script src="https://mpld3.github.io/js/mpld3.v0.5.12.js"></script>
@@ -1289,7 +1462,7 @@ example = real_data[<span class="num">0</span>]
 
     // ==================== NAV ACTIVE ====================
     const navLinks = document.querySelectorAll('.topnav-links a');
-    const sectionIds = ['abstract', 'discrepancies', 'examples', 'taxonomy', 'evaluation', 'start', 'citation'];
+    const sectionIds = ['abstract', 'overview', 'discrepancies', 'examples', 'taxonomy', 'evaluation', 'analysis', 'conclusions', 'start', 'citation'];
     const sectionEls = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
     const sectionObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -1327,7 +1500,7 @@ example = real_data[<span class="num">0</span>]
       });
     }
 
-    const statsSection = document.getElementById('stats');
+    const statsSection = document.getElementById('abstract');
     const statsObs = new IntersectionObserver((entries) => {
       entries.forEach(entry => { if (entry.isIntersecting) { animateCounters(); statsObs.unobserve(entry.target); } });
     }, { threshold: 0.3 });
@@ -1351,24 +1524,24 @@ example = real_data[<span class="num">0</span>]
     });
 
     // ==================== BAR CHART ANIMATION ====================
-    const recallChart = document.getElementById('recall-chart');
-    if (recallChart) {
-      const barObs = new IntersectionObserver((entries) => {
+    // Animate all bar charts on scroll
+    document.querySelectorAll('.bar-group').forEach(group => {
+      const chartBarObs = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            const bars = recallChart.querySelectorAll('.bar-animate');
+            const bars = entry.target.querySelectorAll('.bar-animate');
             bars.forEach((bar, i) => {
               setTimeout(() => {
                 bar.style.height = bar.dataset.h;
                 bar.classList.remove('bar-animate');
               }, i * 40);
             });
-            barObs.unobserve(entry.target);
+            chartBarObs.unobserve(entry.target);
           }
         });
       }, { threshold: 0.2 });
-      barObs.observe(recallChart);
-    }
+      chartBarObs.observe(group);
+    });
 
     // ==================== COPY BIBTEX ====================
     function copyBibtex() {
@@ -1378,9 +1551,174 @@ example = real_data[<span class="num">0</span>]
         confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
       }
       navigator.clipboard.writeText(code).then(() => {
-        btn.classList.add('copied');
-        btn.querySelector('.copy-text').textContent = 'Copied!';
+        if (btn) { btn.classList.add('copied'); btn.querySelector('.copy-text').textContent = 'Copied!'; }
+        const heroCite = document.querySelector('.hero-cite-text');
+        if (heroCite) { heroCite.textContent = 'Copied!'; setTimeout(() => heroCite.textContent = 'Cite', 2000); }
         setTimeout(() => { btn.classList.remove('copied'); btn.querySelector('.copy-text').textContent = 'Copy'; }, 2000);
+      });
+    }
+
+    // ==================== SLIDE MODE ====================
+    let slideModeActive = false;
+    let currentSlide = 0;
+    let savedScrollY = 0;
+
+    function getSlides() {
+      const hero = document.querySelector('section.hero');
+      const links = document.querySelector('section.links');
+      const mainSections = Array.from(document.querySelectorAll('main > section'));
+      // Slide 0 = hero + links combined, then each main section
+      const slides = [{ elements: [hero, links], label: 'title' }];
+      mainSections.forEach(sec => slides.push({ elements: [sec], label: sec.id || 'section' }));
+      return slides;
+    }
+
+    function toggleSlideMode() {
+      slideModeActive = !slideModeActive;
+      const slides = getSlides();
+      if (slideModeActive) {
+        savedScrollY = window.scrollY;
+        currentSlide = 0;
+        document.body.classList.add('slide-mode');
+        document.querySelector('.slide-toggle-label').textContent = 'Website';
+        document.querySelector('#slideToggle i').className = 'fa-solid fa-globe';
+        // Build progress dots
+        const slides = getSlides();
+        const labels = ['Title','TL;DR','Overview','Discrepancies','Examples','Taxonomy','Evaluation','Analysis','Conclusions','Get Started','Citation'];
+        const prog = document.getElementById('slideProgress');
+        prog.innerHTML = '';
+        slides.forEach((s, i) => {
+          const dot = document.createElement('div');
+          dot.className = 'slide-dot' + (i === 0 ? ' dot-active' : '');
+          dot.onclick = () => showSlide(i, i > currentSlide ? 'left' : 'right');
+          const tip = document.createElement('div');
+          tip.className = 'slide-dot-tip';
+          tip.textContent = labels[i] || s.label;
+          dot.appendChild(tip);
+          prog.appendChild(dot);
+        });
+        showSlide(currentSlide, 'none');
+      } else {
+        document.body.classList.remove('slide-mode');
+        document.querySelector('.slide-toggle-label').textContent = 'Slides';
+        document.querySelector('#slideToggle i').className = 'fa-solid fa-display';
+        slides.forEach(s => s.elements.forEach(el => {
+          el.classList.remove('slide-active', 'slide-exit-left', 'slide-exit-right');
+          el.style.zoom = '';
+        }));
+        slideZoom = 1;
+        document.querySelectorAll('main > section').forEach(el => el.style.zoom = '');
+        document.querySelectorAll('section.hero, section.links').forEach(el => { el.style.transform = ''; });
+        window.scrollTo(0, savedScrollY);
+        history.replaceState(null, '', window.location.pathname + window.location.search);
+      }
+    }
+
+    function detectCurrentSection() {
+      const slides = getSlides();
+      const vc = window.scrollY + window.innerHeight / 2;
+      for (let i = slides.length - 1; i >= 0; i--) {
+        if (slides[i].elements[0].offsetTop <= vc) return i;
+      }
+      return 0;
+    }
+
+    function showSlide(index, direction) {
+      const slides = getSlides();
+      if (index < 0 || index >= slides.length) return;
+      // Exit current
+      if (direction === 'left' || direction === 'right') {
+        slides[currentSlide].elements.forEach(el => {
+          el.classList.remove('slide-active');
+          el.classList.add(direction === 'left' ? 'slide-exit-left' : 'slide-exit-right');
+        });
+      }
+      // Clear all classes after transition
+      slides.forEach(s => s.elements.forEach(el => {
+        if (el !== slides[currentSlide]?.elements[0]) {
+          el.classList.remove('slide-active', 'slide-exit-left', 'slide-exit-right');
+        }
+      }));
+      currentSlide = index;
+      // Show new slide
+      requestAnimationFrame(() => {
+        slides.forEach(s => s.elements.forEach(el => el.classList.remove('slide-active', 'slide-exit-left', 'slide-exit-right')));
+        slides[currentSlide].elements.forEach(el => {
+          el.classList.add('slide-active');
+          el.scrollTop = 0; // reset scroll within slide
+        });
+      });
+      // Update progress dots
+      document.querySelectorAll('.slide-dot').forEach((dot, i) => {
+        dot.classList.toggle('dot-active', i === currentSlide);
+      });
+      // Re-trigger animations for specific slides
+      const activeEls = slides[currentSlide].elements;
+      if (activeEls.some(el => el.id === 'abstract' || (el.querySelector && el.querySelector('.stats-grid')))) {
+        setTimeout(animateCounters, 200);
+      }
+      // Re-trigger bar animations for any slide containing bars
+      activeEls.forEach(el => {
+        const bars = el.querySelectorAll ? el.querySelectorAll('.bar') : [];
+        if (bars.length > 0) {
+          setTimeout(() => {
+            bars.forEach(b => { b.style.height = '0'; b.classList.add('bar-animate'); });
+            setTimeout(() => {
+              bars.forEach((b, i) => {
+                setTimeout(() => { b.style.height = b.dataset.h; b.classList.remove('bar-animate'); }, i * 40);
+              });
+            }, 50);
+          }, 200);
+        }
+      });
+      // URL hash
+      const label = slides[currentSlide].label;
+      history.replaceState(null, '', '#slide=' + label);
+    }
+
+    function slideNav(delta) {
+      const newIndex = currentSlide + delta;
+      if (newIndex < 0 || newIndex >= getSlides().length) return;
+      showSlide(newIndex, delta > 0 ? 'left' : 'right');
+    }
+
+    let slideZoom = 1;
+    function slideFontSize(delta) {
+      slideZoom = Math.max(0.7, Math.min(1.5, slideZoom + delta * 0.1));
+      document.querySelectorAll('main > section').forEach(el => {
+        el.style.zoom = slideZoom;
+      });
+      // Title slide: scale hero from center, links from top-center so they stay below
+      const hero = document.querySelector('section.hero');
+      const links = document.querySelector('section.links');
+      if (hero) { hero.style.transform = slideZoom === 1 ? '' : `scale(${slideZoom})`; hero.style.transformOrigin = 'center 45%'; }
+      if (links) { links.style.transform = slideZoom === 1 ? '' : `scale(${slideZoom})`; links.style.transformOrigin = 'center top'; }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (!slideModeActive) return;
+      switch (e.key) {
+        case 'ArrowRight': case 'ArrowDown': case ' ':
+          e.preventDefault(); slideNav(1); break;
+        case 'ArrowLeft': case 'ArrowUp':
+          e.preventDefault(); slideNav(-1); break;
+        case 'Escape':
+          e.preventDefault(); toggleSlideMode(); break;
+        case 'Home':
+          e.preventDefault(); showSlide(0, 'right'); break;
+        case 'End':
+          e.preventDefault(); showSlide(getSlides().length - 1, 'left'); break;
+      }
+    });
+
+    // Deep-link: auto-enter slide mode if URL has #slide=
+    if (window.location.hash.startsWith('#slide=')) {
+      window.addEventListener('DOMContentLoaded', () => {
+        const ref = window.location.hash.replace('#slide=', '');
+        toggleSlideMode();
+        const slides = getSlides();
+        const idx = ref === 'title' ? 0 : slides.findIndex(s => s.label === ref);
+        if (idx >= 0) showSlide(idx, 'none');
       });
     }
 
