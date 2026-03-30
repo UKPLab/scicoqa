@@ -781,6 +781,45 @@
       .slide-controls { bottom: 16px; padding: 6px 14px; gap: 10px; }
     }
 
+    /* ==================== REUSABLE COMPONENTS ==================== */
+    /* Flow icon (evaluation pipeline) */
+    .flow-icon {
+      width: 56px; height: 56px; border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 6px; font-size: 1.3rem;
+    }
+    .flow-arrow { padding: 0 14px; color: #94a3b8; font-size: 1rem; }
+    .flow-step { text-align: center; }
+    .flow-step-title { font-size: 0.78rem; font-weight: 700; color: var(--text); }
+    .flow-step-desc { font-size: 0.66rem; color: var(--text-secondary); }
+
+    /* Chart axis labels */
+    .chart-x-label { text-align: center; font-size: 0.62rem; color: var(--text-secondary); line-height: 1.2; }
+    .chart-x-label-sm { text-align: center; font-size: 0.55rem; color: var(--text-secondary); }
+
+    /* Chart legend */
+    .chart-legend { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+    .chart-legend-item { font-size: 0.66rem; display: flex; align-items: center; gap: 4px; }
+    .chart-legend-dot { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+
+    /* Inline card accent borders */
+    .border-teal { border-top: 3px solid var(--teal); }
+    .border-amber { border-top: 3px solid var(--amber); }
+    .border-accent { border-top: 3px solid var(--accent); }
+
+    /* Grid layouts */
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+
+    /* Analysis error card (inline in evaluation) */
+    .analysis-card {
+      background: #fff; border: 1px solid var(--border); border-radius: 8px;
+      padding: 10px 12px; flex: 1;
+    }
+    .analysis-card-title { font-size: 0.88rem; font-weight: 700; color: var(--text); margin-bottom: 2px; }
+    .analysis-card-title i { margin-right: 5px; font-size: 0.72rem; }
+    .analysis-card-desc { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45; }
+
     /* ==================== ANIMATIONS ==================== */
     .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1); }
     .fade-up.visible { opacity: 1; transform: translateY(0); }
@@ -991,32 +1030,32 @@
           <p>A <em>meaningful</em> semantic conflict between the scientific method described in the publication and its actual implementation in the codebase&mdash;a fundamental alteration to the scientific logic, experimental protocol, or mathematical formulation.</p>
 
           <p style="font-weight: 600; color: var(--text); margin-bottom: 8px; font-size: 0.88rem;">These discrepancies manifest as three types:</p>
-          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 14px;">
-            <div class="taxonomy-card-new" style="border-top: 3px solid var(--teal);">
+          <div class="grid-3" style="margin-bottom: 14px;">
+            <div class="taxonomy-card-new border-teal">
               <div class="tc-title"><i class="fa-solid fa-arrows-left-right" style="color: var(--teal);"></i> Difference</div>
               <div class="tc-desc">Code implements a logic distinct from the paper (e.g., L1 vs. L2 normalization)</div>
             </div>
-            <div class="taxonomy-card-new" style="border-top: 3px solid var(--teal);">
+            <div class="taxonomy-card-new border-teal">
               <div class="tc-title"><i class="fa-solid fa-file-circle-minus" style="color: var(--teal);"></i> Paper Omission</div>
               <div class="tc-desc">Code includes critical components missing from the paper description</div>
             </div>
-            <div class="taxonomy-card-new" style="border-top: 3px solid var(--teal);">
+            <div class="taxonomy-card-new border-teal">
               <div class="tc-title"><i class="fa-solid fa-code" style="color: var(--teal);"></i> Code Omission</div>
               <div class="tc-desc">A step described in the paper is absent from the repository</div>
             </div>
           </div>
 
           <p style="font-weight: 600; color: var(--text); margin-bottom: 8px; font-size: 0.88rem;">We distinguish these from engineering artifacts:</p>
-          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
-            <div class="taxonomy-card-new" style="opacity: 0.7;">
+          <div class="grid-3">
+            <div class="taxonomy-card-new" style="opacity: 0.65;">
               <div class="tc-title" style="color: var(--text-secondary);"><i class="fa-solid fa-times" style="color: var(--text-secondary); opacity: 0.5;"></i> Bugs</div>
               <div class="tc-desc">Independent of the paper's scientific description</div>
             </div>
-            <div class="taxonomy-card-new" style="opacity: 0.7;">
+            <div class="taxonomy-card-new" style="opacity: 0.65;">
               <div class="tc-title" style="color: var(--text-secondary);"><i class="fa-solid fa-times" style="color: var(--text-secondary); opacity: 0.5;"></i> Hyperparameters</div>
               <div class="tc-desc">Configurable via CLI arguments or config files</div>
             </div>
-            <div class="taxonomy-card-new" style="opacity: 0.7;">
+            <div class="taxonomy-card-new" style="opacity: 0.65;">
               <div class="tc-title" style="color: var(--text-secondary);"><i class="fa-solid fa-times" style="color: var(--text-secondary); opacity: 0.5;"></i> Trivial Details</div>
               <div class="tc-desc">Standard engineering practices (e.g., numerical stability)</div>
             </div>
@@ -1122,15 +1161,15 @@
         <!-- 3 type cards -->
         <h3 class="fade-up" style="font-size: 1.1rem; margin-bottom: 10px;">Discrepancy <span style="background: linear-gradient(135deg, var(--accent), var(--teal)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Types</span></h3>
         <div class="fade-up" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 24px;">
-          <div class="taxonomy-card-new" style="border-top: 3px solid var(--teal);">
+          <div class="taxonomy-card-new border-teal">
             <div class="tc-title"><i class="fa-solid fa-arrows-left-right" style="color: var(--teal);"></i> Difference</div>
             <div class="tc-desc">Paper and code describe conflicting approaches</div>
           </div>
-          <div class="taxonomy-card-new" style="border-top: 3px solid var(--teal);">
+          <div class="taxonomy-card-new border-teal">
             <div class="tc-title"><i class="fa-solid fa-file-circle-minus" style="color: var(--teal);"></i> Paper Omission</div>
             <div class="tc-desc">Code includes components missing from the paper</div>
           </div>
-          <div class="taxonomy-card-new" style="border-top: 3px solid var(--teal);">
+          <div class="taxonomy-card-new border-teal">
             <div class="tc-title"><i class="fa-solid fa-code" style="color: var(--teal);"></i> Code Omission</div>
             <div class="tc-desc">Paper describes a step absent from the code</div>
           </div>
@@ -1139,27 +1178,27 @@
         <!-- 6 category cards in a 3x2 grid -->
         <h3 class="fade-up" style="font-size: 1.1rem; margin-bottom: 10px;">Discrepancy <span style="background: linear-gradient(135deg, var(--accent), var(--amber)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Categories</span></h3>
         <div class="fade-up" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 28px;">
-          <div class="taxonomy-card-new" style="border-top: 3px solid var(--amber);">
+          <div class="taxonomy-card-new border-amber">
             <div class="tc-title"><i class="fa-solid fa-diagram-project" style="color: var(--amber);"></i> Algorithm</div>
             <div class="tc-desc">Step order, operations, or core logic differs between paper and code</div>
           </div>
-          <div class="taxonomy-card-new" style="border-top: 3px solid var(--amber);">
+          <div class="taxonomy-card-new border-amber">
             <div class="tc-title"><i class="fa-solid fa-cubes" style="color: var(--amber);"></i> Model</div>
             <div class="tc-desc">Architectural choices or initialization methods don't match</div>
           </div>
-          <div class="taxonomy-card-new" style="border-top: 3px solid var(--amber);">
+          <div class="taxonomy-card-new border-amber">
             <div class="tc-title"><i class="fa-solid fa-scale-unbalanced" style="color: var(--amber);"></i> Loss</div>
             <div class="tc-desc">Loss function definition, terms, or weighting differs</div>
           </div>
-          <div class="taxonomy-card-new" style="border-top: 3px solid var(--amber);">
+          <div class="taxonomy-card-new border-amber">
             <div class="tc-title"><i class="fa-solid fa-chart-bar" style="color: var(--amber);"></i> Evaluation</div>
             <div class="tc-desc">Evaluation metrics, logic, or test scripts computed differently</div>
           </div>
-          <div class="taxonomy-card-new" style="border-top: 3px solid var(--amber);">
+          <div class="taxonomy-card-new border-amber">
             <div class="tc-title"><i class="fa-solid fa-database" style="color: var(--amber);"></i> Data</div>
             <div class="tc-desc">Dataset usage, preprocessing, augmentation, or filtering differs</div>
           </div>
-          <div class="taxonomy-card-new" style="border-top: 3px solid var(--amber);">
+          <div class="taxonomy-card-new border-amber">
             <div class="tc-title"><i class="fa-solid fa-graduation-cap" style="color: var(--amber);"></i> Training</div>
             <div class="tc-desc">Learning process, schedule, or optimization strategy changed</div>
           </div>
@@ -1185,9 +1224,9 @@
               <div class="bar-group" style="left:69%;width:24%;"><div class="bar-tooltip">Real: 31.5% · Synth: 11.8%</div><div class="bar real bar-animate" data-h="39.4%"></div><div class="bar synth bar-animate" data-h="14.8%"></div></div>
             </div>
             <div style="display:flex;margin-left:28px;margin-top:4px;">
-              <div style="width:33%;text-align:center;font-size:0.6rem;color:var(--text-secondary);">Difference</div>
-              <div style="width:33%;text-align:center;font-size:0.6rem;color:var(--text-secondary);">Code Om.</div>
-              <div style="width:33%;text-align:center;font-size:0.6rem;color:var(--text-secondary);">Paper Om.</div>
+              <div class="chart-x-label" style="width:33%;">Difference</div>
+              <div class="chart-x-label" style="width:33%;">Code Om.</div>
+              <div class="chart-x-label" style="width:33%;">Paper Om.</div>
             </div>
           </div>
           <!-- Category Distribution -->
@@ -1211,12 +1250,12 @@
               <div class="bar-group" style="left:81%;width:13%;"><div class="bar-tooltip">Real: 17.4% · Synth: 11.5%</div><div class="bar real bar-animate" data-h="57.4%"></div><div class="bar synth bar-animate" data-h="38.0%"></div></div>
             </div>
             <div style="display:flex;margin-left:28px;margin-top:4px;">
-              <div style="width:16.6%;text-align:center;font-size:0.55rem;color:var(--text-secondary);">Algorithm</div>
-              <div style="width:16.6%;text-align:center;font-size:0.55rem;color:var(--text-secondary);">Model</div>
-              <div style="width:16.6%;text-align:center;font-size:0.55rem;color:var(--text-secondary);">Loss</div>
-              <div style="width:16.6%;text-align:center;font-size:0.55rem;color:var(--text-secondary);">Evaluation</div>
-              <div style="width:16.6%;text-align:center;font-size:0.55rem;color:var(--text-secondary);">Data</div>
-              <div style="width:16.6%;text-align:center;font-size:0.55rem;color:var(--text-secondary);">Training</div>
+              <div class="chart-x-label-sm" style="width:16.6%;">Algorithm</div>
+              <div class="chart-x-label-sm" style="width:16.6%;">Model</div>
+              <div class="chart-x-label-sm" style="width:16.6%;">Loss</div>
+              <div class="chart-x-label-sm" style="width:16.6%;">Evaluation</div>
+              <div class="chart-x-label-sm" style="width:16.6%;">Data</div>
+              <div class="chart-x-label-sm" style="width:16.6%;">Training</div>
             </div>
           </div>
         </div>
@@ -1235,51 +1274,44 @@
         </p>
 
         <!-- Pipeline figure (web-native) -->
-        <div class="fade-up" style="display: flex; align-items: center; justify-content: center; gap: 0; padding: 28px 0 12px;">
-          <!-- Input -->
-          <div style="text-align: center;">
-            <div style="width: 56px; height: 56px; border-radius: 14px; background: var(--accent-wash); display: flex; align-items: center; justify-content: center; margin: 0 auto 6px;"><i class="fa-solid fa-file-lines" style="font-size: 1.3rem; color: var(--accent);"></i></div>
-            <div style="font-size: 0.78rem; font-weight: 700; color: var(--text);">Paper + Code</div>
-            <div style="font-size: 0.66rem; color: var(--text-secondary);">markdown + source files</div>
+        <div class="fade-up" style="display: flex; align-items: center; justify-content: center; padding: 28px 0 12px;">
+          <div class="flow-step">
+            <div class="flow-icon" style="background: var(--accent-wash);"><i class="fa-solid fa-file-lines" style="color: var(--accent);"></i></div>
+            <div class="flow-step-title">Paper + Code</div>
+            <div class="flow-step-desc">markdown + source files</div>
           </div>
-          <div style="padding: 0 14px; color: #94a3b8; font-size: 1rem;"><i class="fa-solid fa-arrow-right"></i></div>
-          <!-- LLM -->
-          <div style="text-align: center;">
-            <div style="width: 56px; height: 56px; border-radius: 14px; background: var(--blue-wash); display: flex; align-items: center; justify-content: center; margin: 0 auto 6px;"><i class="fa-solid fa-brain" style="font-size: 1.3rem; color: var(--blue);"></i></div>
-            <div style="font-size: 0.78rem; font-weight: 700; color: var(--text);">LLM</div>
-            <div style="font-size: 0.66rem; color: var(--text-secondary);">zero-shot inference</div>
+          <div class="flow-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+          <div class="flow-step">
+            <div class="flow-icon" style="background: var(--blue-wash);"><i class="fa-solid fa-brain" style="color: var(--blue);"></i></div>
+            <div class="flow-step-title">LLM</div>
+            <div class="flow-step-desc">zero-shot inference</div>
           </div>
-          <div style="padding: 0 14px; color: #94a3b8; font-size: 1rem;"><i class="fa-solid fa-arrow-right"></i></div>
-          <!-- Output -->
-          <div style="text-align: center;">
-            <div style="width: 56px; height: 56px; border-radius: 14px; background: var(--surface); border: 1.5px solid var(--border); display: flex; align-items: center; justify-content: center; margin: 0 auto 6px;"><i class="fa-solid fa-list-check" style="font-size: 1.3rem; color: var(--text-secondary);"></i></div>
-            <div style="font-size: 0.78rem; font-weight: 700; color: var(--text);">Discrepancies</div>
-            <div style="font-size: 0.66rem; color: var(--text-secondary);">generated predictions</div>
+          <div class="flow-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+          <div class="flow-step">
+            <div class="flow-icon" style="background: var(--surface); border: 1.5px solid var(--border);"><i class="fa-solid fa-list-check" style="color: var(--text-secondary);"></i></div>
+            <div class="flow-step-title">Discrepancies</div>
+            <div class="flow-step-desc">generated predictions</div>
           </div>
-          <div style="padding: 0 14px; color: #94a3b8; font-size: 1rem;"><i class="fa-solid fa-arrow-right"></i></div>
-          <!-- Judge -->
-          <div style="text-align: center;">
-            <div style="width: 56px; height: 56px; border-radius: 14px; background: var(--teal-wash); display: flex; align-items: center; justify-content: center; margin: 0 auto 6px;"><i class="fa-solid fa-scale-balanced" style="font-size: 1.3rem; color: var(--teal);"></i></div>
-            <div style="font-size: 0.78rem; font-weight: 700; color: var(--text);">LLM Judge</div>
-            <div style="font-size: 0.66rem; color: var(--text-secondary);">GPT-OSS 20B</div>
+          <div class="flow-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+          <div class="flow-step">
+            <div class="flow-icon" style="background: var(--teal-wash);"><i class="fa-solid fa-scale-balanced" style="color: var(--teal);"></i></div>
+            <div class="flow-step-title">LLM Judge</div>
+            <div class="flow-step-desc">GPT-OSS 20B</div>
           </div>
-          <div style="padding: 0 14px; color: #94a3b8; font-size: 1rem;"><i class="fa-solid fa-arrow-right"></i></div>
-          <!-- Recall -->
-          <div style="text-align: center;">
-            <div style="width: 56px; height: 56px; border-radius: 14px; background: #fff; border: 2px solid var(--amber); display: flex; align-items: center; justify-content: center; margin: 0 auto 6px;">
-              <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; font-weight: 700; color: var(--amber);">&Sigma;</span>
-            </div>
-            <div style="font-size: 0.78rem; font-weight: 700; color: var(--text);">Recall</div>
-            <div style="font-size: 0.66rem; color: var(--text-secondary);"><span style="color: #16a34a;"><i class="fa-solid fa-check" style="font-size: 0.55rem;"></i></span> match / <span style="color: #dc2626;"><i class="fa-solid fa-xmark" style="font-size: 0.55rem;"></i></span> no match</div>
+          <div class="flow-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+          <div class="flow-step">
+            <div class="flow-icon" style="background: #fff; border: 2px solid var(--amber);"><span style="font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; font-weight: 700; color: var(--amber);">&Sigma;</span></div>
+            <div class="flow-step-title">Recall</div>
+            <div class="flow-step-desc"><span style="color: #16a34a;"><i class="fa-solid fa-check" style="font-size: 0.55rem;"></i></span> match / <span style="color: #dc2626;"><i class="fa-solid fa-xmark" style="font-size: 0.55rem;"></i></span> no match</div>
           </div>
         </div>
 
         <!-- Results chart -->
         <div class="fade-up" style="margin-bottom: 28px;">
           <h3>Recall by Model</h3>
-          <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 10px;">
-            <span style="font-size: 0.72rem; display: flex; align-items: center; gap: 5px;"><span style="width: 12px; height: 12px; border-radius: 3px; background: var(--accent); display: inline-block;"></span> Real</span>
-            <span style="font-size: 0.72rem; display: flex; align-items: center; gap: 5px;"><span style="width: 12px; height: 12px; border-radius: 3px; background: var(--teal); display: inline-block;"></span> Synthetic</span>
+          <div class="chart-legend">
+            <span class="chart-legend-item"><span class="chart-legend-dot" style="background: var(--accent);"></span> Real</span>
+            <span class="chart-legend-item"><span class="chart-legend-dot" style="background: var(--teal);"></span> Synthetic</span>
           </div>
           <!-- CSS bar chart -->
           <div id="recall-chart" style="position: relative; height: 240px; margin-left: 32px; border-bottom: 1.5px solid var(--border); border-left: 1.5px solid var(--border);">
@@ -1306,16 +1338,16 @@
           </div>
           <!-- X-axis labels -->
           <div style="display:flex;margin-left:32px;margin-top:6px;">
-            <div style="width:10%;text-align:center;font-size:0.62rem;color:var(--text-secondary);line-height:1.2;">GPT-5</div>
-            <div style="width:10%;text-align:center;font-size:0.62rem;color:var(--text-secondary);line-height:1.2;">GPT-5<br>Mini</div>
-            <div style="width:10%;text-align:center;font-size:0.62rem;color:var(--text-secondary);line-height:1.2;">Gemini<br>3.1 Pro</div>
-            <div style="width:10%;text-align:center;font-size:0.62rem;color:var(--text-secondary);line-height:1.2;">GPT-OSS<br>20B</div>
-            <div style="width:10%;text-align:center;font-size:0.62rem;color:var(--text-secondary);line-height:1.2;">Gemini<br>2.5 Pro</div>
-            <div style="width:10%;text-align:center;font-size:0.62rem;color:var(--text-secondary);line-height:1.2;">GPT-5<br>Codex</div>
-            <div style="width:10%;text-align:center;font-size:0.62rem;color:var(--text-secondary);line-height:1.2;">GPT-OSS<br>120B</div>
-            <div style="width:10%;text-align:center;font-size:0.62rem;color:var(--text-secondary);line-height:1.2;">Gemini<br>2.5 Flash</div>
-            <div style="width:10%;text-align:center;font-size:0.62rem;color:var(--text-secondary);line-height:1.2;">GPT-5<br>Nano</div>
-            <div style="width:10%;text-align:center;font-size:0.62rem;color:var(--text-secondary);line-height:1.2;">Nemotron<br>49B</div>
+            <div class="chart-x-label" style="width:10%;">GPT-5</div>
+            <div class="chart-x-label" style="width:10%;">GPT-5<br>Mini</div>
+            <div class="chart-x-label" style="width:10%;">Gemini<br>3.1 Pro</div>
+            <div class="chart-x-label" style="width:10%;">GPT-OSS<br>20B</div>
+            <div class="chart-x-label" style="width:10%;">Gemini<br>2.5 Pro</div>
+            <div class="chart-x-label" style="width:10%;">GPT-5<br>Codex</div>
+            <div class="chart-x-label" style="width:10%;">GPT-OSS<br>120B</div>
+            <div class="chart-x-label" style="width:10%;">Gemini<br>2.5 Flash</div>
+            <div class="chart-x-label" style="width:10%;">GPT-5<br>Nano</div>
+            <div class="chart-x-label" style="width:10%;">Nemotron<br>49B</div>
           </div>
           <p class="chart-note" style="margin-top: 8px;">Recall of the 10 top-performing LLMs. Sorted by real-world + synthetic recall.</p>
         </div>
@@ -1361,17 +1393,17 @@
             <h3>Error Analysis</h3>
             <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 12px;">Our evaluation and manual error analysis revealed three main failure modes for discrepancy detection:</p>
             <div style="display: flex; flex-direction: column; gap: 8px; flex: 1;">
-              <div style="background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; border-left: 3px solid var(--accent); flex: 1;">
-                <div style="font-size: 0.88rem; font-weight: 700; color: var(--text); margin-bottom: 2px;"><i class="fa-solid fa-scissors" style="margin-right: 5px; font-size: 0.72rem; color: var(--accent);"></i> Paper Omissions</div>
-                <div style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45;">Models struggle when implementation details exist in code but are never mentioned in the paper. With no textual anchor to match against, LLMs have no signal to detect the mismatch. This is the majority of failures.</div>
+              <div class="analysis-card" style="border-left: 3px solid var(--accent);">
+                <div class="analysis-card-title"><i class="fa-solid fa-scissors" style="color: var(--accent);"></i> Paper Omissions</div>
+                <div class="analysis-card-desc">Models struggle when implementation details exist in code but are never mentioned in the paper. With no textual anchor to match against, LLMs have no signal to detect the mismatch. This is the majority of failures.</div>
               </div>
-              <div style="background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; border-left: 3px solid var(--teal); flex: 1;">
-                <div style="font-size: 0.88rem; font-weight: 700; color: var(--text); margin-bottom: 2px;"><i class="fa-solid fa-ruler" style="margin-right: 5px; font-size: 0.72rem; color: var(--teal);"></i> Long Context</div>
-                <div style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45;">Performance drops significantly on large codebases exceeding 100k tokens. Models struggle to maintain coherence across the full paper and multi-file repositories simultaneously, missing discrepancies buried deep in the code.</div>
+              <div class="analysis-card" style="border-left: 3px solid var(--teal);">
+                <div class="analysis-card-title"><i class="fa-solid fa-ruler" style="color: var(--teal);"></i> Long Context</div>
+                <div class="analysis-card-desc">Performance drops significantly on large codebases exceeding 100k tokens. Models struggle to maintain coherence across the full paper and multi-file repositories simultaneously, missing discrepancies buried deep in the code.</div>
               </div>
-              <div style="background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; border-left: 3px solid var(--amber); flex: 1;">
-                <div style="font-size: 0.88rem; font-weight: 700; color: var(--text); margin-bottom: 2px;"><i class="fa-solid fa-clock-rotate-left" style="margin-right: 5px; font-size: 0.72rem; color: var(--amber);"></i> Recent Papers</div>
-                <div style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45;">Models perform worse on papers published after their training cutoff, showing degradation on non-contaminated data. This suggests detection ability on older papers may partly stem from memorization.</div>
+              <div class="analysis-card" style="border-left: 3px solid var(--amber);">
+                <div class="analysis-card-title"><i class="fa-solid fa-clock-rotate-left" style="color: var(--amber);"></i> Recent Papers</div>
+                <div class="analysis-card-desc">Models perform worse on papers published after their training cutoff, showing degradation on non-contaminated data. This suggests detection ability on older papers may partly stem from memorization.</div>
               </div>
             </div>
           </div>
@@ -1385,7 +1417,7 @@
       <div class="container">
         <div class="section-label">Takeaways</div>
         <h2><span class="title-gradient">Conclusions</span></h2>
-        <div class="fade-up" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;">
+        <div class="fade-up" class="grid-2">
           <div class="conclusion-card">
             <h4><i class="fa-solid fa-newspaper"></i> Publishing</h4>
             <p>46.7% recall means AI can't reliably check alignment&mdash;human-in-the-loop verification remains essential.</p>
