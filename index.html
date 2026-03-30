@@ -153,6 +153,9 @@
       box-shadow: var(--shadow-sm); transition: all 0.25s;
     }
     .card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    .card-title { font-size: 0.88rem; font-weight: 700; color: var(--text); margin-bottom: 3px; }
+    .card-title i { margin-right: 5px; font-size: 0.78rem; }
+    .card-desc { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45; }
 
     /* ==================== NAV ==================== */
     .topnav {
@@ -556,14 +559,10 @@
     /* ==================== GETTING STARTED ==================== */
     .resource-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 32px; }
     .taxonomy-card-new { padding: 12px 14px; }
-    .taxonomy-card-new .tc-title { font-size: 0.88rem; font-weight: 700; color: var(--text); margin-bottom: 3px; }
-    .taxonomy-card-new .tc-title i { margin-right: 5px; font-size: 0.78rem; }
-    .taxonomy-card-new .tc-desc { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45; }
+    /* .tc-title and .tc-desc use .card-title and .card-desc base classes */
 
     .conclusion-card { padding: 18px 20px; border-top: 3px solid var(--accent); }
-    .conclusion-card h4 { font-size: 0.88rem; font-weight: 700; color: var(--text); margin-bottom: 6px; }
-    .conclusion-card h4 i { margin-right: 5px; color: var(--accent); font-size: 0.78rem; }
-    .conclusion-card p { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.55; }
+    .conclusion-card .card-title i { color: var(--accent); }
 
     .resource-card { padding: 28px 20px; position: relative; overflow: hidden; }
     .resource-card::before {
@@ -579,8 +578,9 @@
     .card-icon.ci-amber { background: #fffbeb; color: var(--amber); }
     .card-icon.ci-dark { background: #f1f5f9; color: var(--text); }
     .card-icon.ci-blue { background: var(--blue-wash); color: var(--blue); }
-    .resource-card h4 { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 6px; }
-    .resource-card p { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; }
+    /* resource-card h4/p use .card-title/.card-desc base classes, with size override */
+    .resource-card .card-title { font-size: 1rem; }
+    .resource-card .card-desc { font-size: 0.88rem; }
     .resource-card a { color: var(--accent); text-decoration: none; font-weight: 600; }
     .resource-card a:hover { color: var(--accent-dark); }
 
@@ -794,9 +794,7 @@
 
     /* Analysis error card (inline in evaluation) */
     .analysis-card { padding: 10px 12px; flex: 1; border-radius: 8px; }
-    .analysis-card-title { font-size: 0.88rem; font-weight: 700; color: var(--text); margin-bottom: 2px; }
-    .analysis-card-title i { margin-right: 5px; font-size: 0.72rem; }
-    .analysis-card-desc { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.45; }
+    /* .analysis-card-title and .analysis-card-desc use .card-title and .card-desc */
 
     /* ==================== ANIMATIONS ==================== */
     .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1); }
@@ -1010,32 +1008,32 @@
           <p style="font-weight: 600; color: var(--text); margin-bottom: 8px; font-size: 0.88rem;">These discrepancies manifest as three types:</p>
           <div class="grid-3" style="margin-bottom: 14px;">
             <div class="card taxonomy-card-new border-teal">
-              <div class="tc-title"><i class="fa-solid fa-arrows-left-right" style="color: var(--teal);"></i> Difference</div>
-              <div class="tc-desc">Code implements a logic distinct from the paper (e.g., L1 vs. L2 normalization)</div>
+              <div class="card-title"><i class="fa-solid fa-arrows-left-right" style="color: var(--teal);"></i> Difference</div>
+              <div class="card-desc">Code implements a logic distinct from the paper (e.g., L1 vs. L2 normalization)</div>
             </div>
             <div class="card taxonomy-card-new border-teal">
-              <div class="tc-title"><i class="fa-solid fa-file-circle-minus" style="color: var(--teal);"></i> Paper Omission</div>
-              <div class="tc-desc">Code includes critical components missing from the paper description</div>
+              <div class="card-title"><i class="fa-solid fa-file-circle-minus" style="color: var(--teal);"></i> Paper Omission</div>
+              <div class="card-desc">Code includes critical components missing from the paper description</div>
             </div>
             <div class="card taxonomy-card-new border-teal">
-              <div class="tc-title"><i class="fa-solid fa-code" style="color: var(--teal);"></i> Code Omission</div>
-              <div class="tc-desc">A step described in the paper is absent from the repository</div>
+              <div class="card-title"><i class="fa-solid fa-code" style="color: var(--teal);"></i> Code Omission</div>
+              <div class="card-desc">A step described in the paper is absent from the repository</div>
             </div>
           </div>
 
           <p style="font-weight: 600; color: var(--text); margin-bottom: 8px; font-size: 0.88rem;">We distinguish these from engineering artifacts:</p>
           <div class="grid-3">
             <div class="card taxonomy-card-new" style="opacity: 0.65;">
-              <div class="tc-title" style="color: var(--text-secondary);"><i class="fa-solid fa-times" style="color: var(--text-secondary); opacity: 0.5;"></i> Bugs</div>
-              <div class="tc-desc">Independent of the paper's scientific description</div>
+              <div class="card-title" style="color: var(--text-secondary);"><i class="fa-solid fa-times" style="color: var(--text-secondary); opacity: 0.5;"></i> Bugs</div>
+              <div class="card-desc">Independent of the paper's scientific description</div>
             </div>
             <div class="card taxonomy-card-new" style="opacity: 0.65;">
-              <div class="tc-title" style="color: var(--text-secondary);"><i class="fa-solid fa-times" style="color: var(--text-secondary); opacity: 0.5;"></i> Hyperparameters</div>
-              <div class="tc-desc">Configurable via CLI arguments or config files</div>
+              <div class="card-title" style="color: var(--text-secondary);"><i class="fa-solid fa-times" style="color: var(--text-secondary); opacity: 0.5;"></i> Hyperparameters</div>
+              <div class="card-desc">Configurable via CLI arguments or config files</div>
             </div>
             <div class="card taxonomy-card-new" style="opacity: 0.65;">
-              <div class="tc-title" style="color: var(--text-secondary);"><i class="fa-solid fa-times" style="color: var(--text-secondary); opacity: 0.5;"></i> Trivial Details</div>
-              <div class="tc-desc">Standard engineering practices (e.g., numerical stability)</div>
+              <div class="card-title" style="color: var(--text-secondary);"><i class="fa-solid fa-times" style="color: var(--text-secondary); opacity: 0.5;"></i> Trivial Details</div>
+              <div class="card-desc">Standard engineering practices (e.g., numerical stability)</div>
             </div>
           </div>
         </div>
@@ -1140,16 +1138,16 @@
         <h3 class="fade-up" style="font-size: 1.1rem; margin-bottom: 10px;">Discrepancy <span style="background: linear-gradient(135deg, var(--accent), var(--teal)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Types</span></h3>
         <div class="fade-up" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 24px;">
           <div class="card taxonomy-card-new border-teal">
-            <div class="tc-title"><i class="fa-solid fa-arrows-left-right" style="color: var(--teal);"></i> Difference</div>
-            <div class="tc-desc">Paper and code describe conflicting approaches</div>
+            <div class="card-title"><i class="fa-solid fa-arrows-left-right" style="color: var(--teal);"></i> Difference</div>
+            <div class="card-desc">Paper and code describe conflicting approaches</div>
           </div>
           <div class="card taxonomy-card-new border-teal">
-            <div class="tc-title"><i class="fa-solid fa-file-circle-minus" style="color: var(--teal);"></i> Paper Omission</div>
-            <div class="tc-desc">Code includes components missing from the paper</div>
+            <div class="card-title"><i class="fa-solid fa-file-circle-minus" style="color: var(--teal);"></i> Paper Omission</div>
+            <div class="card-desc">Code includes components missing from the paper</div>
           </div>
           <div class="card taxonomy-card-new border-teal">
-            <div class="tc-title"><i class="fa-solid fa-code" style="color: var(--teal);"></i> Code Omission</div>
-            <div class="tc-desc">Paper describes a step absent from the code</div>
+            <div class="card-title"><i class="fa-solid fa-code" style="color: var(--teal);"></i> Code Omission</div>
+            <div class="card-desc">Paper describes a step absent from the code</div>
           </div>
         </div>
 
@@ -1157,28 +1155,28 @@
         <h3 class="fade-up" style="font-size: 1.1rem; margin-bottom: 10px;">Discrepancy <span style="background: linear-gradient(135deg, var(--accent), var(--amber)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Categories</span></h3>
         <div class="fade-up" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 28px;">
           <div class="card taxonomy-card-new border-amber">
-            <div class="tc-title"><i class="fa-solid fa-diagram-project" style="color: var(--amber);"></i> Algorithm</div>
-            <div class="tc-desc">Step order, operations, or core logic differs between paper and code</div>
+            <div class="card-title"><i class="fa-solid fa-diagram-project" style="color: var(--amber);"></i> Algorithm</div>
+            <div class="card-desc">Step order, operations, or core logic differs between paper and code</div>
           </div>
           <div class="card taxonomy-card-new border-amber">
-            <div class="tc-title"><i class="fa-solid fa-cubes" style="color: var(--amber);"></i> Model</div>
-            <div class="tc-desc">Architectural choices or initialization methods don't match</div>
+            <div class="card-title"><i class="fa-solid fa-cubes" style="color: var(--amber);"></i> Model</div>
+            <div class="card-desc">Architectural choices or initialization methods don't match</div>
           </div>
           <div class="card taxonomy-card-new border-amber">
-            <div class="tc-title"><i class="fa-solid fa-scale-unbalanced" style="color: var(--amber);"></i> Loss</div>
-            <div class="tc-desc">Loss function definition, terms, or weighting differs</div>
+            <div class="card-title"><i class="fa-solid fa-scale-unbalanced" style="color: var(--amber);"></i> Loss</div>
+            <div class="card-desc">Loss function definition, terms, or weighting differs</div>
           </div>
           <div class="card taxonomy-card-new border-amber">
-            <div class="tc-title"><i class="fa-solid fa-chart-bar" style="color: var(--amber);"></i> Evaluation</div>
-            <div class="tc-desc">Evaluation metrics, logic, or test scripts computed differently</div>
+            <div class="card-title"><i class="fa-solid fa-chart-bar" style="color: var(--amber);"></i> Evaluation</div>
+            <div class="card-desc">Evaluation metrics, logic, or test scripts computed differently</div>
           </div>
           <div class="card taxonomy-card-new border-amber">
-            <div class="tc-title"><i class="fa-solid fa-database" style="color: var(--amber);"></i> Data</div>
-            <div class="tc-desc">Dataset usage, preprocessing, augmentation, or filtering differs</div>
+            <div class="card-title"><i class="fa-solid fa-database" style="color: var(--amber);"></i> Data</div>
+            <div class="card-desc">Dataset usage, preprocessing, augmentation, or filtering differs</div>
           </div>
           <div class="card taxonomy-card-new border-amber">
-            <div class="tc-title"><i class="fa-solid fa-graduation-cap" style="color: var(--amber);"></i> Training</div>
-            <div class="tc-desc">Learning process, schedule, or optimization strategy changed</div>
+            <div class="card-title"><i class="fa-solid fa-graduation-cap" style="color: var(--amber);"></i> Training</div>
+            <div class="card-desc">Learning process, schedule, or optimization strategy changed</div>
           </div>
         </div>
 
@@ -1397,20 +1395,20 @@
         <h2><span class="title-gradient">Conclusions</span></h2>
         <div class="fade-up" class="grid-2">
           <div class="card conclusion-card">
-            <h4><i class="fa-solid fa-newspaper"></i> Publishing</h4>
-            <p>46.7% recall means AI can't reliably check alignment&mdash;human-in-the-loop verification remains essential.</p>
+            <h4 class="card-title"><i class="fa-solid fa-newspaper"></i> Publishing</h4>
+            <p class="card-desc">46.7% recall means AI can't reliably check alignment&mdash;human-in-the-loop verification remains essential.</p>
           </div>
           <div class="card conclusion-card">
-            <h4><i class="fa-solid fa-robot"></i> AI Scientists</h4>
-            <p>Autonomous AI-generated code can't be reliably verified by LLMs alone&mdash;human oversight needed.</p>
+            <h4 class="card-title"><i class="fa-solid fa-robot"></i> AI Scientists</h4>
+            <p class="card-desc">Autonomous AI-generated code can't be reliably verified by LLMs alone&mdash;human oversight needed.</p>
           </div>
           <div class="card conclusion-card">
-            <h4><i class="fa-solid fa-eye-slash"></i> Paper Omissions</h4>
-            <p>The hardest discrepancy type to detect&mdash;details present in code but missing from the paper remain largely invisible to LLMs.</p>
+            <h4 class="card-title"><i class="fa-solid fa-eye-slash"></i> Paper Omissions</h4>
+            <p class="card-desc">The hardest discrepancy type to detect&mdash;details present in code but missing from the paper remain largely invisible to LLMs.</p>
           </div>
           <div class="card conclusion-card">
-            <h4><i class="fa-solid fa-flask"></i> Future Work</h4>
-            <p>Better automated paper-code consistency methods are crucial as AI scales in scientific discovery.</p>
+            <h4 class="card-title"><i class="fa-solid fa-flask"></i> Future Work</h4>
+            <p class="card-desc">Better automated paper-code consistency methods are crucial as AI scales in scientific discovery.</p>
           </div>
         </div>
       </div>
@@ -1425,15 +1423,15 @@
 
         <div class="resource-grid fade-up">
           <div class="card resource-card">
-            <div class="card resource-card-head"><div class="card-icon ci-amber"><i class="fa-solid fa-database"></i></div><h4>Dataset</h4></div>
+            <div class="resource-card-head"><div class="card-icon ci-amber"><i class="fa-solid fa-database"></i></div><h4>Dataset</h4></div>
             <p>Available on <a href="https://huggingface.co/datasets/UKPLab/scicoqa" target="_blank">Hugging Face</a> for easy access and integration.</p>
           </div>
           <div class="card resource-card">
-            <div class="card resource-card-head"><div class="card-icon ci-dark"><i class="fa-brands fa-github"></i></div><h4>Code</h4></div>
+            <div class="resource-card-head"><div class="card-icon ci-dark"><i class="fa-brands fa-github"></i></div><h4>Code</h4></div>
             <p>The complete codebase for data collection, inference, and evaluation is on <a href="https://github.com/UKPLab/scicoqa" target="_blank">GitHub</a>.</p>
           </div>
           <div class="card resource-card">
-            <div class="card resource-card-head"><div class="card-icon ci-blue"><i class="fa-solid fa-display"></i></div><h4>Demo</h4></div>
+            <div class="resource-card-head"><div class="card-icon ci-blue"><i class="fa-solid fa-display"></i></div><h4>Demo</h4></div>
             <p>Try discrepancy detection interactively in our <a href="https://huggingface.co/spaces/UKPLab/scicoqa" target="_blank">Hugging Face Space</a> demo.</p>
           </div>
         </div>
