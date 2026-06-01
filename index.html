@@ -224,6 +224,16 @@
     .authors a:hover { color: var(--accent-dark); }
     .authors sup { font-size: 0.65em; margin-left: 1px; color: var(--text-secondary); }
     .affiliations { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 6px; }
+    .hero-venue {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-top: 20px; padding: 6px 16px;
+      border: 1px solid #d6e1ee; border-radius: 100px;
+      background: var(--accent-wash);
+      font-size: 0.8rem; font-weight: 500; color: var(--accent);
+      letter-spacing: 0.2px;
+    }
+    .hero-venue i { font-size: 0.8rem; opacity: 0.85; }
+    .hero-venue strong { font-weight: 700; }
 
     /* ==================== LINKS ==================== */
     .links { padding: 8px 0 56px; text-align: center; }
@@ -286,6 +296,11 @@
     }
     .figure-wrapper img { width: 100%; height: auto; display: block; }
     .figure-caption { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin-top: 12px; }
+
+    /* ==================== VIDEO ==================== */
+    .video-wrapper { padding: 12px; }
+    .video-embed { position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 12px; overflow: hidden; background: var(--text); }
+    .video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 
     /* ==================== PIPELINE DIAGRAM ==================== */
     .pipe-diagram { display: flex; flex-direction: column; gap: 0; }
@@ -838,6 +853,7 @@
     <div class="topnav-inner">
       <a href="#" class="topnav-title">SciCoQA</a>
       <div class="topnav-links">
+        <a href="#video" data-section="video">Video</a>
         <a href="#overview" data-section="overview">Collection</a>
         <a href="#discrepancies" data-section="discrepancies">Discrepancies</a>
         <a href="#examples" data-section="examples">Examples</a>
@@ -864,6 +880,7 @@
       <div class="affiliations">
         Ubiquitous Knowledge Processing Lab &middot; Technical University of Darmstadt
       </div>
+      <div class="hero-venue"><i class="fa-solid fa-award"></i> Accepted at <strong>ACL&nbsp;2026</strong></div>
     </div>
   </section>
 
@@ -875,6 +892,7 @@
         <a href="https://github.com/UKPLab/scicoqa" class="link-btn" target="_blank"><i class="fa-brands fa-github"></i> Code</a>
         <a href="https://huggingface.co/datasets/UKPLab/scicoqa" class="link-btn" target="_blank"><i class="fa-solid fa-database"></i> Data</a>
         <a href="https://huggingface.co/spaces/UKPLab/scicoqa" class="link-btn" target="_blank"><i class="fa-solid fa-display"></i> Demo</a>
+        <a href="https://www.youtube.com/watch?v=9W-GI317wjs" class="link-btn" target="_blank"><i class="fa-brands fa-youtube"></i> Video</a>
         <button class="link-btn" onclick="copyBibtex()" style="cursor:pointer;"><i class="fa-solid fa-quote-left"></i> <span class="hero-cite-text">Cite</span></button>
       </div>
     </div>
@@ -906,8 +924,21 @@
       </div>
     </section>
 
+    <!-- VIDEO -->
+    <section class="section no-slide" id="video">
+      <div class="container">
+        <div class="section-label">Watch</div>
+        <h2>Video <span class="title-gradient">Overview</span></h2>
+        <div class="figure-wrapper fade-up video-wrapper">
+          <div class="video-embed">
+            <iframe src="https://www.youtube-nocookie.com/embed/9W-GI317wjs" title="SciCoQA: Quality Assurance for Scientific Paper-Code Alignment" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- OVERVIEW FIGURE (web-native) -->
-    <section class="section" id="overview">
+    <section class="section-alt" id="overview">
       <div class="container">
         <div class="section-label">Data Collection</div>
         <h2>How SciCoQA Was <span class="title-gradient">Collected</span></h2>
@@ -993,7 +1024,7 @@
     </section>
 
     <!-- PAPER-CODE DISCREPANCIES -->
-    <section class="section-alt" id="discrepancies">
+    <section class="section" id="discrepancies">
       <div class="container">
         <div class="section-label">Definition</div>
         <h2>Paper-Code <span class="title-gradient">Discrepancies</span></h2>
@@ -1042,7 +1073,7 @@
     </section>
 
     <!-- EXAMPLES -->
-    <section class="section" id="examples">
+    <section class="section-alt" id="examples">
       <div class="container">
         <div class="section-label">Dataset</div>
         <h2>SciCoQA <span class="title-gradient">Examples</span></h2>
@@ -1129,7 +1160,7 @@
     </section>
 
     <!-- TAXONOMY -->
-    <section class="section-alt" id="taxonomy">
+    <section class="section" id="taxonomy">
       <div class="container">
         <div class="section-label">Classification</div>
         <h2>Discrepancy <span class="title-gradient">Taxonomy</span></h2>
@@ -1241,7 +1272,7 @@
     </section>
 
     <!-- EVALUATION -->
-    <section class="section" id="evaluation">
+    <section class="section-alt" id="evaluation">
       <div class="container">
         <div class="section-label">Experiments</div>
         <h2><span class="title-gradient">Evaluation</span></h2>
@@ -1339,7 +1370,7 @@
     </section>
 
     <!-- ANALYSIS -->
-    <section class="section-alt" id="analysis">
+    <section class="section" id="analysis">
       <div class="container">
         <div class="section-label">Deep Dive</div>
         <h2><span class="title-gradient">Analysis</span></h2>
@@ -1390,7 +1421,7 @@
     </section>
 
     <!-- CONCLUSIONS -->
-    <section class="section" id="conclusions">
+    <section class="section-alt" id="conclusions">
       <div class="container">
         <div class="section-label">Takeaways</div>
         <h2><span class="title-gradient">Conclusions</span></h2>
@@ -1416,7 +1447,7 @@
     </section>
 
     <!-- GETTING STARTED -->
-    <section class="section-alt" id="start">
+    <section class="section" id="start">
       <div class="container">
         <div class="section-label">Resources</div>
         <h2>Getting <span class="title-gradient">Started</span></h2>
@@ -1466,7 +1497,7 @@ example = real_data[<span class="num">0</span>]
     </section>
 
     <!-- CITATION -->
-    <section class="section" id="citation">
+    <section class="section-alt" id="citation">
       <div class="container">
         <div class="section-label">Reference</div>
         <h2><span class="title-gradient">Citation</span></h2>
@@ -1496,6 +1527,7 @@ example = real_data[<span class="num">0</span>]
         <a href="mailto:tim.baumgaertner@tu-darmstadt.de"><i class="fa-solid fa-envelope"></i> Contact</a>
         <a href="https://github.com/UKPLab/scicoqa" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
         <a href="https://huggingface.co/datasets/UKPLab/scicoqa" target="_blank"><i class="fa-solid fa-database"></i> Dataset</a>
+        <a href="https://www.youtube.com/watch?v=9W-GI317wjs" target="_blank"><i class="fa-brands fa-youtube"></i> Video</a>
         <a href="https://www.ukp.tu-darmstadt.de" target="_blank"><i class="fa-solid fa-building-columns"></i> UKP Lab</a>
         <a href="https://bsky.app/profile/timbmg.bsky.social" target="_blank"><i class="fa-brands fa-bluesky"></i> @timbmg</a>
       </div>
@@ -1534,7 +1566,7 @@ example = real_data[<span class="num">0</span>]
 
     // ==================== NAV ACTIVE ====================
     const navLinks = document.querySelectorAll('.topnav-links a');
-    const sectionIds = ['abstract', 'overview', 'discrepancies', 'examples', 'taxonomy', 'evaluation', 'analysis', 'conclusions', 'start', 'citation'];
+    const sectionIds = ['abstract', 'video', 'overview', 'discrepancies', 'examples', 'taxonomy', 'evaluation', 'analysis', 'conclusions', 'start', 'citation'];
     const sectionEls = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
     const sectionObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -1638,7 +1670,8 @@ example = real_data[<span class="num">0</span>]
     function getSlides() {
       const hero = document.querySelector('section.hero');
       const links = document.querySelector('section.links');
-      const mainSections = Array.from(document.querySelectorAll('main > section'));
+      const mainSections = Array.from(document.querySelectorAll('main > section'))
+        .filter(sec => !sec.classList.contains('no-slide'));
       // Slide 0 = hero + links combined, then each main section
       const slides = [{ elements: [hero, links], label: 'title' }];
       mainSections.forEach(sec => slides.push({ elements: [sec], label: sec.id || 'section' }));
