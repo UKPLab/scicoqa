@@ -224,6 +224,16 @@
     .authors a:hover { color: var(--accent-dark); }
     .authors sup { font-size: 0.65em; margin-left: 1px; color: var(--text-secondary); }
     .affiliations { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 6px; }
+    .hero-venue {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-top: 20px; padding: 6px 16px;
+      border: 1px solid #d6e1ee; border-radius: 100px;
+      background: var(--accent-wash);
+      font-size: 0.8rem; font-weight: 500; color: var(--accent);
+      letter-spacing: 0.2px;
+    }
+    .hero-venue i { font-size: 0.8rem; opacity: 0.85; }
+    .hero-venue strong { font-weight: 700; }
 
     /* ==================== LINKS ==================== */
     .links { padding: 8px 0 56px; text-align: center; }
@@ -870,6 +880,7 @@
       <div class="affiliations">
         Ubiquitous Knowledge Processing Lab &middot; Technical University of Darmstadt
       </div>
+      <div class="hero-venue"><i class="fa-solid fa-award"></i> Accepted at <strong>ACL&nbsp;2026</strong></div>
     </div>
   </section>
 
@@ -914,7 +925,7 @@
     </section>
 
     <!-- VIDEO -->
-    <section class="section" id="video">
+    <section class="section no-slide" id="video">
       <div class="container">
         <div class="section-label">Watch</div>
         <h2>Video <span class="title-gradient">Overview</span></h2>
@@ -1516,6 +1527,7 @@ example = real_data[<span class="num">0</span>]
         <a href="mailto:tim.baumgaertner@tu-darmstadt.de"><i class="fa-solid fa-envelope"></i> Contact</a>
         <a href="https://github.com/UKPLab/scicoqa" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
         <a href="https://huggingface.co/datasets/UKPLab/scicoqa" target="_blank"><i class="fa-solid fa-database"></i> Dataset</a>
+        <a href="https://www.youtube.com/watch?v=9W-GI317wjs" target="_blank"><i class="fa-brands fa-youtube"></i> Video</a>
         <a href="https://www.ukp.tu-darmstadt.de" target="_blank"><i class="fa-solid fa-building-columns"></i> UKP Lab</a>
         <a href="https://bsky.app/profile/timbmg.bsky.social" target="_blank"><i class="fa-brands fa-bluesky"></i> @timbmg</a>
       </div>
@@ -1658,7 +1670,8 @@ example = real_data[<span class="num">0</span>]
     function getSlides() {
       const hero = document.querySelector('section.hero');
       const links = document.querySelector('section.links');
-      const mainSections = Array.from(document.querySelectorAll('main > section'));
+      const mainSections = Array.from(document.querySelectorAll('main > section'))
+        .filter(sec => !sec.classList.contains('no-slide'));
       // Slide 0 = hero + links combined, then each main section
       const slides = [{ elements: [hero, links], label: 'title' }];
       mainSections.forEach(sec => slides.push({ elements: [sec], label: sec.id || 'section' }));
