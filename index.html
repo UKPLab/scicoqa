@@ -175,7 +175,7 @@
     .topnav-links { display: flex; gap: 4px; list-style: none; }
     .topnav-links a {
       font-size: 0.78rem; font-weight: 600; color: var(--text-secondary); text-decoration: none;
-      padding: 6px 12px; border-radius: 8px; transition: all 0.2s;
+      padding: 6px 9px; border-radius: 8px; transition: all 0.2s; white-space: nowrap;
     }
     .topnav-links a:hover { color: var(--accent); background: var(--accent-wash); }
     .topnav-links a.nav-active {
@@ -260,6 +260,28 @@
       color: #fff !important; box-shadow: 0 4px 20px rgba(30,58,95,0.35) !important;
     }
     @media (max-width: 600px) { .link-btn { padding: 9px 18px; font-size: 0.82rem; } }
+
+    /* ==================== NEWS ==================== */
+    .section.news-section { padding: 0 0 64px; }
+    .news-list { max-width: 780px; }
+    .news-item {
+      display: flex; gap: 20px; align-items: baseline;
+      padding: 14px 0; border-bottom: 1px solid var(--border);
+    }
+    .news-item:last-child { border-bottom: none; }
+    .news-date {
+      flex: 0 0 108px; font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem; font-weight: 500; color: var(--text-secondary);
+      white-space: nowrap; letter-spacing: 0.3px;
+    }
+    .news-text { font-size: 0.95rem; line-height: 1.6; }
+    .news-text i { color: var(--accent); font-size: 0.85rem; margin-right: 6px; }
+    .news-text a { color: var(--accent); font-weight: 500; text-decoration: none; border-bottom: 1px solid #d6e1ee; transition: border-color 0.2s; }
+    .news-text a:hover { border-color: var(--accent); }
+    @media (max-width: 600px) {
+      .news-item { flex-direction: column; gap: 2px; }
+      .news-date { flex: none; }
+    }
 
     /* ==================== SECTIONS ==================== */
     .section { padding: 72px 0; }
@@ -853,6 +875,7 @@
     <div class="topnav-inner">
       <a href="#" class="topnav-title">SciCoQA</a>
       <div class="topnav-links">
+        <a href="#news" data-section="news">News</a>
         <a href="#video" data-section="video">Video</a>
         <a href="#overview" data-section="overview">Collection</a>
         <a href="#discrepancies" data-section="discrepancies">Discrepancies</a>
@@ -880,7 +903,7 @@
       <div class="affiliations">
         Ubiquitous Knowledge Processing Lab &middot; Technical University of Darmstadt
       </div>
-      <div class="hero-venue"><i class="fa-solid fa-award"></i> Accepted at <strong>ACL&nbsp;2026</strong></div>
+      <div class="hero-venue"><i class="fa-solid fa-award"></i> <span><strong>ACL&nbsp;2026</strong> &middot; SAC Highlight Award</span></div>
     </div>
   </section>
 
@@ -899,6 +922,28 @@
   </section>
 
   <main>
+
+    <!-- NEWS -->
+    <section class="section news-section no-slide" id="news">
+      <div class="container">
+        <div class="section-label">Updates</div>
+        <h2>Latest <span class="title-gradient">News</span></h2>
+        <div class="news-list">
+          <div class="news-item fade-up">
+            <span class="news-date">Jul 12, 2026</span>
+            <span class="news-text"><i class="fa-solid fa-code-compare"></i> <a href="https://cspaper.org/code-check" target="_blank">CSPaper</a> launched <strong>Code Check</strong>, a paper&ndash;code consistency tool built on the SciCoQA benchmark. They are using an agentic setup to detect paper-code discrepancies, improving over the baselines in the paper <a href="https://cspaper.org/articles/code-check" target="_blank">[blog post]</a>.</span>
+          </div>
+          <div class="news-item fade-up stagger-1">
+            <span class="news-date">Jul 7, 2026</span>
+            <span class="news-text"><i class="fa-solid fa-trophy"></i> SciCoQA received a <strong>SAC Highlight Award</strong> at ACL 2026, given by the Senior Area Chairs to papers they consider particularly outstanding &mdash; for originality, significance, technical excellence, reproducibility, or potential impact <a href="https://www.linkedin.com/posts/timbmg_acl2026-share-7480384627858186240-OqQT/" target="_blank">[LinkedIn post]</a>.</span>
+          </div>
+          <div class="news-item fade-up stagger-2">
+            <span class="news-date">Apr 4, 2026</span>
+            <span class="news-text"><i class="fa-solid fa-circle-check"></i> SciCoQA is accepted to the main conference of <strong>ACL 2026</strong> in San Diego <a href="https://aclanthology.org/2026.acl-long.1795/" target="_blank">[ACL Anthology]</a>.</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- TL;DR + STATS -->
     <section class="section-alt" id="abstract">
