@@ -224,16 +224,15 @@
     .authors a:hover { color: var(--accent-dark); }
     .authors sup { font-size: 0.65em; margin-left: 1px; color: var(--text-secondary); }
     .affiliations { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 6px; }
-    .hero-venue {
+    .affiliations span { display: inline-block; margin: 0 10px; }
+    .award-badge {
       display: inline-flex; align-items: center; gap: 8px;
-      margin-top: 20px; padding: 6px 16px;
-      border: 1px solid #d6e1ee; border-radius: 100px;
-      background: var(--accent-wash);
-      font-size: 0.8rem; font-weight: 500; color: var(--accent);
-      letter-spacing: 0.2px;
+      background: linear-gradient(135deg, #fef9c3, #fef3c7); color: #92400e;
+      border: 1.5px solid #fbbf24; padding: 10px 24px; border-radius: 100px;
+      font-size: 0.88rem; font-weight: 700; margin-bottom: 28px;
+      box-shadow: 0 2px 12px rgba(217,119,6,0.15);
     }
-    .hero-venue i { font-size: 0.8rem; opacity: 0.85; }
-    .hero-venue strong { font-weight: 700; }
+    .award-badge i { color: var(--amber); }
 
     /* ==================== LINKS ==================== */
     .links { padding: 8px 0 56px; text-align: center; }
@@ -262,7 +261,7 @@
     @media (max-width: 600px) { .link-btn { padding: 9px 18px; font-size: 0.82rem; } }
 
     /* ==================== NEWS ==================== */
-    .section.news-section { padding: 0 0 64px; }
+    .section-alt.news-section { padding: 48px 0 64px; }
     .news-list { max-width: 780px; }
     .news-item {
       display: flex; gap: 20px; align-items: baseline;
@@ -896,14 +895,14 @@
   <section class="hero">
     <div class="container">
       <h1 class="paper-title">SciCoQA: Quality Assurance for Scientific <span class="title-gradient">Paper-Code Alignment</span></h1>
+      <div class="award-badge"><i class="fa-solid fa-trophy"></i> ACL 2026 &middot; SAC Highlight Award</div>
       <div class="authors">
-        <a href="https://scholar.google.com/citations?user=pwDGJYsAAAAJ&hl=en" target="_blank">Tim Baumg&auml;rtner</a> and
-        <a href="https://scholar.google.com/citations?user=t3A39e8AAAAJ&hl=en" target="_blank">Iryna Gurevych</a>
+        <a href="https://scholar.google.com/citations?user=pwDGJYsAAAAJ&hl=en" target="_blank">Tim Baumg&auml;rtner</a><sup>1</sup>,
+        <a href="https://scholar.google.com/citations?user=t3A39e8AAAAJ&hl=en" target="_blank">Iryna Gurevych</a><sup>1</sup>
       </div>
       <div class="affiliations">
-        Ubiquitous Knowledge Processing Lab &middot; Technical University of Darmstadt
+        <span><sup>1</sup> UKP Lab, TU Darmstadt &amp; ATHENE</span>
       </div>
-      <div class="hero-venue"><i class="fa-solid fa-award"></i> <span><strong>ACL&nbsp;2026</strong> &middot; SAC Highlight Award</span></div>
     </div>
   </section>
 
@@ -925,7 +924,7 @@
   <main>
 
     <!-- NEWS -->
-    <section class="section news-section no-slide" id="news">
+    <section class="section-alt news-section no-slide" id="news">
       <div class="container">
         <div class="section-label">Updates</div>
         <h2>Latest <span class="title-gradient">News</span></h2>
@@ -947,7 +946,7 @@
     </section>
 
     <!-- TL;DR + STATS -->
-    <section class="section-alt" id="abstract">
+    <section class="section" id="abstract">
       <div class="container">
         <div class="section-label">Summary</div>
         <h2><span class="title-gradient">TL;DR</span></h2>
@@ -971,7 +970,7 @@
     </section>
 
     <!-- VIDEO -->
-    <section class="section no-slide" id="video">
+    <section class="section-alt no-slide" id="video">
       <div class="container">
         <div class="section-label">Watch</div>
         <h2>Video <span class="title-gradient">Overview</span></h2>
@@ -984,7 +983,7 @@
     </section>
 
     <!-- OVERVIEW FIGURE (web-native) -->
-    <section class="section-alt" id="overview">
+    <section class="section" id="overview">
       <div class="container">
         <div class="section-label">Data Collection</div>
         <h2>How SciCoQA Was <span class="title-gradient">Collected</span></h2>
@@ -1070,7 +1069,7 @@
     </section>
 
     <!-- PAPER-CODE DISCREPANCIES -->
-    <section class="section" id="discrepancies">
+    <section class="section-alt" id="discrepancies">
       <div class="container">
         <div class="section-label">Definition</div>
         <h2>Paper-Code <span class="title-gradient">Discrepancies</span></h2>
@@ -1119,7 +1118,7 @@
     </section>
 
     <!-- EXAMPLES -->
-    <section class="section-alt" id="examples">
+    <section class="section" id="examples">
       <div class="container">
         <div class="section-label">Dataset</div>
         <h2>SciCoQA <span class="title-gradient">Examples</span></h2>
@@ -1206,7 +1205,7 @@
     </section>
 
     <!-- TAXONOMY -->
-    <section class="section" id="taxonomy">
+    <section class="section-alt" id="taxonomy">
       <div class="container">
         <div class="section-label">Classification</div>
         <h2>Discrepancy <span class="title-gradient">Taxonomy</span></h2>
@@ -1318,7 +1317,7 @@
     </section>
 
     <!-- EVALUATION -->
-    <section class="section-alt" id="evaluation">
+    <section class="section" id="evaluation">
       <div class="container">
         <div class="section-label">Experiments</div>
         <h2><span class="title-gradient">Evaluation</span></h2>
@@ -1416,7 +1415,7 @@
     </section>
 
     <!-- ANALYSIS -->
-    <section class="section" id="analysis">
+    <section class="section-alt" id="analysis">
       <div class="container">
         <div class="section-label">Deep Dive</div>
         <h2><span class="title-gradient">Analysis</span></h2>
@@ -1467,7 +1466,7 @@
     </section>
 
     <!-- CONCLUSIONS -->
-    <section class="section-alt" id="conclusions">
+    <section class="section" id="conclusions">
       <div class="container">
         <div class="section-label">Takeaways</div>
         <h2><span class="title-gradient">Conclusions</span></h2>
@@ -1493,7 +1492,7 @@
     </section>
 
     <!-- GETTING STARTED -->
-    <section class="section" id="start">
+    <section class="section-alt" id="start">
       <div class="container">
         <div class="section-label">Resources</div>
         <h2>Getting <span class="title-gradient">Started</span></h2>
@@ -1543,7 +1542,7 @@ example = real_data[<span class="num">0</span>]
     </section>
 
     <!-- CITATION -->
-    <section class="section-alt" id="citation">
+    <section class="section" id="citation">
       <div class="container">
         <div class="section-label">Reference</div>
         <h2><span class="title-gradient">Citation</span></h2>
