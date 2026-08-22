@@ -1,6 +1,6 @@
 # Dataset License
 
-The SciCoQA dataset files in this directory (`scicoqa-real-v1.1.jsonl`, `scicoqa-synthetic-v1.1.jsonl` and `scicoqa-pooled-v1.1.jsonl`) are licensed under the Creative Commons Attribution 4.0 International License (CC-BY 4.0).
+The SciCoQA dataset files in this directory (`scicoqa-real-v*.jsonl`, `scicoqa-synthetic-v*.jsonl` and `scicoqa-pooled-v*.jsonl`) are licensed under the Creative Commons Attribution 4.0 International License (CC-BY 4.0).
 
 **License URL**: https://creativecommons.org/licenses/by/4.0/
 
