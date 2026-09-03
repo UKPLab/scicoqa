@@ -845,6 +845,7 @@
     .stagger-1 { transition-delay: 0.1s; }
     .stagger-2 { transition-delay: 0.2s; }
     .stagger-3 { transition-delay: 0.3s; }
+    .stagger-4 { transition-delay: 0.4s; }
 
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
@@ -937,18 +938,22 @@
         <h2>Latest <span class="title-gradient">News</span></h2>
         <div class="news-list">
           <div class="news-item fade-up">
+            <span class="news-date">Jul 24, 2026</span>
+            <span class="news-text"><i class="fa-solid fa-robot"></i> <a href="https://github.com/CatNebulaaaa/ClaimCheck-Skill" target="_blank">ClaimCheck</a>, an independently developed open-source agent skill for auditing paper&ndash;code consistency, uses SciCoQA's public cases as its development and regression set <a href="https://github.com/CatNebulaaaa/ClaimCheck-Skill" target="_blank">[GitHub]</a>.</span>
+          </div>
+          <div class="news-item fade-up stagger-1">
             <span class="news-date">Jul 12, 2026</span>
             <span class="news-text"><i class="fa-solid fa-code-compare"></i> <a href="https://cspaper.org/code-check" target="_blank">CSPaper</a> launched <strong>Code Check</strong>, a paper&ndash;code consistency tool built on the SciCoQA benchmark. They are using an agentic setup to detect paper-code discrepancies, improving over the baselines in the paper <a href="https://cspaper.org/articles/code-check" target="_blank">[blog post]</a>.</span>
           </div>
-          <div class="news-item fade-up stagger-1">
+          <div class="news-item fade-up stagger-2">
             <span class="news-date">Jul 7, 2026</span>
             <span class="news-text"><i class="fa-solid fa-trophy"></i> SciCoQA received a <strong>SAC Highlight Award</strong> at ACL 2026, given by the Senior Area Chairs to papers they consider particularly outstanding &mdash; for originality, significance, technical excellence, reproducibility, or potential impact <a href="https://www.linkedin.com/posts/timbmg_acl2026-share-7480384627858186240-OqQT/" target="_blank">[LinkedIn post]</a>.</span>
           </div>
-          <div class="news-item fade-up stagger-2">
+          <div class="news-item fade-up stagger-3">
             <span class="news-date">Apr 4, 2026</span>
             <span class="news-text"><i class="fa-solid fa-circle-check"></i> SciCoQA is accepted to the main conference of <strong>ACL 2026</strong> in San Diego <a href="https://aclanthology.org/2026.acl-long.1795/" target="_blank">[ACL Anthology]</a>.</span>
           </div>
-          <div class="news-item fade-up stagger-3">
+          <div class="news-item fade-up stagger-4">
             <span class="news-date">Jan 19, 2026</span>
             <span class="news-text"><i class="fa-solid fa-rocket"></i> SciCoQA is out! The paper is on <strong>arXiv</strong>, and we release the <strong>code</strong> and <strong>dataset</strong> <a href="https://arxiv.org/abs/2601.12910" target="_blank">[arXiv]</a> <a href="https://github.com/UKPLab/scicoqa" target="_blank">[GitHub]</a> <a href="https://huggingface.co/datasets/UKPLab/scicoqa" target="_blank">[Hugging Face]</a>.</span>
           </div>
