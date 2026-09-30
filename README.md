@@ -181,14 +181,15 @@ Create a `.env` file in the root directory with the following:
 The archives are located in the `out/` directory and are split as follows:
 
 - `out/data_collection.tar.gz`: Contains all data collection outputs (GitHub classification, validation, reproducibility extraction, etc.)
-- `out/inference_discrepancy_detection_real.tar.gz`: Contains inference results on real data (both full and code_only)
-- `out/inference_discrepancy_detection_synthetic_code_only.tar.gz`: Contains inference results on synthetic data (code_only experiments)
-- `out/inference_discrepancy_detection_synthetic_full.tar.gz`: Contains inference results on synthetic data (full context experiments)
+- `out/inference_discrepancy_detection_real.tar.gz`: Contains inference results and GPT-OSS 20B judge evaluations on the v1.1 real data. It covers all 22 models with full context and the 8 models of the code-only ablation, and reproduces the paper's results. See `README.md` in the archive for details.
+- `out/inference_discrepancy_detection_synthetic_code_only.tar.gz`: Contains inference results on the v1.0 synthetic data (code_only experiments)
+- `out/inference_discrepancy_detection_synthetic_full.tar.gz`: Contains inference results on the v1.0 synthetic data (full context experiments)
 - `out/inference_*.tar.gz`: Any other inference-related archives
 
 Each archive contains only the following file types:
 
 - `generations.jsonl`: Model generation outputs
+- `evaluations.jsonl`: Judge verdicts per prediction and reference description
 - `discrepancy_issues-positives.jsonl`: Classified discrepancy issues
 - `predictions_and_classifications.jsonl`: Predictions and classifications
 - `classifications.json`: Classification results
@@ -402,7 +403,8 @@ uv run python -m scicoqa.inference.discrepancy_eval \
     --model "vllm-gpt-oss-20b" \
     --generations_dir $GENERATIONS_DIR \
     --vllm_server_url "http://localhost:11435/v1" \
-    --dataset_split real
+    --dataset_split real \
+    --dir_prefix eval-gpt-oss-20b
 ```
 
 For synthetic data evaluation:
@@ -413,10 +415,11 @@ uv run python -m scicoqa.inference.discrepancy_eval \
     --model "vllm-gpt-oss-20b" \
     --generations_dir $GENERATIONS_DIR \
     --vllm_server_url "http://localhost:11435/v1" \
-    --dataset_split synthetic
+    --dataset_split synthetic \
+    --dir_prefix eval-gpt-oss-20b
 ```
 
-This creates an `eval` directory in the generations directory with evaluation results.
+This creates an `eval-gpt-oss-20b` directory in the generations directory with evaluation results. Each prediction is judged against every reference description of the discrepancy (for the real data, the GPT-5 and Gemini 3.1 Pro descriptions).
 
 ### Computing Recall
 
@@ -426,6 +429,8 @@ To compute recall metrics across all runs:
 # Compute recall for all experiments
 uv run python -m scicoqa.evaluation.compute_recall --eval-type eval-gpt-oss-20b
 ```
+
+A discrepancy counts as detected if any prediction is judged to match any of its reference descriptions. Evaluations against an empty reference description are excluded: 12 of the 92 real discrepancies only have a Gemini 3.1 Pro description.
 
 Example output:
 
@@ -457,7 +462,7 @@ The `out/` directory contains pre-generated results:
 - `out/inference/discrepancy_detection/synthetic/full/`: Predictions on synthetic data
 - `out/inference/discrepancy_detection/synthetic/code_only/`: Code-only ablation on synthetic data
 
-These can be used to compute metrics without re-running inference.
+These can be used to compute metrics without re-running inference, e.g. `compute_recall --eval-type eval-gpt-oss-20b` reproduces the paper's real-data results.
 
 ## Citation
 
