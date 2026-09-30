@@ -182,8 +182,8 @@ The archives are located in the `out/` directory and are split as follows:
 
 - `out/data_collection.tar.gz`: Contains all data collection outputs (GitHub classification, validation, reproducibility extraction, etc.)
 - `out/inference_discrepancy_detection_real.tar.gz`: Contains inference results and GPT-OSS 20B judge evaluations on the v1.1 real data. It covers all 22 models with full context and the 8 models of the code-only ablation, and reproduces the paper's results. See `README.md` in the archive for details.
-- `out/inference_discrepancy_detection_synthetic_code_only.tar.gz`: Contains inference results on the v1.0 synthetic data (code_only experiments)
-- `out/inference_discrepancy_detection_synthetic_full.tar.gz`: Contains inference results on the v1.0 synthetic data (full context experiments)
+- `out/inference_discrepancy_detection_synthetic_full.tar.gz`: Contains inference results and GPT-OSS 20B judge evaluations on the v1.1 synthetic data for all 22 models with full context. See `README.md` in the archive for details.
+- `out/inference_discrepancy_detection_synthetic_code_only.tar.gz`: Contains the same for the 8 models of the code-only ablation on the v1.1 synthetic data.
 - `out/inference_*.tar.gz`: Any other inference-related archives
 
 Each archive contains only the following file types:
@@ -462,7 +462,7 @@ The `out/` directory contains pre-generated results:
 - `out/inference/discrepancy_detection/synthetic/full/`: Predictions on synthetic data
 - `out/inference/discrepancy_detection/synthetic/code_only/`: Code-only ablation on synthetic data
 
-These can be used to compute metrics without re-running inference, e.g. `compute_recall --eval-type eval-gpt-oss-20b` reproduces the paper's real-data results.
+These can be used to compute metrics without re-running inference, e.g. `compute_recall --eval-type eval-gpt-oss-20b` reproduces the paper's results (real, synthetic, and combined recall).
 
 ## Citation
 
