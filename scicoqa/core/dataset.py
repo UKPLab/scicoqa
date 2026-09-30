@@ -50,7 +50,8 @@ def load_scicoqa(
         logger.info(
             f"Loading SciCoQA {split} {version} from HuggingFace: {HF_DATASET_ID}"
         )
-        dataset = load_dataset(HF_DATASET_ID, name=version, split=split)
+        # Versions are tags of the HuggingFace dataset repo (e.g. "v1.0", "v1.1")
+        dataset = load_dataset(HF_DATASET_ID, split=split, revision=version)
         df = dataset.to_pandas()
 
         # Convert struct columns back to list-of-dicts format for compatibility

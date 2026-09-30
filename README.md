@@ -132,6 +132,9 @@ df_real = load_scicoqa(split="real")
 df_synthetic = load_scicoqa(split="synthetic")
 df_pooled = load_scicoqa(split="pooled")
 
+# Load an earlier dataset version (a tag of the HuggingFace dataset repo)
+df_real_v10 = load_scicoqa(split="real", version="v1.0")
+
 # Or load from local files
 df_real = load_scicoqa(split="real", use_local=True)
 ```
