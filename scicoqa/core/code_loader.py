@@ -61,7 +61,7 @@ class CodeLoader:
             repo = git.Repo(self.repo_path)
             current_commit = repo.head.commit.hexsha
 
-            url_parts = self.github_url.rstrip("/").rstrip(".git").split("/")
+            url_parts = self.github_url.rstrip("/").removesuffix(".git").split("/")
             owner = url_parts[-2]
             repo_name = url_parts[-1]
 
