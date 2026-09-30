@@ -7,12 +7,12 @@ and computes mean recall metrics for each model. It provides a simplified
 alternative to the full discrepancy_analysis.ipynb notebook.
 
 Usage:
-    # Display results to console (top-3 most similar, matching paper methodology)
+    # Display results to console (all predictions, matching the paper)
     python -m scicoqa.evaluation.compute_recall --eval-type eval-gpt-oss-20b
     # Save results to CSV
     python -m scicoqa.evaluation.compute_recall --eval-type eval-gpt-oss-20b -o results.csv
-    # Use all predictions instead of top-3
-    python -m scicoqa.evaluation.compute_recall --eval-type eval-gpt-oss-20b --top-k 0
+    # Only consider the top-3 most similar predictions per discrepancy
+    python -m scicoqa.evaluation.compute_recall --eval-type eval-gpt-oss-20b --top-k 3
 
 Output:
     - Recall Overall: Mean recall across all discrepancies (real + synthetic)
@@ -180,10 +180,52 @@ DATASET_SIZES = {
 }
 
 
+def load_reference_availability(
+    data_dir: Path, dataset_version: str
+) -> dict[tuple[str, str], bool]:
+    """
+    Map (discrepancy_id, gt_source) to whether that reference description is
+    non-empty in the dataset.
+
+    Some discrepancies only have one of the reference descriptions (e.g. 12 real
+    discrepancies in v1.1 have no GPT description). Evaluations judged against
+    an empty reference are not meaningful and are excluded from the paper's
+    results.
+    """
+    has_reference = {}
+    for split in ("real", "synthetic"):
+        data_file = data_dir / f"scicoqa-{split}-{dataset_version}.jsonl"
+        if not data_file.exists():
+            print(f"WARNING: {data_file} not found, cannot check references.")
+            continue
+        with open(data_file) as f:
+            for line in f:
+                entry = json.loads(line)
+                for key, description in entry.items():
+                    if not key.startswith("discrepancy_description_"):
+                        continue
+                    gt_source = key.removeprefix("discrepancy_description_")
+                    has_reference[(entry["discrepancy_id"], gt_source)] = (
+                        isinstance(description, str) and bool(description.strip())
+                    )
+    return has_reference
+
+
+def drop_empty_reference_evaluations(
+    df: pd.DataFrame, has_reference: dict[tuple[str, str], bool]
+) -> pd.DataFrame:
+    """Drop evaluations whose reference description is empty in the dataset."""
+    keep = [
+        has_reference.get((disc_id, gt_source), True)
+        for disc_id, gt_source in zip(df["discrepancy_id"], df["gt_source"])
+    ]
+    return df[keep]
+
+
 def compute_recall(
     df: pd.DataFrame,
     eval_type: str = "eval",
-    top_k: int = 3,
+    top_k: int = 0,
     dataset_version: str = "v1.1",
 ) -> pd.DataFrame:
     """
@@ -192,9 +234,9 @@ def compute_recall(
     Recall is computed as:
     (# discrepancies recalled) / (total # discrepancies in dataset)
 
-    By default, considers only the top-3 most similar predictions per
-    (discrepancy, gt_source) pair, matching the paper's methodology.
-    Set top_k=0 to consider all predictions.
+    By default, considers all predictions, matching the paper's main results.
+    Set top_k > 0 to only consider the top-k most similar predictions per
+    (discrepancy, gt_source) pair.
 
     Returns a dataframe with columns: model, model_pretty,
     recall_overall, recall_real, recall_synthetic
@@ -386,6 +428,17 @@ def main():
     df_evals = df_evals[
         ~df_evals["model"].isin(["gpt-oss-20b-mid", "gpt-oss-120b-mid"])
     ]
+
+    # Exclude evaluations judged against an empty reference description
+    has_reference = load_reference_availability(
+        project_root / "data", args.dataset_version
+    )
+    before = len(df_evals)
+    df_evals = drop_empty_reference_evaluations(df_evals, has_reference)
+    print(
+        f"Dropped {before - len(df_evals):,} evaluations against an empty "
+        "reference description"
+    )
 
     # Compute recall metrics
     top_k_desc = f"top-{args.top_k} similar" if args.top_k > 0 else "all"
